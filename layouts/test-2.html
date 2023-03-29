@@ -13,7 +13,14 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
     <script src="https://cdn.tailwindcss.com/3.2.4"></script>
-    <title>Date range picker</title>
+    <!-- Required chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <!-- Alpine JS -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <!--  -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Index</title>
 </head>
 
 <body>
@@ -21,7 +28,7 @@
     <!-- ===== ================ ==== -->
     <!-- ===== section Header ==== -->
     <!-- ===== ================ ==== -->
-    <section class="fixed z-[1036] w-full h-16 bg-white border-b md:px-2">
+    <section class="fixed  z-[1036] w-full h-16 bg-white border-b md:px-2">
         <div class="flex justify-between h-full">
             <div class="z-10 flex justify-between w-full px-4 md:px-2">
 
@@ -53,11 +60,9 @@
     <!-- ===== ================ ==== -->
 
 
-    <section
-        class="relative flex h-screen min-h-full items-start justify-center overflow-y-hidden border bg-gray-50 dark:border-zinc-900 dark:bg-zinc-700">
-
+    <section class="relative flex h-screen min-h-full items-start justify-center overflow-y-hidden border bg-gray-50">
         <!-- toogler -->
-        <div class="absolute z-[1036] md:left-4 md:top-1.5 right-2 top-3">
+        <div class="absolute  z-[1036] md:left-4 md:top-1.5 right-2 top-3">
             <div data-te-sidenav-toggle-ref data-te-target="#sidenav-2" aria-controls="#sidenav-2" aria-haspopup="true">
                 <button class="md:h-12 md:w-12 h-10 w-10 rounded-full bg-slate-100 hover:bg-slate-00 transition-all">
                     <i class="fa-regular fa-bars-staggered"></i>
@@ -66,39 +71,39 @@
         </div>
         <!-- end toogler -->
 
-
         <!-- ===== ================ ==== -->
-        <!-- ===== section Left Nav ==== -->
+        <!-- ===== section Side Nav ==== -->
         <!-- ===== ================ ==== -->
-        <nav id="sidenav-2"
-            class="fixed top-0 left-0 z-[1035] h-screen w-60 pt-16 -translate-x-full overflow-hidden bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.07),_0_2px_4px_rgba(0,0,0,0.05)] data-[te-sidenav-hidden='false']:translate-x-0 dark:bg-zinc-800"
-            data-te-sidenav-init data-te-sidenav-hidden="false" data-te-sidenav-mode="over"
+        <nav id="sidenav-2" aria-label=""
+            class="fixed  left-0 z-[1035] h-screen w-60 pt-16 -translate-x-full overflow-hidden bg-white border-r data-[te-sidenav-hidden='false']:translate-x-0"
+            data-te-sidenav-init data-te-sidenav-hidden="true" data-te-sidenav-mode="over"
             data-te-sidenav-content="#content">
 
             <ul class="relative m-0 list-none px-[0.2rem]" data-te-sidenav-menu-ref>
+                <!-- dashboard menu -->
                 <li class="relative">
-                    <a class="flex h-12 cursor-pointer items-center truncate rounded-[5px] py-4 px-6 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
+                    <a class="flex h-12 cursor-pointer items-center truncate rounded-[5px] py-4 px-6 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none "
                         data-te-sidenav-link-ref>
                         <span class="mr-4 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-gray-400">
                             <i class="fa-regular fa-computer-classic"></i>
                         </span>
-                        <span class="text-sm text-left font-semibold text-primary">Dashboard</span>
+                        <h1 class="text-sm text-left font-semibold text-primary">
+                            Dashboard</h1>
                     </a>
                 </li>
+                <!-- end dashboard menu -->
+
+                <!-- News menu -->
                 <li class="relative">
-                    <a class="flex h-12 cursor-pointer items-center truncate rounded-[5px] py-4 px-6 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
+                    <a class="flex h-12 cursor-pointer items-center truncate rounded-[5px] py-4 px-6 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none "
                         data-te-sidenav-link-ref>
-                        <span class="mr-4 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-gray-400 dark:[&>svg]:text-gray-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="h-4 w-4">
-                                <path fill-rule="evenodd"
-                                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-2.625 6c-.54 0-.828.419-.936.634a1.96 1.96 0 00-.189.866c0 .298.059.605.189.866.108.215.395.634.936.634.54 0 .828-.419.936-.634.13-.26.189-.568.189-.866 0-.298-.059-.605-.189-.866-.108-.215-.395-.634-.936-.634zm4.314.634c.108-.215.395-.634.936-.634.54 0 .828.419.936.634.13.26.189.568.189.866 0 .298-.059.605-.189.866-.108.215-.395.634-.936.634-.54 0-.828-.419-.936-.634a1.96 1.96 0 01-.189-.866c0-.298.059-.605.189-.866zm2.023 6.828a.75.75 0 10-1.06-1.06 3.75 3.75 0 01-5.304 0 .75.75 0 00-1.06 1.06 5.25 5.25 0 007.424 0z"
-                                    clip-rule="evenodd" />
-                            </svg>
+                        <span class="mr-4 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-gray-400">
+                            <i class="fa-regular fa-newspaper"></i>
                         </span>
-                        <span>Category 1</span>
+                        <h1 class="text-sm text-left font-sans text-cs-black hover:font-title">
+                            News</h1>
                         <span
-                            class="absolute right-0 ml-auto mr-[0.8rem] transition-transform duration-300 ease-linear motion-reduce:transition-none [&>svg]:text-gray-600 dark:[&>svg]:text-gray-300"
+                            class="absolute right-0 ml-auto mr-[0.8rem] transition-transform duration-300 ease-linear motion-reduce:transition-none [&>svg]:text-gray-600 "
                             data-te-sidenav-rotate-icon-ref>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                 class="h-5 w-5">
@@ -111,123 +116,1675 @@
                     <ul class="!visible relative m-0 hidden list-none p-0 data-[te-collapse-show]:block "
                         data-te-sidenav-collapse-ref>
                         <li class="relative">
-                            <a class="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-                                data-te-sidenav-link-ref>Link 2</a>
+                            <a class="flex  cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-sm text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none "
+                                data-te-sidenav-link-ref>Internal News</a>
                         </li>
                         <li class="relative">
-                            <a class="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-                                data-te-sidenav-link-ref>Link 3</a>
+                            <a class="flex  cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-sm text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none "
+                                data-te-sidenav-link-ref>Tenant News</a>
                         </li>
                     </ul>
                 </li>
-                <li class="relative">
-                    <a class="flex h-12 cursor-pointer items-center truncate rounded-[5px] py-4 px-6 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-                        data-te-sidenav-link-ref>
-                        <span class="mr-4 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-gray-400 dark:[&>svg]:text-gray-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="h-4 w-4">
-                                <path fill-rule="evenodd"
-                                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-2.625 6c-.54 0-.828.419-.936.634a1.96 1.96 0 00-.189.866c0 .298.059.605.189.866.108.215.395.634.936.634.54 0 .828-.419.936-.634.13-.26.189-.568.189-.866 0-.298-.059-.605-.189-.866-.108-.215-.395-.634-.936-.634zm4.314.634c.108-.215.395-.634.936-.634.54 0 .828.419.936.634.13.26.189.568.189.866 0 .298-.059.605-.189.866-.108.215-.395.634-.936.634-.54 0-.828-.419-.936-.634a1.96 1.96 0 01-.189-.866c0-.298.059-.605.189-.866zm2.023 6.828a.75.75 0 10-1.06-1.06 3.75 3.75 0 01-5.304 0 .75.75 0 00-1.06 1.06 5.25 5.25 0 007.424 0z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </span>
-                        <span>Category 2</span>
-                        <span
-                            class="absolute right-0 ml-auto mr-[0.8rem] transition-transform duration-300 ease-linear motion-reduce:transition-none [&>svg]:text-gray-600 dark:[&>svg]:text-gray-300"
-                            data-te-sidenav-rotate-icon-ref>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                class="h-5 w-5">
-                                <path fill-rule="evenodd"
-                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </span>
-                    </a>
-                    <ul class="show !visible relative m-0 hidden list-none p-0 data-[te-collapse-show]:block "
-                        data-te-sidenav-collapse-ref>
-                        <li class="relative">
-                            <a class="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-                                data-te-sidenav-link-ref>Link 4</a>
-                        </li>
-                        <li class="relative">
-                            <a class="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-                                data-te-sidenav-link-ref>Link 5</a>
-                        </li>
-                    </ul>
-                </li>
+                <!-- end News menu -->
             </ul>
         </nav>
         <!-- ===== ================ ==== -->
-        <!-- ===== end section Left Nav ==== -->
+        <!-- ===== end section Side Nav ==== -->
         <!-- ===== ================ ==== -->
 
 
-        <!-- Sidenav -->
-        <div class="p-5 !pl-[260px] text-center" id="content">
-            <!-- Toggler -->
-            <button
-                class="mt-10 inline-block rounded bg-blue-600 px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg"
-                data-te-sidenav-toggle-ref data-te-target="#sidenav-2" aria-controls="#sidenav-2" aria-haspopup="true">
-                <span class="block [&>svg]:h-5 [&>svg]:w-5 [&>svg]:text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
-                        <path fill-rule="evenodd"
-                            d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-                            clip-rule="evenodd" />
-                    </svg>
-                </span>
-            </button>
-            <!-- Toggler -->
-            <div class="my-5 flex text-start">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc magna
-                massa, ornare quis interdum a, cursus in quam. Quisque risus libero,
-                cursus eget eros vitae, aliquam placerat velit. Vivamus luctus eros
-                id sagittis luctus. Pellentesque felis nulla, rhoncus viverra nunc
-                vitae, viverra aliquam ante. Ut feugiat mattis tempor.
+        <!-- ===== ================ ==== -->
+        <!-- ===== section Main Body ==== -->
+        <!-- ===== ================ ==== -->
+        <div class="absolute w-full pt-16 overflow-y-auto h-full px-4">
+
+            <!-- ===== ================ ==== -->
+            <!-- ===== section Tab ==== -->
+            <!-- ===== ================ ==== -->
+            <ul class="mb-4 flex list-none  flex-wrap border-b-0 pl-0 md:flex-row space-x-2" id="tabs-tab3"
+                role="tablist" data-te-nav-ref>
+                <!-- tab complaint -->
+                <li role="presentation">
+                    <a href="#tabs-complaint"
+                        class="my-2 block  border bg-white px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded"
+                        id="tabs-home-tab3" data-te-toggle="pill" data-te-target="#tabs-complaint" data-te-nav-active
+                        role="tab" aria-controls="tabs-complaint" aria-selected="true">Complaint Request</a>
+                </li>
+                <!-- tab work -->
+                <li role="presentation">
+                    <a href="#tabs-work"
+                        class="focus:border-transparen my-2 block border bg-white px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded "
+                        id="tabs-profile-tab3" data-te-toggle="pill" data-te-target="#tabs-work" role="tab"
+                        aria-controls="tabs-work" aria-selected="false">Work Order</a>
+                </li>
+            </ul>
+            <!-- ===== ================ ==== -->
+            <!-- ===== end section Tab ==== -->
+            <!-- ===== ================ ==== -->
+
+
+            <!-- ===== ================ ==== -->
+            <!-- ===== section modul tab ==== -->
+            <!-- ===== ================ ==== -->
+            <div>
+                <!-- ===== ================ ==== -->
+                <!-- ===== section modul tab Complaint request ==== -->
+                <!-- ===== ================ ==== -->
+                <div class="hidden  transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+                    id="tabs-complaint" role="tabpanel" data-te-tab-active aria-labelledby="Complaint Request">
+
+                    <section class="w-full space-y-4" id="content">
+
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== section last update & date range ==== -->
+                        <!-- ===== ================ ==== -->
+                        <section class="md:flex md:space-x-3 space-y-2 md:space-y-0">
+                            <div class="my-auto bg-white">
+                                <input type="date" name="" id="" class="font-sans text-sm p-2 border rounded-md w-full">
+                            </div>
+                            <div class="text-xs text-slate-40 flex my-auto">
+                                <span class="my-auto">Last Updated:</span>
+                                <span class="my-auto">Mar 20, 2023 08:00</span>
+                            </div>
+                        </section>
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== end section last update & date range ==== -->
+                        <!-- ===== ================ ==== -->
+
+                        <div class="border px-4 py-8 space-y-4 bg-white rounded-md">
+                            <!-- ===== ================ ==== -->
+                            <!-- ===== section Options List ==== -->
+                            <!-- ===== ================ ==== -->
+                            <section>
+                                <!-- button -->
+                                <div class="grid md:grid-cols-6 grid-cols-2 gap-2">
+
+                                    <!-- Property -->
+                                    <div x-data="{ open: false }" class="relative">
+                                        <button @click="open = !open"
+                                            class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                            <h1 class="font-sans text-sm text-left w-full">Property</h1>
+                                            <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                        </button>
+                                        <!-- show modul -->
+                                        <div x-show="open" x-transition class="pt-1">
+                                            <form action="/action_page.php"
+                                                class="bg-white absolute border w-full rounded-m p-2 space-y-2">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">FX
+                                                        Sudirman</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">Beachwalk Bali</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">23
+                                                        Paskal</label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- end Property -->
+
+                                    <!-- Type -->
+                                    <div x-data="{ open: false }" class="relative">
+                                        <button @click="open = !open"
+                                            class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                            <h1 class="font-sans text-sm text-left w-full">Type</h1>
+                                            <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                        </button>
+                                        <!-- show modul -->
+                                        <div x-show="open" x-transition class="pt-1">
+                                            <form action="/action_page.php"
+                                                class="bg-white absolute w-full border rounded-m p-2 space-y-2">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">FX
+                                                        Request</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">Complaint</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">23
+                                                        Others</label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- end Type -->
+
+                                    <!-- Category -->
+                                    <div x-data="{ open: false }" class="relative">
+                                        <button @click="open = !open"
+                                            class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                            <h1 class="font-sans text-sm text-left w-full">Category</h1>
+                                            <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                        </button>
+                                        <!-- show modul -->
+                                        <div x-show="open" x-transition class="pt-1">
+                                            <form action="/action_page.php"
+                                                class="bg-white absolute w-full overflow-y-auto max-h-56 border rounded-m p-2 space-y-2">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">
+                                                        Civil</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">
+                                                        Electricity</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">
+                                                        AC</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">
+                                                        Keamanan</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">
+                                                        Listrik</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">
+                                                        Pest Control</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">
+                                                        Safety</label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- end Category -->
+
+                                    <!-- Submitter -->
+                                    <div x-data="{ open: false }" class="relative">
+                                        <button @click="open = !open"
+                                            class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                            <h1 class="font-sans text-sm text-left w-full">Submitter</h1>
+                                            <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                        </button>
+                                        <!-- show modul -->
+                                        <div x-show="open" x-transition class="pt-1">
+                                            <form action="/action_page.php"
+                                                class="bg-white absolute w-full border rounded-m p-2 space-y-2">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">FX
+                                                        Internal</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">Tenant</label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- end Submitter -->
+
+                                    <!-- Tenant/Departement -->
+                                    <div x-data="{ open: false }" class="relative">
+                                        <button @click="open = !open"
+                                            class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                            <h1 class="font-sans text-sm text-left w-full truncate">Tenant / Departement
+                                            </h1>
+                                            <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                        </button>
+                                        <!-- show modul -->
+                                        <div x-show="open" x-transition class="pt-1 absolute w-full">
+                                            <div class="border rounded-m truncate flex w-full">
+                                                <input type="search" name="" placeholder="Search Tenant" id=""
+                                                    class="text-xs truncate p-2 bg-white w-full">
+                                            </div>
+                                            <form action="/action_page.php"
+                                                class="bg-white border rounded-m p-2 space-y-2">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">FX
+                                                        Chicago Popcorn</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">Zenbu</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">Your
+                                                        Bag Spa</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">XIAOMI</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">Wingstop</label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- end Tenant/Departement -->
+
+                                    <!-- Submitter Name -->
+                                    <div x-data="{ open: false }" class="relative">
+                                        <button @click="open = !open"
+                                            class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                            <h1 class="font-sans text-sm text-left w-full truncate">Submitter Name</h1>
+                                            <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                        </button>
+                                        <!-- show modul -->
+                                        <div x-show="open" x-transition class="absolute pt-1 w-full">
+                                            <div class="border rounded-m truncate flex w-full">
+                                                <input type="search" name="" placeholder="Search Tenant" id=""
+                                                    class="text-xs truncate p-2 bg-white w-full">
+                                            </div>
+                                            <form action="/action_page.php"
+                                                class="bg-white border rounded-m p-2 space-y-2">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">FX
+                                                        Chicago Popcorn</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">Zenbu</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">Your
+                                                        Bag Spa</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">XIAOMI</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">Wingstop</label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- end Submitter Name -->
+
+                                </div>
+                                <!-- end button -->
+                            </section>
+                            <!-- ===== ================ ==== -->
+                            <!-- ===== end section Options List ==== -->
+                            <!-- ===== ================ ==== -->
+
+
+                            <!-- ===== ================ ==== -->
+                            <!-- ===== section Total Information ==== -->
+                            <!-- ===== ================ ==== -->
+                            <section class="grid md:grid-cols-5 grid-cols-2 gap-2">
+
+                                <!-- complaint and request -->
+                                <div
+                                    class="p-4 bg-white rounded-md border border-blue-500 space-y-2 md:col-span-1 col-span-2">
+                                    <h1 class="font-sans text-xs font-semibold text-cs-gray">Total Complaint & Request
+                                    </h1>
+                                    <h1 class="font-sans text-4xl font-normal text-cs-primary">4,331</h1>
+                                </div>
+                                <!-- end complaint and request -->
+
+                                <!-- Tenant Submitter -->
+                                <div class="p-4 bg-white rounded-md border  space-y-2">
+                                    <h1 class="font-sans text-xs font-semibold text-cs-gray">Tenant Submitter </h1>
+                                    <h1 class="font-sans text-4xl font-normal text-cs-black">1,289</h1>
+                                </div>
+                                <!-- end Tenant Submitter -->
+
+                                <!-- Internal Submitter  -->
+                                <div class="p-4 bg-white rounded-md border  space-y-2">
+                                    <h1 class="font-sans text-xs font-semibold text-cs-gray">Internal Submitter </h1>
+                                    <h1 class="font-sans text-4xl font-normal text-cs-black">3,042 </h1>
+                                </div>
+                                <!-- end Internal Submitter  -->
+
+                                <!-- Percentage Complete   -->
+                                <div class="p-4 bg-white rounded-md border  space-y-2">
+                                    <h1 class="font-sans text-xs font-semibold text-cs-gray">Percentage Complete </h1>
+                                    <h1 class="font-sans text-4xl font-normal text-cs-black">95.27% </h1>
+                                </div>
+                                <!-- end Percentage Complete   -->
+
+                                <!-- Satisfaction Level    -->
+                                <div class="p-4 bg-white rounded-md border  space-y-2">
+                                    <h1 class="font-sans text-xs font-semibold text-cs-gray">Satisfaction Level </h1>
+                                    <h1 class="font-sans text-4xl font-normal text-cs-black">4.87</h1>
+                                    <div class="flex space-x-2">
+                                        <i class="fa-solid fa-star text-yellow-500 my-auto"></i>
+                                        <h1 class="text-sm font-sans text-slate-500 my-auto">(1-5)</h1>
+                                    </div>
+                                </div>
+                                <!-- end Satisfaction Level    -->
+
+                            </section>
+                            <!-- ===== ================ ==== -->
+                            <!-- ===== end section Total Information ==== -->
+                            <!-- ===== ================ ==== -->
+                        </div>
+
+                    </section>
+
+                    <!-- ===== ================ ==== -->
+                    <!-- ===== section Task Progress ==== -->
+                    <!-- ===== ================ ==== -->
+                    <div class="p-4 w-full space-y-4" id="content">
+                        <!-- title -->
+                        <h1 class="font-title text-lg">Percentage of Task P​rogress</h1>
+                        <section class="grid md:grid-cols-5 gap-3">
+
+                            <div class="md:col-span-2">
+                                <div class="overflow-hidden bg-white rounded-md border h-full">
+
+                                    <div class="p-10">
+                                        <canvas id="taskProgress"></canvas>
+                                    </div>
+
+                                    <!-- Chart doughnut -->
+                                    <script>
+                                        const dataDoughnut = {
+                                            labels: ["Approved", "Inspect", "Wait", "Complete", "Unassigned", "Process"],
+                                            datasets: [
+                                                {
+                                                    label: "My First Dataset",
+                                                    data: [300, 50, 100, 120, 90, 20],
+                                                    backgroundColor: [
+                                                        "rgb(52, 73, 94)",
+                                                        "rgb(26, 188, 156)",
+                                                        "rgb(231, 76, 60)",
+                                                        "rgb(52, 152, 219)",
+                                                        "rgb(244, 208, 63)",
+                                                        "rgb(230, 126, 34)",
+                                                    ],
+                                                    hoverOffset: 4,
+                                                },
+                                            ],
+                                        };
+
+                                        const configDoughnut = {
+                                            type: "doughnut",
+                                            data: dataDoughnut,
+                                            options: {},
+                                        };
+
+                                        var chartBar = new Chart(
+                                            document.getElementById("taskProgress"),
+                                            configDoughnut
+                                        );
+
+                                    </script>
+                                </div>
+                            </div>
+
+                            <div class="col-span-3">
+                                <div class="border rounded-md bg-white h-full">
+
+                                    <div class="rounded-md p-10 flex h-full">
+                                        <div class="my-auto overflow-hidden w-full ">
+                                            <canvas id="chartBar"></canvas>
+                                        </div>
+                                    </div>
+
+                                    <!-- Required chart.js -->
+                                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+                                    <!-- Chart bar -->
+                                    <script>
+                                        const labelsBarChart = [
+                                            "BM Operational Shift",
+                                            "Building Maintance",
+                                            "Building Service and Civil",
+                                            "Civil",
+                                            "Commercial",
+                                            "Customer Relation Management",
+                                            "Event",
+                                            "GA",
+                                            "GA & Legal",
+                                        ];
+                                        const dataBarChart = {
+                                            labels: labelsBarChart,
+                                            datasets: [
+                                                {
+                                                    label: "",
+                                                    data: [300, 50, 100, 120, 90, 20],
+                                                    backgroundColor: [
+                                                        "rgb(52, 73, 94)",
+                                                        "rgb(26, 188, 156)",
+                                                        "rgb(231, 76, 60)",
+                                                        "rgb(52, 152, 219)",
+                                                        "rgb(244, 208, 63)",
+                                                        "rgb(230, 126, 34)",
+                                                    ],
+                                                    hoverOffset: 4,
+                                                },
+                                            ],
+                                        };
+
+                                        const configBarChart = {
+                                            type: "bar",
+                                            data: dataBarChart,
+                                            options: {},
+                                        };
+
+                                        var chartBar = new Chart(
+                                            document.getElementById("chartBar"),
+                                            configBarChart
+                                        );
+                                    </script>
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+                    <!-- ===== ================ ==== -->
+                    <!-- ===== end section Task Progress ==== -->
+                    <!-- ===== ================ ==== -->
+
+                    <!-- ===== ================ ==== -->
+                    <!-- ===== section Bar Chart ==== -->
+                    <!-- ===== ================ ==== -->
+                    <div class="p-4 w-full" id="content">
+                        <div class="grid md:grid-cols-3 gap-3">
+
+                            <!-- bar chart Top 5 Submitter -->
+                            <div class="md:col-span-1">
+                                <div class="overflow-hidden bg-white rounded-md border h-full p-2">
+
+                                    <div>
+                                        <canvas class="w-full" id="taskProgress2"></canvas>
+                                    </div>
+
+                                    <!-- Bar Chart -->
+                                    <script>
+                                        const dataDoughnut2 = {
+                                            labels: ["Securtiy Parking", "RDD", "Operation", "TCR & Casual Leasing", "HSE"],
+                                            datasets: [
+                                                {
+                                                    label: "Record Count",
+                                                    data: [586, 396, 322, 290, 246],
+                                                    backgroundColor: [
+                                                        "rgb(52, 73, 94)",
+                                                        "rgb(52, 73, 94)",
+                                                        "rgb(52, 73, 94)",
+                                                        "rgb(52, 73, 94)",
+                                                        "rgb(52, 73, 94)",
+                                                    ],
+                                                    hoverOffset: 4,
+                                                },
+                                            ],
+                                        };
+                                        const options2 = {
+                                            indexAxis: "y",
+                                            responsive: true,
+                                            plugins: {
+                                                legend: {
+                                                    position: "top",
+                                                },
+                                                title: {
+                                                    display: true,
+                                                    text: "Top 5 Submitter",
+                                                },
+                                            },
+                                        };
+                                        const configDoughnut2 = {
+                                            type: "bar",
+                                            data: dataDoughnut2,
+                                            options: options2,
+                                        };
+
+                                        var chartBar = new Chart(
+                                            document.getElementById("taskProgress2"),
+                                            configDoughnut2
+                                        );
+
+                                    </script>
+                                    <!-- end Bar Chart -->
+
+                                </div>
+                            </div>
+                            <!-- end bar chart Top 5 Submitter -->
+
+                            <!-- bar chart Top 5 Floor -->
+                            <div class="md:col-span-1">
+                                <div class="overflow-hidden bg-white rounded-md border h-full p-2">
+
+                                    <div>
+                                        <canvas class="w-full" id="taskProgress3"></canvas>
+                                    </div>
+
+                                    <!-- Bar Chart -->
+                                    <script>
+                                        const dataDoughnut3 = {
+                                            labels: ["L1", "B1", "L2", "L3", "BF"],
+                                            datasets: [
+                                                {
+                                                    label: "Record Count",
+                                                    data: [217, 171, 64, 62, 48],
+                                                    backgroundColor: [
+                                                        "rgb(26, 188, 156)",
+                                                        "rgb(26, 188, 156)",
+                                                        "rgb(26, 188, 156)",
+                                                        "rgb(26, 188, 156)",
+                                                        "rgb(26, 188, 156)",
+                                                    ],
+                                                    hoverOffset: 4,
+                                                },
+                                            ],
+                                        };
+                                        const options3 = {
+                                            indexAxis: "y",
+                                            responsive: false,
+                                            plugins: {
+                                                legend: {
+                                                    position: "top",
+                                                },
+                                                title: {
+                                                    display: true,
+                                                    text: "Top 5 Floor",
+                                                },
+                                            },
+                                        };
+                                        const configDoughnut3 = {
+                                            type: "bar",
+                                            data: dataDoughnut3,
+                                            options: options3,
+                                        };
+
+                                        var chartBar = new Chart(
+                                            document.getElementById("taskProgress3"),
+                                            configDoughnut3
+                                        );
+
+                                    </script>
+                                    <!-- end Bar Chart -->
+
+                                </div>
+                            </div>
+                            <!-- end bar chart Top 5 Floor -->
+
+                            <!-- bar chart 3 -->
+                            <div class="md:col-span-1">
+                                <div class="overflow-hidden bg-white rounded-md border h-full p-2">
+
+                                    <div>
+                                        <canvas class="w-full" id="taskProgress4"></canvas>
+                                    </div>
+
+                                    <!-- Bar Chart -->
+                                    <script>
+                                        const dataDoughnut4 = {
+                                            labels: ["Civil", "Electricity", "Listrik", "Lain-lain", "Telephone"],
+                                            datasets: [
+                                                {
+                                                    label: "Record Count",
+                                                    data: [50, 50, 100, 120, 90, 20],
+                                                    backgroundColor: [
+                                                        "rgb(244, 208, 63)",
+                                                        "rgb(244, 208, 63)",
+                                                        "rgb(244, 208, 63)",
+                                                        "rgb(244, 208, 63)",
+                                                        "rgb(244, 208, 63)",
+                                                    ],
+                                                    hoverOffset: 4,
+                                                },
+                                            ],
+                                        };
+                                        const options4 = {
+                                            indexAxis: "y",
+                                            responsive: false,
+                                            plugins: {
+                                                legend: {
+                                                    position: "top",
+                                                },
+                                                title: {
+                                                    display: true,
+                                                    text: "Top 5 Category",
+                                                },
+                                            },
+                                        };
+                                        const configDoughnut4 = {
+                                            type: "bar",
+                                            data: dataDoughnut4,
+                                            options: options4,
+                                        };
+
+                                        var chartBar = new Chart(
+                                            document.getElementById("taskProgress4"),
+                                            configDoughnut4
+                                        );
+
+                                    </script>
+                                    <!-- end Bar Chart -->
+
+                                </div>
+                            </div>
+                            <!-- end bar chart 3 -->
+                        </div>
+                    </div>
+                    <!-- ===== ================ ==== -->
+                    <!-- ===== end section Bar Chart ==== -->
+                    <!-- ===== ================ ==== -->
+
+
+                    <!-- ===== ================ ==== -->
+                    <!-- ===== section Ticket ID ==== -->
+                    <!-- ===== ================ ==== -->
+                    <section class="p-4 space-y-4" id="content">
+                        <!-- top bar -->
+                        <div class="flex justify-between">
+                            <h1 class="font-title text-lg">Ticket ID </h1>
+                            <div>
+                                <!-- export -->
+                                <button class="border p-2 rounded bg-blue-500 hover:bg-blue-400 flex space-x-3">
+                                    <i class="fa-regular fa-file-arrow-down text-white"></i>
+                                    <h1 class="text-xs font-title text-white">Export</h1>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- end top bar -->
+                        <div class="max-w-full border bg-white rounded-md overflow-x-auto">
+                            <div>
+                                <table class="text-center text-sm font-light" aria-label="">
+                                    <thead class="border-b font-medium dark:border-neutral-500 bg-slate-100">
+                                        <tr>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">Ticket ID</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">Title</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">Submitter Name</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">Progress</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">User - Process</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">User - Complete</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">Submit</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">Description</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">Property</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y">
+                                        <tr>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr class="bg-slate-50">
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium ">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr class="bg-slate-50">
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr class="bg-slate-50">
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr class="bg-slate-50">
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr class="bg-slate-50">
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                        <div class="flex justify-end py-2">
+                            <nav aria-label="Pagination">
+                                <ul class="flex">
+                                    <li class="p-1.5 hover:bg-slate-100 rounded-sm font-title text-xs text-center">
+                                        Previous</li>
+                                    <li class="p-1.5 hover:bg-slate-200 rounded-sm w-8 ">
+                                        <h1 class="text-center font-title text-xs">1</h1>
+                                    </li>
+                                    <li class="p-1.5 hover:bg-slate-200 rounded-sm w-8 ">
+                                        <h1 class="text-center font-title text-xs">2</h1>
+                                    </li>
+                                    <li class="p-1.5 hover:bg-slate-100 rounded-sm font-title text-xs text-center">Next
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </section>
+                    <!-- ===== ================ ==== -->
+                    <!-- ===== section Ticket ID ==== -->
+                    <!-- ===== ================ ==== -->
+
+                </div>
+                <!-- ===== ================ ==== -->
+                <!-- ===== end section modul tab Complaint request ==== -->
+                <!-- ===== ================ ==== -->
+
+                <!-- ===== ================ ==== -->
+                <!-- ===== section modul tab Complaint work order ==== -->
+                <!-- ===== ================ ==== -->
+                <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+                    id="tabs-work" role="tabpanel" aria-labelledby="Work Order">
+
+                    <section class="w-full space-y-4" id="content">
+
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== section last update & date range ==== -->
+                        <!-- ===== ================ ==== -->
+                        <section class="md:flex md:space-x-3 space-y-2 md:space-y-0">
+                            <div class="my-auto bg-white">
+                                <input type="date" name="" id="" class="font-sans text-sm p-2 border rounded-md w-full">
+                            </div>
+                            <div class="text-xs text-slate-40 flex my-auto">
+                                <span class="my-auto">Last Updated:</span>
+                                <span class="my-auto">Mar 20, 2023 08:00</span>
+                            </div>
+                        </section>
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== end section last update & date range ==== -->
+                        <!-- ===== ================ ==== -->
+
+                        <div class="border px-4 py-8 space-y-4 bg-white rounded-md">
+                            <!-- ===== ================ ==== -->
+                            <!-- ===== section Options List ==== -->
+                            <!-- ===== ================ ==== -->
+                            <section>
+                                <!-- button -->
+                                <div class="grid md:grid-cols-6 grid-cols-2 gap-2">
+
+                                    <!-- Property -->
+                                    <div x-data="{ open: false }" class="relative">
+                                        <button @click="open = !open"
+                                            class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                            <h1 class="font-sans text-sm text-left w-full">Property</h1>
+                                            <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                        </button>
+                                        <!-- show modul -->
+                                        <div x-show="open" x-transition class="pt-1">
+                                            <form action="/action_page.php"
+                                                class="bg-white absolute border w-full rounded-m p-2 space-y-2">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">FX
+                                                        Sudirman</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">Beachwalk Bali</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">23
+                                                        Paskal</label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- end Property -->
+
+                                    <!-- Floor -->
+                                    <div x-data="{ open: false }" class="relative">
+                                        <button @click="open = !open"
+                                            class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                            <h1 class="font-sans text-sm text-left w-full">Floor</h1>
+                                            <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                        </button>
+                                        <!-- show modul -->
+                                        <div x-show="open" x-transition class="pt-1">
+                                            <form action="/action_page.php"
+                                                class="bg-white absolute w-full border rounded-m p-2 space-y-2">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">FX
+                                                        Request</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">Complaint</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check2"
+                                                        name="option2" value="something">
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check2">23
+                                                        Others</label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- end Floor -->
+
+                                    <!-- Category -->
+                                    <div x-data="{ open: false }" class="relative">
+                                        <button @click="open = !open"
+                                            class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                            <h1 class="font-sans text-sm text-left w-full">Category</h1>
+                                            <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                        </button>
+                                        <!-- show modul -->
+                                        <div x-show="open" x-transition class="pt-1">
+                                            <form action="/action_page.php"
+                                                class="bg-white absolute w-full overflow-y-auto max-h-56 border rounded-m p-2 space-y-2">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">
+                                                        Civil</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">
+                                                        Electricity</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">
+                                                        AC</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">
+                                                        Keamanan</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">
+                                                        Listrik</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">
+                                                        Pest Control</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="check1"
+                                                        name="option1" value="something" checked>
+                                                    <label class="form-check-label font-sans text-sm text-left"
+                                                        for="check1">
+                                                        Safety</label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- end Category -->
+
+                                </div>
+                                <!-- end button -->
+                            </section>
+                            <!-- ===== ================ ==== -->
+                            <!-- ===== end section Options List ==== -->
+                            <!-- ===== ================ ==== -->
+
+
+                            <!-- ===== ================ ==== -->
+                            <!-- ===== section Total Information ==== -->
+                            <!-- ===== ================ ==== -->
+                            <section class="grid md:grid-cols-5 grid-cols-2 gap-2">
+
+                                <!-- Total Work Order -->
+                                <div
+                                    class="p-4 bg-white rounded-md border border-blue-500 space-y-2 pb-11 md:col-span-1 col-span-2">
+                                    <h1 class="font-sans text-xs font-semibold text-cs-gray">Total Work Order
+                                    </h1>
+                                    <h1 class="font-sans text-4xl font-normal text-cs-primary">5,997</h1>
+                                </div>
+                                <!-- end Total Work Order -->
+
+                            </section>
+                            <!-- ===== ================ ==== -->
+                            <!-- ===== end section Total Information ==== -->
+                            <!-- ===== ================ ==== -->
+                        </div>
+
+                    </section>
+
+                    <!-- ===== ================ ==== -->
+                    <!-- ===== section Task Progress ==== -->
+                    <!-- ===== ================ ==== -->
+                    <div class="p-4 w-full space-y-4" id="content">
+                        <!-- title -->
+                        <h1 class="font-title text-lg">Percentage of Task P​rogress</h1>
+                        <section class="grid md:grid-cols-5 gap-3">
+
+                            <div class="md:col-span-2">
+                                <div class="overflow-hidden bg-white rounded-md border h-full">
+
+                                    <div class="p-10">
+                                        <canvas id="taskProgress1"></canvas>
+                                    </div>
+
+                                    <!-- Chart doughnut -->
+                                    <script>
+                                        const dataDoughnut1 = {
+                                            labels: ["Inspect", "Wait", "Process", "Complete"],
+                                            datasets: [
+                                                {
+                                                    label: "Data",
+                                                    data: [300, 50, 100, 120],
+                                                    backgroundColor: [
+                                                        "rgb(52, 73, 94)",
+                                                        "rgb(26, 188, 156)",
+                                                        "rgb(231, 76, 60)",
+                                                        "rgb(52, 152, 219)",
+                                                    ],
+                                                    hoverOffset: 4,
+                                                },
+                                            ],
+                                        };
+
+                                        const configDoughnut1 = {
+                                            type: "doughnut",
+                                            data: dataDoughnut1,
+                                            options: {},
+                                        };
+
+                                        var chartBar = new Chart(
+                                            document.getElementById("taskProgress1"),
+                                            configDoughnut1
+                                        );
+
+                                    </script>
+                                </div>
+                            </div>
+
+                            <div class="col-span-3">
+                                <div class="border rounded-md bg-white h-full ">
+
+                                    <!-- bar chart Top 5 Submitter -->
+                                    <div class="md:col-span-1 h-full">
+                                        <div class="overflow-hidden bg-white rounded-md my-auto  h-full p-2">
+
+                                            <div class="flex h-full">
+                                                <canvas class="w-full my-auto h-full" id="taskCategory"></canvas>
+                                            </div>
+
+                                            <!-- Bar Chart -->
+                                            <script>
+                                                const dataCategory = {
+                                                    labels: ["AC", "Electricity", "Plumbing - Air Kotor", "Listrik", "Lift & Eskalator", "Civil", "Exhaust", "Safety", "Lain lain"],
+                                                    datasets: [
+                                                        {
+                                                            label: "Total Tasks by Category",
+                                                            data: [1595, 868, 625, 533, 493, 346, 339, 258, 192],
+                                                            backgroundColor: [
+                                                                "rgb(52, 73, 94)",
+                                                                "rgb(52, 73, 94)",
+                                                                "rgb(52, 73, 94)",
+                                                                "rgb(52, 73, 94)",
+                                                                "rgb(52, 73, 94)",
+                                                            ],
+                                                            hoverOffset: 4,
+                                                        },
+                                                    ],
+                                                };
+                                                const optionsCategory = {
+                                                    indexAxis: "y",
+                                                    responsive: true,
+                                                    plugins: {
+                                                        legend: {
+                                                            position: "top",
+                                                        },
+                                                        title: {
+                                                            // display: true,
+                                                            // text: "Top 5 Submitter",
+                                                        },
+                                                    },
+                                                };
+                                                const configCategory = {
+                                                    type: "bar",
+                                                    data: dataCategory,
+                                                    options: optionsCategory,
+                                                };
+
+                                                var chartBar = new Chart(
+                                                    document.getElementById("taskCategory"),
+                                                    configCategory
+                                                );
+
+                                            </script>
+                                            <!-- end Bar Chart -->
+
+                                        </div>
+                                    </div>
+                                    <!-- end bar chart Top 5 Submitter -->
+
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+                    <!-- ===== ================ ==== -->
+                    <!-- ===== end section Task Progress ==== -->
+                    <!-- ===== ================ ==== -->
+
+                    <!-- ===== ================ ==== -->
+                    <!-- ===== section Bar Chart ==== -->
+                    <!-- ===== ================ ==== -->
+                    <div class="p-4 w-full" id="content">
+                        <div class="grid md:grid-cols-3 gap-3">
+
+                            <!-- bar chart Top 5 Submitter -->
+                            <div class="md:col-span-1">
+                                <div class="overflow-hidden bg-white rounded-md border h-full p-2">
+
+                                    <div>
+                                        <canvas class="w-full" id="taskSubmiter"></canvas>
+                                    </div>
+
+                                    <!-- Bar Chart -->
+                                    <script>
+                                        const dataSubmiter = {
+                                            labels: ["Securtiy Parking", "RDD", "Operation", "TCR & Casual Leasing", "HSE"],
+                                            datasets: [
+                                                {
+                                                    label: "Record Count",
+                                                    data: [586, 396, 322, 290, 246],
+                                                    backgroundColor: [
+                                                        "rgb(52, 73, 94)",
+                                                        "rgb(52, 73, 94)",
+                                                        "rgb(52, 73, 94)",
+                                                        "rgb(52, 73, 94)",
+                                                        "rgb(52, 73, 94)",
+                                                    ],
+                                                    hoverOffset: 4,
+                                                },
+                                            ],
+                                        };
+                                        const optionsSubmiter = {
+                                            indexAxis: "y",
+                                            responsive: true,
+                                            plugins: {
+                                                legend: {
+                                                    position: "top",
+                                                },
+                                                title: {
+                                                    display: true,
+                                                    text: "Top 5 Submitter",
+                                                },
+                                            },
+                                        };
+                                        const configSubmiter = {
+                                            type: "bar",
+                                            data: dataSubmiter,
+                                            options: optionsSubmiter,
+                                        };
+
+                                        var chartBar = new Chart(
+                                            document.getElementById("taskSubmiter"),
+                                            configSubmiter
+                                        );
+
+                                    </script>
+                                    <!-- end Bar Chart -->
+
+                                </div>
+                            </div>
+                            <!-- end bar chart Top 5 Submitter -->
+
+                            <!-- bar chart Top 5 Floor -->
+                            <div class="md:col-span-1">
+                                <div class="overflow-hidden bg-white rounded-md border h-full p-2">
+
+                                    <div>
+                                        <canvas class="w-full" id="taskFloor"></canvas>
+                                    </div>
+
+                                    <!-- Bar Chart -->
+                                    <script>
+                                        const dataFloor = {
+                                            labels: ["L1", "B2", "L2", "L3", "BF"],
+                                            datasets: [
+                                                {
+                                                    label: "Record Count",
+                                                    data: [217, 171, 64, 62, 80],
+                                                    backgroundColor: [
+                                                        "rgb(26, 188, 156)",
+                                                        "rgb(26, 188, 156)",
+                                                        "rgb(26, 188, 156)",
+                                                        "rgb(26, 188, 156)",
+                                                        "rgb(26, 188, 156)",
+                                                    ],
+                                                    hoverOffset: 4,
+                                                },
+                                            ],
+                                        };
+                                        const optionsfloor = {
+                                            indexAxis: "y",
+                                            responsive: true,
+                                            plugins: {
+                                                legend: {
+                                                    position: "top",
+                                                },
+                                                title: {
+                                                    display: true,
+                                                    text: "Top 5 Floor",
+                                                },
+                                            },
+                                        };
+                                        const configFloor = {
+                                            type: "bar",
+                                            data: dataFloor,
+                                            options: optionsfloor,
+                                        };
+
+                                        var chartBar = new Chart(
+                                            document.getElementById("taskFloor"),
+                                            configFloor
+                                        );
+
+                                    </script>
+                                    <!-- end Bar Chart -->
+
+                                </div>
+                            </div>
+                            <!-- end bar chart Top 5 Floor -->
+
+                            <!-- bar chart Top 5 Departement -->
+                            <div class="md:col-span-1">
+                                <div class="overflow-hidden bg-white rounded-md border h-full p-2">
+
+                                    <div>
+                                        <canvas class="w-full" id="taskDepartement"></canvas>
+                                    </div>
+
+                                    <!-- Bar Chart -->
+                                    <script>
+                                        const dataDepartement = {
+                                            labels: ["Civil", "Electricity", "Listrik", "Lain-lain", "Telephone"],
+                                            datasets: [
+                                                {
+                                                    label: "Record Count",
+                                                    data: [50, 50, 100, 120, 90, 20],
+                                                    backgroundColor: [
+                                                        "rgb(244, 208, 63)",
+                                                        "rgb(244, 208, 63)",
+                                                        "rgb(244, 208, 63)",
+                                                        "rgb(244, 208, 63)",
+                                                        "rgb(244, 208, 63)",
+                                                    ],
+                                                    hoverOffset: 4,
+                                                },
+                                            ],
+                                        };
+                                        const optionsDepartement = {
+                                            indexAxis: "y",
+                                            responsive: true,
+                                            plugins: {
+                                                legend: {
+                                                    position: "top",
+                                                },
+                                                title: {
+                                                    display: true,
+                                                    text: "Top 5 Departement",
+                                                },
+                                            },
+                                        };
+                                        const configDepartement = {
+                                            type: "bar",
+                                            data: dataDepartement,
+                                            options: optionsDepartement,
+                                        };
+
+                                        var chartBar = new Chart(
+                                            document.getElementById("taskDepartement"),
+                                            configDepartement
+                                        );
+
+                                    </script>
+                                    <!-- end Bar Chart -->
+
+                                </div>
+                            </div>
+                            <!-- end bar chart Top 5 Departement -->
+                        </div>
+                    </div>
+                    <!-- ===== ================ ==== -->
+                    <!-- ===== end section Bar Chart ==== -->
+                    <!-- ===== ================ ==== -->
+
+
+                    <!-- ===== ================ ==== -->
+                    <!-- ===== section Ticket ID ==== -->
+                    <!-- ===== ================ ==== -->
+                    <section class="p-4 space-y-4" id="content">
+                        <!-- top bar -->
+                        <div class="flex justify-between">
+                            <h1 class="font-title text-lg">Ticket ID </h1>
+                            <div>
+                                <!-- export -->
+                                <button class="border p-2 rounded bg-blue-500 hover:bg-blue-400 flex space-x-3">
+                                    <i class="fa-regular fa-file-arrow-down text-white"></i>
+                                    <h1 class="text-xs font-title text-white">Export</h1>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- end top bar -->
+                        <div class="max-w-full border bg-white rounded-md overflow-x-auto">
+                            <div>
+                                <table class="text-center text-sm font-light" aria-label="">
+                                    <thead class="border-b font-medium dark:border-neutral-500 bg-slate-100">
+                                        <tr>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">Ticket ID</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">Title</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">Submitter Name</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">Progress</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">User - Process</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">User - Complete</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">Submit</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">Description</th>
+                                            <th scope="col" class="px-6 py-4 text-left truncate">Property</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y">
+                                        <tr>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr class="bg-slate-50">
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium ">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr class="bg-slate-50">
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr class="bg-slate-50">
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr class="bg-slate-50">
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+                                        <tr class="bg-slate-50">
+                                            <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                FXS/WO/BMOPS/XII/2022/0013</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55 WIB</td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                Pagi ini kami temukan meja kerja berada di depan lobby
+                                            </td>
+                                            <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                        <div class="flex justify-end py-2">
+                            <nav aria-label="Pagination">
+                                <ul class="flex">
+                                    <li class="p-1.5 hover:bg-slate-100 rounded-sm font-title text-xs text-center">
+                                        Previous</li>
+                                    <li class="p-1.5 hover:bg-slate-200 rounded-sm w-8 ">
+                                        <h1 class="text-center font-title text-xs">1</h1>
+                                    </li>
+                                    <li class="p-1.5 hover:bg-slate-200 rounded-sm w-8 ">
+                                        <h1 class="text-center font-title text-xs">2</h1>
+                                    </li>
+                                    <li class="p-1.5 hover:bg-slate-100 rounded-sm font-title text-xs text-center">Next
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </section>
+                    <!-- ===== ================ ==== -->
+                    <!-- ===== section Ticket ID ==== -->
+                    <!-- ===== ================ ==== -->
+
+                </div>
+                <!-- ===== ================ ==== -->
+                <!-- ===== end section modul tab Complaint work order ==== -->
+                <!-- ===== ================ ==== -->
             </div>
+            <!-- ===== ================ ==== -->
+            <!-- ===== end section modul tab ==== -->
+            <!-- ===== ================ ==== -->
+
+
         </div>
+        <!-- ===== ================ ==== -->
+        <!-- ===== section Main Body ==== -->
+        <!-- ===== ================ ==== -->
+
     </section>
 
-    <script>
-        const instanceMode = te.Sidenav.getInstance(
-            document.getElementById("sidenav-2")
-        );
-        const modes = ["push", "over", "side"];
 
-        modes.forEach((mode) => {
-            const modeSwitch = document.getElementById(mode);
-            modeSwitch.addEventListener("click", () => {
-                console.log(mode);
-                const instance = te.Sidenav.getInstance(
-                    document.getElementById("sidenav-2")
-                );
-                instance.changeMode(mode);
-                modes.forEach((el) => {
-                    if (el === mode) {
-                        ["text-blue-600", "border-blue-600"].forEach((item) =>
-                            modeSwitch.classList.remove(item)
-                        );
-                        modeSwitch.className +=
-                            " bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 focus:bg-blue-700 border-transparent";
-                    } else {
-                        const node = document.getElementById(el);
-                        node.className += " text-blue-600 border-blue-600";
-                        [
-                            "bg-blue-600",
-                            "text-white",
-                            "hover:bg-blue-700",
-                            "active:bg-blue-800",
-                            "focus:bg-blue-700",
-                            "border-transparent",
-                        ].forEach((item) => node.classList.remove(item));
-                    }
-                });
-            });
-        });
-    </script>
 
 
     <!-- CDN tw-element tailwind -->
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 </body>
 
 </html>
