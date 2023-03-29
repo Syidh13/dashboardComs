@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./media/fontawesome-pro-6.0.0-web/css/all.min.css">
+    <!-- alpinejs -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- tailwind element -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="space-y-6">
+
+
+
+    <div x-data="{ tab: 'description' }">
+        <!-- nav -->
+        <nav>
+            <a class="text-slate-400" :class="{ 'border text-blue-400': tab === 'description' }"
+                x-on:click.prevent="tab = 'description'" href="#">Description</a>
+
+            <a class="text-slate-400" :class="{ 'border text-blue-400': tab === 'dimensions' }"
+                x-on:click.prevent="tab = 'dimensions'" href="#">Dimensions</a>
+
+            <a class="text-slate-400" :class="{ 'border text-blue-400': tab === 'reviews' }"
+                x-on:click.prevent="tab = 'reviews'" href="#">Reviews</a>
+        </nav>
+
+        <!-- content -->
+        <div x-show="tab === 'description'">
+            <h3>Description</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus
+                facilisis tristique. Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit.
+            </p>
+        </div>
+        <div x-show="tab === 'dimensions'">
+            <h3>Dimensions</h3>
+            <p>
+                Donec placerat ullamcorper sodales. Nam congue justo sit amet erat luctus
+                faucibus.
+            </p>
+        </div>
+        <div x-show="tab === 'reviews'">
+            <h3>Reviews</h3>
+            <p>
+                Sed hendrerit imperdiet accumsan. Nunc venenatis sit amet diam vel rutrum.
+                Quisque interdum dui et molestie tristique.
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

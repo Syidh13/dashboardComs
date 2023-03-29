@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preventive Maintance - detail</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./media/fontawesome-pro-6.0.0-web/css/all.min.css">
+    <!-- alpinejs -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- tailwind element -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- flowbite -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+
+
+</head>
+
+<body x-data="{ modal: false }">
+    <!-- ===== section header ==== -->
+    <section class="fixed z-50 w-full h-16 bg-white border-b md:px-2">
+        <div class="flex justify-between h-full">
+            <div class="z-10 flex justify-between w-full px-2">
+
+                <!-- logo -->
+                <div class="flex space-x-4 md:space-x-0">
+                    <a href="./buildingManagement-PreventiveMaintance.html" class="block my-auto md:hidden">
+                        <button class="w-8 h-8 rounded-full bg-slate-100">
+                            <i class="fa-regular fa-chevron-left"></i>
+                        </button>
+                    </a>
+                    <a href="./index.html" class="flex my-auto">
+                        <div class="flex w-36 md:w-64">
+                            <img src="./media/img/lg-primary.svg" alt="" class="h-6 my-auto md:h-10">
+                        </div>
+                    </a>
+                </div>
+                <!-- end logo -->
+
+                <!-- profile button -->
+                <a href="#" class="hidden px-2 py-1 my-auto space-x-3 border rounded md:flex">
+                    <img src="https://images.pexels.com/photos/8090261/pexels-photo-8090261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="" class="object-cover w-10 h-10 border-2 rounded-full">
+                    <h1 class="my-auto text-sm font-title text-slate-800">Phoenix Jasper</h1>
+                </a>
+                <!-- end profile button -->
+
+                <!-- bars icon (mobile) -->
+                <button class="block w-8 h-8 my-auto rounded-full bg-slate-50 md:hidden">
+                    <i class="my-auto fa-regular fa-bars" @click="modal = true"></i>
+                </button>
+                <!-- bars icon (mobile) -->
+            </div>
+
+            <!--! modal mobile -->
+            <div class="absolute z-20 w-full h-screen md:hidden" x-show="modal">
+                <div class="fixed w-full h-screen bg-white">
+                    <div class="flex flex-col h-screen space-y-2 overflow-y-auto">
+
+
+
+                        <!-- modal header (mobile) -->
+                        <div class="fixed z-20 w-full h-16 px-2 py-4 bg-white border-b">
+                            <div class="flex justify-between">
+                                <img src="./media/img/lg-primary.svg" alt="" class="h-6 my-auto">
+                                <button class="w-8 h-8 my-auto rounded-full bg-slate-50" @click="modal = !modal">
+                                    <i class="my-auto fa-regular fa-xmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- end modal header (mobile) -->
+
+                        <!-- modal footer (profile) (mobile) -->
+                        <a href="#" class="fixed bottom-0 z-20 w-full h-16 px-3 py-4 bg-white border-t">
+                            <div class="flex justify-between h-full">
+                                <div class="flex space-x-2">
+                                    <img src="https://images.pexels.com/photos/8090261/pexels-photo-8090261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1g"
+                                        alt="" class="object-cover w-8 h-8 my-auto border-2 rounded-full ">
+                                    <h1 class="my-auto text-sm font-title text-slate-800">Phoenix Jasper</h1>
+                                </div>
+                                <button class="w-8 h-8 my-auto rounded-full bg-slate-50">
+                                    <i class="my-auto fa-regular fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </a>
+                        <!-- end modal footer (profile) (mobile) -->
+
+
+                        <!-- Menu button (mobile) -->
+                        <ul class="z-10 flex flex-col pt-14">
+
+
+                            <!-- dashboard (mobile) -->
+                            <li class="relative w-full" id="">
+                                <a href="./index.html"
+                                    class="flex justify-between h-12 px-6 py-4 overflow-hidden text-sm text-gray-700 transition ease-in-out cursor-pointer hover:bg-primary/5 whitespace-nowrap "
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">
+                                    <div class="flex w-full space-x-2">
+                                        <i class="my-auto text-cs-black fa-regular fa-display"></i>
+                                        <h1 class="text-sm text-left font-title-regular text-cs-black">Dashboard</h1>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- end dashboard (mobile) -->
+
+                            <!-- news (mobile) -->
+                            <li class="relative w-full" id="news">
+                                <a class="flex justify-between h-12 px-6 py-4 overflow-hidden text-sm text-gray-700 transition ease-in-out bg-white rounded cursor-pointer whitespace-nowrap hover:text-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow" data-bs-toggle="collapse"
+                                    data-bs-target="#collapsenews" aria-expanded="false" aria-controls="collapsenews">
+
+                                    <div class="flex space-x-2">
+                                        <i class="my-auto fa-regular fa-newspaper "></i>
+                                        <h1 class="text-sm text-left font-body text-cs-black">News</h1>
+                                    </div>
+                                    <i class="my-auto fa-regular fa-angle-up"></i>
+
+                                </a>
+                                <ul class="relative accordion-collapse collapse" id="collapsenews"
+                                    aria-labelledby="news" data-bs-parent="#sidenavSecExample">
+                                    <li class="relative">
+                                        <a href="./news-internalNews.html"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out bg-white font-title-regular whitespace-nowrap"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Internal News</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="./news-tenantNews.html"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out bg-white whitespace-nowrap font-body"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Tenant News</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- end news (mobile) -->
+
+                            <!-- Building Management (mobile) -->
+                            <li class="relative w-full" id="buildingManagement">
+                                <a class="flex justify-between h-12 px-6 py-4 overflow-hidden text-sm text-gray-700 transition ease-in-out rounded cursor-pointer whitespace-nowrap bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow" data-bs-toggle="collapse"
+                                    data-bs-target="#collapsebuildingManagement" aria-expanded="false"
+                                    aria-controls="collapsebuildingManagement">
+
+                                    <div class="flex space-x-2">
+                                        <i class="my-auto fa-regular fa-clipboard "></i>
+                                        <h1 class="text-sm text-left font-title text-cs-black">Building
+                                            Management</h1>
+                                    </div>
+                                    <i class="my-auto fa-regular fa-angle-up"></i>
+
+                                </a>
+                                <ul class="relative accordion-collapse collapse" id="collapsebuildingManagement"
+                                    aria-labelledby="buildingManagement" data-bs-parent="#sidenavSecExample">
+                                    <li class="relative">
+                                        <a href="./buildingManagement-tenantMeterUtility.html"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Tenant Meter
+                                            Utility</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out whitespace-nowrap bg-slate-100 font-title"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Preventive
+                                            Maintance</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- end Building Management (mobile) -->
+
+
+                            <!-- Tenant & Internal (mobile) -->
+                            <li class="relative w-full" id="internal">
+                                <a class="flex justify-between h-12 px-6 py-4 overflow-hidden text-sm text-gray-700 transition ease-in-out rounded cursor-pointer whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseinternal" aria-expanded="false"
+                                    aria-controls="collapseinternal">
+
+                                    <div class="flex space-x-2">
+                                        <i class="my-auto fa-regular fa-store "></i>
+                                        <h1 class="text-sm text-left font-title-regular text-cs-black">Tenant & Internal
+                                        </h1>
+                                    </div>
+                                    <i class="my-auto fa-regular fa-angle-up"></i>
+
+                                </a>
+                                <ul class="relative accordion-collapse collapse" id="collapseinternal"
+                                    aria-labelledby="internal" data-bs-parent="#sidenavSecExample">
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Complaint &
+                                            Request</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Internal Work
+                                            Order</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- end Tenant & Internal (mobile) -->
+
+                            <!-- Master Data (mobile) -->
+                            <li class="relative w-full" id="masterData">
+                                <a class="flex justify-between h-12 px-6 py-4 overflow-hidden text-sm text-gray-700 transition ease-in-out rounded cursor-pointer whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow" data-bs-toggle="collapse"
+                                    data-bs-target="#collapsemasterData" aria-expanded="false"
+                                    aria-controls="collapsemasterData">
+
+                                    <div class="flex space-x-2">
+                                        <i class="my-auto fa-regular fa-database "></i>
+                                        <h1 class="text-sm text-left font-title-regular text-cs-black">Master Data</h1>
+                                    </div>
+                                    <i class="my-auto fa-regular fa-angle-up"></i>
+
+                                </a>
+                                <ul class="relative accordion-collapse collapse" id="collapsemasterData"
+                                    aria-labelledby="masterData" data-bs-parent="#sidenavSecExample">
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Items</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Preventive
+                                            Templates</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Basic Price
+                                            Utilities</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Master Data (mobile) -->
+
+                            <!-- Category (mobile) -->
+                            <li class="relative w-full" id="category">
+                                <a class="flex justify-between h-12 px-6 py-4 overflow-hidden text-sm text-gray-700 transition ease-in-out rounded cursor-pointer whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow" data-bs-toggle="collapse"
+                                    data-bs-target="#collapsecategory" aria-expanded="false"
+                                    aria-controls="collapsecategory">
+
+                                    <div class="flex space-x-2">
+                                        <i class="my-auto fa-solid fa-grip-dots"></i>
+                                        <h1 class="text-sm text-left font-title-regular text-cs-black">Category</h1>
+                                    </div>
+                                    <i class="my-auto fa-regular fa-angle-up"></i>
+
+                                </a>
+                                <ul class="relative accordion-collapse collapse" id="collapsecategory"
+                                    aria-labelledby="category" data-bs-parent="#sidenavSecExample">
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Tenant</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Asset</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Work Order</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Complaint &
+                                            Request</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Preventive</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Category (mobile) -->
+
+                            <!-- Settings (mobile) -->
+                            <li class="relative w-full" id="settings">
+                                <a class="flex justify-between h-12 px-6 py-4 overflow-hidden text-sm text-gray-700 transition ease-in-out rounded cursor-pointer whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow" data-bs-toggle="collapse"
+                                    data-bs-target="#collapsesettings" aria-expanded="false"
+                                    aria-controls="collapsesettings">
+
+                                    <div class="flex space-x-2">
+                                        <i class="my-auto fa-regular fa-gear"></i>
+                                        <h1 class="text-sm text-left font-title-regular text-cs-black">Settings</h1>
+                                    </div>
+                                    <i class="my-auto fa-regular fa-angle-up"></i>
+
+                                </a>
+                                <ul class="relative accordion-collapse collapse" id="collapsesettings"
+                                    aria-labelledby="settings" data-bs-parent="#sidenavSecExample">
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Property Setting</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Tenant Setting</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Floor Setting</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Unit Setting</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Role Setting</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">Dept Setting</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">User Cornerstone</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">User Property</a>
+                                    </li>
+                                    <li class="relative">
+                                        <a href="#!"
+                                            class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:text-primary hover:bg-primary/5"
+                                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">User Tenant</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Settings (mobile) -->
+                        </ul>
+                        <!-- end Menu button (mobile) -->
+                    </div>
+                </div>
+            </div>
+            <!--! end modal mobile -->
+
+        </div>
+    </section>
+    <!-- ===== end section header ==== -->
+
+
+
+    <!-- ===== section main ==== -->
+    <section class="flex-col w-full md:flex md:flex-row md:min-h-screen">
+
+        <!-- ===== section button (left on desktop) ==== -->
+        <section
+            class="z-20 flex-col flex-shrink-0 hidden h-screen pt-16 overflow-y-auto text-gray-700 bg-white border-r md:w-64 md:block whitespace-nowrap scrollbar-hide">
+            <div class="flex flex-col items-center justify-between flex-shrink-0 bg-white">
+
+                <ul class="w-full" id="sidenavSecExample">
+
+                    <!-- dashboard (desktop) -->
+                    <li class="relative w-full" id="">
+                        <a href="./index.html"
+                            class="flex justify-between h-12 px-6 py-4 overflow-hidden text-sm text-gray-700 transition ease-in-out rounded cursor-pointer whitespace-nowrap hover:font-title hover:bg-slate-100 "
+                            data-mdb-ripple="true" data-mdb-ripple-color="yellow">
+                            <div class="flex w-full space-x-2 ">
+                                <i class="my-auto text-cs-black fa-regular fa-display"></i>
+                                <h1 class="text-sm text-left font-title-regular text-cs-black hover:font-title">
+                                    Dashboard</h1>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- end dashboard (desktop) -->
+
+                    <!-- news (desktop) -->
+                    <li class="relative w-full" id="news">
+                        <a class="flex justify-between h-12 px-6 py-4 overflow-hidden text-sm text-gray-700 transition ease-in-out bg-white cursor-pointer hover:font-title font-body hover:bg-slate-100 whitespace-nowrap"
+                            data-mdb-ripple="true" data-mdb-ripple-color="yellow" data-bs-toggle="collapse"
+                            data-bs-target="#collapsenews" aria-expanded="false" aria-controls="collapsenews">
+
+                            <div class="flex space-x-2">
+                                <i class="my-auto fa-regular fa-newspaper "></i>
+                                <h1 class="text-sm text-left text-cs-black">News</h1>
+                            </div>
+                            <i class="my-auto fa-regular fa-angle-up"></i>
+
+                        </a>
+                        <ul class="relative accordion-collapse collapse" id="collapsenews" aria-labelledby="news"
+                            data-bs-parent="#sidenavSecExample">
+                            <li class="relative">
+                                <a href="./news-internalNews.html"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out bg-white font-body hover:bg-slate-100 hover:font-title whitespace-nowrap"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Internal News</a>
+                            </li>
+                            <li class="relative">
+                                <a href="news-tenantNews.html"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out bg-white whitespace-nowrap font-body hover:bg-slate-100 hover:font-title"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Tenant News</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- end news (desktop) -->
+
+                    <!-- Building Management (desktop) -->
+                    <li class="relative w-full" id="buildingManagement">
+                        <a class="flex justify-between h-12 px-6 py-4 overflow-hidden text-sm text-gray-700 transition ease-in-out rounded cursor-pointer whitespace-nowraps font-title bg-slate-100"
+                            data-mdb-ripple="true" data-mdb-ripple-color="yellow" data-bs-toggle="collapse"
+                            data-bs-target="#collapsebuildingManagement" aria-expanded="false"
+                            aria-controls="collapsebuildingManagement">
+
+                            <div class="flex space-x-2">
+                                <i class="my-auto fa-regular fa-clipboard "></i>
+                                <h1 class="text-sm text-left text-cs-black">Building Management</h1>
+                            </div>
+                            <i class="my-auto fa-regular fa-angle-up"></i>
+
+                        </a>
+                        <ul class="relative accordion-collapse collapse" id="collapsebuildingManagement"
+                            aria-labelledby="buildingManagement" data-bs-parent="#sidenavSecExample">
+                            <li class="relative">
+                                <a href="./buildingManagement-tenantMeterUtility.html"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Tenant Meter Utility</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out whitespace-nowrap font-title bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Preventive Maintance</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- end Building Management (desktop) -->
+
+                    <!-- Tenant & Internal (desktop) -->
+                    <li class="relative w-full" id="internal">
+                        <a class="flex justify-between h-12 px-6 py-4 overflow-hidden text-sm text-gray-700 transition ease-in-out rounded cursor-pointer whitespace-nowrap font-title-regular hover:font-title hover:bg-slate-100"
+                            data-mdb-ripple="true" data-mdb-ripple-color="yellow" data-bs-toggle="collapse"
+                            data-bs-target="#collapseinternal" aria-expanded="false" aria-controls="collapseinternal">
+
+                            <div class="flex space-x-2">
+                                <i class="my-auto fa-regular fa-store "></i>
+                                <h1 class="text-sm text-left text-cs-black">Tenant & Internal</h1>
+                            </div>
+                            <i class="my-auto fa-regular fa-angle-up"></i>
+
+                        </a>
+                        <ul class="relative accordion-collapse collapse" id="collapseinternal"
+                            aria-labelledby="internal" data-bs-parent="#sidenavSecExample">
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Complaint & Request</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Internal Work Order</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- end Tenant & Internal (desktop) -->
+
+                    <!-- Master Data (desktop) -->
+                    <li class="relative w-full" id="masterData">
+                        <a class="flex justify-between h-12 px-6 py-4 overflow-hidden text-sm text-gray-700 transition ease-in-out rounded cursor-pointer whitespace-nowrap font-title-regular hover:font-title hover:bg-slate-100"
+                            data-mdb-ripple="true" data-mdb-ripple-color="yellow" data-bs-toggle="collapse"
+                            data-bs-target="#collapsemasterData" aria-expanded="false"
+                            aria-controls="collapsemasterData">
+
+                            <div class="flex space-x-2">
+                                <i class="my-auto fa-regular fa-database "></i>
+                                <h1 class="text-sm text-left text-cs-black">Master Data</h1>
+                            </div>
+                            <i class="my-auto fa-regular fa-angle-up"></i>
+
+                        </a>
+                        <ul class="relative accordion-collapse collapse" id="collapsemasterData"
+                            aria-labelledby="masterData" data-bs-parent="#sidenavSecExample">
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Items</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Preventive Templates</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Basic Price Utilities</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Master Data (desktop) -->
+
+                    <!-- Category (desktop) -->
+                    <li class="relative w-full" id="category">
+                        <a class="flex justify-between h-12 px-6 py-4 overflow-hidden text-sm text-gray-700 transition ease-in-out rounded cursor-pointer whitespace-nowrap font-title-regular hover:font-title hover:bg-slate-100"
+                            data-mdb-ripple="true" data-mdb-ripple-color="yellow" data-bs-toggle="collapse"
+                            data-bs-target="#collapsecategory" aria-expanded="false" aria-controls="collapsecategory">
+
+                            <div class="flex space-x-2">
+                                <i class="my-auto fa-solid fa-grip-dots"></i>
+                                <h1 class="text-sm text-left text-cs-black">Category</h1>
+                            </div>
+                            <i class="my-auto fa-regular fa-angle-up"></i>
+
+                        </a>
+                        <ul class="relative accordion-collapse collapse" id="collapsecategory"
+                            aria-labelledby="category" data-bs-parent="#sidenavSecExample">
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Tenant</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Asset</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Work Order</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Complaint & Request</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Preventive</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Category (desktop) -->
+
+                    <!-- Settings (desktop) -->
+                    <li class="relative w-full" id="settings">
+                        <a class="flex justify-between h-12 px-6 py-4 overflow-hidden text-sm text-gray-700 transition ease-in-out rounded cursor-pointer whitespace-nowrap font-title-regular hover:font-title hover:bg-slate-100"
+                            data-mdb-ripple="true" data-mdb-ripple-color="yellow" data-bs-toggle="collapse"
+                            data-bs-target="#collapsesettings" aria-expanded="false" aria-controls="collapsesettings">
+                            <div class="flex space-x-2">
+                                <i class="my-auto fa-regular fa-gear"></i>
+                                <h1 class="text-sm text-left text-cs-black">Settings</h1>
+                            </div>
+                            <i class="my-auto fa-regular fa-angle-up"></i>
+
+                        </a>
+                        <ul class="relative accordion-collapse collapse" id="collapsesettings"
+                            aria-labelledby="settings" data-bs-parent="#sidenavSecExample">
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Property Setting</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Tenant Setting</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Floor Setting</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Unit Setting</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Role Setting</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Asset</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">Dept Setting</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">User Cornerstone</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">User Property</a>
+                            </li>
+                            <li class="relative">
+                                <a href="#!"
+                                    class="flex items-center h-6 p-6 pl-12 pr-6 overflow-hidden text-sm text-gray-700 transition ease-in-out font-body whitespace-nowrap hover:font-title hover:bg-slate-100"
+                                    data-mdb-ripple="true" data-mdb-ripple-color="yellow">User Tenant</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Settings (desktop) -->
+
+                </ul>
+
+            </div>
+        </section>
+        <!-- ===== end section button (left on desktop) ==== -->
+
+
+        <!--* ===== section main display (right on desktop & center mobile) ==== -->
+        <section class="w-full h-screen pt-16 pb-16 overflow-y-auto bg-slate-50">
+            <div class="w-full px-4 py-6 space-y-5 ">
+                <!-- ===== section breadcrumb ==== -->
+                <nav class="w-full rounded-md" aria-label="">
+                    <ol class="flex space-x-2 list-reset">
+                        <li class="my-auto text-xs text-slate-400 font-title-regular">Building Management</li>
+                        <i class="my-auto text-xs fa-regular fa-slash-forward text-slate-400"></i>
+                        <li class="my-auto text-xs text-slate-400 font-title-regular hover:text-slate-800"><a
+                                href="./buildingManagement-PreventiveMaintance.html">Preventive Maintance </a></li>
+                        <i class="my-auto text-xs fa-regular fa-slash-forward text-slate-400"></i>
+                        <li class="my-auto text-xs text-slate-800 font-title">Create</li>
+                    </ol>
+                </nav>
+                <!-- ===== end section breadcrumb ==== -->
+
+                <div class="max-w-3xl space-y-3">
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-title">Create Preventive Maintenance</h1>
+                    </div>
+
+                    <div class="block space-y-3 md:grid md:grid-cols-4 md:gap-4 md:space-y-0">
+                        <!-- Property -->
+                        <div class="relative z-20 border rounded" x-data="{ open: false }">
+                            <button class="flex justify-between w-full bg-white rounded hover:bg-blue-50"
+                                @click="open = !open">
+                                <div class="flex justify-between w-full px-3 py-2.5 rounded md:col-span-1">
+                                    <h1 class="text-sm font-body text-slate-400">Choose a property</h1>
+                                    <i class="justify-end my-auto text-sm fa-regular fa-chevron-down"></i>
+                                </div>
+                            </button>
+                            <div class="absolute w-full pt-1 shadow" x-show="open">
+                                <ul class="bg-white border rounded ">
+                                    <li class="p-2 text-sm font-title hover:bg-blue-50">CSN</li>
+                                    <li class="p-2 text-sm font-title hover:bg-blue-50">FX Sudirman</li>
+                                    <li class="p-2 text-sm font-title hover:bg-blue-50">Beachwalk Bali</li>
+                                    <li class="p-2 text-sm font-title hover:bg-blue-50">23 Paskal</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- end Property -->
+
+                        <!-- Task Title -->
+                        <div class="border rounded md:col-span-3">
+                            <input type="text" name="" id="" placeholder="Input text title"
+                                class="w-full text-sm border-none rounded font-body text-slate-800">
+                        </div>
+                        <!-- end Task Title -->
+                    </div>
+
+                    <!-- Description -->
+                    <div class="w-full border">
+                        <textarea name="" id="" cols="30" rows="4" class="w-full p-2 text-sm border-none font-body"
+                            placeholder="Input Description in here"></textarea>
+                    </div>
+                    <!-- end Description -->
+
+                    <!-- Select Preventive -->
+                    <div class="relative z-10 border" x-data="{ open: false }">
+                        <button class="flex justify-between w-full bg-white rounded hover:bg-blue-50"
+                            @click="open = !open">
+                            <div class="flex justify-between w-full px-3 py-2.5 rounded md:col-span-1">
+                                <h1 class="text-sm font-body text-slate-400">Choose a Preventive Template</h1>
+                                <i class="justify-end my-auto text-sm fa-regular fa-chevron-down"></i>
+                            </div>
+                        </button>
+                        <div class="absolute w-full pt-1 rounded shadow" x-show="open">
+                            <ul class="overflow-y-auto bg-white border divide-y rounded h-52">
+                                <li class="flex justify-between px-2 hover:bg-blue-50 py-2.5 space-x-3 ">
+                                    <a href="#2" class="flex w-full text-sm font-title ">
+                                        <h1 class="my-auto">Checklist Perawatan Rutin Genset</h1>
+
+                                        <a href="./buildingManagement-PreventiveMaintance-create-template.html"
+                                            class="my-auto rounded hover:bg-blue-500 hover:text-white">
+                                            <button class="flex p-2 border rounded md:space-x-2">
+                                                <h1 class="hidden text-xs md:block font-title">View </h1>
+                                                <i class="fa-regular fa-clipboard-list"></i>
+                                            </button>
+                                        </a>
+                                    </a>
+                                </li>
+
+                                <li class="flex justify-between px-2 hover:bg-blue-50 py-2.5 space-x-3 ">
+                                    <a href="#1" class="flex w-full text-sm font-title ">
+                                        <h1 class="my-auto">Checklist Perawatan Rutin Pompa dan Motor</h1>
+
+                                        <a href="#" class="my-auto rounded hover:bg-blue-500 hover:text-white">
+                                            <button class="flex p-2 border rounded md:space-x-2">
+                                                <h1 class="hidden text-xs md:block font-title">View </h1>
+                                                <i class="fa-regular fa-clipboard-list"></i>
+                                            </button>
+                                        </a>
+                                    </a>
+                                </li>
+
+                                <li class="flex justify-between px-2 hover:bg-blue-50 py-2.5 space-x-3 ">
+                                    <a href="#1" class="flex w-full text-sm font-title ">
+                                        <h1 class="my-auto">Checklist Perawatan Rutin AC Split/VRV</h1>
+
+                                        <a href="#" class="my-auto rounded hover:bg-blue-500 hover:text-white">
+                                            <button class="flex p-2 border rounded md:space-x-2">
+                                                <h1 class="hidden text-xs md:block font-title">View </h1>
+                                                <i class="fa-regular fa-clipboard-list"></i>
+                                            </button>
+                                        </a>
+                                    </a>
+                                </li>
+
+                                <li class="flex justify-between px-2 hover:bg-blue-50 py-2.5 space-x-3 ">
+                                    <a href="#1" class="flex w-full text-sm font-title ">
+                                        <h1 class="my-auto">Checklist Perawatan Rutin MATV</h1>
+
+                                        <a href="#" class="my-auto rounded hover:bg-blue-500 hover:text-white">
+                                            <button class="flex p-2 border rounded md:space-x-2">
+                                                <h1 class="hidden text-xs md:block font-title">View </h1>
+                                                <i class="fa-regular fa-clipboard-list"></i>
+                                            </button>
+                                        </a>
+                                    </a>
+                                </li>
+
+                                <li class="flex justify-between px-2 hover:bg-blue-50 py-2.5 space-x-3 ">
+                                    <a href="#1" class="flex w-full text-sm font-title ">
+                                        <h1 class="my-auto">Checklist Perawatan Rutin Sound System</h1>
+
+                                        <a href="#" class="my-auto rounded hover:bg-blue-500 hover:text-white">
+                                            <button class="flex p-2 border rounded md:space-x-2">
+                                                <h1 class="hidden text-xs md:block font-title">View </h1>
+                                                <i class="fa-regular fa-clipboard-list"></i>
+                                            </button>
+                                        </a>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end Select Preventive -->
+
+
+                    <!-- ===== section main ==== -->
+                    <div x-data="{ tab: 'asset' }" class="relative bg-white border rounded">
+
+                        <!-- nav -->
+                        <nav aria-label=""
+                            class="flex p-2 py-4 space-x-1 overflow-scroll border-b rounded-t font-title">
+
+                            <a class="px-3 py-2 text-sm border font-title"
+                                :class="{ 'font-title text-blue-500  bg-blue-100': tab === 'asset' }"
+                                x-on:click.prevent="tab = 'asset'" href="#">Asset</a>
+
+                            <a class="px-3 py-2 text-sm border font-title"
+                                :class="{ ' text-blue-500 font-title bg-blue-100': tab === 'nonasset' }"
+                                x-on:click.prevent="tab = 'nonasset'" href="#">Non Asset</a>
+
+
+
+                        </nav>
+
+                        <!-- content -->
+                        <!--  asset tab -->
+                        <div x-show="tab === 'asset'" class="py-2 space-y-2">
+
+                            <!-- Select asset -->
+                            <div class="relative" x-data="{ open: false }">
+                                <button class="flex justify-between w-full px-2 bg-white rounded "
+                                    @click="open = !open">
+                                    <div
+                                        class="flex justify-between w-full px-3 py-2.5 rounded md:col-span-1 border hover:bg-blue-50">
+                                        <h1 class="text-sm font-body text-slate-400">Select Asset</h1>
+                                        <i class="justify-end my-auto text-sm fa-regular fa-chevron-down"></i>
+                                    </div>
+                                </button>
+                                <div class="absolute z-10 w-full px-2 pt-1 rounded" x-show="open">
+                                    <ul class="overflow-y-auto bg-white border divide-y rounded md:max-h-52 max-h-32">
+                                        <li class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                            <a href="#1" class="flex w-full text-sm font-title ">
+                                                <h1 class="my-auto">Genset</h1>
+                                            </a>
+                                        </li>
+
+                                        <li class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                            <a href="#1" class="flex w-full text-sm font-title ">
+                                                <h1 class="my-auto">Fire Extinguisher</h1>
+                                            </a>
+                                        </li>
+                                        <li class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                            <a href="#1" class="flex w-full text-sm font-title ">
+                                                <h1 class="my-auto">Genset</h1>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- end Select asset -->
+
+
+                            <!-- Select Category -->
+                            <div class="relative" x-data="{ open: false }">
+                                <button class="flex justify-between w-full px-2 bg-white rounded "
+                                    @click="open = !open">
+                                    <div
+                                        class="flex justify-between w-full px-3 py-2.5 rounded md:col-span-1 border hover:bg-blue-50">
+                                        <h1 class="text-sm font-body text-slate-400">Select Category</h1>
+                                        <i class="justify-end my-auto text-sm fa-regular fa-chevron-down"></i>
+                                    </div>
+                                </button>
+                                <div class="absolute z-10 w-full px-2 pt-1 rounded" x-show="open">
+                                    <ul class="overflow-y-auto bg-white border divide-y rounded md:max-h-52 max-h-32">
+                                        <li class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                            <a href="#1" class="flex w-full text-sm font-title ">
+                                                <h1 class="my-auto">Safety</h1>
+                                            </a>
+                                        </li>
+
+                                        <li class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                            <a href="#1" class="flex w-full text-sm font-title ">
+                                                <h1 class="my-auto">Housekeeping</h1>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                            <a href="#1" class="flex w-full text-sm font-title ">
+                                                <h1 class="my-auto">Landscape</h1>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- end Select Category -->
+
+                        </div>
+                        <!-- end asset tab -->
+
+
+                        <!--  non asset tab -->
+                        <div x-show="tab === 'nonasset'" class="relative ">
+
+                            <!-- Select Category (non asset) -->
+                            <div class="relative" x-data="{ open: false }">
+                                <button class="flex justify-between w-full p-2 bg-white rounded " @click="open = !open">
+                                    <div
+                                        class="flex justify-between w-full px-3 py-2.5 rounded md:col-span-1 border hover:bg-blue-50">
+                                        <h1 class="text-sm font-body text-slate-400">Select Category</h1>
+                                        <i class="justify-end my-auto text-sm fa-regular fa-chevron-down"></i>
+                                    </div>
+                                </button>
+                                <div class="absolute z-10 w-full px-2 pt-1 rounded" x-show="open">
+                                    <ul class="overflow-y-auto bg-white border divide-y rounded md:max-h-52 max-h-32">
+                                        <li class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                            <a href="#1" class="flex w-full text-sm font-title ">
+                                                <h1 class="my-auto">Safety</h1>
+                                            </a>
+                                        </li>
+
+                                        <li class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                            <a href="#1" class="flex w-full text-sm font-title ">
+                                                <h1 class="my-auto">Housekeeping</h1>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                            <a href="#1" class="flex w-full text-sm font-title ">
+                                                <h1 class="my-auto">Landscape</h1>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- end Select Category (non asset) -->
+
+                        </div>
+                        <!-- end non asset tab -->
+                        <!-- end content -->
+                    </div>
+                    <!-- ===== end section main ==== -->
+
+
+
+                </div>
+
+            </div>
+            <!-- ===== end  section information (right on desktop) ==== -->
+
+        </section>
+
+        <!-- ===== footer ==== -->
+        <section class="absolute bottom-0 flex w-full my-auto">
+            <div class="w-full px-4 py-2 bg-white border-t">
+                <div class="flex justify-end space-x-3">
+                    <a href="#" class="px-3 py-1 bg-slate-200 hover:bg-red-500 hover:text-white">
+                        <small class="font-body">Cancel</small>
+                    </a>
+                    <a href="#" class="px-3 py-1 text-white bg-blue-500 hover:bg-blue-400">
+                        <small class="font-body">Set Scheduling</small>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+        <!-- ===== end footer ==== -->
+        <!--* ===== section main display (right on desktop & center mobile) ==== -->
+
+    </section>
+    <!-- ===== end section main ==== -->
+
+    <!-- list row detail -->
+    <script src="./js/list-row-detail.js"></script>
+    <!-- flowbite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/datepicker.min.js"></script>
+    <script src="../node_modules/tw-elements/dist/js/index.min.js"></script>
+</body>
+
+</html>

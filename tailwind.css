@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+
+/* ======== Table ======== */
+.cs-table-title {
+  @apply px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase whitespace-nowrap;
+}
+
+.cs-table-body {
+  @apply px-6 py-5 text-sm font-body  text-left;
+}
+
+/* ======== Status Button ======== */
+
+.cs-status-waiting {
+  @apply px-4 py-2 text-xs font-semibold text-red-500 bg-red-200 rounded;
+}
+
+@tailwind utilities;
+@layer base {
+  @font-face {
+    font-family: 'TGAqsaPro';
+    src: url('/layouts/media/fonts/TGAqsaPro-Medium.woff2');
+  }
+  @font-face {
+    font-family: 'TGAqsaPro-regular';
+    src: url('/layouts/media/fonts/TGAqsaPro-Regular.woff2');
+  }
+
+  @font-face {
+    font-family: 'WorkSans-regular';
+    src: url('/layouts/media/fonts/WorkSans-VariableFont_wght.ttf');
+  }
+}
