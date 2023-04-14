@@ -43,16 +43,14 @@
                 <!-- end logo -->
 
                 <!-- profile button -->
-                <a href="#" class="hidden px-2 py-1 my-auto space-x-3 border rounded md:flex">
+                <a href="#"
+                    class="hidden px-3 py-1 my-auto space-x-3 border rounded-full md:flex hover:bg-slate-100 z-10 transition-colors">
                     <img src="https://images.pexels.com/photos/8090261/pexels-photo-8090261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                         alt="" class="object-cover w-10 h-10 border-2 rounded-full">
                     <h1 class="my-auto text-sm font-title text-slate-800">Phoenix Jasper</h1>
                 </a>
                 <!-- end profile button -->
-
             </div>
-
-
         </div>
     </section>
     <!-- ===== ================ ==== -->
@@ -62,12 +60,12 @@
 
     <section class="relative flex h-screen min-h-full items-start justify-center overflow-y-hidden border bg-gray-50">
         <!-- toogler -->
-        <div class="absolute  z-[1036] md:left-4 md:top-1.5 right-2 top-3">
-            <div data-te-sidenav-toggle-ref data-te-target="#sidenav-2" aria-controls="#sidenav-2" aria-haspopup="true">
-                <button class="md:h-12 md:w-12 h-10 w-10 rounded-full bg-slate-100 hover:bg-slate-00 transition-all">
-                    <i class="fa-regular fa-bars-staggered"></i>
-                </button>
-            </div>
+        <div class="absolute w-12  z-[1036] md:left-4 md:top-1.5 right-2 top-3">
+            <button
+                class="md:h-12 md:w-12 h-10 w-10 rounded-full bg-slate-100 hover:bg-slate-200 hover:bg-slate-00 transition-all"
+                data-te-sidenav-toggle-ref data-te-target="#sidenav-2" aria-controls="#sidenav-2" aria-haspopup="true">
+                <i class="fa-regular fa-bars-staggered"></i>
+            </button>
         </div>
         <!-- end toogler -->
 
@@ -203,11 +201,12 @@
                                     <div x-data="{ open: false }" class="relative">
                                         <button @click="open = !open"
                                             class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
-                                            <h1 class="font-sans text-sm text-left w-full">Property</h1>
+                                            <h1 class="font-sans text-sm text-left w-full truncate">Property
+                                            </h1>
                                             <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
                                         </button>
                                         <!-- show modul -->
-                                        <div x-show="open" x-transition class="pt-1">
+                                        <div x-show="open" x-transition class="pt-1 absolute w-full">
                                             <form action="/action_page.php"
                                                 class="bg-white absolute border w-full rounded-m p-2 space-y-2">
                                                 <div class="form-check">
@@ -233,17 +232,18 @@
                                             </form>
                                         </div>
                                     </div>
-                                    <!-- end Property -->
+                                    <!-- end property -->
 
                                     <!-- Type -->
                                     <div x-data="{ open: false }" class="relative">
                                         <button @click="open = !open"
                                             class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
-                                            <h1 class="font-sans text-sm text-left w-full">Type</h1>
+                                            <h1 class="font-sans text-sm text-left w-full truncate">Type
+                                            </h1>
                                             <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
                                         </button>
                                         <!-- show modul -->
-                                        <div x-show="open" x-transition class="pt-1">
+                                        <div x-show="open" x-transition class="pt-1 absolute w-full">
                                             <form action="/action_page.php"
                                                 class="bg-white absolute w-full border rounded-m p-2 space-y-2">
                                                 <div class="form-check">
@@ -275,11 +275,12 @@
                                     <div x-data="{ open: false }" class="relative">
                                         <button @click="open = !open"
                                             class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
-                                            <h1 class="font-sans text-sm text-left w-full">Category</h1>
+                                            <h1 class="font-sans text-sm text-left w-full truncate">Category
+                                            </h1>
                                             <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
                                         </button>
                                         <!-- show modul -->
-                                        <div x-show="open" x-transition class="pt-1">
+                                        <div x-show="open" x-transition class="pt-1 absolute w-full">
                                             <form action="/action_page.php"
                                                 class="bg-white absolute w-full overflow-y-auto max-h-56 border rounded-m p-2 space-y-2">
                                                 <div class="form-check">
@@ -340,11 +341,12 @@
                                     <div x-data="{ open: false }" class="relative">
                                         <button @click="open = !open"
                                             class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
-                                            <h1 class="font-sans text-sm text-left w-full">Submitter</h1>
+                                            <h1 class="font-sans text-sm text-left w-full truncate">Submitter
+                                            </h1>
                                             <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
                                         </button>
                                         <!-- show modul -->
-                                        <div x-show="open" x-transition class="pt-1">
+                                        <div x-show="open" x-transition class="pt-1 absolute w-full">
                                             <form action="/action_page.php"
                                                 class="bg-white absolute w-full border rounded-m p-2 space-y-2">
                                                 <div class="form-check">
@@ -364,6 +366,7 @@
                                         </div>
                                     </div>
                                     <!-- end Submitter -->
+
 
                                     <!-- Tenant/Departement -->
                                     <div x-data="{ open: false }" class="relative">
@@ -843,7 +846,8 @@
                             <h1 class="font-title text-lg">Ticket ID </h1>
                             <div>
                                 <!-- export -->
-                                <button class="border p-2 rounded bg-blue-500 hover:bg-blue-400 flex space-x-3">
+                                <button
+                                    class="border py-2 px-3 transition-colors rounded bg-blue-500 hover:bg-blue-400 flex space-x-3">
                                     <i class="fa-regular fa-file-arrow-down text-white"></i>
                                     <h1 class="text-xs font-title text-white">Export</h1>
                                 </button>
