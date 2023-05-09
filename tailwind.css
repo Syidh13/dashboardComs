@@ -1,5 +1,14 @@
 @tailwind base;
+
 @tailwind components;
+/* ======== Button ======== */
+.cs-nav-selected {
+  @apply justify-between cs-font-buttonNormal md:justify-start md:space-x-3 px-6 rounded-lg text-left md:cursor-pointer bg-blue-50  overflow-hidden text-cs-primary whitespace-nowrap;
+}
+
+.cs-nav-normal {
+  @apply cs-font-buttonNormal transition-colors  md:justify-start md:space-x-3 px-6 rounded-lg text-left md:cursor-pointer  hover:text-cs-primary whitespace-nowrap;
+}
 
 /* ======== Table ======== */
 .cs-table-title {
@@ -11,24 +20,63 @@
 }
 
 /* ======== Status Button ======== */
-
 .cs-status-waiting {
   @apply px-4 py-2 text-xs font-semibold text-red-500 bg-red-200 rounded;
+}
+
+/* ======== Fonts ======== */
+.cs-font-headline1 {
+  @apply text-3xl font-headline1;
+}
+
+.cs-font-headline2 {
+  @apply text-2xl font-headline2;
+}
+
+.cs-font-title {
+  @apply text-base font-title;
+}
+
+.cs-font-subtitle {
+  @apply text-base font-subtitle;
+}
+
+.cs-font-body {
+  @apply text-sm font-body;
+}
+
+.cs-font-caption {
+  @apply text-xs font-caption;
+}
+
+.cs-font-overline {
+  @apply text-[0.625rem] uppercase font-overline;
+}
+
+.cs-font-buttonHover {
+  @apply text-sm font-buttonbold;
+}
+
+.cs-font-buttonNormal {
+  @apply text-sm font-buttonregular;
 }
 
 @tailwind utilities;
 @layer base {
   @font-face {
-    font-family: 'TGAqsaPro';
-    src: url('/layouts/media/fonts/TGAqsaPro-Medium.woff2');
+    font-family: 'primary-Light';
+    src: url('/layouts/media/fonts/Mulish-Light.ttf');
   }
   @font-face {
-    font-family: 'TGAqsaPro-regular';
-    src: url('/layouts/media/fonts/TGAqsaPro-Regular.woff2');
+    font-family: 'primary-Bold';
+    src: url('/layouts/media/fonts/Mulish-Bold.ttf');
   }
-
   @font-face {
-    font-family: 'WorkSans-regular';
-    src: url('/layouts/media/fonts/WorkSans-VariableFont_wght.ttf');
+    font-family: 'primary-Medium';
+    src: url('/layouts/media/fonts/Mulish-Medium.ttf');
+  }
+  @font-face {
+    font-family: 'primary-Regular';
+    src: url('/layouts/media/fonts/Mulish-Regular.ttf');
   }
 }

@@ -8,9 +8,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'title': ['TGAqsaPro'],
-        'body': ['TGAqsaPro-regular'],
-        'title-regular': ['TGAqsaPro-regular']
+        'headline1': ['primary-Regular'],
+        'headline2': ['primary-Bold'],
+        'title': ['primary-Bold'],
+        'subtitle': ['primary-Regular'],
+        'buttonbold': ['primary-Bold'],
+        'buttonregular': ['primary-Regular'],
+        'body': ['primary-Regular'],
+        'caption': ['primary-Regular'],
+        'overline': ['primary-Regular'],
       },
       colors: {
         'cs-primary': "#2196F3",
