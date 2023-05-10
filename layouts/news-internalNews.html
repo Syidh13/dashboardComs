@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internal News</title>
+    <title>COMS - Internal News</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./media/fontawesome-pro-6.0.0-web/css/all.min.css">
     <!-- alpinejs -->
@@ -85,8 +85,8 @@
                                 <ul class="space-y-2">
 
                                     <!-- dashboard (mobile) -->
-                                    <li class="cs-nav-selected">
-                                        <a href="#" class="flex py-3 space-x-3">
+                                    <li class="cs-nav-normal">
+                                        <a href="./index.html" class="flex py-3 space-x-3">
                                             <i class="fa-regular fa-tv my-auto"></i>
                                             <h1>Dashboard</h1>
                                         </a>
@@ -95,7 +95,7 @@
 
                                     <!-- News (mobile) -->
                                     <li x-data="{ open: false }">
-                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-normal"
+                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-sele"
                                             @click="open = !open">
                                             <div class="space-x-3 flex">
                                                 <i class="fa-regular fa-newspaper my-auto"></i>
@@ -108,7 +108,7 @@
                                             <ul class="space-y-1">
                                                 <!-- internal news -->
                                                 <li>
-                                                    <a href="#" class="">
+                                                    <a href="./news-internalNews.html" class="">
                                                         <div class="cs-nav-normal py-2">
                                                             <h1 class="ml-6">Internal News</h1>
                                                         </div>
@@ -116,15 +116,15 @@
                                                 </li>
                                                 <!-- end internal news -->
 
-                                                <!-- external news -->
+                                                <!-- tenant news -->
                                                 <li>
-                                                    <a href="#" class="">
+                                                    <a href="./news-tenantNews.html" class="">
                                                         <div class="cs-nav-normal py-2">
-                                                            <h1 class="ml-6">External News</h1>
+                                                            <h1 class="ml-6">Tenant News</h1>
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <!-- end external news -->
+                                                <!-- end tenant news -->
                                             </ul>
                                         </div>
 
@@ -448,7 +448,7 @@
 
                         <!-- dashboard (desktop) -->
                         <li class="relative">
-                            <a href="./index.html" class="flex cs-nav-selected py-4" data-te-sidenav-link-ref>
+                            <a href="./index.html" class="flex cs-nav-normal py-4" data-te-sidenav-link-ref>
                                 <span>
                                     <i class="fa-regular fa-tv"></i>
                                 </span>
@@ -459,7 +459,7 @@
 
                         <!-- News (desktop) -->
                         <li class="relative">
-                            <a class="flex cs-nav-normal py-4" data-te-sidenav-link-ref>
+                            <a class="flex cs-nav-selected py-4" data-te-sidenav-link-ref>
                                 <span>
                                     <i class="fa-regular fa-newspaper"></i>
                                 </span>
@@ -477,20 +477,22 @@
 
                                 <!-- Internal News -->
                                 <li class="relative ">
-                                    <a href="#internal" class="flex py-2 cs-nav-normal" data-te-sidenav-link-ref>
+                                    <a href="./news-internalNews.html" class="flex py-2 cs-nav-selected"
+                                        data-te-sidenav-link-ref>
                                         <h1 class="pl-6 whitespace-normal"> Internal News
                                         </h1>
                                     </a>
                                 </li>
                                 <!-- end Internal News -->
 
-                                <!-- External News -->
+                                <!-- tenant News -->
                                 <li class="relative ">
-                                    <a href="#external" class="flex py-2 cs-nav-normal" data-te-sidenav-link-ref>
-                                        <h1 class="ml-6 "> External News</h1>
+                                    <a href="./news-tenantNews.html" class="flex py-2 cs-nav-normal"
+                                        data-te-sidenav-link-ref>
+                                        <h1 class="ml-6 "> Tenant News</h1>
                                     </a>
                                 </li>
-                                <!-- end External News -->
+                                <!-- end tenant News -->
 
                             </ul>
                         </li>
@@ -795,1757 +797,328 @@
 
 
         <!--* ===== section main display (right on desktop & center mobile) ==== -->
-        <section class="w-full h-screen pt-16 overflow-y-auto bg-slate-50">
-            <div class="w-full h-full py-6 space-y-5  px-4">
+        <section class="w-full h-screen pt-16  overflow-y-auto bg-cs-background ">
+            <div class="w-full  px-4 py-6 space-y-5">
 
                 <!-- ===== section breadcrumb ==== -->
                 <nav class="w-full rounded-md" aria-label="">
                     <ol class="flex space-x-2 list-reset">
-                        <li class="my-auto text-xs text-slate-400 font-title-regular">Dashboard</li>
-                        <!-- <i class="text-xs fa-regular fa-slash-forward text-slate-400"></i>
-                        <li class="my-auto text-xs text-slate-800 font-title">Tenant Meter Utility</li> -->
+                        <li class="my-auto cs-font-overline text-cs-gray">News</li>
+                        <i class="text-xs fa-regular fa-slash-forward text-cs-gray"></i>
+                        <li class="my-auto cs-font-overline text-cs-pri">Internal News</li>
                     </ol>
                 </nav>
                 <!-- ===== end section breadcrumb ==== -->
 
-
-                <!-- ===== ================ ==== -->
-                <!-- ===== section Main Body ==== -->
-                <!-- ===== ================ ==== -->
-                <section class="">
-                    <!-- ===== ================ ==== -->
-                    <!-- ===== section Tab ==== -->
-                    <!-- ===== ================ ==== -->
-                    <ul class="mb-4 flex list-none  flex-wrap border-b-0 pl-0 md:flex-row space-x-2" id="tabs-tab3"
-                        role="tablist" data-te-nav-ref>
-                        <!-- tab complaint -->
-                        <li role="presentation">
-                            <a href="#tabs-complaint"
-                                class="my-2 block  border bg-white px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded"
-                                id="tabs-home-tab3" data-te-toggle="pill" data-te-target="#tabs-complaint"
-                                data-te-nav-active role="tab" aria-controls="tabs-complaint"
-                                aria-selected="true">Complaint Request</a>
-                        </li>
-                        <!-- tab work -->
-                        <li role="presentation">
-                            <a href="#tabs-work"
-                                class="focus:border-transparen my-2 block border bg-white px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded "
-                                id="tabs-profile-tab3" data-te-toggle="pill" data-te-target="#tabs-work" role="tab"
-                                aria-controls="tabs-work" aria-selected="false">Work Order</a>
-                        </li>
-                    </ul>
-                    <!-- ===== ================ ==== -->
-                    <!-- ===== end section Tab ==== -->
-                    <!-- ===== ================ ==== -->
-
-
-                    <!-- ===== ================ ==== -->
-                    <!-- ===== section modul tab ==== -->
-                    <!-- ===== ================ ==== -->
-                    <section>
-                        <!-- ===== ================ ==== -->
-                        <!-- ===== section modul tab Complaint request ==== -->
-                        <!-- ===== ================ ==== -->
-                        <div class="hidden  transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-                            id="tabs-complaint" role="tabpanel" data-te-tab-active aria-labelledby="Complaint Request">
-
-                            <section class="w-full space-y-4" id="content">
-
-                                <!-- ===== ================ ==== -->
-                                <!-- ===== section last update & date range ==== -->
-                                <!-- ===== ================ ==== -->
-                                <section class="md:flex md:space-x-3 space-y-2 md:space-y-0">
-                                    <div class="my-auto bg-white">
-                                        <input type="date" name="" id=""
-                                            class="font-sans text-sm p-2 border rounded-md w-full">
-                                    </div>
-                                    <div class="text-xs text-slate-40 flex my-auto">
-                                        <span class="my-auto">Last Updated:</span>
-                                        <span class="my-auto">Mar 20, 2023 08:00</span>
-                                    </div>
-                                </section>
-                                <!-- ===== ================ ==== -->
-                                <!-- ===== end section last update & date range ==== -->
-                                <!-- ===== ================ ==== -->
-
-                                <div class="border px-4 py-8 space-y-4 bg-white rounded-md">
-                                    <!-- ===== ================ ==== -->
-                                    <!-- ===== section Options List ==== -->
-                                    <!-- ===== ================ ==== -->
-                                    <section>
-                                        <!-- button -->
-                                        <div class="grid md:grid-cols-6 grid-cols-2 gap-2">
-
-                                            <!-- Property -->
-                                            <div x-data="{ open: false }" class="relative z-[6]">
-                                                <button @click="open = !open"
-                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
-                                                    <h1 class="font-sans text-sm text-left w-full truncate">Property
-                                                    </h1>
-                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
-                                                </button>
-                                                <!-- show modul -->
-                                                <div x-show="open" x-transition class="pt-1 absolute w-full">
-                                                    <form action="/action_page.php"
-                                                        class="bg-white absolute border w-full rounded-m p-2 space-y-2">
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">FX
-                                                                Sudirman</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">Beachwalk Bali</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">23
-                                                                Paskal</label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <!-- end property -->
-
-                                            <!-- Type -->
-                                            <div x-data="{ open: false }" class="relative z-[5]">
-                                                <button @click="open = !open"
-                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
-                                                    <h1 class="font-sans text-sm text-left w-full truncate">Type
-                                                    </h1>
-                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
-                                                </button>
-                                                <!-- show modul -->
-                                                <div x-show="open" x-transition class="pt-1 absolute w-full">
-                                                    <form action="/action_page.php"
-                                                        class="bg-white absolute w-full border rounded-m p-2 space-y-2">
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">FX
-                                                                Request</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">Complaint</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">23
-                                                                Others</label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <!-- end Type -->
-
-                                            <!-- Category -->
-                                            <div x-data="{ open: false }" class="relative z-[4]">
-                                                <button @click="open = !open"
-                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
-                                                    <h1 class="font-sans text-sm text-left w-full truncate">Category
-                                                    </h1>
-                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
-                                                </button>
-                                                <!-- show modul -->
-                                                <div x-show="open" x-transition class="pt-1 absolute w-full">
-                                                    <form action="/action_page.php"
-                                                        class="bg-white absolute w-full overflow-y-auto max-h-56 border rounded-m p-2 space-y-2">
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">
-                                                                Civil</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">
-                                                                Electricity</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">
-                                                                AC</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">
-                                                                Keamanan</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">
-                                                                Listrik</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">
-                                                                Pest Control</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">
-                                                                Safety</label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <!-- end Category -->
-
-                                            <!-- Submitter -->
-                                            <div x-data="{ open: false }" class="relative z-[3]">
-                                                <button @click="open = !open"
-                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
-                                                    <h1 class="font-sans text-sm text-left w-full truncate">Submitter
-                                                    </h1>
-                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
-                                                </button>
-                                                <!-- show modul -->
-                                                <div x-show="open" x-transition class="pt-1 absolute w-full">
-                                                    <form action="/action_page.php"
-                                                        class="bg-white absolute w-full border rounded-m p-2 space-y-2">
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">FX
-                                                                Internal</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">Tenant</label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <!-- end Submitter -->
-
-
-                                            <!-- Tenant/Departement -->
-                                            <div x-data="{ open: false }" class="relative z-[2]">
-                                                <button @click="open = !open"
-                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
-                                                    <h1 class="font-sans text-sm text-left w-full truncate">Tenant /
-                                                        Departement
-                                                    </h1>
-                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
-                                                </button>
-                                                <!-- show modul -->
-                                                <div x-show="open" x-transition class="pt-1 absolute w-full">
-                                                    <div class="border rounded-m truncate flex w-full">
-                                                        <input type="search" name="" placeholder="Search Tenant" id=""
-                                                            class="text-xs truncate p-2 bg-white w-full">
-                                                    </div>
-                                                    <form action="/action_page.php"
-                                                        class="bg-white border rounded-m p-2 space-y-2">
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">FX
-                                                                Chicago Popcorn</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">Zenbu</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">Your
-                                                                Bag Spa</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">XIAOMI</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">Wingstop</label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <!-- end Tenant/Departement -->
-
-                                            <!-- Submitter Name -->
-                                            <div x-data="{ open: false }" class="relative z-[1]">
-                                                <button @click="open = !open"
-                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
-                                                    <h1 class="font-sans text-sm text-left w-full truncate">Submitter
-                                                        Name</h1>
-                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
-                                                </button>
-                                                <!-- show modul -->
-                                                <div x-show="open" x-transition class="absolute pt-1 w-full">
-                                                    <div class="border rounded-m truncate flex w-full">
-                                                        <input type="search" name="" placeholder="Search Tenant" id=""
-                                                            class="text-xs truncate p-2 bg-white w-full">
-                                                    </div>
-                                                    <form action="/action_page.php"
-                                                        class="bg-white border rounded-m p-2 space-y-2">
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">FX
-                                                                Chicago Popcorn</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">Zenbu</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">Your
-                                                                Bag Spa</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">XIAOMI</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">Wingstop</label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <!-- end Submitter Name -->
-
-                                        </div>
-                                        <!-- end button -->
-                                    </section>
-                                    <!-- ===== ================ ==== -->
-                                    <!-- ===== end section Options List ==== -->
-                                    <!-- ===== ================ ==== -->
-
-
-                                    <!-- ===== ================ ==== -->
-                                    <!-- ===== section Total Information ==== -->
-                                    <!-- ===== ================ ==== -->
-                                    <section class="grid md:grid-cols-5 grid-cols-2 gap-2">
-
-                                        <!-- complaint and request -->
-                                        <div
-                                            class="p-4 bg-white rounded-md border border-blue-500 space-y-2 md:col-span-1 col-span-2">
-                                            <h1 class="font-sans text-xs font-semibold text-cs-gray">Total Complaint &
-                                                Request
-                                            </h1>
-                                            <h1 class="font-sans text-4xl font-normal text-cs-primary">4,331</h1>
-                                        </div>
-                                        <!-- end complaint and request -->
-
-                                        <!-- Tenant Submitter -->
-                                        <div class="p-4 bg-white rounded-md border  space-y-2">
-                                            <h1 class="font-sans text-xs font-semibold text-cs-gray">Tenant Submitter
-                                            </h1>
-                                            <h1 class="font-sans text-4xl font-normal text-cs-black">1,289</h1>
-                                        </div>
-                                        <!-- end Tenant Submitter -->
-
-                                        <!-- Internal Submitter  -->
-                                        <div class="p-4 bg-white rounded-md border  space-y-2">
-                                            <h1 class="font-sans text-xs font-semibold text-cs-gray">Internal Submitter
-                                            </h1>
-                                            <h1 class="font-sans text-4xl font-normal text-cs-black">3,042 </h1>
-                                        </div>
-                                        <!-- end Internal Submitter  -->
-
-                                        <!-- Percentage Complete   -->
-                                        <div class="p-4 bg-white rounded-md border  space-y-2">
-                                            <h1 class="font-sans text-xs font-semibold text-cs-gray">Percentage Complete
-                                            </h1>
-                                            <h1 class="font-sans text-4xl font-normal text-cs-black">95.27% </h1>
-                                        </div>
-                                        <!-- end Percentage Complete   -->
-
-                                        <!-- Satisfaction Level    -->
-                                        <div class="p-4 bg-white rounded-md border  space-y-2">
-                                            <h1 class="font-sans text-xs font-semibold text-cs-gray">Satisfaction Level
-                                            </h1>
-                                            <h1 class="font-sans text-4xl font-normal text-cs-black">4.87</h1>
-                                            <div class="flex space-x-2">
-                                                <i class="fa-solid fa-star text-yellow-500 my-auto"></i>
-                                                <h1 class="text-sm font-sans text-slate-500 my-auto">(1-5)</h1>
-                                            </div>
-                                        </div>
-                                        <!-- end Satisfaction Level    -->
-
-                                    </section>
-                                    <!-- ===== ================ ==== -->
-                                    <!-- ===== end section Total Information ==== -->
-                                    <!-- ===== ================ ==== -->
-                                </div>
-
-                            </section>
-
-                            <!-- ===== ================ ==== -->
-                            <!-- ===== section Task Progress ==== -->
-                            <!-- ===== ================ ==== -->
-                            <section class="py-4 w-full space-y-4" id="content">
-                                <!-- title -->
-                                <h1 class="font-title text-lg">Percentage of Task P​rogress</h1>
-                                <section class="grid md:grid-cols-5 gap-3">
-
-                                    <div class="md:col-span-2 col-span-1">
-                                        <div class="overflow-hidden bg-white rounded-md border h-full">
-
-                                            <div class="">
-                                                <canvas id="taskProgress"></canvas>
-                                            </div>
-
-                                            <!-- Chart doughnut -->
-                                            <script>
-                                                const dataDoughnut = {
-                                                    labels: ["Approved", "Inspect", "Wait", "Complete", "Unassigned", "Process"],
-                                                    datasets: [
-                                                        {
-                                                            label: "My First Dataset",
-                                                            data: [300, 50, 100, 120, 90, 20],
-                                                            backgroundColor: [
-                                                                "rgb(52, 73, 94)",
-                                                                "rgb(26, 188, 156)",
-                                                                "rgb(231, 76, 60)",
-                                                                "rgb(52, 152, 219)",
-                                                                "rgb(244, 208, 63)",
-                                                                "rgb(230, 126, 34)",
-                                                            ],
-                                                            hoverOffset: 4,
-                                                        },
-                                                    ],
-                                                };
-
-                                                const configDoughnut = {
-                                                    type: "doughnut",
-                                                    data: dataDoughnut,
-                                                    options: {},
-                                                };
-
-                                                var chartBar = new Chart(
-                                                    document.getElementById("taskProgress"),
-                                                    configDoughnut
-                                                );
-
-                                            </script>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-span-3">
-                                        <div class="border rounded-md bg-white h-full">
-
-                                            <div class="rounded-md p-10 flex h-full">
-                                                <div class="my-auto overflow-hidden w-full ">
-                                                    <canvas id="chartBar"></canvas>
-                                                </div>
-                                            </div>
-
-                                            <!-- Required chart.js -->
-                                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
-                                            <!-- Chart bar -->
-                                            <script>
-                                                const labelsBarChart = [
-                                                    "BM Operational Shift",
-                                                    "Building Maintance",
-                                                    "Building Service and Civil",
-                                                    "Civil",
-                                                    "Commercial",
-                                                    "Customer Relation Management",
-                                                    "Event",
-                                                    "GA",
-                                                    "GA & Legal",
-                                                ];
-                                                const dataBarChart = {
-                                                    labels: labelsBarChart,
-                                                    datasets: [
-                                                        {
-                                                            label: "",
-                                                            data: [300, 50, 100, 120, 90, 20],
-                                                            backgroundColor: [
-                                                                "rgb(52, 73, 94)",
-                                                                "rgb(26, 188, 156)",
-                                                                "rgb(231, 76, 60)",
-                                                                "rgb(52, 152, 219)",
-                                                                "rgb(244, 208, 63)",
-                                                                "rgb(230, 126, 34)",
-                                                            ],
-                                                            hoverOffset: 4,
-                                                        },
-                                                    ],
-                                                };
-
-                                                const configBarChart = {
-                                                    type: "bar",
-                                                    data: dataBarChart,
-                                                    options: {},
-                                                };
-
-                                                var chartBar = new Chart(
-                                                    document.getElementById("chartBar"),
-                                                    configBarChart
-                                                );
-                                            </script>
-                                        </div>
-
-                                    </div>
-                                </section>
-                            </section>
-                            <!-- ===== ================ ==== -->
-                            <!-- ===== end section Task Progress ==== -->
-                            <!-- ===== ================ ==== -->
-
-                            <!-- ===== ================ ==== -->
-                            <!-- ===== section Bar Chart ==== -->
-                            <!-- ===== ================ ==== -->
-                            <div class="py-4 w-full" id="content">
-                                <div class="grid md:grid-cols-3 gap-3">
-
-                                    <!-- bar chart Top 5 Submitter -->
-                                    <div class="md:col-span-1">
-                                        <div class="overflow-hidden bg-white rounded-md border h-full p-2">
-
-                                            <div>
-                                                <canvas class="w-full" id="taskProgress2"></canvas>
-                                            </div>
-
-                                            <!-- Bar Chart -->
-                                            <script>
-                                                const dataDoughnut2 = {
-                                                    labels: ["Securtiy Parking", "RDD", "Operation", "TCR & Casual Leasing", "HSE"],
-                                                    datasets: [
-                                                        {
-                                                            label: "Record Count",
-                                                            data: [586, 396, 322, 290, 246],
-                                                            backgroundColor: [
-                                                                "rgb(52, 73, 94)",
-                                                                "rgb(52, 73, 94)",
-                                                                "rgb(52, 73, 94)",
-                                                                "rgb(52, 73, 94)",
-                                                                "rgb(52, 73, 94)",
-                                                            ],
-                                                            hoverOffset: 4,
-                                                        },
-                                                    ],
-                                                };
-                                                const options2 = {
-                                                    indexAxis: "y",
-                                                    responsive: true,
-                                                    plugins: {
-                                                        legend: {
-                                                            position: "top",
-                                                        },
-                                                        title: {
-                                                            display: true,
-                                                            text: "Top 5 Submitter",
-                                                        },
-                                                    },
-                                                };
-                                                const configDoughnut2 = {
-                                                    type: "bar",
-                                                    data: dataDoughnut2,
-                                                    options: options2,
-                                                };
-
-                                                var chartBar = new Chart(
-                                                    document.getElementById("taskProgress2"),
-                                                    configDoughnut2
-                                                );
-
-                                            </script>
-                                            <!-- end Bar Chart -->
-
-                                        </div>
-                                    </div>
-                                    <!-- end bar chart Top 5 Submitter -->
-
-                                    <!-- bar chart Top 5 Floor -->
-                                    <div class="md:col-span-1">
-                                        <div class="overflow-hidden bg-white rounded-md border h-full p-2">
-
-                                            <div>
-                                                <canvas class="w-full" id="taskProgress3"></canvas>
-                                            </div>
-
-                                            <!-- Bar Chart -->
-                                            <script>
-                                                const dataDoughnut3 = {
-                                                    labels: ["L1", "B1", "L2", "L3", "BF"],
-                                                    datasets: [
-                                                        {
-                                                            label: "Record Count",
-                                                            data: [217, 171, 64, 62, 48],
-                                                            backgroundColor: [
-                                                                "rgb(26, 188, 156)",
-                                                                "rgb(26, 188, 156)",
-                                                                "rgb(26, 188, 156)",
-                                                                "rgb(26, 188, 156)",
-                                                                "rgb(26, 188, 156)",
-                                                            ],
-                                                            hoverOffset: 4,
-                                                        },
-                                                    ],
-                                                };
-                                                const options3 = {
-                                                    indexAxis: "y",
-                                                    responsive: false,
-                                                    plugins: {
-                                                        legend: {
-                                                            position: "top",
-                                                        },
-                                                        title: {
-                                                            display: true,
-                                                            text: "Top 5 Floor",
-                                                        },
-                                                    },
-                                                };
-                                                const configDoughnut3 = {
-                                                    type: "bar",
-                                                    data: dataDoughnut3,
-                                                    options: options3,
-                                                };
-
-                                                var chartBar = new Chart(
-                                                    document.getElementById("taskProgress3"),
-                                                    configDoughnut3
-                                                );
-
-                                            </script>
-                                            <!-- end Bar Chart -->
-
-                                        </div>
-                                    </div>
-                                    <!-- end bar chart Top 5 Floor -->
-
-                                    <!-- bar chart 3 -->
-                                    <div class="md:col-span-1">
-                                        <div class="overflow-hidden bg-white rounded-md border h-full p-2">
-
-                                            <div>
-                                                <canvas class="w-full" id="taskProgress4"></canvas>
-                                            </div>
-
-                                            <!-- Bar Chart -->
-                                            <script>
-                                                const dataDoughnut4 = {
-                                                    labels: ["Civil", "Electricity", "Listrik", "Lain-lain", "Telephone"],
-                                                    datasets: [
-                                                        {
-                                                            label: "Record Count",
-                                                            data: [50, 50, 100, 120, 90, 20],
-                                                            backgroundColor: [
-                                                                "rgb(244, 208, 63)",
-                                                                "rgb(244, 208, 63)",
-                                                                "rgb(244, 208, 63)",
-                                                                "rgb(244, 208, 63)",
-                                                                "rgb(244, 208, 63)",
-                                                            ],
-                                                            hoverOffset: 4,
-                                                        },
-                                                    ],
-                                                };
-                                                const options4 = {
-                                                    indexAxis: "y",
-                                                    responsive: false,
-                                                    plugins: {
-                                                        legend: {
-                                                            position: "top",
-                                                        },
-                                                        title: {
-                                                            display: true,
-                                                            text: "Top 5 Category",
-                                                        },
-                                                    },
-                                                };
-                                                const configDoughnut4 = {
-                                                    type: "bar",
-                                                    data: dataDoughnut4,
-                                                    options: options4,
-                                                };
-
-                                                var chartBar = new Chart(
-                                                    document.getElementById("taskProgress4"),
-                                                    configDoughnut4
-                                                );
-
-                                            </script>
-                                            <!-- end Bar Chart -->
-
-                                        </div>
-                                    </div>
-                                    <!-- end bar chart 3 -->
-                                </div>
-                            </div>
-                            <!-- ===== ================ ==== -->
-                            <!-- ===== end section Bar Chart ==== -->
-                            <!-- ===== ================ ==== -->
-
-
-                            <!-- ===== ================ ==== -->
-                            <!-- ===== section Ticket ID ==== -->
-                            <!-- ===== ================ ==== -->
-                            <section class=" space-y-4" id="content">
-                                <!-- top bar -->
-                                <div class="flex justify-between">
-                                    <h1 class="font-title text-lg">Ticket ID </h1>
-                                    <div>
-                                        <!-- export -->
-                                        <button
-                                            class="border py-2 px-3 transition-colors rounded bg-blue-500 hover:bg-blue-400 flex space-x-3">
-                                            <i class="fa-regular fa-file-arrow-down text-white"></i>
-                                            <h1 class="text-xs font-title text-white">Export</h1>
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- end top bar -->
-                                <div class="max-w-full border bg-white rounded-md overflow-x-auto">
-                                    <div>
-                                        <table class="text-center text-sm font-light" aria-label="">
-                                            <thead class="border-b font-medium dark:border-neutral-500 bg-slate-100">
-                                                <tr>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">Ticket ID</th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">Title</th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">Submitter Name
-                                                    </th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">Progress</th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">User - Process
-                                                    </th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">User - Complete
-                                                    </th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">Submit</th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">Description
-                                                    </th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">Property</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="divide-y">
-                                                <tr>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr class="bg-slate-50">
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium ">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr class="bg-slate-50">
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr class="bg-slate-50">
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr class="bg-slate-50">
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr class="bg-slate-50">
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-
-                                            </tbody>
-                                        </table>
-
-                                    </div>
-                                </div>
-                                <div class="flex justify-end py-2">
-                                    <nav aria-label="Pagination">
-                                        <ul class="flex">
-                                            <li
-                                                class="p-1.5 hover:bg-slate-100 rounded-sm font-title text-xs text-center">
-                                                Previous</li>
-                                            <li class="p-1.5 hover:bg-slate-200 rounded-sm w-8 ">
-                                                <h1 class="text-center font-title text-xs">1</h1>
-                                            </li>
-                                            <li class="p-1.5 hover:bg-slate-200 rounded-sm w-8 ">
-                                                <h1 class="text-center font-title text-xs">2</h1>
-                                            </li>
-                                            <li
-                                                class="p-1.5 hover:bg-slate-100 rounded-sm font-title text-xs text-center">
-                                                Next
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </section>
-                            <!-- ===== ================ ==== -->
-                            <!-- ===== section Ticket ID ==== -->
-                            <!-- ===== ================ ==== -->
-
-                        </div>
-                        <!-- ===== ================ ==== -->
-                        <!-- ===== end section modul tab Complaint request ==== -->
-                        <!-- ===== ================ ==== -->
-
-                        <!-- ===== ================ ==== -->
-                        <!-- ===== section modul tab Complaint work order ==== -->
-                        <!-- ===== ================ ==== -->
-                        <div class="hidden opacity-0 space-y-3 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-                            id="tabs-work" role="tabpanel" aria-labelledby="Work Order">
-
-                            <section class="w-full space-y-4" id="content">
-
-                                <!-- ===== ================ ==== -->
-                                <!-- ===== section last update & date range ==== -->
-                                <!-- ===== ================ ==== -->
-                                <section class="md:flex md:space-x-3 space-y-2 md:space-y-0">
-                                    <div class="my-auto bg-white">
-                                        <input type="date" name="" id=""
-                                            class="font-sans text-sm p-2 border rounded-md w-full">
-                                    </div>
-                                    <div class="text-xs text-slate-40 flex my-auto">
-                                        <span class="my-auto">Last Updated:</span>
-                                        <span class="my-auto">Mar 20, 2023 08:00</span>
-                                    </div>
-                                </section>
-                                <!-- ===== ================ ==== -->
-                                <!-- ===== end section last update & date range ==== -->
-                                <!-- ===== ================ ==== -->
-
-                                <div class="border px-4 py-8 space-y-4 bg-white rounded-md">
-                                    <!-- ===== ================ ==== -->
-                                    <!-- ===== section Options List ==== -->
-                                    <!-- ===== ================ ==== -->
-                                    <section>
-                                        <!-- button -->
-                                        <div class="grid md:grid-cols-6 grid-cols-2 gap-2">
-
-                                            <!-- Property -->
-                                            <div x-data="{ open: false }" class="relative">
-                                                <button @click="open = !open"
-                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
-                                                    <h1 class="font-sans text-sm text-left w-full">Property</h1>
-                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
-                                                </button>
-                                                <!-- show modul -->
-                                                <div x-show="open" x-transition class="pt-1">
-                                                    <form action="/action_page.php"
-                                                        class="bg-white absolute border w-full rounded-m p-2 space-y-2">
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">FX
-                                                                Sudirman</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">Beachwalk Bali</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">23
-                                                                Paskal</label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <!-- end Property -->
-
-                                            <!-- Floor -->
-                                            <div x-data="{ open: false }" class="relative">
-                                                <button @click="open = !open"
-                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
-                                                    <h1 class="font-sans text-sm text-left w-full">Floor</h1>
-                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
-                                                </button>
-                                                <!-- show modul -->
-                                                <div x-show="open" x-transition class="pt-1">
-                                                    <form action="/action_page.php"
-                                                        class="bg-white absolute w-full border rounded-m p-2 space-y-2">
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">FX
-                                                                Request</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">Complaint</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check2"
-                                                                name="option2" value="something">
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check2">23
-                                                                Others</label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <!-- end Floor -->
-
-                                            <!-- Category -->
-                                            <div x-data="{ open: false }" class="relative">
-                                                <button @click="open = !open"
-                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
-                                                    <h1 class="font-sans text-sm text-left w-full">Category</h1>
-                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
-                                                </button>
-                                                <!-- show modul -->
-                                                <div x-show="open" x-transition class="pt-1">
-                                                    <form action="/action_page.php"
-                                                        class="bg-white absolute w-full overflow-y-auto max-h-56 border rounded-m p-2 space-y-2">
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">
-                                                                Civil</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">
-                                                                Electricity</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">
-                                                                AC</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">
-                                                                Keamanan</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">
-                                                                Listrik</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">
-                                                                Pest Control</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="check1"
-                                                                name="option1" value="something" checked>
-                                                            <label class="form-check-label font-sans text-sm text-left"
-                                                                for="check1">
-                                                                Safety</label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <!-- end Category -->
-
-                                        </div>
-                                        <!-- end button -->
-                                    </section>
-                                    <!-- ===== ================ ==== -->
-                                    <!-- ===== end section Options List ==== -->
-                                    <!-- ===== ================ ==== -->
-
-
-                                    <!-- ===== ================ ==== -->
-                                    <!-- ===== section Total Information ==== -->
-                                    <!-- ===== ================ ==== -->
-                                    <section class="grid md:grid-cols-5 grid-cols-2 gap-2">
-
-                                        <!-- Total Work Order -->
-                                        <div
-                                            class="p-4 bg-white rounded-md border border-blue-500 space-y-2 pb-11 md:col-span-1 col-span-2">
-                                            <h1 class="font-sans text-xs font-semibold text-cs-gray">Total Work Order
-                                            </h1>
-                                            <h1 class="font-sans text-4xl font-normal text-cs-primary">5,997</h1>
-                                        </div>
-                                        <!-- end Total Work Order -->
-
-                                    </section>
-                                    <!-- ===== ================ ==== -->
-                                    <!-- ===== end section Total Information ==== -->
-                                    <!-- ===== ================ ==== -->
-                                </div>
-
-                            </section>
-
-                            <!-- ===== ================ ==== -->
-                            <!-- ===== section Task Progress ==== -->
-                            <!-- ===== ================ ==== -->
-                            <div class=" w-full space-y-4" id="content">
-                                <!-- title -->
-                                <h1 class="font-title text-lg">Percentage of Task P​rogress</h1>
-                                <section class="grid md:grid-cols-5 gap-3">
-
-                                    <div class="md:col-span-2">
-                                        <div class="overflow-hidden bg-white rounded-md border h-full">
-
-                                            <div class="p-10">
-                                                <canvas id="taskProgress1"></canvas>
-                                            </div>
-
-                                            <!-- Chart doughnut -->
-                                            <script>
-                                                const dataDoughnut1 = {
-                                                    labels: ["Inspect", "Wait", "Process", "Complete"],
-                                                    datasets: [
-                                                        {
-                                                            label: "Data",
-                                                            data: [300, 50, 100, 120],
-                                                            backgroundColor: [
-                                                                "rgb(52, 73, 94)",
-                                                                "rgb(26, 188, 156)",
-                                                                "rgb(231, 76, 60)",
-                                                                "rgb(52, 152, 219)",
-                                                            ],
-                                                            hoverOffset: 4,
-                                                        },
-                                                    ],
-                                                };
-
-                                                const configDoughnut1 = {
-                                                    type: "doughnut",
-                                                    data: dataDoughnut1,
-                                                    options: {},
-                                                };
-
-                                                var chartBar = new Chart(
-                                                    document.getElementById("taskProgress1"),
-                                                    configDoughnut1
-                                                );
-
-                                            </script>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-span-3">
-                                        <div class="border rounded-md bg-white h-full ">
-
-                                            <!-- bar chart Top 5 Submitter -->
-                                            <div class="md:col-span-1 h-full">
-                                                <div class="overflow-hidden bg-white rounded-md my-auto  h-full p-2">
-
-                                                    <div class="flex h-full">
-                                                        <canvas class="w-full my-auto h-full"
-                                                            id="taskCategory"></canvas>
-                                                    </div>
-
-                                                    <!-- Bar Chart -->
-                                                    <script>
-                                                        const dataCategory = {
-                                                            labels: ["AC", "Electricity", "Plumbing - Air Kotor", "Listrik", "Lift & Eskalator", "Civil", "Exhaust", "Safety", "Lain lain"],
-                                                            datasets: [
-                                                                {
-                                                                    label: "Total Tasks by Category",
-                                                                    data: [1595, 868, 625, 533, 493, 346, 339, 258, 192],
-                                                                    backgroundColor: [
-                                                                        "rgb(52, 73, 94)",
-                                                                        "rgb(52, 73, 94)",
-                                                                        "rgb(52, 73, 94)",
-                                                                        "rgb(52, 73, 94)",
-                                                                        "rgb(52, 73, 94)",
-                                                                    ],
-                                                                    hoverOffset: 4,
-                                                                },
-                                                            ],
-                                                        };
-                                                        const optionsCategory = {
-                                                            indexAxis: "y",
-                                                            responsive: true,
-                                                            plugins: {
-                                                                legend: {
-                                                                    position: "top",
-                                                                },
-                                                                title: {
-                                                                    // display: true,
-                                                                    // text: "Top 5 Submitter",
-                                                                },
-                                                            },
-                                                        };
-                                                        const configCategory = {
-                                                            type: "bar",
-                                                            data: dataCategory,
-                                                            options: optionsCategory,
-                                                        };
-
-                                                        var chartBar = new Chart(
-                                                            document.getElementById("taskCategory"),
-                                                            configCategory
-                                                        );
-
-                                                    </script>
-                                                    <!-- end Bar Chart -->
-
-                                                </div>
-                                            </div>
-                                            <!-- end bar chart Top 5 Submitter -->
-
-                                        </div>
-
-                                    </div>
-                                </section>
-                            </div>
-                            <!-- ===== ================ ==== -->
-                            <!-- ===== end section Task Progress ==== -->
-                            <!-- ===== ================ ==== -->
-
-                            <!-- ===== ================ ==== -->
-                            <!-- ===== section Bar Chart ==== -->
-                            <!-- ===== ================ ==== -->
-                            <div class="w-full" id="content">
-                                <div class="grid md:grid-cols-3 grid-cols-1 gap-3">
-
-                                    <!-- bar chart Top 5 Submitter -->
-                                    <div class="md:col-span-1">
-                                        <div class="overflow-hidden bg-white rounded-md border h-full p-2">
-
-                                            <div>
-                                                <canvas class="w-full" id="taskSubmiter"></canvas>
-                                            </div>
-
-                                            <!-- Bar Chart -->
-                                            <script>
-                                                const dataSubmiter = {
-                                                    labels: ["Securtiy Parking", "RDD", "Operation", "TCR & Casual Leasing", "HSE"],
-                                                    datasets: [
-                                                        {
-                                                            label: "Record Count",
-                                                            data: [586, 396, 322, 290, 246],
-                                                            backgroundColor: [
-                                                                "rgb(52, 73, 94)",
-                                                                "rgb(52, 73, 94)",
-                                                                "rgb(52, 73, 94)",
-                                                                "rgb(52, 73, 94)",
-                                                                "rgb(52, 73, 94)",
-                                                            ],
-                                                            hoverOffset: 4,
-                                                        },
-                                                    ],
-                                                };
-                                                const optionsSubmiter = {
-                                                    indexAxis: "y",
-                                                    responsive: true,
-                                                    plugins: {
-                                                        legend: {
-                                                            position: "top",
-                                                        },
-                                                        title: {
-                                                            display: true,
-                                                            text: "Top 5 Submitter",
-                                                        },
-                                                    },
-                                                };
-                                                const configSubmiter = {
-                                                    type: "bar",
-                                                    data: dataSubmiter,
-                                                    options: optionsSubmiter,
-                                                };
-
-                                                var chartBar = new Chart(
-                                                    document.getElementById("taskSubmiter"),
-                                                    configSubmiter
-                                                );
-
-                                            </script>
-                                            <!-- end Bar Chart -->
-
-                                        </div>
-                                    </div>
-                                    <!-- end bar chart Top 5 Submitter -->
-
-                                    <!-- bar chart Top 5 Floor -->
-                                    <div class="md:col-span-1">
-                                        <div class="overflow-hidden bg-white rounded-md border h-full p-2">
-
-                                            <div>
-                                                <canvas class="w-full" id="taskFloor"></canvas>
-                                            </div>
-
-                                            <!-- Bar Chart -->
-                                            <script>
-                                                const dataFloor = {
-                                                    labels: ["L1", "B2", "L2", "L3", "BF"],
-                                                    datasets: [
-                                                        {
-                                                            label: "Record Count",
-                                                            data: [217, 171, 64, 62, 80],
-                                                            backgroundColor: [
-                                                                "rgb(26, 188, 156)",
-                                                                "rgb(26, 188, 156)",
-                                                                "rgb(26, 188, 156)",
-                                                                "rgb(26, 188, 156)",
-                                                                "rgb(26, 188, 156)",
-                                                            ],
-                                                            hoverOffset: 4,
-                                                        },
-                                                    ],
-                                                };
-                                                const optionsfloor = {
-                                                    indexAxis: "y",
-                                                    responsive: true,
-                                                    plugins: {
-                                                        legend: {
-                                                            position: "top",
-                                                        },
-                                                        title: {
-                                                            display: true,
-                                                            text: "Top 5 Floor",
-                                                        },
-                                                    },
-                                                };
-                                                const configFloor = {
-                                                    type: "bar",
-                                                    data: dataFloor,
-                                                    options: optionsfloor,
-                                                };
-
-                                                var chartBar = new Chart(
-                                                    document.getElementById("taskFloor"),
-                                                    configFloor
-                                                );
-
-                                            </script>
-                                            <!-- end Bar Chart -->
-
-                                        </div>
-                                    </div>
-                                    <!-- end bar chart Top 5 Floor -->
-
-                                    <!-- bar chart Top 5 Departement -->
-                                    <div class="md:col-span-1">
-                                        <div class="overflow-hidden bg-white rounded-md border h-full p-2">
-
-                                            <div>
-                                                <canvas class="w-full" id="taskDepartement"></canvas>
-                                            </div>
-
-                                            <!-- Bar Chart -->
-                                            <script>
-                                                const dataDepartement = {
-                                                    labels: ["Civil", "Electricity", "Listrik", "Lain-lain", "Telephone"],
-                                                    datasets: [
-                                                        {
-                                                            label: "Record Count",
-                                                            data: [50, 50, 100, 120, 90, 20],
-                                                            backgroundColor: [
-                                                                "rgb(244, 208, 63)",
-                                                                "rgb(244, 208, 63)",
-                                                                "rgb(244, 208, 63)",
-                                                                "rgb(244, 208, 63)",
-                                                                "rgb(244, 208, 63)",
-                                                            ],
-                                                            hoverOffset: 4,
-                                                        },
-                                                    ],
-                                                };
-                                                const optionsDepartement = {
-                                                    indexAxis: "y",
-                                                    responsive: true,
-                                                    plugins: {
-                                                        legend: {
-                                                            position: "top",
-                                                        },
-                                                        title: {
-                                                            display: true,
-                                                            text: "Top 5 Departement",
-                                                        },
-                                                    },
-                                                };
-                                                const configDepartement = {
-                                                    type: "bar",
-                                                    data: dataDepartement,
-                                                    options: optionsDepartement,
-                                                };
-
-                                                var chartBar = new Chart(
-                                                    document.getElementById("taskDepartement"),
-                                                    configDepartement
-                                                );
-
-                                            </script>
-                                            <!-- end Bar Chart -->
-
-                                        </div>
-                                    </div>
-                                    <!-- end bar chart Top 5 Departement -->
-                                </div>
-                            </div>
-                            <!-- ===== ================ ==== -->
-                            <!-- ===== end section Bar Chart ==== -->
-                            <!-- ===== ================ ==== -->
-
-
-                            <!-- ===== ================ ==== -->
-                            <!-- ===== section Ticket ID ==== -->
-                            <!-- ===== ================ ==== -->
-                            <section class="p-4 space-y-4" id="content">
-                                <!-- top bar -->
-                                <div class="flex justify-between">
-                                    <h1 class="font-title text-lg">Ticket ID</h1>
-                                    <div>
-                                        <!-- export -->
-                                        <button class="border p-2 rounded bg-blue-500 hover:bg-blue-400 flex space-x-3">
-                                            <i class="fa-regular fa-file-arrow-down text-white"></i>
-                                            <h1 class="text-xs font-title text-white">Export</h1>
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- end top bar -->
-                                <div class="max-w-full border bg-white rounded-md overflow-x-auto">
-                                    <div>
-                                        <table class="text-center text-sm font-light" aria-label="">
-                                            <thead class="border-b font-medium dark:border-neutral-500 bg-slate-100">
-                                                <tr>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">Ticket ID</th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">Title</th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">Submitter Name
-                                                    </th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">Progress</th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">User - Process
-                                                    </th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">User - Complete
-                                                    </th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">Submit</th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">Description
-                                                    </th>
-                                                    <th scope="col" class="px-6 py-4 text-left truncate">Property</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="divide-y">
-                                                <tr>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr class="bg-slate-50">
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium ">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr class="bg-slate-50">
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr class="bg-slate-50">
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr class="bg-slate-50">
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-                                                <tr class="bg-slate-50">
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left font-medium">
-                                                        FXS/WO/BMOPS/XII/2022/0013</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Pintu copot lagi
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Manager Go-Work
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Approved</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">Iwan</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">M.Zihad</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">5 Oct 2022 10:55
-                                                        WIB</td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">
-                                                        Pagi ini kami temukan meja kerja berada di depan lobby
-                                                    </td>
-                                                    <td class="whitespace-nowrap px-6 py-4 text-left">FX Sudirman</td>
-                                                </tr>
-
-
-                                            </tbody>
-                                        </table>
-
-                                    </div>
-                                </div>
-                                <div class="flex justify-end py-2">
-                                    <nav aria-label="Pagination">
-                                        <ul class="flex">
-                                            <li
-                                                class="p-1.5 hover:bg-slate-100 rounded-sm font-title text-xs text-center">
-                                                Previous</li>
-                                            <li class="p-1.5 hover:bg-slate-200 rounded-sm w-8 ">
-                                                <h1 class="text-center font-title text-xs">1</h1>
-                                            </li>
-                                            <li class="p-1.5 hover:bg-slate-200 rounded-sm w-8 ">
-                                                <h1 class="text-center font-title text-xs">2</h1>
-                                            </li>
-                                            <li
-                                                class="p-1.5 hover:bg-slate-100 rounded-sm font-title text-xs text-center">
-                                                Next
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </section>
-                            <!-- ===== ================ ==== -->
-                            <!-- ===== section Ticket ID ==== -->
-                            <!-- ===== ================ ==== -->
-
-                        </div>
-                        <!-- ===== ================ ==== -->
-                        <!-- ===== end section modul tab Complaint work order ==== -->
-                        <!-- ===== ================ ==== -->
-                    </section>
-                    <!-- ===== ================ ==== -->
-                    <!-- ===== end section modul tab ==== -->
-                    <!-- ===== ================ ==== -->
-
+                <section class="flex justify-between p-2 space-x-2 bg-white border rounded">
+                    <div class="w-full ">
+                        <input type="search" name="" id="" placeholder="Search.."
+                            class="w-full p-2 cs-font-body active:ring-1 active:ring-cs-primary rounded bg-slate-50">
+                    </div>
+                    <button class="flex px-4 py-2 my-auto space-x-2 bg-cs-primary rounded">
+                        <i class="text-white fa-regular fa-download"></i>
+                        <h1 class="hidden my-auto cs-font-buttonNormal text-white md:block">Download</h1>
+                    </button>
                 </section>
-                <!-- ===== ================ ==== -->
-                <!-- ===== end section Main Body ==== -->
-                <!-- ===== ================ ==== -->
+
+
+                <!-- ===== section main ==== -->
+                <div x-data="{ tab: 'actived' }" class="relative bg-white border rounded">
+                    <!-- nav -->
+                    <nav aria-label="" class="p-2 py-4 border-b rounded-t cs-font-buttonNormal">
+
+                        <a class="px-3 py-2 text-sm border text-cs-gray cs-font-buttonNormal transition-all"
+                            :class="{ 'cs-font-buttonNormal text-cs-primary bg-cs-primary-soft transition-all': tab === 'actived' }"
+                            x-on:click.prevent="tab = 'actived'" href="#">Actived</a>
+
+                        <a class="px-3 py-2 text-sm border text-cs-gray cs-font-buttonNormal transition-all"
+                            :class="{ 'text-cs-primary cs-font-buttonNormal bg-cs-primary-soft transition-all': tab === 'removed' }"
+                            x-on:click.prevent="tab = 'removed'" href="#">Removed</a>
+
+                    </nav>
+
+                    <!-- content -->
+                    <!-- end actived tab -->
+                    <div x-show="tab === 'actived'" class="relative px-2">
+
+                        <div class="flex flex-col">
+                            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                <div class="min-w-full sm:px-6 lg:px-8">
+                                    <div class="overflow-x-auto">
+                                        <table class="min-w-full" aria-label="">
+                                            <thead class="bg-white border-b-2 border-gray-200">
+                                                <tr>
+                                                    <th class="w-12 p-3 text-sm font-semibold tracking-wide text-left">
+                                                        No.</th>
+                                                    <th
+                                                        class="w-40 p-3 pr-20 text-sm font-semibold tracking-wide text-left">
+                                                        Photo</th>
+                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left w-44">
+                                                        Title</th>
+                                                    <th
+                                                        class="w-56 p-3 text-sm font-semibold tracking-wide text-left truncate">
+                                                        Description
+                                                    </th>
+                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left w-44">
+                                                        Property</th>
+                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left">Start
+                                                        Time</th>
+                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left">End
+                                                        Time</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-100">
+                                                <!-- content list 1 -->
+                                                <tr class="bg-white">
+                                                    <td
+                                                        class="p-3 text-sm text-center text-slate-700 whitespace-nowrap font-title">
+                                                        1</td>
+                                                    <td class="p-3 text-sm text-slate-700 whitespace-nowrap">
+                                                        <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="" class="object-cover w-full rounded aspect-video">
+                                                    </td>
+                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
+                                                        Gado Gado
+                                                    </td>
+                                                    <td
+                                                        class="flex p-3 text-sm w-72 text-slate-500 text-ellipsis font-title-regular">
+                                                        makanan khas
+                                                        Jakarta
+                                                        berisi
+                                                        sayur-sayuran yang
+                                                        direbus, irisan telur dan tahu, serta ditaburi bawang goreng dan
+                                                        kerupuk.
+                                                        Sayur-sayuran ditambahkan dengan bumbu kacang atau saus dari
+                                                        kacang tanah yang telah
+                                                        dihaluskan yang kemudian diaduk merata. </td>
+                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
+                                                        CSN</td>
+                                                    <td
+                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
+                                                        30 August
+                                                        2022</td>
+                                                    <td
+                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
+                                                        32 August
+                                                        2022</td>
+                                                </tr>
+                                                <!-- end content list 1 -->
+
+
+                                                <!-- field content 2 -->
+                                                <tr class="bg-white">
+                                                    <td
+                                                        class="p-3 text-sm text-center text-slate-700 whitespace-nowrap font-title">
+                                                        2</td>
+                                                    <td class="p-3 text-sm text-slate-700 whitespace-nowrap">
+                                                        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="" class="object-cover w-full rounded aspect-video">
+                                                    </td>
+                                                    <td
+                                                        class="w-12 p-3 text-sm text-ellipsis text-slate-800 whitespace-nowrap font-title">
+                                                        3 Tempat dessert di CSN
+                                                    </td>
+                                                    <td
+                                                        class="flex p-3 text-sm w-72 text-slate-500 text-ellipsis font-title-regular">
+                                                        3 tempat dessert untuk kamu setelah pulang kerja </td>
+                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
+                                                        CSN</td>
+                                                    <td
+                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
+                                                        30 August
+                                                        2022</td>
+                                                    <td
+                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
+                                                        32 August
+                                                        2022</td>
+                                                </tr>
+                                                <!-- end content list 2 -->
+
+                                                <!-- field content 3 -->
+                                                <tr class="bg-white">
+                                                    <td
+                                                        class="p-3 text-sm text-center text-slate-700 whitespace-nowrap font-title">
+                                                        3</td>
+                                                    <td class="p-3 text-sm text-slate-700 whitespace-nowrap">
+                                                        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="" class="object-cover w-full rounded aspect-video">
+                                                    </td>
+                                                    <td
+                                                        class="w-12 p-3 text-sm text-ellipsis text-slate-800 whitespace-nowrap font-title">
+                                                        3 Tempat dessert di CSN
+                                                    </td>
+                                                    <td
+                                                        class="flex p-3 text-sm w-72 text-slate-500 text-ellipsis font-title-regular">
+                                                        3 tempat dessert untuk kamu setelah pulang kerja </td>
+                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
+                                                        CSN</td>
+                                                    <td
+                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
+                                                        30 August
+                                                        2022</td>
+                                                    <td
+                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
+                                                        32 August
+                                                        2022</td>
+                                                </tr>
+                                                <!-- end content list 3 -->
+
+                                                <!-- field content 4 -->
+                                                <tr class="bg-white">
+                                                    <td
+                                                        class="p-3 text-sm text-center text-slate-700 whitespace-nowrap font-title">
+                                                        4</td>
+                                                    <td class="p-3 text-sm text-slate-700 whitespace-nowrap">
+                                                        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="" class="object-cover w-full rounded aspect-video">
+                                                    </td>
+                                                    <td
+                                                        class="w-12 p-3 text-sm text-ellipsis text-slate-800 whitespace-nowrap font-title">
+                                                        3 Tempat dessert di CSN
+                                                    </td>
+                                                    <td
+                                                        class="flex p-3 text-sm w-72 text-slate-500 text-ellipsis font-title-regular">
+                                                        3 tempat dessert untuk kamu setelah pulang kerja </td>
+                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
+                                                        CSN</td>
+                                                    <td
+                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
+                                                        30 August
+                                                        2022</td>
+                                                    <td
+                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
+                                                        32 August
+                                                        2022</td>
+                                                </tr>
+                                                <!-- end content list 4 -->
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end actived tab -->
+
+                    <!-- removed tab -->
+                    <div x-show="tab === 'removed'" class="relative px-2">
+                        <div class="flex flex-col">
+                            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                <div class="min-w-full sm:px-6 lg:px-8">
+                                    <div class="overflow-x-auto">
+                                        <table class="min-w-full" aria-label="">
+                                            <thead class="bg-white border-b-2 border-gray-200">
+                                                <tr>
+                                                    <th class="w-12 p-3 text-sm font-semibold tracking-wide text-left">
+                                                        No.</th>
+                                                    <th
+                                                        class="w-40 p-3 pr-20 text-sm font-semibold tracking-wide text-left">
+                                                        Photo</th>
+                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left w-44">
+                                                        Title</th>
+                                                    <th
+                                                        class="w-56 p-3 text-sm font-semibold tracking-wide text-left truncate">
+                                                        Description
+                                                    </th>
+                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left w-44">
+                                                        Property</th>
+                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left">Start
+                                                        Time</th>
+                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left">End
+                                                        Time</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-100">
+                                                <!-- content list 1 -->
+                                                <tr class="bg-white">
+                                                    <td
+                                                        class="p-3 text-sm text-center text-slate-700 whitespace-nowrap font-title">
+                                                        1</td>
+                                                    <td class="p-3 text-sm text-slate-700 whitespace-nowrap">
+                                                        <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="" class="object-cover w-full rounded aspect-video">
+                                                    </td>
+                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
+                                                        Gado Gado
+                                                    </td>
+                                                    <td
+                                                        class="flex p-3 text-sm w-72 text-slate-500 text-ellipsis font-title-regular">
+                                                        makanan khas
+                                                        Jakarta
+                                                        berisi
+                                                        sayur-sayuran yang
+                                                        direbus, irisan telur dan tahu, serta ditaburi bawang goreng dan
+                                                        kerupuk.
+                                                        Sayur-sayuran ditambahkan dengan bumbu kacang atau saus dari
+                                                        kacang tanah yang telah
+                                                        dihaluskan yang kemudian diaduk merata. </td>
+                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
+                                                        CSN</td>
+                                                    <td
+                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
+                                                        30 August
+                                                        2022</td>
+                                                    <td
+                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
+                                                        32 August
+                                                        2022</td>
+                                                </tr>
+                                                <!-- end content list 1 -->
+
+
+                                                <!-- field content 2 -->
+                                                <tr class="bg-white">
+                                                    <td
+                                                        class="p-3 text-sm text-center text-slate-700 whitespace-nowrap font-title">
+                                                        2</td>
+                                                    <td class="p-3 text-sm text-slate-700 whitespace-nowrap">
+                                                        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="" class="object-cover w-full rounded aspect-video">
+                                                    </td>
+                                                    <td
+                                                        class="w-12 p-3 text-sm text-ellipsis text-slate-800 whitespace-nowrap font-title">
+                                                        3 Tempat dessert di CSN
+                                                    </td>
+                                                    <td
+                                                        class="flex p-3 text-sm w-72 text-slate-500 text-ellipsis font-title-regular">
+                                                        3 tempat dessert untuk kamu setelah pulang kerja </td>
+                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
+                                                        CSN</td>
+                                                    <td
+                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
+                                                        30 August
+                                                        2022</td>
+                                                    <td
+                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
+                                                        32 August
+                                                        2022</td>
+                                                </tr>
+                                                <!-- end content list 2 -->
+
+
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end removed tab -->
+
+                </div>
+                <!-- ===== end section main ==== -->
 
 
 
             </div>
+            <!-- ===== end  section information (right on desktop) ==== -->
+
         </section>
         <!--* ===== section main display (right on desktop & center mobile) ==== -->
 

@@ -20,6 +20,8 @@ module.exports = {
       },
       colors: {
         'cs-primary': "#2196F3",
+        'cs-primary-soft': "#eff6ff",
+        'cs-background': "#f8fafc",
         'primary-hover':"#A3B028",
         'primary-click':"#8F9A21",
         'cs-black': "#191919",

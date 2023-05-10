@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internal News</title>
+    <title>COMS - Dashboard</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./media/fontawesome-pro-6.0.0-web/css/all.min.css">
     <!-- alpinejs -->
@@ -95,8 +95,7 @@
 
                                     <!-- News (mobile) -->
                                     <li x-data="{ open: false }">
-                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-normal"
-                                            @click="open = !open">
+                                        <a class="py-3 flex justify-between gap-3 cs-nav-normal" @click="open = !open">
                                             <div class="space-x-3 flex">
                                                 <i class="fa-regular fa-newspaper my-auto"></i>
                                                 <h1 class="whitespace-normal my-auto">News</h1>
@@ -106,19 +105,19 @@
                                         <!-- sub -->
                                         <div x-show="open" class="py-1" x-transition>
                                             <ul class="space-y-1">
-                                                <!-- internal news -->
+                                                <!-- tenant news -->
                                                 <li>
-                                                    <a href="#" class="">
+                                                    <a href="./news-tenantNews.html" class="">
                                                         <div class="cs-nav-normal py-2">
-                                                            <h1 class="ml-6">Internal News</h1>
+                                                            <h1 class="ml-6">tenant News</h1>
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <!-- end internal news -->
+                                                <!-- end tenant news -->
 
                                                 <!-- external news -->
                                                 <li>
-                                                    <a href="#" class="">
+                                                    <a href="./news-externalNews.html" class="">
                                                         <div class="cs-nav-normal py-2">
                                                             <h1 class="ml-6">External News</h1>
                                                         </div>
@@ -475,22 +474,24 @@
                             <ul class="show !visible relative m-0 hidden pt-2 list-none p-0 data-[te-collapse-show]:block space-y-3"
                                 data-te-sidenav-collapse-ref>
 
-                                <!-- Internal News -->
+                                <!-- internal News -->
                                 <li class="relative ">
-                                    <a href="#internal" class="flex py-2 cs-nav-normal" data-te-sidenav-link-ref>
+                                    <a href="./news-internalNews.html" class="flex py-2 cs-nav-normal"
+                                        data-te-sidenav-link-ref>
                                         <h1 class="pl-6 whitespace-normal"> Internal News
                                         </h1>
                                     </a>
                                 </li>
-                                <!-- end Internal News -->
+                                <!-- end internal News -->
 
-                                <!-- External News -->
+                                <!-- tenant News -->
                                 <li class="relative ">
-                                    <a href="#external" class="flex py-2 cs-nav-normal" data-te-sidenav-link-ref>
-                                        <h1 class="ml-6 "> External News</h1>
+                                    <a href="./news-tenantNews.html" class="flex py-2 cs-nav-normal"
+                                        data-te-sidenav-link-ref>
+                                        <h1 class="ml-6 "> Tenant News</h1>
                                     </a>
                                 </li>
-                                <!-- end External News -->
+                                <!-- end tenant News -->
 
                             </ul>
                         </li>
