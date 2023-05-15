@@ -95,7 +95,7 @@
 
                                     <!-- News (mobile) -->
                                     <li x-data="{ open: false }">
-                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-sele"
+                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-selected"
                                             @click="open = !open">
                                             <div class="space-x-3 flex">
                                                 <i class="fa-regular fa-newspaper my-auto"></i>
@@ -109,7 +109,7 @@
                                                 <!-- internal news -->
                                                 <li>
                                                     <a href="./news-internalNews.html" class="">
-                                                        <div class="cs-nav-normal py-2">
+                                                        <div class="cs-nav-selected py-2">
                                                             <h1 class="ml-6">Internal News</h1>
                                                         </div>
                                                     </a>
@@ -154,15 +154,15 @@
                                                 </li>
                                                 <!-- end Tenant Meter Utility -->
 
-                                                <!-- Preventive Maintance -->
+                                                <!-- Schedule Maintance -->
                                                 <li>
                                                     <a href="#" class="">
                                                         <div class="cs-nav-normal py-2">
-                                                            <h1 class="ml-6">Preventive Maintance</h1>
+                                                            <h1 class="ml-6">Schedule Maintance</h1>
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <!-- end Preventive Maintance -->
+                                                <!-- end Schedule Maintance -->
                                             </ul>
                                         </div>
                                     </li>
@@ -221,7 +221,7 @@
                                             <ul class="space-y-1">
                                                 <!-- Items -->
                                                 <li>
-                                                    <a href="#" class="">
+                                                    <a href="./masterData-items.html" class="">
                                                         <div class="cs-nav-normal py-2">
                                                             <h1 class="ml-6">Items</h1>
                                                         </div>
@@ -229,15 +229,15 @@
                                                 </li>
                                                 <!-- end Items -->
 
-                                                <!-- Preventive Template -->
+                                                <!-- Schedule Template -->
                                                 <li>
                                                     <a href="#" class="">
                                                         <div class="cs-nav-normal py-2">
-                                                            <h1 class="ml-6">Preventive Template</h1>
+                                                            <h1 class="ml-6">Schedule Template</h1>
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <!-- end Preventive Template -->
+                                                <!-- end Schedule Template -->
 
                                                 <!-- Basic Price Utilities -->
                                                 <li>
@@ -307,15 +307,15 @@
                                                 </li>
                                                 <!-- end Complaint & Request -->
 
-                                                <!-- Preventive -->
+                                                <!-- Schedule -->
                                                 <li>
                                                     <a href="#" class="">
                                                         <div class="cs-nav-normal py-2">
-                                                            <h1 class="ml-6">Preventive</h1>
+                                                            <h1 class="ml-6">Schedule</h1>
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <!-- end Preventive -->
+                                                <!-- end Schedule -->
                                             </ul>
                                         </div>
 
@@ -525,13 +525,13 @@
                                 </li>
                                 <!-- end Tenant Meter Utility -->
 
-                                <!-- Preventive Maintance -->
+                                <!-- Schedule Maintance -->
                                 <li class="relative ">
                                     <a href="#external" class="flex py-2 cs-nav-normal" data-te-sidenav-link-ref>
-                                        <h1 class="ml-6 "> Preventive Maintance</h1>
+                                        <h1 class="ml-6 "> Schedule Maintance</h1>
                                     </a>
                                 </li>
-                                <!-- end Preventive Maintance -->
+                                <!-- end Schedule Maintance -->
 
                             </ul>
                         </li>
@@ -596,20 +596,21 @@
 
                                 <!-- Items -->
                                 <li class="relative ">
-                                    <a href="#internal" class="flex py-2 cs-nav-normal" data-te-sidenav-link-ref>
+                                    <a href="./masterData-items.html" class="flex py-2 cs-nav-normal"
+                                        data-te-sidenav-link-ref>
                                         <h1 class="pl-6 whitespace-normal"> Items
                                         </h1>
                                     </a>
                                 </li>
                                 <!-- end Items -->
 
-                                <!-- Preventive Template -->
+                                <!-- Schedule Template -->
                                 <li class="relative ">
                                     <a href="#external" class="flex py-2 cs-nav-normal" data-te-sidenav-link-ref>
-                                        <h1 class="ml-6 "> Preventive Template</h1>
+                                        <h1 class="ml-6 "> Schedule Template</h1>
                                     </a>
                                 </li>
-                                <!-- end Preventive Template -->
+                                <!-- end Schedule Template -->
 
                                 <!-- Basic Price Utilities -->
                                 <li class="relative ">
@@ -674,13 +675,13 @@
                                 </li>
                                 <!-- end Complaint & Request -->
 
-                                <!-- Preventive -->
+                                <!-- Schedule -->
                                 <li class="relative ">
                                     <a href="#external" class="flex py-2 cs-nav-normal" data-te-sidenav-link-ref>
-                                        <h1 class="ml-6 "> Preventive</h1>
+                                        <h1 class="ml-6 "> Schedule</h1>
                                     </a>
                                 </li>
-                                <!-- end Preventive -->
+                                <!-- end Schedule -->
 
                             </ul>
                         </li>
@@ -805,7 +806,7 @@
                     <ol class="flex space-x-2 list-reset">
                         <li class="my-auto cs-font-overline text-cs-gray">News</li>
                         <i class="text-xs fa-regular fa-slash-forward text-cs-gray"></i>
-                        <li class="my-auto cs-font-overline text-cs-pri">Internal News</li>
+                        <li class="my-auto cs-font-overline text-cs-primary">Internal News</li>
                     </ol>
                 </nav>
                 <!-- ===== end section breadcrumb ==== -->
@@ -822,297 +823,467 @@
                 </section>
 
 
-                <!-- ===== section main ==== -->
+                <!-- ========= Table ========= -->
                 <div x-data="{ tab: 'actived' }" class="relative bg-white border rounded">
                     <!-- nav -->
-                    <nav aria-label="" class="p-2 py-4 border-b rounded-t cs-font-buttonNormal">
+                    <nav aria-label="" class="p-2 py-4 rounded-t cs-font-buttonNormal">
 
-                        <a class="px-3 py-2 text-sm border text-cs-gray cs-font-buttonNormal transition-all"
-                            :class="{ 'cs-font-buttonNormal text-cs-primary bg-cs-primary-soft transition-all': tab === 'actived' }"
+                        <a class="px-3 py-2 text-sm border text-cs-gray cs-font-buttonNormal rounded-md transition-all"
+                            :class="{ 'cs-font-buttonNormal text-cs-primary rounded-md bg-cs-primary-soft transition-all': tab === 'actived' }"
                             x-on:click.prevent="tab = 'actived'" href="#">Actived</a>
 
-                        <a class="px-3 py-2 text-sm border text-cs-gray cs-font-buttonNormal transition-all"
-                            :class="{ 'text-cs-primary cs-font-buttonNormal bg-cs-primary-soft transition-all': tab === 'removed' }"
+                        <a class="px-3 py-2 text-sm border text-cs-gray rounded-md cs-font-buttonNormal transition-all"
+                            :class="{ ' text-cs-primary cs-font-buttonNormal rounded-md bg-cs-primary-soft transition-all': tab === 'removed' }"
                             x-on:click.prevent="tab = 'removed'" href="#">Removed</a>
-
                     </nav>
+                    <!-- end  tab -->
+                    <section>
+                        <!-- Actived Tab -->
+                        <div x-show="tab === 'actived'" class="relative px-2">
+                            <div class="h-full">
+                                <div class=" overflow-x-auto rounded-md border border-gray-200 ">
+                                    <table class="w-full" aria-label="">
+                                        <th></th>
+                                        <thead class="border-b-2 border-gray-200 bg-gray-50">
+                                            <tr>
+                                                <td class="p-3 w-36 text-left font-title text-sm tracking-wide">Photo
+                                                </td>
+                                                <td class="p-3 w-36 text-left font-title text-sm tracking-wide">Title
+                                                </td>
+                                                <td class="p-3 w-20 text-left font-title text-sm tracking-wide">
+                                                    Description
+                                                </td>
+                                                <td class="p-3 text-left font-title text-sm tracking-wide">Property</td>
+                                                <td class="w-32 p-3 text-left font-title text-sm tracking-wide">Start
+                                                    Time
+                                                </td>
+                                                <td class="w-24 p-3 text-left font-title text-sm tracking-wide">End Time
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-100">
+                                            <tr class="bg-white">
+                                                <!-- Photo -->
+                                                <td class="w-full p-3 text-sm text-gray-700">
+                                                    <div class="md:w-40 w-36">
+                                                        <img class="aspect-video w-full object-cover rounded-md"
+                                                            src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="">
+                                                    </div>
+                                                </td>
+                                                <!-- Title -->
+                                                <td
+                                                    class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
+                                                    Pipa Bocor</td>
+                                                <!-- Description -->
+                                                <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
+                                                    Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
+                                                <!-- Property -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span
+                                                        class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                </td>
+                                                <!-- Start time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
+                                                <!-- End Time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                            </tr>
 
-                    <!-- content -->
-                    <!-- end actived tab -->
-                    <div x-show="tab === 'actived'" class="relative px-2">
+                                            <tr class="bg-gray-50">
+                                                <!-- Photo -->
+                                                <td class="w-full p-3 text-sm text-gray-700">
+                                                    <div class="md:w-40 w-36">
+                                                        <img class="aspect-video w-full object-cover rounded-md"
+                                                            src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="">
+                                                    </div>
+                                                </td>
+                                                <!-- Title -->
+                                                <td
+                                                    class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
+                                                    Pipa Bocor</td>
+                                                <!-- Description -->
+                                                <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
+                                                    Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
+                                                <!-- Property -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span
+                                                        class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                </td>
+                                                <!-- Start time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
+                                                <!-- End Time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                            </tr>
 
-                        <div class="flex flex-col">
-                            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                                <div class="min-w-full sm:px-6 lg:px-8">
-                                    <div class="overflow-x-auto">
-                                        <table class="min-w-full" aria-label="">
-                                            <thead class="bg-white border-b-2 border-gray-200">
-                                                <tr>
-                                                    <th class="w-12 p-3 text-sm font-semibold tracking-wide text-left">
-                                                        No.</th>
-                                                    <th
-                                                        class="w-40 p-3 pr-20 text-sm font-semibold tracking-wide text-left">
-                                                        Photo</th>
-                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left w-44">
-                                                        Title</th>
-                                                    <th
-                                                        class="w-56 p-3 text-sm font-semibold tracking-wide text-left truncate">
-                                                        Description
-                                                    </th>
-                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left w-44">
-                                                        Property</th>
-                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left">Start
-                                                        Time</th>
-                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left">End
-                                                        Time</th>
+                                            <tr class="bg-white">
+                                                <!-- Photo -->
+                                                <td class="w-full p-3 text-sm text-gray-700">
+                                                    <div class="md:w-40 w-36">
+                                                        <img class="aspect-video w-full object-cover rounded-md"
+                                                            src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="">
+                                                    </div>
+                                                </td>
+                                                <!-- Title -->
+                                                <td
+                                                    class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
+                                                    Pipa Bocor</td>
+                                                <!-- Description -->
+                                                <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
+                                                    Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
+                                                <!-- Property -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span
+                                                        class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                </td>
+                                                <!-- Start time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
+                                                <!-- End Time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                            </tr>
 
-                                                </tr>
-                                            </thead>
-                                            <tbody class="divide-y divide-gray-100">
-                                                <!-- content list 1 -->
-                                                <tr class="bg-white">
-                                                    <td
-                                                        class="p-3 text-sm text-center text-slate-700 whitespace-nowrap font-title">
-                                                        1</td>
-                                                    <td class="p-3 text-sm text-slate-700 whitespace-nowrap">
-                                                        <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                            alt="" class="object-cover w-full rounded aspect-video">
-                                                    </td>
-                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
-                                                        Gado Gado
-                                                    </td>
-                                                    <td
-                                                        class="flex p-3 text-sm w-72 text-slate-500 text-ellipsis font-title-regular">
-                                                        makanan khas
-                                                        Jakarta
-                                                        berisi
-                                                        sayur-sayuran yang
-                                                        direbus, irisan telur dan tahu, serta ditaburi bawang goreng dan
-                                                        kerupuk.
-                                                        Sayur-sayuran ditambahkan dengan bumbu kacang atau saus dari
-                                                        kacang tanah yang telah
-                                                        dihaluskan yang kemudian diaduk merata. </td>
-                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
-                                                        CSN</td>
-                                                    <td
-                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
-                                                        30 August
-                                                        2022</td>
-                                                    <td
-                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
-                                                        32 August
-                                                        2022</td>
-                                                </tr>
-                                                <!-- end content list 1 -->
+                                            <tr class="bg-gray-50">
+                                                <!-- Photo -->
+                                                <td class="w-full p-3 text-sm text-gray-700">
+                                                    <div class="md:w-40 w-36">
+                                                        <img class="aspect-video w-full object-cover rounded-md"
+                                                            src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="">
+                                                    </div>
+                                                </td>
+                                                <!-- Title -->
+                                                <td
+                                                    class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
+                                                    Pipa Bocor</td>
+                                                <!-- Description -->
+                                                <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
+                                                    Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
+                                                <!-- Property -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span
+                                                        class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                </td>
+                                                <!-- Start time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
+                                                <!-- End Time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                            </tr>
 
+                                            <tr class="bg-white">
+                                                <!-- Photo -->
+                                                <td class="w-full p-3 text-sm text-gray-700">
+                                                    <div class="md:w-40 w-36">
+                                                        <img class="aspect-video w-full object-cover rounded-md"
+                                                            src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="">
+                                                    </div>
+                                                </td>
+                                                <!-- Title -->
+                                                <td
+                                                    class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
+                                                    Pipa Bocor</td>
+                                                <!-- Description -->
+                                                <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
+                                                    Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
+                                                <!-- Property -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span
+                                                        class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                </td>
+                                                <!-- Start time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
+                                                <!-- End Time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                            </tr>
 
-                                                <!-- field content 2 -->
-                                                <tr class="bg-white">
-                                                    <td
-                                                        class="p-3 text-sm text-center text-slate-700 whitespace-nowrap font-title">
-                                                        2</td>
-                                                    <td class="p-3 text-sm text-slate-700 whitespace-nowrap">
-                                                        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                            alt="" class="object-cover w-full rounded aspect-video">
-                                                    </td>
-                                                    <td
-                                                        class="w-12 p-3 text-sm text-ellipsis text-slate-800 whitespace-nowrap font-title">
-                                                        3 Tempat dessert di CSN
-                                                    </td>
-                                                    <td
-                                                        class="flex p-3 text-sm w-72 text-slate-500 text-ellipsis font-title-regular">
-                                                        3 tempat dessert untuk kamu setelah pulang kerja </td>
-                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
-                                                        CSN</td>
-                                                    <td
-                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
-                                                        30 August
-                                                        2022</td>
-                                                    <td
-                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
-                                                        32 August
-                                                        2022</td>
-                                                </tr>
-                                                <!-- end content list 2 -->
+                                            <tr class="bg-gray-50">
+                                                <!-- Photo -->
+                                                <td class="w-full p-3 text-sm text-gray-700">
+                                                    <div class="md:w-40 w-36">
+                                                        <img class="aspect-video w-full object-cover rounded-md"
+                                                            src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="">
+                                                    </div>
+                                                </td>
+                                                <!-- Title -->
+                                                <td
+                                                    class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
+                                                    Pipa Bocor</td>
+                                                <!-- Description -->
+                                                <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
+                                                    Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
+                                                <!-- Property -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span
+                                                        class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                </td>
+                                                <!-- Start time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
+                                                <!-- End Time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                            </tr>
 
-                                                <!-- field content 3 -->
-                                                <tr class="bg-white">
-                                                    <td
-                                                        class="p-3 text-sm text-center text-slate-700 whitespace-nowrap font-title">
-                                                        3</td>
-                                                    <td class="p-3 text-sm text-slate-700 whitespace-nowrap">
-                                                        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                            alt="" class="object-cover w-full rounded aspect-video">
-                                                    </td>
-                                                    <td
-                                                        class="w-12 p-3 text-sm text-ellipsis text-slate-800 whitespace-nowrap font-title">
-                                                        3 Tempat dessert di CSN
-                                                    </td>
-                                                    <td
-                                                        class="flex p-3 text-sm w-72 text-slate-500 text-ellipsis font-title-regular">
-                                                        3 tempat dessert untuk kamu setelah pulang kerja </td>
-                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
-                                                        CSN</td>
-                                                    <td
-                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
-                                                        30 August
-                                                        2022</td>
-                                                    <td
-                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
-                                                        32 August
-                                                        2022</td>
-                                                </tr>
-                                                <!-- end content list 3 -->
-
-                                                <!-- field content 4 -->
-                                                <tr class="bg-white">
-                                                    <td
-                                                        class="p-3 text-sm text-center text-slate-700 whitespace-nowrap font-title">
-                                                        4</td>
-                                                    <td class="p-3 text-sm text-slate-700 whitespace-nowrap">
-                                                        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                            alt="" class="object-cover w-full rounded aspect-video">
-                                                    </td>
-                                                    <td
-                                                        class="w-12 p-3 text-sm text-ellipsis text-slate-800 whitespace-nowrap font-title">
-                                                        3 Tempat dessert di CSN
-                                                    </td>
-                                                    <td
-                                                        class="flex p-3 text-sm w-72 text-slate-500 text-ellipsis font-title-regular">
-                                                        3 tempat dessert untuk kamu setelah pulang kerja </td>
-                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
-                                                        CSN</td>
-                                                    <td
-                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
-                                                        30 August
-                                                        2022</td>
-                                                    <td
-                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
-                                                        32 August
-                                                        2022</td>
-                                                </tr>
-                                                <!-- end content list 4 -->
-
-
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                            <tr class="bg-white">
+                                                <!-- Photo -->
+                                                <td class="w-full p-3 text-sm text-gray-700">
+                                                    <div class="md:w-40 w-36">
+                                                        <img class="aspect-video w-full object-cover rounded-md"
+                                                            src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="">
+                                                    </div>
+                                                </td>
+                                                <!-- Title -->
+                                                <td
+                                                    class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
+                                                    Pipa Bocor</td>
+                                                <!-- Description -->
+                                                <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
+                                                    Kring new fit office chair, mesh + PU Black fkhjgskdjfg Kring new
+                                                    fit
+                                                    office
+                                                    chair, mesh + PU Black fkhjgskdjfg</td>
+                                                <!-- Property -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span
+                                                        class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                </td>
+                                                <!-- Start time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
+                                                <!-- End Time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- end actived tab -->
+                        <!-- end Actived Tab -->
 
-                    <!-- removed tab -->
-                    <div x-show="tab === 'removed'" class="relative px-2">
-                        <div class="flex flex-col">
-                            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                                <div class="min-w-full sm:px-6 lg:px-8">
-                                    <div class="overflow-x-auto">
-                                        <table class="min-w-full" aria-label="">
-                                            <thead class="bg-white border-b-2 border-gray-200">
-                                                <tr>
-                                                    <th class="w-12 p-3 text-sm font-semibold tracking-wide text-left">
-                                                        No.</th>
-                                                    <th
-                                                        class="w-40 p-3 pr-20 text-sm font-semibold tracking-wide text-left">
-                                                        Photo</th>
-                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left w-44">
-                                                        Title</th>
-                                                    <th
-                                                        class="w-56 p-3 text-sm font-semibold tracking-wide text-left truncate">
-                                                        Description
-                                                    </th>
-                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left w-44">
-                                                        Property</th>
-                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left">Start
-                                                        Time</th>
-                                                    <th class="p-3 text-sm font-semibold tracking-wide text-left">End
-                                                        Time</th>
+                        <!-- Removed Tab -->
+                        <div x-show="tab === 'removed'" class="relative px-2">
+                            <div class="h-full">
+                                <div class=" overflow-x-auto rounded-md border border-gray-200 ">
+                                    <table class="w-full" aria-label="">
+                                        <th></th>
+                                        <thead class="border-b-2 border-gray-200 bg-gray-50">
+                                            <tr>
+                                                <td class="p-3 w-36 text-left font-title text-sm tracking-wide">Photo
+                                                </td>
+                                                <td class="p-3 w-36 text-left font-title text-sm tracking-wide">Title
+                                                </td>
+                                                <td class="p-3 w-20 text-left font-title text-sm tracking-wide">
+                                                    Description
+                                                </td>
+                                                <td class="p-3 text-left font-title text-sm tracking-wide">Property</td>
+                                                <td class="w-32 p-3 text-left font-title text-sm tracking-wide">Start
+                                                    Time
+                                                </td>
+                                                <td class="w-24 p-3 text-left font-title text-sm tracking-wide">End Time
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-100">
+                                            <tr class="bg-white">
+                                                <!-- Photo -->
+                                                <td class="w-full p-3 text-sm text-gray-700">
+                                                    <div class="md:w-40 w-36">
+                                                        <img class="aspect-video w-full object-cover rounded-md"
+                                                            src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="">
+                                                    </div>
+                                                </td>
+                                                <!-- Title -->
+                                                <td
+                                                    class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
+                                                    papepo Bocor</td>
+                                                <!-- Description -->
+                                                <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
+                                                    Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
+                                                <!-- Property -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span
+                                                        class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                </td>
+                                                <!-- Start time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
+                                                <!-- End Time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                            </tr>
 
-                                                </tr>
-                                            </thead>
-                                            <tbody class="divide-y divide-gray-100">
-                                                <!-- content list 1 -->
-                                                <tr class="bg-white">
-                                                    <td
-                                                        class="p-3 text-sm text-center text-slate-700 whitespace-nowrap font-title">
-                                                        1</td>
-                                                    <td class="p-3 text-sm text-slate-700 whitespace-nowrap">
-                                                        <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                            alt="" class="object-cover w-full rounded aspect-video">
-                                                    </td>
-                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
-                                                        Gado Gado
-                                                    </td>
-                                                    <td
-                                                        class="flex p-3 text-sm w-72 text-slate-500 text-ellipsis font-title-regular">
-                                                        makanan khas
-                                                        Jakarta
-                                                        berisi
-                                                        sayur-sayuran yang
-                                                        direbus, irisan telur dan tahu, serta ditaburi bawang goreng dan
-                                                        kerupuk.
-                                                        Sayur-sayuran ditambahkan dengan bumbu kacang atau saus dari
-                                                        kacang tanah yang telah
-                                                        dihaluskan yang kemudian diaduk merata. </td>
-                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
-                                                        CSN</td>
-                                                    <td
-                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
-                                                        30 August
-                                                        2022</td>
-                                                    <td
-                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
-                                                        32 August
-                                                        2022</td>
-                                                </tr>
-                                                <!-- end content list 1 -->
+                                            <tr class="bg-gray-50">
+                                                <!-- Photo -->
+                                                <td class="w-full p-3 text-sm text-gray-700">
+                                                    <div class="md:w-40 w-36">
+                                                        <img class="aspect-video w-full object-cover rounded-md"
+                                                            src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="">
+                                                    </div>
+                                                </td>
+                                                <!-- Title -->
+                                                <td
+                                                    class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
+                                                    Pipa Bocor</td>
+                                                <!-- Description -->
+                                                <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
+                                                    Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
+                                                <!-- Property -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span
+                                                        class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                </td>
+                                                <!-- Start time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
+                                                <!-- End Time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                            </tr>
 
+                                            <tr class="bg-white">
+                                                <!-- Photo -->
+                                                <td class="w-full p-3 text-sm text-gray-700">
+                                                    <div class="md:w-40 w-36">
+                                                        <img class="aspect-video w-full object-cover rounded-md"
+                                                            src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="">
+                                                    </div>
+                                                </td>
+                                                <!-- Title -->
+                                                <td
+                                                    class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
+                                                    Pipa Bocor</td>
+                                                <!-- Description -->
+                                                <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
+                                                    Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
+                                                <!-- Property -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span
+                                                        class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                </td>
+                                                <!-- Start time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
+                                                <!-- End Time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                            </tr>
 
-                                                <!-- field content 2 -->
-                                                <tr class="bg-white">
-                                                    <td
-                                                        class="p-3 text-sm text-center text-slate-700 whitespace-nowrap font-title">
-                                                        2</td>
-                                                    <td class="p-3 text-sm text-slate-700 whitespace-nowrap">
-                                                        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                            alt="" class="object-cover w-full rounded aspect-video">
-                                                    </td>
-                                                    <td
-                                                        class="w-12 p-3 text-sm text-ellipsis text-slate-800 whitespace-nowrap font-title">
-                                                        3 Tempat dessert di CSN
-                                                    </td>
-                                                    <td
-                                                        class="flex p-3 text-sm w-72 text-slate-500 text-ellipsis font-title-regular">
-                                                        3 tempat dessert untuk kamu setelah pulang kerja </td>
-                                                    <td class="p-3 text-sm text-slate-800 whitespace-nowrap font-title">
-                                                        CSN</td>
-                                                    <td
-                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
-                                                        30 August
-                                                        2022</td>
-                                                    <td
-                                                        class="p-3 text-xs text-slate-500 whitespace-nowrap font-title-regular">
-                                                        32 August
-                                                        2022</td>
-                                                </tr>
-                                                <!-- end content list 2 -->
+                                            <tr class="bg-gray-50">
+                                                <!-- Photo -->
+                                                <td class="w-full p-3 text-sm text-gray-700">
+                                                    <div class="md:w-40 w-36">
+                                                        <img class="aspect-video w-full object-cover rounded-md"
+                                                            src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="">
+                                                    </div>
+                                                </td>
+                                                <!-- Title -->
+                                                <td
+                                                    class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
+                                                    Pipa Bocor</td>
+                                                <!-- Description -->
+                                                <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
+                                                    Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
+                                                <!-- Property -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span
+                                                        class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                </td>
+                                                <!-- Start time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
+                                                <!-- End Time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                            </tr>
 
+                                            <tr class="bg-white">
+                                                <!-- Photo -->
+                                                <td class="w-full p-3 text-sm text-gray-700">
+                                                    <div class="md:w-40 w-36">
+                                                        <img class="aspect-video w-full object-cover rounded-md"
+                                                            src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="">
+                                                    </div>
+                                                </td>
+                                                <!-- Title -->
+                                                <td
+                                                    class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
+                                                    Pipa Bocor</td>
+                                                <!-- Description -->
+                                                <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
+                                                    Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
+                                                <!-- Property -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span
+                                                        class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                </td>
+                                                <!-- Start time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
+                                                <!-- End Time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                            </tr>
 
+                                            <tr class="bg-gray-50">
+                                                <!-- Photo -->
+                                                <td class="w-full p-3 text-sm text-gray-700">
+                                                    <div class="md:w-40 w-36">
+                                                        <img class="aspect-video w-full object-cover rounded-md"
+                                                            src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="">
+                                                    </div>
+                                                </td>
+                                                <!-- Title -->
+                                                <td
+                                                    class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
+                                                    Pipa Bocor</td>
+                                                <!-- Description -->
+                                                <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
+                                                    Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
+                                                <!-- Property -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span
+                                                        class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                </td>
+                                                <!-- Start time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
+                                                <!-- End Time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                            </tr>
 
-
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                            <tr class="bg-white">
+                                                <!-- Photo -->
+                                                <td class="w-full p-3 text-sm text-gray-700">
+                                                    <div class="md:w-40 w-36">
+                                                        <img class="aspect-video w-full object-cover rounded-md"
+                                                            src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                            alt="">
+                                                    </div>
+                                                </td>
+                                                <!-- Title -->
+                                                <td
+                                                    class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
+                                                    Pipa Bocor</td>
+                                                <!-- Description -->
+                                                <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
+                                                    Kring new fit office chair, mesh + PU Black fkhjgskdjfg Kring new
+                                                    fit
+                                                    office
+                                                    chair, mesh + PU Black fkhjgskdjfg</td>
+                                                <!-- Property -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span
+                                                        class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                </td>
+                                                <!-- Start time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
+                                                <!-- End Time -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- end removed tab -->
-
+                        <!-- end Removed Tab -->
+                    </section>
                 </div>
-                <!-- ===== end section main ==== -->
+                <!-- ========= end Table ========= -->
 
 
 

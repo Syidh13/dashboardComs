@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMS - Tenant News</title>
+    <title>COMS - Master Data - Items</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./media/fontawesome-pro-6.0.0-web/css/all.min.css">
     <!-- alpinejs -->
@@ -95,7 +95,7 @@
 
                                     <!-- News (mobile) -->
                                     <li x-data="{ open: false }">
-                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-selected"
+                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-normal"
                                             @click="open = !open">
                                             <div class="space-x-3 flex">
                                                 <i class="fa-regular fa-newspaper my-auto"></i>
@@ -119,7 +119,7 @@
                                                 <!-- tenant news -->
                                                 <li>
                                                     <a href="./news-tenantNews.html" class="">
-                                                        <div class="cs-nav-selected py-2">
+                                                        <div class="cs-nav-normal py-2">
                                                             <h1 class="ml-6">Tenant News</h1>
                                                         </div>
                                                     </a>
@@ -208,7 +208,7 @@
 
                                     <!-- Master Data (mobile) -->
                                     <li x-data="{ open: false }">
-                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-normal"
+                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-selected"
                                             @click="open = !open">
                                             <div class="space-x-3 flex">
                                                 <i class="fa-regular fa-database my-auto"></i>
@@ -222,7 +222,7 @@
                                                 <!-- Items -->
                                                 <li>
                                                     <a href="./masterData-items.html" class="">
-                                                        <div class="cs-nav-normal py-2">
+                                                        <div class="cs-nav-selected py-2">
                                                             <h1 class="ml-6">Items</h1>
                                                         </div>
                                                     </a>
@@ -459,7 +459,7 @@
 
                         <!-- News (desktop) -->
                         <li class="relative">
-                            <a class="flex cs-nav-selected py-4" data-te-sidenav-link-ref>
+                            <a class="flex cs-nav-normal py-4" data-te-sidenav-link-ref>
                                 <span>
                                     <i class="fa-regular fa-newspaper"></i>
                                 </span>
@@ -487,7 +487,7 @@
 
                                 <!-- tenant News -->
                                 <li class="relative ">
-                                    <a href="./news-tenantNews.html" class="flex py-2 cs-nav-selected"
+                                    <a href="./news-tenantNews.html" class="flex py-2 cs-nav-normal"
                                         data-te-sidenav-link-ref>
                                         <h1 class="ml-6 "> Tenant News</h1>
                                     </a>
@@ -578,7 +578,7 @@
 
                         <!-- Master Data (desktop) -->
                         <li class="relative">
-                            <a class="flex cs-nav-normal py-4" data-te-sidenav-link-ref>
+                            <a class="flex cs-nav-selected py-4" data-te-sidenav-link-ref>
                                 <span>
                                     <i class="fa-regular fa-database"></i>
                                 </span>
@@ -596,7 +596,7 @@
 
                                 <!-- Items -->
                                 <li class="relative ">
-                                    <a href="./masterData-items.html" class="flex py-2 cs-nav-normal"
+                                    <a href="./masterData-items.html" class="flex py-2 cs-nav-selected"
                                         data-te-sidenav-link-ref>
                                         <h1 class="pl-6 whitespace-normal"> Items
                                         </h1>
@@ -778,19 +778,11 @@
                                     </a>
                                 </li>
                                 <!-- end User Tenant -->
-
-
-
                             </ul>
                         </li>
                         <!-- end Settings (desktop) -->
                     </ul>
-
-
-
-
                 </div>
-
             </div>
         </section>
         <!-- ===== end section button (left on desktop) ==== -->
@@ -801,13 +793,23 @@
         <section class="w-full h-screen pt-16 overflow-y-auto">
             <div class="w-full h-full px-4 py-6 bg-slate-50">
 
-                <div class="pb-4 space-y-5">
+                <!-- FAB -->
+                <a href="./masterData-items-create.html"
+                    class="absolute md:right-8 right-4 md:bottom-8 bottom-4  z-10 drop-shadow-lg">
+                    <div
+                        class="rounded-full bg-cs-primary py-4 hover:bg-cs-primary-hover px-5 transition-all text-white">
+                        <i class="fa-regular fa-plus"></i>
+                    </div>
+                </a>
+                <!-- end FAB -->
+
+                <div class="pb-20 space-y-5">
                     <!-- ===== section breadcrumb ==== -->
                     <nav class="w-full rounded-md" aria-label="">
                         <ol class="flex space-x-2 list-reset">
-                            <li class="my-auto cs-font-overline text-cs-gray">News</li>
+                            <li class="my-auto cs-font-overline text-cs-gray">Master Data</li>
                             <i class="text-xs fa-regular fa-slash-forward text-cs-gray"></i>
-                            <li class="my-auto cs-font-overline text-cs-primary">Tenant News</li>
+                            <li class="my-auto cs-font-overline text-cs-primary">Items</li>
                         </ol>
                     </nav>
                     <!-- ===== end section breadcrumb ==== -->
@@ -827,475 +829,548 @@
 
 
                     <!-- ========= Table ========= -->
-                    <div x-data="{ tab: 'actived' }" class="relative bg-white border pb-2 rounded">
-                        <!-- nav -->
-                        <nav aria-label="" class="p-2 py-4 rounded-t cs-font-buttonNormal">
-
-                            <a class="px-3 py-2 text-sm border text-cs-gray cs-font-buttonNormal rounded-md transition-all"
-                                :class="{ 'cs-font-buttonNormal text-cs-primary rounded-md bg-cs-primary-soft transition-all': tab === 'actived' }"
-                                x-on:click.prevent="tab = 'actived'" href="#">Actived</a>
-
-                            <a class="px-3 py-2 text-sm border text-cs-gray rounded-md cs-font-buttonNormal transition-all"
-                                :class="{ ' text-cs-primary cs-font-buttonNormal rounded-md bg-cs-primary-soft transition-all': tab === 'removed' }"
-                                x-on:click.prevent="tab = 'removed'" href="#">Removed</a>
-                        </nav>
-                        <!-- end  tab -->
+                    <div class="relative bg-white pb-2 rounded">
                         <section>
                             <!-- Actived Tab -->
-                            <div x-show="tab === 'actived'" class="relative px-2">
+                            <div class="relative">
                                 <div class="h-full">
                                     <div class=" overflow-x-auto rounded-md border border-gray-200 ">
                                         <table class="w-full" aria-label="">
                                             <th></th>
                                             <thead class="border-b-2 border-gray-200 bg-gray-50">
                                                 <tr>
-                                                    <td class="p-3 w-36 text-left font-title text-sm tracking-wide">
-                                                        Photo
+                                                    <td class="p-3  w-10 text-left font-title text-sm tracking-wide">
+                                                        Property
                                                     </td>
-                                                    <td class="p-3 w-36 text-left font-title text-sm tracking-wide">
-                                                        Title
+                                                    <td
+                                                        class="w-20 p-3 whitespace-nowrap text-left font-title text-sm tracking-wide">
+                                                        Primary ID
                                                     </td>
-                                                    <td class="p-3 w-20 text-left font-title text-sm tracking-wide">
-                                                        Description
+                                                    <td class="w-10 p-3 text-left font-title text-sm tracking-wide">
+                                                        Item ID
                                                     </td>
-                                                    <td class="p-3 text-left font-title text-sm tracking-wide">Property
+                                                    <td
+                                                        class="w-12 p-3 text-left whitespace-nowrap font-title text-sm tracking-wide">
+                                                        Items Name
                                                     </td>
-                                                    <td class="w-32 p-3 text-left font-title text-sm tracking-wide">
-                                                        Start
-                                                        Time
+                                                    <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
+                                                        Category
                                                     </td>
-                                                    <td class="w-24 p-3 text-left font-title text-sm tracking-wide">End
-                                                        Time
+                                                    <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
+                                                        Qty
+                                                    </td>
+                                                    <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
+                                                        Location
+                                                    </td>
+                                                    <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
+                                                        Condition
+                                                    </td>
+                                                    <td
+                                                        class="w-12 p-3 text-left font-title whitespace-nowrap text-sm tracking-wide">
+                                                        Last Update
+                                                    </td>
+                                                    <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
+                                                        Action
                                                     </td>
                                                 </tr>
                                             </thead>
                                             <tbody class="divide-y divide-gray-100">
                                                 <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
                                                     <!-- Property -->
                                                     <td class="whitespace-nowrap p-3 text-sm text-gray-700">
                                                         <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">Beachwalk
+                                                            Bali</span>
                                                     </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                                    <!-- Primary ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
+                                                    <!-- Item ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
+                                                    <!-- Items Name -->
+                                                    <td
+                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
+                                                        AC - PSKL</td>
+                                                    <!-- Category -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Genset</td>
+                                                    <!-- Qty -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        3</td>
+                                                    <!-- Location -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        B2</td>
+                                                    <!-- Condition -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Baik</td>
+                                                    <!-- Last Update -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
+                                                        10 May 2023</td>
+                                                    <!-- action -->
+                                                    <td>
+                                                        <div class="flex">
+                                                            <a href="#detail"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-eye"></i>
+                                                            </a>
+                                                            <a href="#Delete"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-trash"></i>
+                                                            </a>
+                                                            <a href="#edit"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-edit"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr class="bg-gray-50">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
                                                     <!-- Property -->
                                                     <td class="whitespace-nowrap p-3 text-sm text-gray-700">
                                                         <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">FX
+                                                            Sudirman</span>
                                                     </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                                    <!-- Primary ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
+                                                    <!-- Item ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
+                                                    <!-- Items Name -->
+                                                    <td
+                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
+                                                        AC - PSKL</td>
+                                                    <!-- Category -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Genset</td>
+                                                    <!-- Qty -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        3</td>
+                                                    <!-- Location -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        B2</td>
+                                                    <!-- Condition -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Baik</td>
+                                                    <!-- Last Update -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
+                                                        10 May 2023</td>
+                                                    <!-- action -->
+                                                    <td>
+                                                        <div class="flex">
+                                                            <a href="#detail"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-eye"></i>
+                                                            </a>
+                                                            <a href="#Delete"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-trash"></i>
+                                                            </a>
+                                                            <a href="#edit"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-edit"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
                                                     <!-- Property -->
                                                     <td class="whitespace-nowrap p-3 text-sm text-gray-700">
                                                         <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">Beachwalk
+                                                            Bali</span>
                                                     </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                                    <!-- Primary ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
+                                                    <!-- Item ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
+                                                    <!-- Items Name -->
+                                                    <td
+                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
+                                                        AC - PSKL</td>
+                                                    <!-- Category -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Genset</td>
+                                                    <!-- Qty -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        3</td>
+                                                    <!-- Location -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        B2</td>
+                                                    <!-- Condition -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Baik</td>
+                                                    <!-- Last Update -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
+                                                        10 May 2023</td>
+                                                    <!-- action -->
+                                                    <td>
+                                                        <div class="flex">
+                                                            <a href="#detail"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-eye"></i>
+                                                            </a>
+                                                            <a href="#Delete"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-trash"></i>
+                                                            </a>
+                                                            <a href="#edit"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-edit"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr class="bg-gray-50">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
                                                     <!-- Property -->
                                                     <td class="whitespace-nowrap p-3 text-sm text-gray-700">
                                                         <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">FX
+                                                            Sudirman</span>
                                                     </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                                    <!-- Primary ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
+                                                    <!-- Item ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
+                                                    <!-- Items Name -->
+                                                    <td
+                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
+                                                        AC - PSKL</td>
+                                                    <!-- Category -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Genset</td>
+                                                    <!-- Qty -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        3</td>
+                                                    <!-- Location -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        B2</td>
+                                                    <!-- Condition -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Baik</td>
+                                                    <!-- Last Update -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
+                                                        10 May 2023</td>
+                                                    <!-- action -->
+                                                    <td>
+                                                        <div class="flex">
+                                                            <a href="#detail"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-eye"></i>
+                                                            </a>
+                                                            <a href="#Delete"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-trash"></i>
+                                                            </a>
+                                                            <a href="#edit"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-edit"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
                                                     <!-- Property -->
                                                     <td class="whitespace-nowrap p-3 text-sm text-gray-700">
                                                         <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">Beachwalk
+                                                            Bali</span>
                                                     </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                                    <!-- Primary ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
+                                                    <!-- Item ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
+                                                    <!-- Items Name -->
+                                                    <td
+                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
+                                                        AC - PSKL</td>
+                                                    <!-- Category -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Genset</td>
+                                                    <!-- Qty -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        3</td>
+                                                    <!-- Location -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        B2</td>
+                                                    <!-- Condition -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Baik</td>
+                                                    <!-- Last Update -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
+                                                        10 May 2023</td>
+                                                    <!-- action -->
+                                                    <td>
+                                                        <div class="flex">
+                                                            <a href="#detail"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-eye"></i>
+                                                            </a>
+                                                            <a href="#Delete"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-trash"></i>
+                                                            </a>
+                                                            <a href="#edit"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-edit"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr class="bg-gray-50">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
                                                     <!-- Property -->
                                                     <td class="whitespace-nowrap p-3 text-sm text-gray-700">
                                                         <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">FX
+                                                            Sudirman</span>
                                                     </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                                    <!-- Primary ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
+                                                    <!-- Item ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
+                                                    <!-- Items Name -->
+                                                    <td
+                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
+                                                        AC - PSKL</td>
+                                                    <!-- Category -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Genset</td>
+                                                    <!-- Qty -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        3</td>
+                                                    <!-- Location -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        B2</td>
+                                                    <!-- Condition -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Baik</td>
+                                                    <!-- Last Update -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
+                                                        10 May 2023</td>
+                                                    <!-- action -->
+                                                    <td>
+                                                        <div class="flex">
+                                                            <a href="#detail"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-eye"></i>
+                                                            </a>
+                                                            <a href="#Delete"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-trash"></i>
+                                                            </a>
+                                                            <a href="#edit"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-edit"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg Kring
-                                                        new
-                                                        fit
-                                                        office
-                                                        chair, mesh + PU Black fkhjgskdjfg</td>
                                                     <!-- Property -->
                                                     <td class="whitespace-nowrap p-3 text-sm text-gray-700">
                                                         <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
+                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">Beachwalk
+                                                            Bali</span>
                                                     </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
+                                                    <!-- Primary ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
+                                                    <!-- Item ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
+                                                    <!-- Items Name -->
+                                                    <td
+                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
+                                                        AC - PSKL</td>
+                                                    <!-- Category -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Genset</td>
+                                                    <!-- Qty -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        3</td>
+                                                    <!-- Location -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        B2</td>
+                                                    <!-- Condition -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Baik</td>
+                                                    <!-- Last Update -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
+                                                        10 May 2023</td>
+                                                    <!-- action -->
+                                                    <td>
+                                                        <div class="flex">
+                                                            <a href="#detail"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-eye"></i>
+                                                            </a>
+                                                            <a href="#Delete"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-trash"></i>
+                                                            </a>
+                                                            <a href="#edit"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-edit"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
                                                 </tr>
+
+                                                <tr class="bg-gray-50">
+                                                    <!-- Property -->
+                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                        <span
+                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">FX
+                                                            Sudirman</span>
+                                                    </td>
+                                                    <!-- Primary ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
+                                                    <!-- Item ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
+                                                    <!-- Items Name -->
+                                                    <td
+                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
+                                                        AC - PSKL</td>
+                                                    <!-- Category -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Genset</td>
+                                                    <!-- Qty -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        3</td>
+                                                    <!-- Location -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        B2</td>
+                                                    <!-- Condition -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Baik</td>
+                                                    <!-- Last Update -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
+                                                        10 May 2023</td>
+                                                    <!-- action -->
+                                                    <td>
+                                                        <div class="flex">
+                                                            <a href="#detail"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-eye"></i>
+                                                            </a>
+                                                            <a href="#Delete"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-trash"></i>
+                                                            </a>
+                                                            <a href="#edit"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-edit"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr class="bg-white">
+                                                    <!-- Property -->
+                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                        <span
+                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">Beachwalk
+                                                            Bali</span>
+                                                    </td>
+                                                    <!-- Primary ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
+                                                    <!-- Item ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
+                                                    <!-- Items Name -->
+                                                    <td
+                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
+                                                        AC - PSKL</td>
+                                                    <!-- Category -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Genset</td>
+                                                    <!-- Qty -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        3</td>
+                                                    <!-- Location -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        B2</td>
+                                                    <!-- Condition -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Baik</td>
+                                                    <!-- Last Update -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
+                                                        10 May 2023</td>
+                                                    <!-- action -->
+                                                    <td>
+                                                        <div class="flex">
+                                                            <a href="#detail"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-eye"></i>
+                                                            </a>
+                                                            <a href="#Delete"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-trash"></i>
+                                                            </a>
+                                                            <a href="#edit"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-edit"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr class="bg-gray-50">
+                                                    <!-- Property -->
+                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                        <span
+                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">FX
+                                                            Sudirman</span>
+                                                    </td>
+                                                    <!-- Primary ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
+                                                    <!-- Item ID -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
+                                                    <!-- Items Name -->
+                                                    <td
+                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
+                                                        AC - PSKL</td>
+                                                    <!-- Category -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Genset</td>
+                                                    <!-- Qty -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        3</td>
+                                                    <!-- Location -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        B2</td>
+                                                    <!-- Condition -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                        Baik</td>
+                                                    <!-- Last Update -->
+                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
+                                                        10 May 2023</td>
+                                                    <!-- action -->
+                                                    <td>
+                                                        <div class="flex">
+                                                            <a href="#detail"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-eye"></i>
+                                                            </a>
+                                                            <a href="#Delete"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-trash"></i>
+                                                            </a>
+                                                            <a href="#edit"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-edit"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
                             <!-- end Actived Tab -->
-
-                            <!-- Removed Tab -->
-                            <div x-show="tab === 'removed'" class="relative px-2">
-                                <div class="h-full">
-                                    <div class=" overflow-x-auto rounded-md border border-gray-200 ">
-                                        <table class="w-full" aria-label="">
-                                            <th></th>
-                                            <thead class="border-b-2 border-gray-200 bg-gray-50">
-                                                <tr>
-                                                    <td class="p-3 w-36 text-left font-title text-sm tracking-wide">
-                                                        Photo
-                                                    </td>
-                                                    <td class="p-3 w-36 text-left font-title text-sm tracking-wide">
-                                                        Title
-                                                    </td>
-                                                    <td class="p-3 w-20 text-left font-title text-sm tracking-wide">
-                                                        Description
-                                                    </td>
-                                                    <td class="p-3 text-left font-title text-sm tracking-wide">Property
-                                                    </td>
-                                                    <td class="w-32 p-3 text-left font-title text-sm tracking-wide">
-                                                        Start
-                                                        Time
-                                                    </td>
-                                                    <td class="w-24 p-3 text-left font-title text-sm tracking-wide">End
-                                                        Time
-                                                    </td>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="divide-y divide-gray-100">
-                                                <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        papepo Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
-
-                                                <tr class="bg-gray-50">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
-
-                                                <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
-
-                                                <tr class="bg-gray-50">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
-
-                                                <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
-
-                                                <tr class="bg-gray-50">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
-
-                                                <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg Kring
-                                                        new
-                                                        fit
-                                                        office
-                                                        chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end Removed Tab -->
                         </section>
 
                         <!-- pagenation -->
@@ -1326,6 +1401,7 @@
                             </div>
                         </section>
                         <!-- end pagenation -->
+
                     </div>
                     <!-- ========= end Table ========= -->
                 </div>
