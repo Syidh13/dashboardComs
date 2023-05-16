@@ -440,7 +440,7 @@
 
         <!-- ===== section button (left on desktop) ==== -->
         <section
-            class="flex-col flex-shrink-0 hidden h-screen pt-20 overflow-y-auto text-gray-700 bg-white border-r md:w-64 md:block  scrollbar-hide">
+            class="flex-col flex-shrink-0 hidden h-screen pt-20 z-50 overflow-y-auto text-gray-700 bg-white border-r md:w-64 md:block  scrollbar-hide">
             <div class="flex flex-col items-center justify-between flex-shrink-0 bg-white">
 
                 <div class="" id="sidenav-1" data-te-sidenav-init data-te-sidenav-position="absolute">
@@ -790,18 +790,8 @@
 
 
         <!--* ===== section main display (right on desktop & center mobile) ==== -->
-        <section class="w-full h-screen pt-16 overflow-y-auto">
-            <div class="w-full h-full px-4 py-6 bg-slate-50">
-
-                <!-- FAB -->
-                <a href="#FAB" class="absolute md:right-8 right-4 md:bottom-8 bottom-4  z-10 drop-shadow-lg">
-                    <div
-                        class="rounded-full bg-cs-primary py-4 hover:bg-cs-primary-hover px-5 transition-all text-white">
-                        <i class="fa-regular fa-plus"></i>
-                    </div>
-                </a>
-                <!-- end FAB -->
-
+        <section class="w-full h-screen bg-slate-50 pt-16 overflow-y-auto">
+            <div class=" px-4 py-6">
                 <div class="pb-20 space-y-5">
                     <!-- ===== section breadcrumb ==== -->
                     <nav class="w-full rounded-md" aria-label="">
@@ -825,601 +815,526 @@
                     </a>
                     <!-- ===== end section back icon (desktop) ==== -->
 
-                    <!-- section search & donwload -->
-                    <section class="flex justify-between p-2 space-x-2 bg-white border rounded">
-                        <div class="w-full ">
-                            <input type="search" name="" id="" placeholder="Search.."
-                                class="w-full p-2 cs-font-body rounded bg-slate-50">
+
+
+                    <!-- ===== section General Information ==== -->
+                    <div class="border bg-white p-4 rounded-md relative" x-data="{ open: true }">
+                        <!-- header -->
+                        <div class="flex justify-between">
+                            <h1 class="cs-font-title text-cs-primary my-auto">General Information</h1>
+                            <button
+                                class="py-1 text-cs-primary px-3 rounded-full bg-cs-primary-soft hover:text-white hover:bg-cs-primary transition-all"
+                                @click="open = !open">
+                                <i class="fa-solid fa-caret-down"></i>
+                            </button>
                         </div>
-                        <button class="flex px-4 py-2 my-auto space-x-2 bg-cs-primary rounded">
-                            <i class="text-white fa-regular fa-download"></i>
-                            <h1 class="hidden my-auto text-white cs-font-buttonNormal md:block">Download</h1>
-                        </button>
-                    </section>
-                    <!-- end section search & donwload -->
+                        <!-- end header -->
+                        <!-- Main information -->
+                        <div x-show="open">
+                            <button
+                                class="py-1 top-4 absolute right-4 text-cs-primary px-3 rounded-full bg-cs-primary-soft hover:text-white hover:bg-cs-primary transition-all"
+                                @click="open = !open">
+                                <i class="fa-solid fa-caret-down rotate-180"></i>
+                            </button>
+                            <!-- information -->
+                            <div class="md:py-4 py-2">
+                                <div
+                                    class="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-1 md:gap-6 space-y-3 md:space-y-0">
 
+                                    <div class="col-span-4">
+                                        <div class="grid md:grid-cols-2 grid-cols-1 gap-3">
+                                            <!-- property Name -->
+                                            <div class="md:col-span-1">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Property Name</h1>
+                                                    <input type="text" name="" id=""
+                                                        class="w-full bg-slate-50 rounded-md p-2 cs-font-body">
+                                                </div>
+                                            </div>
+                                            <!-- end property Name -->
 
-                    <!-- ========= Table ========= -->
-                    <div class="relative bg-white pb-2 rounded">
-                        <section>
-                            <!-- Actived Tab -->
-                            <div class="relative">
-                                <div class="h-full">
-                                    <div class=" overflow-x-auto rounded-md border border-gray-200 ">
-                                        <table class="w-full" aria-label="">
-                                            <th></th>
-                                            <thead class="border-b-2 border-gray-200 bg-gray-50">
-                                                <tr>
-                                                    <td class="p-3  w-10 text-left font-title text-sm tracking-wide">
-                                                        Property
-                                                    </td>
-                                                    <td
-                                                        class="w-20 p-3 whitespace-nowrap text-left font-title text-sm tracking-wide">
-                                                        Primary ID
-                                                    </td>
-                                                    <td class="w-10 p-3 text-left font-title text-sm tracking-wide">
-                                                        Item ID
-                                                    </td>
-                                                    <td
-                                                        class="w-12 p-3 text-left whitespace-nowrap font-title text-sm tracking-wide">
-                                                        Items Name
-                                                    </td>
-                                                    <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
-                                                        Category
-                                                    </td>
-                                                    <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
-                                                        Qty
-                                                    </td>
-                                                    <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
-                                                        Location
-                                                    </td>
-                                                    <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
-                                                        Condition
-                                                    </td>
-                                                    <td
-                                                        class="w-12 p-3 text-left font-title whitespace-nowrap text-sm tracking-wide">
-                                                        Last Update
-                                                    </td>
-                                                    <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
-                                                        Action
-                                                    </td>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="divide-y divide-gray-100">
-                                                <tr class="bg-white">
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">Beachwalk
-                                                            Bali</span>
-                                                    </td>
-                                                    <!-- Primary ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
-                                                    <!-- Item ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
-                                                    <!-- Items Name -->
-                                                    <td
-                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                        AC - PSKL</td>
-                                                    <!-- Category -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Genset</td>
-                                                    <!-- Qty -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        3</td>
-                                                    <!-- Location -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        B2</td>
-                                                    <!-- Condition -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Baik</td>
-                                                    <!-- Last Update -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
-                                                        10 May 2023</td>
-                                                    <!-- action -->
-                                                    <td>
-                                                        <div class="flex">
-                                                            <a href="#detail"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-eye"></i>
-                                                            </a>
-                                                            <a href="#Delete"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-trash"></i>
-                                                            </a>
-                                                            <a href="#edit"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-edit"></i>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                            <!-- Asset/Non Asset -->
+                                            <div class="md:col-span-1 relative z-[3]" x-data="{ open: false }">
+                                                <button class="space-y-2 w-full" @click="open = !open">
+                                                    <h1 class="cs-font-caption text-cs-gray text-left">Asset/Non Asset
+                                                    </h1>
+                                                    <div
+                                                        class="w-full bg-white flex justify-between text-cs-black border rounded-md p-2 cs-font-body">
+                                                        <h1>Asset</h1>
+                                                        <i class="fa-solid fa-caret-down my-auto text-cs-gray"></i>
+                                                    </div>
+                                                    <div class="border rounded-md bg-white w-full absolute divide-y drop-shadow-md"
+                                                        x-show="open" x-transition>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            Asset</div>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            Non Asset</div>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                            <!-- end Asset/Non Asset -->
 
-                                                <tr class="bg-gray-50">
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">FX
-                                                            Sudirman</span>
-                                                    </td>
-                                                    <!-- Primary ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
-                                                    <!-- Item ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
-                                                    <!-- Items Name -->
-                                                    <td
-                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                        AC - PSKL</td>
-                                                    <!-- Category -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Genset</td>
-                                                    <!-- Qty -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        3</td>
-                                                    <!-- Location -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        B2</td>
-                                                    <!-- Condition -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Baik</td>
-                                                    <!-- Last Update -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
-                                                        10 May 2023</td>
-                                                    <!-- action -->
-                                                    <td>
-                                                        <div class="flex">
-                                                            <a href="#detail"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-eye"></i>
-                                                            </a>
-                                                            <a href="#Delete"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-trash"></i>
-                                                            </a>
-                                                            <a href="#edit"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-edit"></i>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                            <!-- Item Name -->
+                                            <div class="md:col-span-1">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Item Name</h1>
+                                                    <input type="text" name="" id=""
+                                                        class="w-full bg-slate-50 rounded-sm p-2 cs-font-body">
+                                                </div>
+                                            </div>
+                                            <!-- end Item Name -->
 
-                                                <tr class="bg-white">
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">Beachwalk
-                                                            Bali</span>
-                                                    </td>
-                                                    <!-- Primary ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
-                                                    <!-- Item ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
-                                                    <!-- Items Name -->
-                                                    <td
-                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                        AC - PSKL</td>
-                                                    <!-- Category -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Genset</td>
-                                                    <!-- Qty -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        3</td>
-                                                    <!-- Location -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        B2</td>
-                                                    <!-- Condition -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Baik</td>
-                                                    <!-- Last Update -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
-                                                        10 May 2023</td>
-                                                    <!-- action -->
-                                                    <td>
-                                                        <div class="flex">
-                                                            <a href="#detail"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-eye"></i>
-                                                            </a>
-                                                            <a href="#Delete"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-trash"></i>
-                                                            </a>
-                                                            <a href="#edit"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-edit"></i>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                            <!-- Item Category -->
+                                            <div class="md:col-span-1 relative z-[2]" x-data="{ open: false }">
+                                                <button class="space-y-2 w-full" @click="open = !open">
+                                                    <h1 class="cs-font-caption text-cs-gray text-left">Item Category
+                                                    </h1>
+                                                    <div
+                                                        class="w-full bg-white flex justify-between text-cs-black border rounded-md p-2 cs-font-body">
+                                                        <h1>Asset</h1>
+                                                        <i class="fa-solid fa-caret-down my-auto text-cs-gray"></i>
+                                                    </div>
+                                                    <div class="border rounded-md bg-white w-full absolute divide-y drop-shadow-md"
+                                                        x-show="open" x-transition>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            Asset</div>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            Non Asset</div>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                            <!-- end Item Category -->
 
-                                                <tr class="bg-gray-50">
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">FX
-                                                            Sudirman</span>
-                                                    </td>
-                                                    <!-- Primary ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
-                                                    <!-- Item ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
-                                                    <!-- Items Name -->
-                                                    <td
-                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                        AC - PSKL</td>
-                                                    <!-- Category -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Genset</td>
-                                                    <!-- Qty -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        3</td>
-                                                    <!-- Location -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        B2</td>
-                                                    <!-- Condition -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Baik</td>
-                                                    <!-- Last Update -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
-                                                        10 May 2023</td>
-                                                    <!-- action -->
-                                                    <td>
-                                                        <div class="flex">
-                                                            <a href="#detail"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-eye"></i>
-                                                            </a>
-                                                            <a href="#Delete"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-trash"></i>
-                                                            </a>
-                                                            <a href="#edit"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-edit"></i>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                            <!-- Primary ID -->
+                                            <div class="md:col-span-1">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Primary ID</h1>
+                                                    <input type="text" name="" id=""
+                                                        class="w-full bg-slate-50 rounded-sm p-2 cs-font-body">
+                                                </div>
+                                            </div>
+                                            <!-- end Primary ID -->
 
-                                                <tr class="bg-white">
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">Beachwalk
-                                                            Bali</span>
-                                                    </td>
-                                                    <!-- Primary ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
-                                                    <!-- Item ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
-                                                    <!-- Items Name -->
-                                                    <td
-                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                        AC - PSKL</td>
-                                                    <!-- Category -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Genset</td>
-                                                    <!-- Qty -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        3</td>
-                                                    <!-- Location -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        B2</td>
-                                                    <!-- Condition -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Baik</td>
-                                                    <!-- Last Update -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
-                                                        10 May 2023</td>
-                                                    <!-- action -->
-                                                    <td>
-                                                        <div class="flex">
-                                                            <a href="#detail"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-eye"></i>
-                                                            </a>
-                                                            <a href="#Delete"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-trash"></i>
-                                                            </a>
-                                                            <a href="#edit"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-edit"></i>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                            <!-- Type -->
+                                            <div class="md:col-span-1">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Type</h1>
+                                                    <input type="text" name="" id=""
+                                                        class="w-full bg-slate-50 rounded-sm p-2 cs-font-body">
+                                                </div>
+                                            </div>
+                                            <!-- end Type -->
 
-                                                <tr class="bg-gray-50">
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">FX
-                                                            Sudirman</span>
-                                                    </td>
-                                                    <!-- Primary ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
-                                                    <!-- Item ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
-                                                    <!-- Items Name -->
-                                                    <td
-                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                        AC - PSKL</td>
-                                                    <!-- Category -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Genset</td>
-                                                    <!-- Qty -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        3</td>
-                                                    <!-- Location -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        B2</td>
-                                                    <!-- Condition -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Baik</td>
-                                                    <!-- Last Update -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
-                                                        10 May 2023</td>
-                                                    <!-- action -->
-                                                    <td>
-                                                        <div class="flex">
-                                                            <a href="#detail"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-eye"></i>
-                                                            </a>
-                                                            <a href="#Delete"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-trash"></i>
-                                                            </a>
-                                                            <a href="#edit"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-edit"></i>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                            <!-- Quantity -->
+                                            <div class="md:col-span-1">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Quantity</h1>
+                                                    <input type="number" name="" id="" min="1"
+                                                        class="w-full bg-slate-50 rounded-sm p-2 cs-font-body">
+                                                </div>
+                                            </div>
+                                            <!-- end Quantity -->
 
-                                                <tr class="bg-white">
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">Beachwalk
-                                                            Bali</span>
-                                                    </td>
-                                                    <!-- Primary ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
-                                                    <!-- Item ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
-                                                    <!-- Items Name -->
-                                                    <td
-                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                        AC - PSKL</td>
-                                                    <!-- Category -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Genset</td>
-                                                    <!-- Qty -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        3</td>
-                                                    <!-- Location -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        B2</td>
-                                                    <!-- Condition -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Baik</td>
-                                                    <!-- Last Update -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
-                                                        10 May 2023</td>
-                                                    <!-- action -->
-                                                    <td>
-                                                        <div class="flex">
-                                                            <a href="#detail"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-eye"></i>
-                                                            </a>
-                                                            <a href="#Delete"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-trash"></i>
-                                                            </a>
-                                                            <a href="#edit"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-edit"></i>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr class="bg-gray-50">
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">FX
-                                                            Sudirman</span>
-                                                    </td>
-                                                    <!-- Primary ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
-                                                    <!-- Item ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
-                                                    <!-- Items Name -->
-                                                    <td
-                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                        AC - PSKL</td>
-                                                    <!-- Category -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Genset</td>
-                                                    <!-- Qty -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        3</td>
-                                                    <!-- Location -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        B2</td>
-                                                    <!-- Condition -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Baik</td>
-                                                    <!-- Last Update -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
-                                                        10 May 2023</td>
-                                                    <!-- action -->
-                                                    <td>
-                                                        <div class="flex">
-                                                            <a href="#detail"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-eye"></i>
-                                                            </a>
-                                                            <a href="#Delete"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-trash"></i>
-                                                            </a>
-                                                            <a href="#edit"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-edit"></i>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr class="bg-white">
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">Beachwalk
-                                                            Bali</span>
-                                                    </td>
-                                                    <!-- Primary ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
-                                                    <!-- Item ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
-                                                    <!-- Items Name -->
-                                                    <td
-                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                        AC - PSKL</td>
-                                                    <!-- Category -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Genset</td>
-                                                    <!-- Qty -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        3</td>
-                                                    <!-- Location -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        B2</td>
-                                                    <!-- Condition -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Baik</td>
-                                                    <!-- Last Update -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
-                                                        10 May 2023</td>
-                                                    <!-- action -->
-                                                    <td>
-                                                        <div class="flex">
-                                                            <a href="#detail"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-eye"></i>
-                                                            </a>
-                                                            <a href="#Delete"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-trash"></i>
-                                                            </a>
-                                                            <a href="#edit"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-edit"></i>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr class="bg-gray-50">
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">FX
-                                                            Sudirman</span>
-                                                    </td>
-                                                    <!-- Primary ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body"> Id-001PSKL</td>
-                                                    <!-- Item ID -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">832jwd</td>
-                                                    <!-- Items Name -->
-                                                    <td
-                                                        class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                        AC - PSKL</td>
-                                                    <!-- Category -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Genset</td>
-                                                    <!-- Qty -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        3</td>
-                                                    <!-- Location -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        B2</td>
-                                                    <!-- Condition -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                        Baik</td>
-                                                    <!-- Last Update -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body text-cs-primary">
-                                                        10 May 2023</td>
-                                                    <!-- action -->
-                                                    <td>
-                                                        <div class="flex">
-                                                            <a href="#detail"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-eye"></i>
-                                                            </a>
-                                                            <a href="#Delete"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-trash"></i>
-                                                            </a>
-                                                            <a href="#edit"
-                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                                <i class="fa-regular fa-edit"></i>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
+                                            <!-- Item Conditions -->
+                                            <div class="md:col-span-1 relative z-[1]" x-data="{ open: false }">
+                                                <button class="space-y-2 w-full" @click="open = !open">
+                                                    <h1 class="cs-font-caption text-cs-gray text-left">Item Conditions
+                                                    </h1>
+                                                    <div
+                                                        class="w-full bg-white flex justify-between text-cs-black border rounded-md p-2 cs-font-body">
+                                                        <h1>Baik</h1>
+                                                        <i class="fa-solid fa-caret-down my-auto text-cs-gray"></i>
+                                                    </div>
+                                                    <div class="border rounded-md bg-white w-full absolute divide-y drop-shadow-md"
+                                                        x-show="open" x-transition>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            Baik</div>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            Baik Sekali</div>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            Rusak</div>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            Rusak Sekali</div>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                            <!-- end Item Conditions -->
+                                        </div>
                                     </div>
+
+                                    <!-- Upload Image -->
+                                    <div class="col-span-1 md:pt-6">
+                                        <div class="flex items-center justify-center w-full">
+                                            <label for="dropzone-file"
+                                                class="flex flex-col items-center justify-center w-full aspect-square border-2 border-slate-300 border-dashed rounded-lg cursor-pointer bg-slate-100">
+                                                <div class="flex flex-col space-y-2 items-center justify-center px-4">
+                                                    <i class="fa-regular fa-cloud-arrow-up text-2xl text-slate-600"></i>
+                                                    <p class="font-body text-sm text-center text-slate-600"><span
+                                                            class="font-semibold">Click to
+                                                            upload</span> or drag and
+                                                        drop</p>
+                                                    <p class="font-body text-xs text-center text-slate-400">JPG or PNG
+                                                        (MAX. 700x700px / 500kb)</p>
+                                                </div>
+                                                <input id="dropzone-file" type="file" class="hidden" />
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- end Upload Image -->
+
                                 </div>
                             </div>
-                            <!-- end Actived Tab -->
-                        </section>
-
-                        <!-- pagenation -->
-                        <section class="p-2">
-                            <div class="flex justify-between">
-                                <!-- number of page -->
-                                <button
-                                    class="border py-2 px-4 hover:bg-cs-primary-soft text-cs-black flex hover:border-primary hover:text-cs-primary space-x-2">
-                                    <h1 class="cs-font-caption">10 / Page</h1>
-                                    <i class="fa-solid fa-caret-down my-auto"></i>
-                                </button>
-                                <!-- end number of page -->
-
-                                <!-- chevron -->
-                                <div class="space-x-2 flex">
-                                    <h1 class="my-auto cs-font-caption text-cs-gray">1/10 of 230 items</h1>
-                                    <button
-                                        class="hover:bg-cs-primary-soft text-cs-black hover:border-primary transition-all hover:text-cs-primary rounded-full">
-                                        <i class="fa-regular fa-chevron-left text-xs py-3 px-4"></i>
-                                    </button>
-
-                                    <button
-                                        class="hover:bg-cs-primary-soft text-cs-black hover:border-primary transition-all hover:text-cs-primary rounded-full">
-                                        <i class="fa-regular fa-chevron-right text-xs py-3 px-4"></i>
-                                    </button>
-                                </div>
-                                <!-- end chevron -->
-                            </div>
-                        </section>
-                        <!-- end pagenation -->
-
+                            <!-- end information -->
+                        </div>
+                        <!-- end Main information -->
                     </div>
-                    <!-- ========= end Table ========= -->
+                    <!-- ===== end section General Information ==== -->
+
+                    <!-- ===== section Location ==== -->
+                    <div class="border bg-white p-4 rounded-md relative" x-data="{ open: true }">
+                        <!-- header -->
+                        <div class="flex justify-between">
+                            <h1 class="cs-font-title text-cs-primary my-auto">Location</h1>
+                            <button
+                                class="py-1 text-cs-primary px-3 rounded-full bg-cs-primary-soft hover:text-white hover:bg-cs-primary transition-all"
+                                @click="open = !open">
+                                <i class="fa-solid fa-caret-down"></i>
+                            </button>
+                        </div>
+                        <!-- end header -->
+                        <!-- Main information -->
+                        <div x-show="open">
+                            <button
+                                class="py-1 top-4 absolute right-4 text-cs-primary px-3 rounded-full bg-cs-primary-soft hover:text-white hover:bg-cs-primary transition-all"
+                                @click="open = !open">
+                                <i class="fa-solid fa-caret-down rotate-180"></i>
+                            </button>
+                            <!-- information -->
+                            <div class="md:py-4 py-2">
+                                <div
+                                    class="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-1 md:gap-6 space-y-3 md:space-y-0">
+
+                                    <div class="col-span-4">
+                                        <div class="grid md:grid-cols-2 grid-cols-1 gap-3">
+                                            <!-- Location - Floor -->
+                                            <div class="md:col-span-1 relative z-[3]" x-data="{ open: false }">
+                                                <button class="space-y-2 w-full" @click="open = !open">
+                                                    <h1 class="cs-font-caption text-cs-gray text-left">Location - Floor
+                                                    </h1>
+                                                    <div
+                                                        class="w-full bg-white flex justify-between text-cs-black border rounded-md p-2 cs-font-body">
+                                                        <h1>Select Floor</h1>
+                                                        <i class="fa-solid fa-caret-down my-auto text-cs-gray"></i>
+                                                    </div>
+                                                    <div class="border rounded-md bg-white w-full absolute divide-y drop-shadow-md"
+                                                        x-show="open" x-transition>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            A1</div>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            A2</div>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            A3</div>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            A4</div>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                            <!-- end Location - Floor -->
+                                        </div>
+                                    </div>
+                                    <div class="col-span-4">
+                                        <div class="grid md:grid-cols-2 grid-cols-1 gap-3">
+
+                                            <!-- Location - Description -->
+                                            <div class="md:col-span-2">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Location - Description
+                                                        <span class="cs-font-caption text-red-500">*</span>
+                                                    </h1>
+                                                    <textarea class="bg-slate-50 cs-font-body w-full p-2 rounded-md"
+                                                        name="Input your description" id="" cols="4"
+                                                        rows="4"></textarea>
+                                                </div>
+                                            </div>
+                                            <!-- end Location - Description -->
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- end information -->
+                        </div>
+                        <!-- end Main information -->
+                    </div>
+                    <!-- ===== end section Location ==== -->
+
+                    <!-- ===== section Item Detail ==== -->
+                    <div class="border bg-white p-4 rounded-md relative" x-data="{ open: true }">
+                        <!-- header -->
+                        <div class="flex justify-between">
+                            <h1 class="cs-font-title text-cs-primary my-auto">Item Detail</h1>
+                            <button
+                                class="py-1 text-cs-primary px-3 rounded-full bg-cs-primary-soft hover:text-white hover:bg-cs-primary transition-all"
+                                @click="open = !open">
+                                <i class="fa-solid fa-caret-down"></i>
+                            </button>
+                        </div>
+                        <!-- end header -->
+                        <!-- Main information -->
+                        <div x-show="open">
+                            <button
+                                class="py-1 top-4 absolute right-4 text-cs-primary px-3 rounded-full bg-cs-primary-soft hover:text-white hover:bg-cs-primary transition-all"
+                                @click="open = !open">
+                                <i class="fa-solid fa-caret-down rotate-180"></i>
+                            </button>
+                            <!-- information -->
+                            <div class="md:py-4 py-2">
+                                <div
+                                    class="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-1 md:gap-6 space-y-3 md:space-y-0">
+
+                                    <div class="col-span-4">
+                                        <div class="grid md:grid-cols-2 grid-cols-1 gap-3">
+                                            <!-- Voltage (Volt) -->
+                                            <div class="md:col-span-1">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Voltage (Volt)</h1>
+                                                    <input type="text" name="" id=""
+                                                        class="w-full bg-slate-50 rounded-md p-2 cs-font-body">
+                                                </div>
+                                            </div>
+                                            <!-- end Voltage (Volt) -->
+
+                                            <!-- Ampere (A) -->
+                                            <div class="md:col-span-1">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Ampere (A)</h1>
+                                                    <input type="text" name="" id=""
+                                                        class="w-full bg-slate-50 rounded-md p-2 cs-font-body">
+                                                </div>
+                                            </div>
+                                            <!-- end Ampere (A) -->
+
+                                            <!-- Tanggal Perolehan -->
+                                            <div class="md:col-span-1">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Tanggal Perolehan</h1>
+                                                    <input type="date" id="PickDate" name="PickDate"
+                                                        class="w-full bg-slate-50 cs-font-body rounded-md p-2 text-cs-black">
+                                                </div>
+                                            </div>
+                                            <!-- end Tanggal Perolehan -->
+
+                                            <!-- Tanggal Pelepasan -->
+                                            <div class="md:col-span-1">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Tanggal Pelepasan</h1>
+                                                    <input type="date" id="OutDate" name="OutDate"
+                                                        class="w-full bg-slate-50 cs-font-body rounded-md p-2 text-cs-black">
+                                                </div>
+                                            </div>
+                                            <!-- end Tanggal Pelepasan -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- end information -->
+                        </div>
+                        <!-- end Main information -->
+                    </div>
+                    <!-- ===== end section Item Detail ==== -->
+
+                    <!-- ===== section Historical Maintance ==== -->
+                    <div class="border bg-white p-4 rounded-md relative" x-data="{ open: true }">
+                        <!-- header -->
+                        <div class="flex justify-between">
+                            <h1 class="cs-font-title text-cs-primary my-auto">Historical Maintance</h1>
+                            <button
+                                class="py-1 text-cs-primary px-3 rounded-full bg-cs-primary-soft hover:text-white hover:bg-cs-primary transition-all"
+                                @click="open = !open">
+                                <i class="fa-solid fa-caret-down"></i>
+                            </button>
+                        </div>
+                        <!-- end header -->
+                        <!-- Main information -->
+                        <div x-show="open">
+                            <button
+                                class="py-1 top-4 absolute right-4 text-cs-primary px-3 rounded-full bg-cs-primary-soft hover:text-white hover:bg-cs-primary transition-all"
+                                @click="open = !open">
+                                <i class="fa-solid fa-caret-down rotate-180"></i>
+                            </button>
+                            <!-- information -->
+                            <div class="md:py-4 py-2">
+                                <div
+                                    class="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-1 md:gap-6 space-y-3 md:space-y-0">
+
+                                    <div class="col-span-4 grid grid-cols-3 gap-3">
+                                        <!-- Select Filter -->
+                                        <div class="md:col-span-1 col-span-3 relative z-[3]" x-data="{ open: false }">
+                                            <button class="space-y-2 w-full" @click="open = !open">
+                                                <h1 class="cs-font-caption text-cs-gray text-left">Select Filter
+                                                </h1>
+                                                <div
+                                                    class="w-full bg-white flex justify-between text-cs-black border rounded-md p-2 cs-font-body">
+                                                    <h1>Filter</h1>
+                                                    <i class="fa-solid fa-caret-down my-auto text-cs-gray"></i>
+                                                </div>
+                                                <div class="border rounded-md bg-white w-full absolute divide-y drop-shadow-md"
+                                                    x-show="open" x-transition>
+                                                    <div
+                                                        class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                        A1</div>
+                                                    <div
+                                                        class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                        A2</div>
+                                                    <div
+                                                        class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                        A3</div>
+                                                    <div
+                                                        class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                        A4</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <!-- end Select Filter -->
+
+                                        <!-- Tanggal Perolehan (dekstop) -->
+                                        <div class="md:col-span-1 hidden md:block">
+                                            <div class="space-y-2">
+                                                <h1 class="cs-font-caption text-cs-gray">Tanggal Perolehan</h1>
+                                                <input type="date" id="PickDate" name="PickDate"
+                                                    class="w-full bg-slate-50 cs-font-body rounded-md p-2 text-cs-black">
+                                            </div>
+                                        </div>
+                                        <!-- end Tanggal Perolehan (dekstop) -->
+
+                                        <!-- Tanggal Perolehan (dekstop) -->
+                                        <div class="md:col-span-1 hidden md:block">
+                                            <div class="space-y-2">
+                                                <h1 class="cs-font-caption text-cs-gray">Tanggal Perolehan</h1>
+                                                <input type="date" id="PickDate" name="PickDate"
+                                                    class="w-full bg-slate-50 cs-font-body rounded-md p-2 text-cs-black">
+                                            </div>
+                                        </div>
+                                        <!-- end Tanggal Perolehan (dekstop) -->
+                                    </div>
+
+                                    <div class="col-span-4 grid grid-cols-2 gap-3  md:hidden">
+                                        <!-- Start Date (Mobile) -->
+                                        <div class="md:col-span-1">
+                                            <div class="space-y-2">
+                                                <h1 class="cs-font-caption text-cs-gray">Start Date</h1>
+                                                <input type="date" id="PickDate" name="PickDate"
+                                                    class="w-full bg-slate-50 cs-font-body rounded-md p-2 text-cs-black">
+                                            </div>
+                                        </div>
+                                        <!-- end Start Date (Mobile) -->
+
+                                        <!-- End Date (Mobile) -->
+                                        <div class="md:col-span-1">
+                                            <div class="space-y-2">
+                                                <h1 class="cs-font-caption text-cs-gray">End Date</h1>
+                                                <input type="date" id="PickDate" name="PickDate"
+                                                    class="w-full bg-slate-50 cs-font-body rounded-md p-2 text-cs-black">
+                                            </div>
+                                        </div>
+                                        <!-- end End Date (Mobile) -->
+                                    </div>
+
+
+                                    <div class="col-span-5">
+                                        <div class="grid md:grid-cols-2 grid-cols-1 gap-3">
+                                            <!-- Voltage (Volt) -->
+                                            <div class="md:col-span-1">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Voltage (Volt)</h1>
+                                                    <input type="text" name="" id=""
+                                                        class="w-full bg-slate-50 rounded-md p-2 cs-font-body">
+                                                </div>
+                                            </div>
+                                            <!-- end Voltage (Volt) -->
+
+                                            <!-- Ampere (A) -->
+                                            <div class="md:col-span-1">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Ampere (A)</h1>
+                                                    <input type="text" name="" id=""
+                                                        class="w-full bg-slate-50 rounded-md p-2 cs-font-body">
+                                                </div>
+                                            </div>
+                                            <!-- end Ampere (A) -->
+
+                                            <!-- Tanggal Perolehan -->
+                                            <div class="md:col-span-1">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Tanggal Perolehan</h1>
+                                                    <input type="date" id="PickDate" name="PickDate"
+                                                        class="w-full bg-slate-50 cs-font-body rounded-md p-2 text-cs-black">
+                                                </div>
+                                            </div>
+                                            <!-- end Tanggal Perolehan -->
+
+                                            <!-- Tanggal Pelepasan -->
+                                            <div class="md:col-span-1">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Tanggal Pelepasan</h1>
+                                                    <input type="date" id="OutDate" name="OutDate"
+                                                        class="w-full bg-slate-50 cs-font-body rounded-md p-2 text-cs-black">
+                                                </div>
+                                            </div>
+                                            <!-- end Tanggal Pelepasan -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- end information -->
+                        </div>
+                        <!-- end Main information -->
+                    </div>
+                    <!-- ===== end section Historical Maintance ==== -->
+
                 </div>
+
+                <!-- ===== section footer ==== -->
+                <section class="bg-white border-t fixed bottom-0 w-full right-0 z-30">
+                    <div class="md:pl-64">
+                        <div class="p-4 flex justify-end space-x-3">
+                            <a href="#">
+                                <h1
+                                    class="cs-font-buttonNormal py-2 px-3 rounded-md text-cs-gray hover:text-cs-black transition-all">
+                                    Cancel
+                                </h1>
+                            </a>
+                            <a href="#">
+                                <h1
+                                    class="cs-font-buttonNormal py-2 px-3 rounded-md bg-cs-primary text-white hover:bg-cs-primary-hover transition-all">
+                                    Submit
+                                </h1>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- ===== end section footer ==== -->
+
             </div>
             <!-- ===== end section main ==== -->
         </section>
         <!--* ===== section main display (right on desktop & center mobile) ==== -->
+
 
 
     </section>
