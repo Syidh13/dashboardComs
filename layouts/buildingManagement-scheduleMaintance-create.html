@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMS - Tenant News</title>
+    <title>COMS - Create Items</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./media/fontawesome-pro-6.0.0-web/css/all.min.css">
     <!-- alpinejs -->
@@ -25,11 +25,21 @@
             <div class="z-10 flex justify-between w-full md:px-2 px-4">
 
                 <!-- logo -->
-                <a href="./index.html" class="flex my-auto">
-                    <div class="flex w-36 md:w-64">
-                        <img src="./media/img/lg-primary.svg" alt="" class="h-6 my-auto md:h-10">
-                    </div>
-                </a>
+                <div class="my-auto flex space-x-3 md:space-x-0">
+                    <!-- ===== section back icon (desktop) ==== -->
+                    <a href="./buildingManagement-scheduleMaintance.html" class="md:hidden space-x-3 block ">
+                        <div
+                            class="rounded-full py-2 px-3 hover:bg-cs-primary bg-slate-200 flex hover:text-white transition-all my-auto">
+                            <i class="fa-regular fa-angle-left my-auto"></i>
+                        </div>
+                    </a>
+                    <!-- ===== end section back icon (desktop) ==== -->
+                    <a href="./index.html" class="flex my-auto">
+                        <div class="flex w-36 md:w-64">
+                            <img src="./media/img/lg-primary.svg" alt="" class="h-6 my-auto md:h-10">
+                        </div>
+                    </a>
+                </div>
                 <!-- end logo -->
 
                 <!-- profile button -->
@@ -95,7 +105,7 @@
 
                                     <!-- News (mobile) -->
                                     <li x-data="{ open: false }">
-                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-selected"
+                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-normal"
                                             @click="open = !open">
                                             <div class="space-x-3 flex">
                                                 <i class="fa-regular fa-newspaper my-auto"></i>
@@ -119,7 +129,7 @@
                                                 <!-- tenant news -->
                                                 <li>
                                                     <a href="./news-tenantNews.html" class="">
-                                                        <div class="cs-nav-selected py-2">
+                                                        <div class="cs-nav-normal py-2">
                                                             <h1 class="ml-6">Tenant News</h1>
                                                         </div>
                                                     </a>
@@ -133,7 +143,7 @@
 
                                     <!-- Building Management (mobile) -->
                                     <li x-data="{ open: false }">
-                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-normal"
+                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-selected"
                                             @click="open = !open">
                                             <div class="space-x-3 flex">
                                                 <i class="fa-regular fa-clipboard my-auto"></i>
@@ -156,8 +166,8 @@
 
                                                 <!-- Schedule Maintance -->
                                                 <li>
-                                                    <a href="./buildingManagement-scheduleMaintance.html" class="">
-                                                        <div class="cs-nav-normal py-2">
+                                                    <a href="#" class="">
+                                                        <div class="cs-nav-selected py-2">
                                                             <h1 class="ml-6">Schedule Maintance</h1>
                                                         </div>
                                                     </a>
@@ -440,7 +450,7 @@
 
         <!-- ===== section button (left on desktop) ==== -->
         <section
-            class="flex-col flex-shrink-0 hidden h-screen pt-20 overflow-y-auto text-gray-700 bg-white border-r md:w-64 md:block  scrollbar-hide">
+            class="flex-col flex-shrink-0 hidden h-screen pt-20 z-50 overflow-y-auto text-gray-700 bg-white border-r md:w-64 md:block  scrollbar-hide">
             <div class="flex flex-col items-center justify-between flex-shrink-0 bg-white">
 
                 <div class="" id="sidenav-1" data-te-sidenav-init data-te-sidenav-position="absolute">
@@ -459,7 +469,7 @@
 
                         <!-- News (desktop) -->
                         <li class="relative">
-                            <a class="flex cs-nav-selected py-4" data-te-sidenav-link-ref>
+                            <a class="flex cs-nav-normal py-4" data-te-sidenav-link-ref>
                                 <span>
                                     <i class="fa-regular fa-newspaper"></i>
                                 </span>
@@ -487,7 +497,7 @@
 
                                 <!-- tenant News -->
                                 <li class="relative ">
-                                    <a href="./news-tenantNews.html" class="flex py-2 cs-nav-selected"
+                                    <a href="./news-tenantNews.html" class="flex py-2 cs-nav-normal"
                                         data-te-sidenav-link-ref>
                                         <h1 class="ml-6 "> Tenant News</h1>
                                     </a>
@@ -500,7 +510,7 @@
 
                         <!-- Building Management (desktop) -->
                         <li class="relative">
-                            <a class="flex cs-nav-normal py-4" data-te-sidenav-link-ref>
+                            <a class="flex cs-nav-selected py-4" data-te-sidenav-link-ref>
                                 <span>
                                     <i class="fa-regular fa-clipboard"></i>
                                 </span>
@@ -527,8 +537,7 @@
 
                                 <!-- Schedule Maintance -->
                                 <li class="relative ">
-                                    <a href="buildingManagement-scheduleMaintance.html" class="flex py-2 cs-nav-normal"
-                                        data-te-sidenav-link-ref>
+                                    <a href="#external" class="flex py-2 cs-nav-selected" data-te-sidenav-link-ref>
                                         <h1 class="ml-6 "> Schedule Maintance</h1>
                                     </a>
                                 </li>
@@ -779,19 +788,11 @@
                                     </a>
                                 </li>
                                 <!-- end User Tenant -->
-
-
-
                             </ul>
                         </li>
                         <!-- end Settings (desktop) -->
                     </ul>
-
-
-
-
                 </div>
-
             </div>
         </section>
         <!-- ===== end section button (left on desktop) ==== -->
@@ -799,541 +800,344 @@
 
 
         <!--* ===== section main display (right on desktop & center mobile) ==== -->
-        <section class="w-full h-screen pt-16 overflow-y-auto">
-            <div class="w-full h-full px-4 py-6 bg-slate-50">
-
-                <div class="pb-4 space-y-5">
+        <section class="w-full h-screen bg-slate-50 pt-16 overflow-y-auto">
+            <div class=" px-4 py-6">
+                <div class="pb-20 space-y-5">
                     <!-- ===== section breadcrumb ==== -->
                     <nav class="w-full rounded-md" aria-label="">
                         <ol class="flex space-x-2 list-reset">
-                            <li class="my-auto cs-font-overline text-cs-gray">News</li>
+                            <li class="my-auto cs-font-overline text-cs-gray">Building Management</li>
                             <i class="text-xs fa-regular fa-slash-forward text-cs-gray"></i>
-                            <li class="my-auto cs-font-overline text-cs-primary">Tenant News</li>
+                            <li class="my-auto cs-font-overline text-cs-gray">Schedule Maintance</li>
+                            <i class="text-xs fa-regular fa-slash-forward text-cs-gray"></i>
+                            <li class="my-auto cs-font-overline text-cs-primary">Create</li>
                         </ol>
                     </nav>
                     <!-- ===== end section breadcrumb ==== -->
 
-                    <!-- section search & donwload -->
-                    <section class="flex justify-between p-2 space-x-2 bg-white border rounded">
-                        <div class="w-full ">
-                            <input type="search" name="" id="" placeholder="Search.."
-                                class="w-full p-2 cs-font-body rounded bg-slate-50">
+                    <!-- ===== section back icon (desktop) ==== -->
+                    <a href="./buildingManagement-scheduleMaintance.html" class="md:flex md:space-x-3 ">
+                        <div
+                            class="rounded-full py-2 px-3 hover:bg-cs-primary bg-slate-200 md:flex hidden hover:text-white transition-all my-auto">
+                            <i class="fa-regular fa-angle-left my-auto"></i>
                         </div>
-                        <button class="flex px-4 py-2 my-auto space-x-2 bg-cs-primary rounded">
-                            <i class="text-white fa-regular fa-download"></i>
-                            <h1 class="hidden my-auto text-white cs-font-buttonNormal md:block">Download</h1>
-                        </button>
-                    </section>
-                    <!-- end section search & donwload -->
+                        <h1 class="my-auto cs-font-buttonNormal text-lg">Create Preventive Maintance</h1>
+                    </a>
+                    <!-- ===== end section back icon (desktop) ==== -->
 
+                    <!-- ===== section General Information ==== -->
+                    <div class="border bg-white p-4 rounded-md relative" x-data="{ open: true }">
 
-                    <!-- ========= Table ========= -->
-                    <div x-data="{ tab: 'actived' }" class="relative bg-white border pb-2 rounded">
-                        <!-- nav -->
-                        <nav aria-label="" class="p-2 py-4 rounded-t cs-font-buttonNormal">
+                        <!-- Main information -->
+                        <div>
+                            <!-- information -->
+                            <div class="md:py-4 py-2">
+                                <div
+                                    class="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-1 md:gap-6 space-y-3 md:space-y-0">
 
-                            <a class="px-3 py-2 text-sm border text-cs-gray cs-font-buttonNormal rounded-md transition-all"
-                                :class="{ 'cs-font-buttonNormal text-cs-primary rounded-md bg-cs-primary-soft transition-all': tab === 'actived' }"
-                                x-on:click.prevent="tab = 'actived'" href="#">Actived</a>
+                                    <div class="col-span-4">
+                                        <div class="grid md:grid-cols-3 grid-cols-1 gap-3">
+                                            <!-- Property -->
+                                            <div class="md:col-span-1 relative z-[3]" x-data="{ open: false }">
+                                                <button class="space-y-2 w-full" @click="open = !open">
+                                                    <h1 class="cs-font-caption text-cs-gray text-left">Property
+                                                    </h1>
+                                                    <div
+                                                        class="w-full bg-white flex justify-between text-cs-black border rounded-md p-2 cs-font-body">
+                                                        <h1>Select Property</h1>
+                                                        <i class="fa-solid fa-caret-down my-auto text-cs-gray"></i>
+                                                    </div>
+                                                    <div class="border rounded-md bg-white w-full absolute divide-y drop-shadow-md"
+                                                        x-show="open" x-transition>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            Cornerstone</div>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            FX Sudirman</div>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            Beachwalk Bali</div>
+                                                        <div
+                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
+                                                            23 Paskal</div>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                            <!-- end Property -->
+                                            <!-- property Name -->
+                                            <div class="md:col-span-2">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Create Title</h1>
+                                                    <input type="text" name="" id=""
+                                                        class="w-full bg-slate-50 rounded-md p-2 cs-font-body">
+                                                </div>
+                                            </div>
+                                            <!-- end property Name -->
 
-                            <a class="px-3 py-2 text-sm border text-cs-gray rounded-md cs-font-buttonNormal transition-all"
-                                :class="{ ' text-cs-primary cs-font-buttonNormal rounded-md bg-cs-primary-soft transition-all': tab === 'removed' }"
-                                x-on:click.prevent="tab = 'removed'" href="#">Removed</a>
-                        </nav>
-                        <!-- end  tab -->
-                        <section>
-                            <!-- Actived Tab -->
-                            <div x-show="tab === 'actived'" class="relative px-2">
-                                <div class="h-full">
-                                    <div class=" overflow-x-auto rounded-md border border-gray-200 ">
-                                        <table class="w-full" aria-label="">
-                                            <th></th>
-                                            <thead class="border-b-2 border-gray-200 bg-gray-50">
-                                                <tr>
-                                                    <td class="p-3 w-36 text-left font-title text-sm tracking-wide">
-                                                        Photo
-                                                    </td>
-                                                    <td class="p-3 w-36 text-left font-title text-sm tracking-wide">
-                                                        Title
-                                                    </td>
-                                                    <td class="p-3 w-20 text-left font-title text-sm tracking-wide">
-                                                        Description
-                                                    </td>
-                                                    <td class="p-3 text-left font-title text-sm tracking-wide">Property
-                                                    </td>
-                                                    <td class="w-32 p-3 text-left font-title text-sm tracking-wide">
-                                                        Start
-                                                        Time
-                                                    </td>
-                                                    <td class="w-24 p-3 text-left font-title text-sm tracking-wide">End
-                                                        Time
-                                                    </td>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="divide-y divide-gray-100">
-                                                <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
+                                            <!-- Description -->
+                                            <div class="md:col-span-3">
+                                                <div class="space-y-2">
+                                                    <h1 class="cs-font-caption text-cs-gray">Description
+                                                    </h1>
+                                                    <textarea class="bg-slate-50 cs-font-body w-full p-2 rounded-md"
+                                                        name="Input your description" id="" cols="4"
+                                                        rows="4"></textarea>
+                                                </div>
+                                            </div>
+                                            <!-- end Description -->
+
+                                            <!-- Choose a Preventive Template -->
+                                            <div class="md:col-span-3 relative z-[2]" x-data="{ open: false }">
+                                                <button class="space-y-2 w-full" @click="open = !open">
+                                                    <h1 class="cs-font-caption text-cs-gray text-left">
+                                                        Preventive Template
+                                                    </h1>
+                                                    <div
+                                                        class="w-full bg-white flex justify-between text-cs-black border rounded-md p-2 cs-font-body">
+                                                        <h1>Choose a
+                                                            Preventive Template</h1>
+                                                        <i class="fa-solid fa-caret-down my-auto text-cs-gray"></i>
+                                                    </div>
+                                                    <div class="border rounded-md bg-white w-full absolute divide-y drop-shadow-md"
+                                                        x-show="open" x-transition>
+
+                                                        <div
+                                                            class="flex justify-between hover:bg-cs-primary-soft px-2 py-3 cs-font-body">
+                                                            <h1 class="my-auto text-left">Checklist perawatan rutin
+                                                                Genset</h1>
+                                                            <a href="#view"
+                                                                class="px-3 py-2 border flex space-x-3 rounded-md bg-white hover:bg-cs-primary hover:text-white hover:border-cs-primary-soft">
+                                                                <i class="fa-regular fa-clipboard-list my-auto"></i>
+                                                                <h1>View</h1>
+                                                            </a>
                                                         </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
 
-                                                <tr class="bg-gray-50">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
+                                                        <div
+                                                            class="flex justify-between hover:bg-cs-primary-soft px-2 py-3 cs-font-body">
+                                                            <h1 class="my-auto">Checklist perawatan rutin Pompa dan
+                                                                Motor</h1>
+                                                            <a href="#view"
+                                                                class="px-3 py-2 border flex space-x-3 rounded-md bg-white hover:bg-cs-primary hover:text-white hover:border-cs-primary-soft">
+                                                                <i class="fa-regular fa-clipboard-list my-auto"></i>
+                                                                <h1>View</h1>
+                                                            </a>
                                                         </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
 
-                                                <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
+                                                        <div
+                                                            class="flex justify-between hover:bg-cs-primary-soft px-2 py-3 cs-font-body">
+                                                            <h1 class="my-auto">Checklist perawatan rutin AC Split</h1>
+                                                            <a href="#view"
+                                                                class="px-3 py-2 border flex space-x-3 rounded-md bg-white hover:bg-cs-primary hover:text-white hover:border-cs-primary-soft">
+                                                                <i class="fa-regular fa-clipboard-list my-auto"></i>
+                                                                <h1>View</h1>
+                                                            </a>
                                                         </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
 
-                                                <tr class="bg-gray-50">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                            <!-- end Choose a Preventive Template -->
 
-                                                <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
+                                        </div>
+                                    </div>
 
-                                                <tr class="bg-gray-50">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
+                                </div>
+                            </div>
+                            <!-- end information -->
 
-                                                <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg Kring
-                                                        new
-                                                        fit
-                                                        office
-                                                        chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                            <!-- ===== section main ==== -->
+                            <div x-data="{ tab: 'asset' }" class="relative ">
+                                <div
+                                    class="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-1 md:gap-6 space-y-3 md:space-y-0">
+                                    <div class="md:col-span-4 bg-white border rounded">
+
+                                        <!-- nav -->
+                                        <nav aria-label=""
+                                            class="flex p-2 py-4 space-x-1 overflow-scroll border-b rounded-t font-body">
+
+                                            <a class="px-3 py-2 text-sm border font-body"
+                                                :class="{ 'font-body text-cs-primary  bg-cs-primary-soft': tab === 'asset' }"
+                                                x-on:click.prevent="tab = 'asset'" href="#">Asset</a>
+
+                                            <a class="px-3 py-2 text-sm border font-body"
+                                                :class="{ ' text-cs-primary font-body  bg-cs-primary-soft': tab === 'nonasset' }"
+                                                x-on:click.prevent="tab = 'nonasset'" href="#">Non Asset</a>
+
+                                        </nav>
+
+                                        <!-- content -->
+
+                                        <!--  asset tab -->
+                                        <div x-show="tab === 'asset'" class="py-2 space-y-2">
+
+                                            <!-- Select asset -->
+                                            <div class="relative" x-data="{ open: false }">
+                                                <button class="flex justify-between w-full px-2 bg-white rounded "
+                                                    @click="open = !open">
+                                                    <div
+                                                        class="flex justify-between w-full px-3 py-2.5 rounded md:col-span-1 border hover:bg-blue-50">
+                                                        <h1 class="text-sm font-body">Select Asset</h1>
+                                                        <i
+                                                            class="justify-end my-auto text-sm fa-regular fa-chevron-down"></i>
+                                                    </div>
+                                                </button>
+                                                <div class="absolute z-10 w-full px-2 pt-1 rounded" x-show="open">
+                                                    <ul
+                                                        class="overflow-y-auto bg-white border divide-y rounded md:max-h-52 max-h-32">
+                                                        <li
+                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                                            <a href="#1" class="flex w-full text-sm font-body ">
+                                                                <h1 class="my-auto">Genset</h1>
+                                                            </a>
+                                                        </li>
+
+                                                        <li
+                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                                            <a href="#1" class="flex w-full text-sm font-body ">
+                                                                <h1 class="my-auto">Fire Extinguisher</h1>
+                                                            </a>
+                                                        </li>
+                                                        <li
+                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                                            <a href="#1" class="flex w-full text-sm font-body ">
+                                                                <h1 class="my-auto">Genset</h1>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- end Select asset -->
+
+
+                                            <!-- Select Category -->
+                                            <div class="relative" x-data="{ open: false }">
+                                                <button class="flex justify-between w-full px-2 bg-white rounded "
+                                                    @click="open = !open">
+                                                    <div
+                                                        class="flex justify-between w-full px-3 py-2.5 rounded md:col-span-1 border hover:bg-blue-50">
+                                                        <h1 class="text-sm font-body">Select Category</h1>
+                                                        <i
+                                                            class="justify-end my-auto text-sm fa-regular fa-chevron-down"></i>
+                                                    </div>
+                                                </button>
+                                                <div class="absolute z-10 w-full px-2 pt-1 rounded" x-show="open">
+                                                    <ul
+                                                        class="overflow-y-auto bg-white border divide-y rounded md:max-h-52 max-h-32">
+                                                        <li
+                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                                            <a href="#1" class="flex w-full text-sm font-body ">
+                                                                <h1 class="my-auto">Safety</h1>
+                                                            </a>
+                                                        </li>
+
+                                                        <li
+                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                                            <a href="#1" class="flex w-full text-sm font-body ">
+                                                                <h1 class="my-auto">Housekeeping</h1>
+                                                            </a>
+                                                        </li>
+
+
+                                                        <li
+                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                                            <a href="#1" class="flex w-full text-sm font-body ">
+                                                                <h1 class="my-auto">Landscape</h1>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- end Select Category -->
+
+                                        </div>
+                                        <!-- end asset tab -->
+
+
+                                        <!--  non asset tab -->
+                                        <div x-show="tab === 'nonasset'" class="relative ">
+
+                                            <!-- Select Category (non asset) -->
+                                            <div class="relative" x-data="{ open: false }">
+                                                <button class="flex justify-between w-full p-2 bg-white rounded "
+                                                    @click="open = !open">
+                                                    <div
+                                                        class="flex justify-between w-full px-3 py-2.5 rounded md:col-span-1 border hover:bg-blue-50">
+                                                        <h1 class="text-sm font-body">Select Category</h1>
+                                                        <i
+                                                            class="justify-end my-auto text-sm fa-regular fa-chevron-down"></i>
+                                                    </div>
+                                                </button>
+                                                <div class="absolute z-10 w-full px-2 pt-1 rounded" x-show="open">
+                                                    <ul
+                                                        class="overflow-y-auto bg-white border divide-y rounded md:max-h-52 max-h-32">
+                                                        <li
+                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                                            <a href="#1" class="flex w-full text-sm font-body ">
+                                                                <h1 class="my-auto">Safety</h1>
+                                                            </a>
+                                                        </li>
+
+                                                        <li
+                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                                            <a href="#1" class="flex w-full text-sm font-body ">
+                                                                <h1 class="my-auto">Housekeeping</h1>
+                                                            </a>
+                                                        </li>
+
+
+                                                        <li
+                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
+                                                            <a href="#1" class="flex w-full text-sm font-body ">
+                                                                <h1 class="my-auto">Landscape</h1>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- end Select Category (non asset) -->
+
+                                        </div>
+                                        <!-- end non asset tab -->
+                                        <!-- end content -->
                                     </div>
                                 </div>
                             </div>
-                            <!-- end Actived Tab -->
-
-                            <!-- Removed Tab -->
-                            <div x-show="tab === 'removed'" class="relative px-2">
-                                <div class="h-full">
-                                    <div class=" overflow-x-auto rounded-md border border-gray-200 ">
-                                        <table class="w-full" aria-label="">
-                                            <th></th>
-                                            <thead class="border-b-2 border-gray-200 bg-gray-50">
-                                                <tr>
-                                                    <td class="p-3 w-36 text-left font-title text-sm tracking-wide">
-                                                        Photo
-                                                    </td>
-                                                    <td class="p-3 w-36 text-left font-title text-sm tracking-wide">
-                                                        Title
-                                                    </td>
-                                                    <td class="p-3 w-20 text-left font-title text-sm tracking-wide">
-                                                        Description
-                                                    </td>
-                                                    <td class="p-3 text-left font-title text-sm tracking-wide">Property
-                                                    </td>
-                                                    <td class="w-32 p-3 text-left font-title text-sm tracking-wide">
-                                                        Start
-                                                        Time
-                                                    </td>
-                                                    <td class="w-24 p-3 text-left font-title text-sm tracking-wide">End
-                                                        Time
-                                                    </td>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="divide-y divide-gray-100">
-                                                <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        papepo Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
-
-                                                <tr class="bg-gray-50">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
-
-                                                <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
-
-                                                <tr class="bg-gray-50">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
-
-                                                <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
-
-                                                <tr class="bg-gray-50">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
-
-                                                <tr class="bg-white">
-                                                    <!-- Photo -->
-                                                    <td class="w-full p-3 text-sm text-gray-700">
-                                                        <div class="md:w-40 w-36">
-                                                            <img class="aspect-video w-full object-cover rounded-md"
-                                                                src="https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                                                alt="">
-                                                        </div>
-                                                    </td>
-                                                    <!-- Title -->
-                                                    <td
-                                                        class="min-w-max max-w-xs p-3 text-sm font-title text-cs-primary whitespace-nowrap">
-                                                        Pipa Bocor</td>
-                                                    <!-- Description -->
-                                                    <td class="min-w-max max-w-xs p-3 text-sm font-body text-gray-700">
-                                                        Kring new fit office chair, mesh + PU Black fkhjgskdjfg Kring
-                                                        new
-                                                        fit
-                                                        office
-                                                        chair, mesh + PU Black fkhjgskdjfg</td>
-                                                    <!-- Property -->
-                                                    <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                        <span
-                                                            class="font-title text-sm bg-cs-primary-soft p-2 rounded-md text-cs-primary">CSN</span>
-                                                    </td>
-                                                    <!-- Start time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">12:00</td>
-                                                    <!-- End Time -->
-                                                    <td class="whitespace-nowrap p-3 text-sm font-body">14:00</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end Removed Tab -->
-                        </section>
-
-                        <!-- pagenation -->
-                        <section class="p-2">
-                            <div class="flex justify-between">
-                                <!-- number of page -->
-                                <button
-                                    class="border py-2 px-4 hover:bg-cs-primary-soft text-cs-black flex hover:border-primary hover:text-cs-primary space-x-2">
-                                    <h1 class="cs-font-caption">10 / Page</h1>
-                                    <i class="fa-solid fa-caret-down my-auto"></i>
-                                </button>
-                                <!-- end number of page -->
-
-                                <!-- chevron -->
-                                <div class="space-x-2 flex">
-                                    <h1 class="my-auto cs-font-caption text-cs-gray">1/10 of 230 items</h1>
-                                    <button
-                                        class="hover:bg-cs-primary-soft text-cs-black hover:border-primary transition-all hover:text-cs-primary rounded-full">
-                                        <i class="fa-regular fa-chevron-left text-xs py-3 px-4"></i>
-                                    </button>
-
-                                    <button
-                                        class="hover:bg-cs-primary-soft text-cs-black hover:border-primary transition-all hover:text-cs-primary rounded-full">
-                                        <i class="fa-regular fa-chevron-right text-xs py-3 px-4"></i>
-                                    </button>
-                                </div>
-                                <!-- end chevron -->
-                            </div>
-                        </section>
-                        <!-- end pagenation -->
+                            <!-- ===== end section main ==== -->
+                        </div>
+                        <!-- end Main information -->
                     </div>
-                    <!-- ========= end Table ========= -->
+                    <!-- ===== end section General Information ==== -->
+
+
                 </div>
+
+                <!-- ===== section footer ==== -->
+                <section class="bg-white border-t fixed bottom-0 w-full right-0 z-30">
+                    <div class="md:pl-64">
+                        <div class="p-4 flex justify-end space-x-3">
+                            <a href="#">
+                                <h1
+                                    class="cs-font-buttonNormal py-2 px-3 rounded-md text-cs-gray hover:text-cs-black transition-all">
+                                    Cancel
+                                </h1>
+                            </a>
+                            <a href="#">
+                                <h1
+                                    class="cs-font-buttonNormal py-2 px-3 rounded-md bg-cs-primary text-white hover:bg-cs-primary-hover transition-all">
+                                    Set Scheduling
+                                </h1>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- ===== end section footer ==== -->
+
             </div>
             <!-- ===== end section main ==== -->
         </section>
         <!--* ===== section main display (right on desktop & center mobile) ==== -->
+
 
 
     </section>
