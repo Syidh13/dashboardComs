@@ -3812,12 +3812,12 @@ textarea.form-control.is-invalid {
   right: 1rem;
 }
 
-.top-4 {
-  top: 1rem;
-}
-
 .right-0 {
   right: 0px;
+}
+
+.top-4 {
+  top: 1rem;
 }
 
 .bottom-4 {
@@ -3844,6 +3844,18 @@ textarea.form-control.is-invalid {
   z-index: 20;
 }
 
+.z-\[3\] {
+  z-index: 3;
+}
+
+.z-\[2\] {
+  z-index: 2;
+}
+
+.z-30 {
+  z-index: 30;
+}
+
 .z-\[6\] {
   z-index: 6;
 }
@@ -3856,20 +3868,8 @@ textarea.form-control.is-invalid {
   z-index: 4;
 }
 
-.z-\[3\] {
-  z-index: 3;
-}
-
-.z-\[2\] {
-  z-index: 2;
-}
-
 .z-\[1\] {
   z-index: 1;
-}
-
-.z-30 {
-  z-index: 30;
 }
 
 .z-\[1036\] {
@@ -3884,16 +3884,16 @@ textarea.form-control.is-invalid {
   grid-column: span 2 / span 2;
 }
 
+.col-span-4 {
+  grid-column: span 4 / span 4;
+}
+
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
 
 .col-span-3 {
   grid-column: span 3 / span 3;
-}
-
-.col-span-4 {
-  grid-column: span 4 / span 4;
 }
 
 .col-span-5 {
@@ -4482,9 +4482,9 @@ textarea.form-control.is-invalid {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
-.bg-cs-background {
+.bg-cs-primary-soft {
   --tw-bg-opacity: 1;
-  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+  background-color: rgb(239 246 255 / var(--tw-bg-opacity));
 }
 
 .bg-cs-primary {
@@ -4492,9 +4492,9 @@ textarea.form-control.is-invalid {
   background-color: rgb(33 150 243 / var(--tw-bg-opacity));
 }
 
-.bg-cs-primary-soft {
+.bg-cs-background {
   --tw-bg-opacity: 1;
-  background-color: rgb(239 246 255 / var(--tw-bg-opacity));
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
 
 .bg-red-200 {
@@ -4794,6 +4794,10 @@ textarea.form-control.is-invalid {
   font-family: Inter, sans-serif;
 }
 
+.font-caption {
+  font-family: primary-Regular;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -5077,13 +5081,13 @@ textarea.form-control.is-invalid {
   isolation: isolate;
 }
 
-.hover\:border-transparent:hover {
-  border-color: transparent;
-}
-
 .hover\:border-cs-primary-soft:hover {
   --tw-border-opacity: 1;
   border-color: rgb(239 246 255 / var(--tw-border-opacity));
+}
+
+.hover\:border-transparent:hover {
+  border-color: transparent;
 }
 
 .hover\:bg-slate-100:hover {
@@ -5111,9 +5115,19 @@ textarea.form-control.is-invalid {
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-cs-primary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(33 150 243 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-cs-primary-soft:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(239 246 255 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-cs-primary-hover:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 189 248 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-neutral-200:hover {
@@ -5124,16 +5138,6 @@ textarea.form-control.is-invalid {
 .hover\:bg-slate-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-cs-primary:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(33 150 243 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-cs-primary-hover:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(56 189 248 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-slate-50:hover {
@@ -5160,14 +5164,14 @@ textarea.form-control.is-invalid {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.hover\:text-cs-primary:hover {
-  --tw-text-opacity: 1;
-  color: rgb(33 150 243 / var(--tw-text-opacity));
-}
-
 .hover\:text-cs-black:hover {
   --tw-text-opacity: 1;
   color: rgb(25 25 25 / var(--tw-text-opacity));
+}
+
+.hover\:text-cs-primary:hover {
+  --tw-text-opacity: 1;
+  color: rgb(33 150 243 / var(--tw-text-opacity));
 }
 
 .hover\:text-inherit:hover {
@@ -5409,16 +5413,16 @@ textarea.form-control.is-invalid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .md\:grid-cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .md\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .md\:grid-cols-2 {
@@ -5471,17 +5475,12 @@ textarea.form-control.is-invalid {
     padding-bottom: 1rem;
   }
 
-  .md\:py-2 {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+  .md\:pl-64 {
+    padding-left: 16rem;
   }
 
   .md\:pt-6 {
     padding-top: 1.5rem;
-  }
-
-  .md\:pl-64 {
-    padding-left: 16rem;
   }
 
   .md\:text-2xl {

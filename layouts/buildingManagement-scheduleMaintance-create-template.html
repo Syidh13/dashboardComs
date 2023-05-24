@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMS - Create Preventive Maintance</title>
+    <title>COMS - View Template</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./media/fontawesome-pro-6.0.0-web/css/all.min.css">
     <!-- alpinejs -->
@@ -25,21 +25,11 @@
             <div class="z-10 flex justify-between w-full md:px-2 px-4">
 
                 <!-- logo -->
-                <div class="my-auto flex space-x-3 md:space-x-0">
-                    <!-- ===== section back icon (desktop) ==== -->
-                    <a href="./buildingManagement-scheduleMaintance.html" class="md:hidden space-x-3 block ">
-                        <div
-                            class="rounded-full py-2 px-3 hover:bg-cs-primary bg-slate-200 flex hover:text-white transition-all my-auto">
-                            <i class="fa-regular fa-angle-left my-auto"></i>
-                        </div>
-                    </a>
-                    <!-- ===== end section back icon (desktop) ==== -->
-                    <a href="./index.html" class="flex my-auto">
-                        <div class="flex w-36 md:w-64">
-                            <img src="./media/img/lg-primary.svg" alt="" class="h-6 my-auto md:h-10">
-                        </div>
-                    </a>
-                </div>
+                <a href="./index.html" class="flex my-auto">
+                    <div class="flex w-36 md:w-64">
+                        <img src="./media/img/lg-primary.svg" alt="" class="h-6 my-auto md:h-10">
+                    </div>
+                </a>
                 <!-- end logo -->
 
                 <!-- profile button -->
@@ -803,337 +793,95 @@
         <section class="w-full h-screen bg-slate-50 pt-16 overflow-y-auto">
             <div class=" px-4 py-6">
                 <div class="pb-20 space-y-5">
-                    <!-- ===== section breadcrumb ==== -->
-                    <nav class="w-full rounded-md" aria-label="">
-                        <ol class="flex space-x-2 list-reset">
-                            <li class="my-auto cs-font-overline text-cs-gray">Building Management</li>
-                            <i class="text-xs fa-regular fa-slash-forward text-cs-gray"></i>
-                            <li class="my-auto cs-font-overline text-cs-gray">Schedule Maintance</li>
-                            <i class="text-xs fa-regular fa-slash-forward text-cs-gray"></i>
-                            <li class="my-auto cs-font-overline text-cs-primary">Create</li>
-                        </ol>
-                    </nav>
-                    <!-- ===== end section breadcrumb ==== -->
 
                     <!-- ===== section back icon (desktop) ==== -->
-                    <a href="./buildingManagement-scheduleMaintance.html" class="md:flex md:space-x-3 ">
+                    <a href="./buildingManagement-scheduleMaintance-create.html" class="flex space-x-3">
                         <div
-                            class="rounded-full py-2 px-3 hover:bg-cs-primary bg-slate-200 md:flex hidden hover:text-white transition-all my-auto">
+                            class="rounded-full py-2 px-3 hover:bg-cs-primary bg-slate-200 flex hover:text-white transition-all my-auto">
                             <i class="fa-regular fa-angle-left my-auto"></i>
                         </div>
-                        <h1 class="my-auto cs-font-buttonNormal text-lg">Create Preventive Maintance</h1>
                     </a>
                     <!-- ===== end section back icon (desktop) ==== -->
 
-                    <!-- ===== section General Information ==== -->
-                    <div class="border bg-white p-4 rounded-md relative" x-data="{ open: true }">
-
-                        <!-- Main information -->
-                        <div>
-                            <!-- information -->
-                            <div class="md:py-4 py-2">
-                                <div
-                                    class="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-1 md:gap-6 space-y-3 md:space-y-0">
-
-                                    <div class="col-span-4">
-                                        <div class="grid md:grid-cols-3 grid-cols-1 gap-3">
-                                            <!-- Property -->
-                                            <div class="md:col-span-1 relative z-[3]" x-data="{ open: false }">
-                                                <button class="space-y-2 w-full" @click="open = !open">
-                                                    <h1 class="cs-font-caption text-cs-gray text-left">Property
-                                                    </h1>
-                                                    <div
-                                                        class="w-full bg-white flex justify-between text-cs-black border rounded-md p-2 cs-font-body">
-                                                        <h1>Select Property</h1>
-                                                        <i class="fa-solid fa-caret-down my-auto text-cs-gray"></i>
-                                                    </div>
-                                                    <div class="border rounded-md bg-white w-full absolute divide-y drop-shadow-md"
-                                                        x-show="open" x-transition>
-                                                        <div
-                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
-                                                            Cornerstone</div>
-                                                        <div
-                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
-                                                            FX Sudirman</div>
-                                                        <div
-                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
-                                                            Beachwalk Bali</div>
-                                                        <div
-                                                            class="text-left p-2 hover:bg-cs-primary-soft cs-font-buttonNormal">
-                                                            23 Paskal</div>
-                                                    </div>
-                                                </button>
-                                            </div>
-                                            <!-- end Property -->
-                                            <!-- property Name -->
-                                            <div class="md:col-span-2">
-                                                <div class="space-y-2">
-                                                    <h1 class="cs-font-caption text-cs-gray">Create Title</h1>
-                                                    <input type="text" name="" id=""
-                                                        class="w-full bg-slate-50 rounded-md p-2 cs-font-body">
-                                                </div>
-                                            </div>
-                                            <!-- end property Name -->
-
-                                            <!-- Description -->
-                                            <div class="md:col-span-3">
-                                                <div class="space-y-2">
-                                                    <h1 class="cs-font-caption text-cs-gray">Description
-                                                    </h1>
-                                                    <textarea class="bg-slate-50 cs-font-body w-full p-2 rounded-md"
-                                                        name="Input your description" id="" cols="4"
-                                                        rows="4"></textarea>
-                                                </div>
-                                            </div>
-                                            <!-- end Description -->
-
-                                            <!-- Choose a Preventive Template -->
-                                            <div class="md:col-span-3 relative z-[2]" x-data="{ open: false }">
-                                                <button class="space-y-2 w-full" @click="open = !open">
-                                                    <h1 class="cs-font-caption text-cs-gray text-left">
-                                                        Preventive Template
-                                                    </h1>
-                                                    <div
-                                                        class="w-full bg-white flex justify-between text-cs-black border rounded-md p-2 cs-font-body">
-                                                        <h1>Choose a
-                                                            Preventive Template</h1>
-                                                        <i class="fa-solid fa-caret-down my-auto text-cs-gray"></i>
-                                                    </div>
-                                                    <div class="border rounded-md bg-white w-full absolute divide-y drop-shadow-md"
-                                                        x-show="open" x-transition>
-
-                                                        <div
-                                                            class="flex justify-between hover:bg-cs-primary-soft px-2 py-3 cs-font-body">
-                                                            <h1 class="my-auto text-left">Checklist perawatan rutin
-                                                                Genset</h1>
-                                                            <a href="./buildingManagement-scheduleMaintance-create-template.html"
-                                                                class="px-3 py-2 border flex space-x-3 rounded-md bg-white hover:bg-cs-primary hover:text-white hover:border-cs-primary-soft">
-                                                                <i class="fa-regular fa-clipboard-list my-auto"></i>
-                                                                <h1>View</h1>
-                                                            </a>
-                                                        </div>
-
-                                                        <div
-                                                            class="flex justify-between hover:bg-cs-primary-soft px-2 py-3 cs-font-body">
-                                                            <h1 class="my-auto text-left">Checklist perawatan rutin
-                                                                Pompa dan
-                                                                Motor</h1>
-                                                            <a href="#view"
-                                                                class="px-3 py-2 border flex space-x-3 rounded-md bg-white hover:bg-cs-primary hover:text-white hover:border-cs-primary-soft">
-                                                                <i class="fa-regular fa-clipboard-list my-auto"></i>
-                                                                <h1>View</h1>
-                                                            </a>
-                                                        </div>
-
-                                                        <div
-                                                            class="flex justify-between hover:bg-cs-primary-soft px-2 py-3 cs-font-body">
-                                                            <h1 class="my-auto text-left">Checklist perawatan rutin AC
-                                                                Split</h1>
-                                                            <a href="#view"
-                                                                class="px-3 py-2 border flex space-x-3 rounded-md bg-white hover:bg-cs-primary hover:text-white hover:border-cs-primary-soft">
-                                                                <i class="fa-regular fa-clipboard-list my-auto"></i>
-                                                                <h1>View</h1>
-                                                            </a>
-                                                        </div>
-
-                                                    </div>
-                                                </button>
-                                            </div>
-                                            <!-- end Choose a Preventive Template -->
-
-                                        </div>
-                                    </div>
-
-                                </div>
+                    <!-- ===== section title ==== -->
+                    <div>
+                        <h1 class="text-xl md:text-2xl cs-font-title text-cs-black">CHECKLIST PERAWATAN RUTIN GENSET
+                        </h1>
+                        <div class="flex py-2 space-x-3">
+                            <div class="flex px-2 py-1.5 bg-cs-primary space-x-2 rounded">
+                                <i class="my-auto text-white fa-light fa-building"></i>
+                                <h1 class="my-auto text-xs text-white font-body">FX Sudirman</h1>
                             </div>
-                            <!-- end information -->
-
-                            <!-- ===== section main ==== -->
-                            <div x-data="{ tab: 'asset' }" class="relative ">
-                                <div
-                                    class="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-1 md:gap-6 space-y-3 md:space-y-0">
-                                    <div class="md:col-span-4 bg-white border rounded">
-
-                                        <!-- nav -->
-                                        <nav aria-label=""
-                                            class="flex p-2 py-4 space-x-1 overflow-scroll border-b rounded-t font-body">
-
-                                            <a class="px-3 py-2 text-sm border font-body"
-                                                :class="{ 'font-body text-cs-primary  bg-cs-primary-soft': tab === 'asset' }"
-                                                x-on:click.prevent="tab = 'asset'" href="#">Asset</a>
-
-                                            <a class="px-3 py-2 text-sm border font-body"
-                                                :class="{ ' text-cs-primary font-body  bg-cs-primary-soft': tab === 'nonasset' }"
-                                                x-on:click.prevent="tab = 'nonasset'" href="#">Non Asset</a>
-
-                                        </nav>
-
-                                        <!-- content -->
-
-                                        <!--  asset tab -->
-                                        <div x-show="tab === 'asset'" class="py-2 space-y-2">
-
-                                            <!-- Select asset -->
-                                            <div class="relative" x-data="{ open: false }">
-                                                <button class="flex justify-between w-full px-2 bg-white rounded "
-                                                    @click="open = !open">
-                                                    <div
-                                                        class="flex justify-between w-full px-3 py-2.5 rounded md:col-span-1 border hover:bg-blue-50">
-                                                        <h1 class="text-sm font-body">Select Asset</h1>
-                                                        <i
-                                                            class="justify-end my-auto text-sm fa-regular fa-chevron-down"></i>
-                                                    </div>
-                                                </button>
-                                                <div class="absolute z-10 w-full px-2 pt-1 rounded" x-show="open">
-                                                    <ul
-                                                        class="overflow-y-auto bg-white border divide-y rounded md:max-h-52 max-h-32">
-                                                        <li
-                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
-                                                            <a href="#1" class="flex w-full text-sm font-body ">
-                                                                <h1 class="my-auto">Genset</h1>
-                                                            </a>
-                                                        </li>
-
-                                                        <li
-                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
-                                                            <a href="#1" class="flex w-full text-sm font-body ">
-                                                                <h1 class="my-auto">Fire Extinguisher</h1>
-                                                            </a>
-                                                        </li>
-                                                        <li
-                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
-                                                            <a href="#1" class="flex w-full text-sm font-body ">
-                                                                <h1 class="my-auto">Genset</h1>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- end Select asset -->
-
-
-                                            <!-- Select Category -->
-                                            <div class="relative" x-data="{ open: false }">
-                                                <button class="flex justify-between w-full px-2 bg-white rounded "
-                                                    @click="open = !open">
-                                                    <div
-                                                        class="flex justify-between w-full px-3 py-2.5 rounded md:col-span-1 border hover:bg-blue-50">
-                                                        <h1 class="text-sm font-body">Select Category</h1>
-                                                        <i
-                                                            class="justify-end my-auto text-sm fa-regular fa-chevron-down"></i>
-                                                    </div>
-                                                </button>
-                                                <div class="absolute z-10 w-full px-2 pt-1 rounded" x-show="open">
-                                                    <ul
-                                                        class="overflow-y-auto bg-white border divide-y rounded md:max-h-52 max-h-32">
-                                                        <li
-                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
-                                                            <a href="#1" class="flex w-full text-sm font-body ">
-                                                                <h1 class="my-auto">Safety</h1>
-                                                            </a>
-                                                        </li>
-
-                                                        <li
-                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
-                                                            <a href="#1" class="flex w-full text-sm font-body ">
-                                                                <h1 class="my-auto">Housekeeping</h1>
-                                                            </a>
-                                                        </li>
-
-
-                                                        <li
-                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
-                                                            <a href="#1" class="flex w-full text-sm font-body ">
-                                                                <h1 class="my-auto">Landscape</h1>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- end Select Category -->
-
-                                        </div>
-                                        <!-- end asset tab -->
-
-
-                                        <!--  non asset tab -->
-                                        <div x-show="tab === 'nonasset'" class="relative ">
-
-                                            <!-- Select Category (non asset) -->
-                                            <div class="relative" x-data="{ open: false }">
-                                                <button class="flex justify-between w-full p-2 bg-white rounded "
-                                                    @click="open = !open">
-                                                    <div
-                                                        class="flex justify-between w-full px-3 py-2.5 rounded md:col-span-1 border hover:bg-blue-50">
-                                                        <h1 class="text-sm font-body">Select Category</h1>
-                                                        <i
-                                                            class="justify-end my-auto text-sm fa-regular fa-chevron-down"></i>
-                                                    </div>
-                                                </button>
-                                                <div class="absolute z-10 w-full px-2 pt-1 rounded" x-show="open">
-                                                    <ul
-                                                        class="overflow-y-auto bg-white border divide-y rounded md:max-h-52 max-h-32">
-                                                        <li
-                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
-                                                            <a href="#1" class="flex w-full text-sm font-body ">
-                                                                <h1 class="my-auto">Safety</h1>
-                                                            </a>
-                                                        </li>
-
-                                                        <li
-                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
-                                                            <a href="#1" class="flex w-full text-sm font-body ">
-                                                                <h1 class="my-auto">Housekeeping</h1>
-                                                            </a>
-                                                        </li>
-
-
-                                                        <li
-                                                            class="flex justify-between px-2 py-4 space-x-3 hover:bg-blue-50 ">
-                                                            <a href="#1" class="flex w-full text-sm font-body ">
-                                                                <h1 class="my-auto">Landscape</h1>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- end Select Category (non asset) -->
-
-                                        </div>
-                                        <!-- end non asset tab -->
-                                        <!-- end content -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ===== end section main ==== -->
+                            <small class="my-auto font-body text-cs-gray">FX-FR-3003-001</small>
                         </div>
-                        <!-- end Main information -->
                     </div>
-                    <!-- ===== end section General Information ==== -->
+                    <!-- ===== end section title ==== -->
 
+                    <!-- description -->
+                    <div class="bg-white border rounded">
+                        <div class="p-2 space-y-2">
+                            <small class="font-caption text-cs-gray">Description</small>
+                            <h1 class="text-sm leading-relaxed text-cs-black font-body">CHECKLIST PERAWATAN RUTIN GENSET
+                                DESKRIPSI
+                            </h1>
+                        </div>
+                    </div>
+                    <!-- end description -->
 
+                    <div class="space-y-4">
+                        <!-- Checklist item -->
+                        <div class="p-2 bg-white border rounded">
+                            <h1 class="cs-font-title text-cs-primary my-auto">Checklist Items</h1>
+                            <ol class="py-2 pl-10 list-decimal list-outside divide-y">
+                                <li class="py-2.5 text-sm font-body text-cs-black">ENGINE - ! OFF</li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">ENGINE - Periksa Level Oli Mesin
+                                </li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">ENGINE - Ganti Oli Mesin </li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">ENGINE - Ganti Filter Oli mesin</li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">ENGINE - Periksa Level Air radiator
+                                    dan
+                                    sistim pendingin (Tambahkan jika perlu )</li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">ENGINE - Periksa tegangan Tali kipas
+                                </li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">ENGINE - Periksa dan Bersihkan
+                                    saringan
+                                    udara dan sistemnya</li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">ENGINE - Periksa system dan
+                                    instalasi
+                                    bahan
+                                    bakar</li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">SISTEM LISTRIK DAN INSTALASI -
+                                    Periksa
+                                    tegangan batery /Accu</li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">SISTEM LISTRIK DAN INSTALASI -
+                                    Periksa
+                                    Terminasi batery /Accu</li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">SISTEM LISTRIK DAN INSTALASI -
+                                    Periksa
+                                    Level Air ACCU (tambahkan bila perlu )</li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">SISTEM LISTRIK DAN INSTALASI -
+                                    Periksa
+                                    instalasi kabel</li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">SISTEM LISTRIK DAN INSTALASI -
+                                    Periksa
+                                    Fungsi Pengisian Batery</li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">SISTEM LISTRIK DAN INSTALASI -
+                                    Periksa
+                                    Fungsi Engine Panel</li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">SISTEM LISTRIK DAN INSTALASI - Ukur
+                                    dan
+                                    Catat Output tegangan listrik</li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">SISTEM LISTRIK DAN INSTALASI -
+                                    Engine
+                                    running Hour</li>
+                                <li class="py-2.5 text-sm font-body text-cs-black">SISTEM LISTRIK DAN INSTALASI -
+                                    Bersihkan
+                                    seluruh body Genset</li>
+                            </ol>
+                        </div>
+                        <!-- end Checklist item -->
+                    </div>
                 </div>
-
-                <!-- ===== section footer ==== -->
-                <section class="bg-white border-t fixed bottom-0 w-full right-0 z-30">
-                    <div class="md:pl-64">
-                        <div class="p-4 flex justify-end space-x-3">
-                            <a href="#">
-                                <h1
-                                    class="cs-font-buttonNormal py-2 px-3 rounded-md text-cs-gray hover:text-cs-black transition-all">
-                                    Cancel
-                                </h1>
-                            </a>
-                            <a href="#">
-                                <h1
-                                    class="cs-font-buttonNormal py-2 px-3 rounded-md bg-cs-primary text-white hover:bg-cs-primary-hover transition-all">
-                                    Set Scheduling
-                                </h1>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <!-- ===== end section footer ==== -->
 
             </div>
             <!-- ===== end section main ==== -->
