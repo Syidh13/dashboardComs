@@ -20,7 +20,7 @@
 
 <body x-data="{ modal: false }">
     <!-- ===== section header ==== -->
-    <section class="fixed z-50 w-full h-16 bg-white border-b md:px-2">
+    <section class="fixed z-30 w-full h-16 bg-white border-b md:px-2">
         <div class="flex justify-between h-full">
             <div class="z-10 flex justify-between w-full px-2">
 
@@ -802,16 +802,28 @@
         <section class="w-full h-screen pt-16  overflow-y-auto bg-cs-background ">
             <div class="w-full  px-4 py-6 space-y-5 pb-20">
 
-                <!-- ===== FAB Create new ==== -->
+                <!-- ===== FAB ==== -->
                 <div class="absolute z-10 flex my-auto bottom-5 right-5">
-                    <a href="./buildingManagement-scheduleMaintance-create.html" class="flex ">
-                        <button
-                            class="text-white transition-all bg-cs-primary rounded-full w-14 h-14 hover:shadow-sm hover:bg-cs-primary-hover">
-                            <i class="mx-auto my-auto fa-regular fa-plus"></i>
-                        </button>
-                    </a>
+                    <div class="flex space-x-3">
+                        <!-- ===== FAB download ==== -->
+                        <a href="#download" class="flex ">
+                            <button
+                                class="text-white transition-all bg-cs-primary my-auto rounded-full w-10 h-10 hover:shadow-sm hover:bg-cs-primary-hover">
+                                <i class="mx-auto my-auto fa-regular fa-download"></i>
+                            </button>
+                        </a>
+                        <!-- ===== FAB download ==== -->
+                        <!-- ===== FAB Create new ==== -->
+                        <a href="./buildingManagement-scheduleMaintance-create.html" class="flex ">
+                            <button
+                                class="text-white transition-all bg-cs-primary my-auto rounded-full w-14 h-14 hover:shadow-sm hover:bg-cs-primary-hover">
+                                <i class="mx-auto my-auto fa-regular fa-plus"></i>
+                            </button>
+                        </a>
+                        <!-- ===== end FAB Create new ==== -->
+                    </div>
                 </div>
-                <!-- ===== end FAB Create new ==== -->
+                <!-- ===== end FAB ==== -->
 
                 <!-- ===== section breadcrumb ==== -->
                 <nav class="w-full rounded-md" aria-label="">
@@ -862,292 +874,446 @@
                     </nav>
                     <!-- end  tab -->
                     <section>
+
                         <!-- Waiting Tab -->
                         <div x-show="tab === 'Waiting'" class="relative px-2">
-                            <div class="h-full">
-                                <div class=" overflow-x-auto rounded-md border border-gray-200 ">
-                                    <table class="w-full" aria-label="">
-                                        <th></th>
-                                        <thead class="border-b-2 border-gray-200 bg-gray-50">
-                                            <tr>
-                                                <td class="p-3  w-10 text-left font-title text-sm tracking-wide">
-                                                    Ticket ID
-                                                </td>
-                                                <td
-                                                    class="w-20 p-3 whitespace-nowrap text-left font-title text-sm tracking-wide">
-                                                    Task Title
-                                                </td>
-                                                <td
-                                                    class="w-10 p-3 text-left whitespace-nowrap font-title text-sm tracking-wide">
-                                                    Preventive Template
-                                                </td>
-                                                <td
-                                                    class="w-12 p-3 text-left whitespace-nowrap font-title text-sm tracking-wide">
-                                                    Due Date
-                                                </td>
-                                                <td
-                                                    class="w-12 p-3 whitespace-nowrap text-left font-title text-sm tracking-wide">
-                                                    Assigned to
-                                                </td>
-                                                <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
-                                                    Status
-                                                </td>
-                                                <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
-                                                    Action
-                                                </td>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody class="divide-y divide-gray-100">
-                                            <tr class="bg-white">
-                                                <!-- Ticket id -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body">
-                                                    FXS/PM/V/2023/0024
-                                                </td>
-                                                <!-- Task title -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body">Test task BH
-                                                </td>
-                                                <!-- Preventive Template -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body">GENSET LOG SHEET
-                                                </td>
-                                                <!-- Due Date -->
-                                                <td
-                                                    class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                    19 May 2023 09:00</td>
-                                                <!-- Assigned to -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                    Heri</td>
-                                                <!-- Status -->
-                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                    <span
-                                                        class="font-subtitle text-xs bg-red-200 p-2 rounded-md text-red-500">Wait</span>
-                                                </td>
-                                                <!-- action -->
-                                                <td>
-                                                    <div class="flex">
-                                                        <a href="#detail"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-eye"></i>
-                                                        </a>
-                                                        <a href="#Delete"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-trash"></i>
-                                                        </a>
-                                                        <a href="#edit"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-edit"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" aria-label="">
+                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                        <tr>
+                                            <th scope="col" class="px-6 py-3">
+                                                Product name
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Color
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Category
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Accesories
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Available
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Price
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Weight
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
 
-                                            <tr class="bg-gray-50">
-                                                <!-- Ticket id -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body"> FXS/PM/V/2023/0024
-                                                </td>
-                                                <!-- Task title -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body">Test task BH</td>
-                                                <!-- Preventive Template -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body">GENSET LOG SHEET
-                                                </td>
-                                                <!-- Due Date -->
-                                                <td
-                                                    class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                    19 May 2023 09:00</td>
-                                                <!-- Assigned to -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                    Heri</td>
-                                                <!-- Status -->
-                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                    <span
-                                                        class="font-subtitle text-xs bg-red-200 p-2 rounded-md text-red-500">Wait</span>
-                                                </td>
-                                                <!-- action -->
-                                                <td>
-                                                    <div class="flex">
-                                                        <a href="#detail"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-eye"></i>
-                                                        </a>
-                                                        <a href="#Delete"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-trash"></i>
-                                                        </a>
-                                                        <a href="#edit"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-edit"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                        <tr class="bg-white border-b  hover:bg-gray-50 cursor-pointer"
+                                            @click="open = true" x-data="{ open: false }">
 
-                                            <tr class="bg-white">
-                                                <!-- Ticket id -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body"> FXS/PM/V/2023/0024
-                                                </td>
-                                                <!-- Task title -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body">Test task BH</td>
-                                                <!-- Preventive Template -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body">GENSET LOG SHEET
-                                                </td>
-                                                <!-- Due Date -->
-                                                <td
-                                                    class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                    19 May 2023 09:00</td>
-                                                <!-- Assigned to -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                    Heri</td>
-                                                <!-- Status -->
-                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                    <span
-                                                        class="font-subtitle text-xs bg-red-200 p-2 rounded-md text-red-500">Wait</span>
-                                                </td>
-                                                <!-- action -->
-                                                <td>
-                                                    <div class="flex">
-                                                        <a href="#detail"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-eye"></i>
-                                                        </a>
-                                                        <a href="#Delete"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-trash"></i>
-                                                        </a>
-                                                        <a href="#edit"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-edit"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            <div x-show="open">test</div>
 
-                                            <tr class="bg-gray-50">
-                                                <!-- Ticket id -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body"> FXS/PM/V/2023/0024
-                                                </td>
-                                                <!-- Task title -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body">Test task BH</td>
-                                                <!-- Preventive Template -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body">GENSET LOG SHEET
-                                                </td>
-                                                <!-- Due Date -->
-                                                <td
-                                                    class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                    19 May 2023 09:00</td>
-                                                <!-- Assigned to -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                    Heri</td>
-                                                <!-- Status -->
-                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                    <span
-                                                        class="font-subtitle text-xs bg-red-200 p-2 rounded-md text-red-500">Wait</span>
-                                                </td>
-                                                <!-- action -->
-                                                <td>
-                                                    <div class="flex">
-                                                        <a href="#detail"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-eye"></i>
-                                                        </a>
-                                                        <a href="#Delete"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-trash"></i>
-                                                        </a>
-                                                        <a href="#edit"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-edit"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            <th scope="row"
+                                                class="px-6 py-4 font-medium text-cs-black whitespace-nowrap">
+                                                Apple MacBook Pro 17"
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                Silver
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Laptop
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Yes
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Yes
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                $2999
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                3.0 lb.
+                                            </td>
+                                            <td class="flex items-center px-6 py-4 space-x-3">
+                                                <a href="#"
+                                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                                <a href="#"
+                                                    class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                                            </td>
 
-                                            <tr class="bg-white">
-                                                <!-- Ticket id -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body"> FXS/PM/V/2023/0024
-                                                </td>
-                                                <!-- Task title -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body">Test task BH</td>
-                                                <!-- Preventive Template -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body">GENSET LOG SHEET
-                                                </td>
-                                                <!-- Due Date -->
-                                                <td
-                                                    class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                    19 May 2023 09:00</td>
-                                                <!-- Assigned to -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                    Heri</td>
-                                                <!-- Status -->
-                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                    <span
-                                                        class="font-subtitle text-xs bg-red-200 p-2 rounded-md text-red-500">Wait</span>
-                                                </td>
-                                                <!-- action -->
-                                                <td>
-                                                    <div class="flex">
-                                                        <a href="#detail"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-eye"></i>
-                                                        </a>
-                                                        <a href="#Delete"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-trash"></i>
-                                                        </a>
-                                                        <a href="#edit"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-edit"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
 
-                                            <tr class="bg-gray-50">
-                                                <!-- Ticket id -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body"> FXS/PM/V/2023/0024
-                                                </td>
-                                                <!-- Task title -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body">Test task BH</td>
-                                                <!-- Preventive Template -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body">GENSET LOG SHEET
-                                                </td>
-                                                <!-- Due Date -->
-                                                <td
-                                                    class="whitespace-nowrap p-3 text-sm font-body py-6 text-cs-primary">
-                                                    19 May 2023 09:00</td>
-                                                <!-- Assigned to -->
-                                                <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
-                                                    Heri</td>
-                                                <!-- Status -->
-                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
-                                                    <span
-                                                        class="font-subtitle text-xs bg-red-200 p-2 rounded-md text-red-500">Wait</span>
-                                                </td>
-                                                <!-- action -->
-                                                <td>
-                                                    <div class="flex">
-                                                        <a href="#detail"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-eye"></i>
-                                                        </a>
-                                                        <a href="#Delete"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-trash"></i>
-                                                        </a>
-                                                        <a href="#edit"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-edit"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                        </tr>
 
-                                        </tbody>
 
-                                    </table>
-                                </div>
+                                        <tr
+                                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td class="w-4 p-4">
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-table-search-2" type="checkbox"
+                                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                    <label for="checkbox-table-search-2"
+                                                        class="sr-only">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <th scope="row"
+                                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                Microsoft Surface Pro
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                White
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Laptop PC
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                No
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Yes
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                $1999
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                1.0 lb.
+                                            </td>
+                                            <td class="flex items-center px-6 py-4 space-x-3">
+                                                <a href="#"
+                                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                                <a href="#"
+                                                    class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td class="w-4 p-4">
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-table-search-3" type="checkbox"
+                                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                    <label for="checkbox-table-search-3"
+                                                        class="sr-only">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <th scope="row"
+                                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                Magic Mouse 2
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                Black
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Accessories
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Yes
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                No
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                $2000
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                0.2 lb.
+                                            </td>
+                                            <td class="flex items-center px-6 py-4 space-x-3">
+                                                <div x-data="{ open: false }">
+                                                    <div @click="open = !open"
+                                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                                        ngedit</div>
+                                                    <!-- modal -->
+                                                    <div x-show="open">test</div>
+                                                </div>
+
+                                                <a href="#"
+                                                    class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td class="w-4 p-4">
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-table-search-3" type="checkbox"
+                                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                    <label for="checkbox-table-search-3"
+                                                        class="sr-only">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <th scope="row"
+                                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                Apple Watch
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                Black
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Watches
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Yes
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                No
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                $199
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                0.12 lb.
+                                            </td>
+                                            <td class="flex items-center px-6 py-4 space-x-3">
+                                                <a href="#"
+                                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                                <a href="#"
+                                                    class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td class="w-4 p-4">
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-table-search-3" type="checkbox"
+                                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                    <label for="checkbox-table-search-3"
+                                                        class="sr-only">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <th scope="row"
+                                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                Apple iMac
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                Silver
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                PC
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Yes
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Yes
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                $2999
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                7.0 lb.
+                                            </td>
+                                            <td class="flex items-center px-6 py-4 space-x-3">
+                                                <a href="#"
+                                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                                <a href="#"
+                                                    class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td class="w-4 p-4">
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-table-search-3" type="checkbox"
+                                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                    <label for="checkbox-table-search-3"
+                                                        class="sr-only">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <th scope="row"
+                                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                Apple AirPods
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                White
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Accessories
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                No
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Yes
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                $399
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                38 g
+                                            </td>
+                                            <td class="flex items-center px-6 py-4 space-x-3">
+                                                <a href="#"
+                                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                                <a href="#"
+                                                    class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td class="w-4 p-4">
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-table-search-3" type="checkbox"
+                                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                    <label for="checkbox-table-search-3"
+                                                        class="sr-only">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <th scope="row"
+                                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                iPad Pro
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                Gold
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Tablet
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                No
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Yes
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                $699
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                1.3 lb.
+                                            </td>
+                                            <td class="flex items-center px-6 py-4 space-x-3">
+                                                <a href="#"
+                                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                                <a href="#"
+                                                    class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td class="w-4 p-4">
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-table-search-3" type="checkbox"
+                                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                    <label for="checkbox-table-search-3"
+                                                        class="sr-only">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <th scope="row"
+                                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                Magic Keyboard
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                Black
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Accessories
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Yes
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Yes
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                $99
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                453 g
+                                            </td>
+                                            <td class="flex items-center px-6 py-4 space-x-3">
+                                                <a href="#"
+                                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                                <a href="#"
+                                                    class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td class="w-4 p-4">
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-table-search-3" type="checkbox"
+                                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                    <label for="checkbox-table-search-3"
+                                                        class="sr-only">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <th scope="row"
+                                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                Apple TV 4K
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                Black
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                TV
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Yes
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                No
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                $179
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                1.78 lb.
+                                            </td>
+                                            <td class="flex items-center px-6 py-4 space-x-3">
+                                                <a href="#"
+                                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                                <a href="#"
+                                                    class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td class="w-4 p-4">
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-table-search-3" type="checkbox"
+                                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                    <label for="checkbox-table-search-3"
+                                                        class="sr-only">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <th scope="row"
+                                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                AirTag
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                Silver
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Accessories
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                Yes
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                No
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                $29
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                53 g
+                                            </td>
+                                            <td class="flex items-center px-6 py-4 space-x-3">
+                                                <a href="#"
+                                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                                <a href="#"
+                                                    class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
+
                         </div>
                         <!-- end Waiting Tab -->
+
+
+
 
                         <!-- Processing Tab -->
                         <div x-show="tab === 'Processing'" class="relative px-2">
