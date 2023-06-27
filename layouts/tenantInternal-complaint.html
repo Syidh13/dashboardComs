@@ -95,7 +95,7 @@
 
                                     <!-- News (mobile) -->
                                     <li x-data="{ open: false }">
-                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-selected"
+                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-normal"
                                             @click="open = !open">
                                             <div class="space-x-3 flex">
                                                 <i class="fa-regular fa-newspaper my-auto"></i>
@@ -109,7 +109,7 @@
                                                 <!-- internal news -->
                                                 <li>
                                                     <a href="./news-internalNews.html" class="">
-                                                        <div class="cs-nav-selected py-2">
+                                                        <div class="cs-nav-normal py-2">
                                                             <h1 class="ml-6">Internal News</h1>
                                                         </div>
                                                     </a>
@@ -170,7 +170,7 @@
 
                                     <!-- Tenant & Internal (mobile) -->
                                     <li x-data="{ open: false }">
-                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-normal"
+                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-selected"
                                             @click="open = !open">
                                             <div class="space-x-3 flex">
                                                 <i class="fa-regular fa-store my-auto"></i>
@@ -184,7 +184,7 @@
                                                 <!-- Complaint & Request -->
                                                 <li>
                                                     <a href="./tenantInternal-complaint.html" class="">
-                                                        <div class="cs-nav-normal py-2">
+                                                        <div class="cs-nav-selected py-2">
                                                             <h1 class="ml-6">Complaint & Request</h1>
                                                         </div>
                                                     </a>
@@ -300,7 +300,7 @@
                                                 <!-- Complaint & Request -->
                                                 <li>
                                                     <a href="./tenantInternal-complaint.html" class="">
-                                                        <div class="cs-nav-normal py-2">
+                                                        <div class="cs-nav-selected py-2">
                                                             <h1 class="ml-6">Complaint & Request</h1>
                                                         </div>
                                                     </a>
@@ -500,7 +500,7 @@
 
                         <!-- Building Management (desktop) -->
                         <li class="relative">
-                            <a class="flex cs-nav-selected py-4" data-te-sidenav-link-ref>
+                            <a class="flex cs-nav-normal py-4" data-te-sidenav-link-ref>
                                 <span>
                                     <i class="fa-regular fa-clipboard"></i>
                                 </span>
@@ -528,7 +528,7 @@
                                 <!-- Schedule Maintance -->
                                 <li class="relative ">
                                     <a href="./buildingManagement-scheduleMaintance.html"
-                                        class="flex py-2 cs-nav-selected" data-te-sidenav-link-ref>
+                                        class="flex py-2 cs-nav-normal" data-te-sidenav-link-ref>
                                         <h1 class="ml-6 "> Schedule Maintance</h1>
                                     </a>
                                 </li>
@@ -540,7 +540,7 @@
 
                         <!-- Tenant & Internal (desktop) -->
                         <li class="relative">
-                            <a class="flex cs-nav-normal py-4" data-te-sidenav-link-ref>
+                            <a class="flex cs-nav-selected py-4" data-te-sidenav-link-ref>
                                 <span>
                                     <i class="fa-regular fa-store"></i>
                                 </span>
@@ -558,7 +558,7 @@
 
                                 <!-- Complaint & Request -->
                                 <li class="relative ">
-                                    <a href="./tenantInternal-complaint.html" class="flex py-2 cs-nav-normal"
+                                    <a href="./tenantInternal-complaint.html" class="flex py-2 cs-nav-selected"
                                         data-te-sidenav-link-ref>
                                         <h1 class="pl-6 whitespace-normal"> Complaint & Request
                                         </h1>
@@ -800,28 +800,22 @@
 
 
         <!--* ===== section main display (right on desktop & center mobile) ==== -->
-        <section class="w-full h-screen pt-16  overflow-y-auto bg-cs-background ">
+        <section class="w-full h-screen md:pt-16 pt-10  overflow-y-auto bg-cs-background ">
             <div class="w-full  px-4 py-6 space-y-5 pb-20">
 
                 <!-- ===== FAB ==== -->
                 <div class="absolute z-10 flex my-auto bottom-5 right-5">
                     <div class="flex space-x-3">
                         <!-- ===== FAB download ==== -->
-                        <a href="#download" class="flex ">
-                            <button
-                                class="text-white transition-all bg-cs-primary my-auto rounded-full w-10 h-10 hover:shadow-sm hover:bg-cs-primary-hover">
-                                <i class="mx-auto my-auto fa-regular fa-download"></i>
-                            </button>
+                        <a href="#download" class="flex">
+                            <div class="my-auto md:hidden block">
+                                <button
+                                    class="text-white transition-all bg-cs-primary my-auto rounded-full w-10 h-10 hover:shadow-sm hover:bg-cs-primary-hover">
+                                    <i class="mx-auto my-auto fa-regular fa-download"></i>
+                                </button>
+                            </div>
                         </a>
                         <!-- ===== FAB download ==== -->
-                        <!-- ===== FAB Create new ==== -->
-                        <a href="./buildingManagement-scheduleMaintance-create.html" class="flex ">
-                            <button
-                                class="text-white transition-all bg-cs-primary my-auto rounded-full w-14 h-14 hover:shadow-sm hover:bg-cs-primary-hover">
-                                <i class="mx-auto my-auto fa-regular fa-plus"></i>
-                            </button>
-                        </a>
-                        <!-- ===== end FAB Create new ==== -->
                     </div>
                 </div>
                 <!-- ===== end FAB ==== -->
@@ -829,32 +823,67 @@
                 <!-- ===== section breadcrumb ==== -->
                 <nav class="w-full rounded-md" aria-label="">
                     <ol class="flex space-x-2 list-reset">
-                        <li class="my-auto cs-font-overline text-cs-gray">Building Management</li>
+                        <li class="my-auto cs-font-overline text-cs-gray">Tenant & Internal</li>
                         <i class="text-xs fa-regular fa-slash-forward text-cs-gray"></i>
-                        <li class="my-auto cs-font-overline text-cs-primary">Schedule Maintance</li>
+                        <li class="my-auto cs-font-overline text-cs-primary">Complaint & Request</li>
                     </ol>
                 </nav>
                 <!-- ===== end section breadcrumb ==== -->
 
-                <section class="flex justify-between p-2 space-x-2 bg-white border rounded">
-                    <div class="w-full ">
-                        <input type="search" name="" id="" placeholder="Search.."
-                            class="w-full p-2 cs-font-body active:ring-1 active:ring-cs-primary rounded bg-slate-50">
-                    </div>
-                    <button class="flex px-4 py-2 my-auto space-x-2 bg-cs-primary rounded">
-                        <i class="text-white fa-regular fa-download"></i>
-                        <h1 class="hidden my-auto cs-font-buttonNormal text-white md:block">Download</h1>
-                    </button>
-                </section>
 
+                <!-- title -->
+                <h1 class="cs-font-headline2 text-cs-black">Complaint & Request</h1>
+                <!-- end title -->
+
+
+                <!-- edit -->
+                <section class="grid md:grid-cols-4 grid-cols-2 p-2 gap-3 bg-white border rounded">
+                    <!-- start date -->
+                    <div class="space-y-1">
+                        <h1 class="cs-font-caption text-cs-gray">Start Date</h1>
+                        <input type="date" name="" id=""
+                            class="cs-font-body text-cs-black p-2 bg-slate-50 border rounded-md w-full">
+                    </div>
+                    <!-- end start date -->
+                    <!-- start date -->
+                    <div class="space-y-1">
+                        <h1 class="cs-font-caption text-cs-gray">End Date</h1>
+                        <input type="date" name="" id=""
+                            class="cs-font-body text-cs-black p-2 bg-slate-50 border rounded-md w-full">
+                    </div>
+                    <!-- end start date -->
+                    <!-- Search -->
+                    <div class="space-y-1 col-span-2 md:col-span-1">
+                        <h1 class="cs-font-caption text-cs-gray">Search</h1>
+                        <input type="search" name="" id=""
+                            class="cs-font-body text-cs-black p-2 bg-slate-50 border rounded-md w-full">
+                    </div>
+                    <!-- end Search -->
+                    <!-- download (only for destop) -->
+                    <div class="hidden md:block pt-5">
+                        <div class="flex justify-end">
+                            <button class="flex px-4 py-2 my-auto space-x-2 bg-cs-primary rounded">
+                                <i class="text-white fa-regular fa-download"></i>
+                                <h1 class="hidden my-auto cs-font-buttonNormal text-white md:block">Download</h1>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- end download (only for destop) -->
+
+                </section>
+                <!-- end edit -->
 
                 <!-- ========= Table ========= -->
-                <div x-data="{ tab: 'Waiting' }" class="relative bg-white border rounded">
+                <div x-data="{ tab: 'Unassigned' }" class="relative bg-white border rounded">
                     <!-- nav -->
                     <nav aria-label="" class="p-2 py-4 flex space-x-1 rounded-t cs-font-buttonNormal overflow-scroll">
 
                         <a class="px-3 py-2 text-sm border text-cs-gray cs-font-buttonNormal rounded-md transition-all"
-                            :class="{ 'cs-font-buttonNormal text-cs-primary rounded-md bg-cs-primary-soft transition-all': tab === 'Waiting' }"
+                            :class="{ 'cs-font-buttonNormal text-cs-primary rounded-md bg-cs-primary-soft transition-all': tab === 'Unassigned' }"
+                            x-on:click.prevent="tab = 'Unassigned'" href="#">Unassigned</a>
+
+                        <a class="px-3 py-2 text-sm border text-cs-gray rounded-md cs-font-buttonNormal transition-all"
+                            :class="{ ' text-cs-primary cs-font-buttonNormal rounded-md bg-cs-primary-soft transition-all': tab === 'Waiting' }"
                             x-on:click.prevent="tab = 'Waiting'" href="#">Waiting</a>
 
                         <a class="px-3 py-2 text-sm border text-cs-gray rounded-md cs-font-buttonNormal transition-all"
@@ -875,6 +904,510 @@
                     </nav>
                     <!-- end  tab -->
                     <section>
+
+                        <!-- Unassigned Tab -->
+                        <div x-show="tab === 'Unassigned'" class="relative px-2 pb-4">
+
+                            <!-- ========= Waiting Tab (view for mobile only) ========= -->
+                            <div class="h-full block lg:hidden">
+                                <div
+                                    class=" lg:overflow-x-auto pb-2 lg:pb-0 h-full rounded-md  border-gray-200 space-y-6">
+
+                                    <!-- Card 1 -->
+                                    <div class="relative" x-data="{ open: false }">
+                                        <a href="#">
+                                            <div class="bg-white w-full relative border p-4 rounded-xl space-y-3">
+
+                                                <div class="flex justify-between">
+                                                    <div>
+                                                        <h1 class="cs-font-caption text-cs-gray">FXS/PM/V/2023/0024</h1>
+                                                        <h1 class="cs-font-title text-cs-black line-clamp-1">Electrical
+                                                        </h1>
+                                                    </div>
+                                                    <!-- date -->
+                                                    <div class="my-auto text-right whitespace-nowrap">
+                                                        <h1 class="cs-font-caption text-cs-gray">17 Jun 2023</h1>
+                                                        <h1 class="cs-font-caption text-cs-gray">09:22 PM</h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!-- absolute -->
+                                        <div class="absolute w-full top-[3.9rem]">
+                                            <div class="flex justify-center">
+                                                <i class="fa-solid fa-caret-down cursor-pointer px-2 py-1 bg-white text-xs rounded-full shadow"
+                                                    @click="open = !open"></i>
+                                            </div>
+                                        </div>
+                                        <!-- modal -->
+                                        <div class="px-2" x-show="open" x-transition>
+                                            <div class="border rounded-b-xl bg-slate-50 border-t-0 py-4 px-2 space-y-2">
+                                                <div class="grid grid-cols-2 gap-3">
+                                                    <div class="bg-white px-2 py-3 rounded-lg space-y-1">
+                                                        <h1 class="cs-font-caption text-cs-gray">Submitter</h1>
+                                                        <h1 class="cs-font-body text-cs-black truncate">Staff Bina
+                                                            Nusantara</h1>
+                                                    </div>
+                                                    <div class="bg-white px-2 py-3 rounded-lg space-y-1">
+                                                        <h1 class="cs-font-caption text-cs-gray">Tenant / Departement
+                                                        </h1>
+                                                        <h1 class="cs-font-body text-cs-black truncate">Bina Nusantara
+                                                        </h1>
+                                                    </div>
+                                                    <div class="bg-white px-2 py-3 rounded-lg space-y-1">
+                                                        <h1 class="cs-font-caption text-cs-gray">Title Submitted</h1>
+                                                        <h1 class="cs-font-body text-cs-black truncate">3 may 2023,
+                                                            10:48 PM</h1>
+                                                    </div>
+                                                    <div class="bg-white px-2 py-3 rounded-lg space-y-1">
+                                                        <h1 class="cs-font-caption text-cs-gray">Type</h1>
+                                                        <h1 class="cs-font-body text-cs-black truncate">Complaint</h1>
+                                                    </div>
+                                                    <div class="bg-white px-2 py-3 rounded-lg space-y-1 col-span-2">
+                                                        <h1 class="cs-font-caption text-cs-gray">Department</h1>
+                                                        <h1 class="cs-font-body text-cs-black truncate">PM Electric</h1>
+                                                    </div>
+                                                </div>
+                                                <div class="flex justify-center">
+                                                    <a href="./workorder-list-detail.html">
+                                                        <h1
+                                                            class="cs-font-buttonNormal py-2 px-4 border rounded-xl border-cs-primary text-cs-primary">
+                                                            View Detail
+                                                        </h1>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end Card 1 -->
+
+
+                                </div>
+                            </div>
+                            <!-- ========= end Waiting Tab (view for mobile only) ========= -->
+
+                            <!-- ========= Waiting Tab (view for desktop only) ========= -->
+                            <div class="h-full hidden lg:block">
+                                <div class=" overflow-x-auto rounded-md border border-gray-200 ">
+                                    <table class="w-full" aria-label="">
+                                        <th></th>
+                                        <thead class="border-b-2 border-gray-200 bg-gray-50">
+                                            <tr>
+                                                <td class="p-3  w-10 text-left font-title text-sm tracking-wide">
+                                                    Ticket ID
+                                                </td>
+                                                <td
+                                                    class="w-20 p-3 whitespace-nowrap text-left font-title text-sm tracking-wide">
+                                                    Submitter
+                                                </td>
+                                                <td
+                                                    class="w-10 p-3 text-left whitespace-nowrap font-title text-sm tracking-wide">
+                                                    Submitter Name
+                                                </td>
+                                                <td
+                                                    class="w-12 p-3 text-left whitespace-nowrap font-title text-sm tracking-wide">
+                                                    Tenant / Departement
+                                                </td>
+                                                <td
+                                                    class="w-12 p-3 whitespace-nowrap text-left font-title text-sm tracking-wide">
+                                                    Title
+                                                </td>
+                                                <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
+                                                    Title Submitted
+                                                </td>
+                                                <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
+                                                    Floor
+                                                </td>
+                                                <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
+                                                    Type
+                                                </td>
+                                                <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
+                                                    Department
+                                                </td>
+                                                <td class="w-12 p-3 text-left font-title text-sm tracking-wide">
+                                                    Action
+                                                </td>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-100">
+                                            <tr class="bg-white">
+                                                <!-- Ticket id -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">
+                                                    FXS/PM/V/2023/0024
+                                                </td>
+                                                <!-- Submitter -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">Tenant
+                                                </td>
+                                                <!-- Submitter Name -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">Staff Bina Nusantara
+                                                </td>
+                                                <!-- Tenant/Department -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body py-6">
+                                                    Bina Nusantara</td>
+                                                <!-- Title -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                    Electrical</td>
+                                                <!-- Time Submitted -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md text-blue-500">3
+                                                        May 2023, 10:48</span>
+                                                </td>
+                                                <!-- Floor -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        F6</span>
+                                                </td>
+                                                <!-- Type -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        Complaint</span>
+                                                </td>
+                                                <!-- Department -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        PM Electric</span>
+                                                </td>
+                                                <!-- action -->
+                                                <td>
+                                                    <div class="flex">
+                                                        <a href="#detail"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-eye"></i>
+                                                        </a>
+                                                        <a href="#Delete"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-trash"></i>
+                                                        </a>
+                                                        <a href="#edit"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-edit"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="bg-gray-50">
+                                                <!-- Ticket id -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">
+                                                    FXS/PM/V/2023/0024
+                                                </td>
+                                                <!-- Submitter -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">Tenant
+                                                </td>
+                                                <!-- Submitter Name -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">Staff Bina Nusantara
+                                                </td>
+                                                <!-- Tenant/Department -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body py-6">
+                                                    Bina Nusantara</td>
+                                                <!-- Title -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                    Electrical</td>
+                                                <!-- Time Submitted -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md text-blue-500">3
+                                                        May 2023, 10:48</span>
+                                                </td>
+                                                <!-- Floor -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        F6</span>
+                                                </td>
+                                                <!-- Type -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        Complaint</span>
+                                                </td>
+                                                <!-- Department -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        PM Electric</span>
+                                                </td>
+                                                <!-- action -->
+                                                <td>
+                                                    <div class="flex">
+                                                        <a href="#detail"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-eye"></i>
+                                                        </a>
+                                                        <a href="#Delete"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-trash"></i>
+                                                        </a>
+                                                        <a href="#edit"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-edit"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="bg-white">
+                                                <!-- Ticket id -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">
+                                                    FXS/PM/V/2023/0024
+                                                </td>
+                                                <!-- Submitter -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">Tenant
+                                                </td>
+                                                <!-- Submitter Name -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">Staff Bina Nusantara
+                                                </td>
+                                                <!-- Tenant/Department -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body py-6">
+                                                    Bina Nusantara</td>
+                                                <!-- Title -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                    Electrical</td>
+                                                <!-- Time Submitted -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md text-blue-500">3
+                                                        May 2023, 10:48</span>
+                                                </td>
+                                                <!-- Floor -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        F6</span>
+                                                </td>
+                                                <!-- Type -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        Complaint</span>
+                                                </td>
+                                                <!-- Department -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        PM Electric</span>
+                                                </td>
+                                                <!-- action -->
+                                                <td>
+                                                    <div class="flex">
+                                                        <a href="#detail"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-eye"></i>
+                                                        </a>
+                                                        <a href="#Delete"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-trash"></i>
+                                                        </a>
+                                                        <a href="#edit"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-edit"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="bg-gray-50">
+                                                <!-- Ticket id -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">
+                                                    FXS/PM/V/2023/0024
+                                                </td>
+                                                <!-- Submitter -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">Tenant
+                                                </td>
+                                                <!-- Submitter Name -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">Staff Bina Nusantara
+                                                </td>
+                                                <!-- Tenant/Department -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body py-6">
+                                                    Bina Nusantara</td>
+                                                <!-- Title -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                    Electrical</td>
+                                                <!-- Time Submitted -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md text-blue-500">3
+                                                        May 2023, 10:48</span>
+                                                </td>
+                                                <!-- Floor -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        F6</span>
+                                                </td>
+                                                <!-- Type -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        Complaint</span>
+                                                </td>
+                                                <!-- Department -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        PM Electric</span>
+                                                </td>
+                                                <!-- action -->
+                                                <td>
+                                                    <div class="flex">
+                                                        <a href="#detail"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-eye"></i>
+                                                        </a>
+                                                        <a href="#Delete"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-trash"></i>
+                                                        </a>
+                                                        <a href="#edit"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-edit"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="bg-white">
+                                                <!-- Ticket id -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">
+                                                    FXS/PM/V/2023/0024
+                                                </td>
+                                                <!-- Submitter -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">Tenant
+                                                </td>
+                                                <!-- Submitter Name -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">Staff Bina Nusantara
+                                                </td>
+                                                <!-- Tenant/Department -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body py-6">
+                                                    Bina Nusantara</td>
+                                                <!-- Title -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                    Electrical</td>
+                                                <!-- Time Submitted -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md text-blue-500">3
+                                                        May 2023, 10:48</span>
+                                                </td>
+                                                <!-- Floor -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        F6</span>
+                                                </td>
+                                                <!-- Type -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        Complaint</span>
+                                                </td>
+                                                <!-- Department -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        PM Electric</span>
+                                                </td>
+                                                <!-- action -->
+                                                <td>
+                                                    <div class="flex">
+                                                        <a href="#detail"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-eye"></i>
+                                                        </a>
+                                                        <a href="#Delete"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-trash"></i>
+                                                        </a>
+                                                        <a href="#edit"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-edit"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="bg-gray-50">
+                                                <!-- Ticket id -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">
+                                                    FXS/PM/V/2023/0024
+                                                </td>
+                                                <!-- Submitter -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">Tenant
+                                                </td>
+                                                <!-- Submitter Name -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body">Staff Bina Nusantara
+                                                </td>
+                                                <!-- Tenant/Department -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body py-6">
+                                                    Bina Nusantara</td>
+                                                <!-- Title -->
+                                                <td class="whitespace-nowrap p-3 text-sm font-body text-cs-black">
+                                                    Electrical</td>
+                                                <!-- Time Submitted -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md text-blue-500">3
+                                                        May 2023, 10:48</span>
+                                                </td>
+                                                <!-- Floor -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        F6</span>
+                                                </td>
+                                                <!-- Type -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        Complaint</span>
+                                                </td>
+                                                <!-- Department -->
+                                                <td class="whitespace-nowrap p-3 text-sm text-gray-700">
+                                                    <span class="font-body p-2 rounded-md">
+                                                        PM Electric</span>
+                                                </td>
+                                                <!-- action -->
+                                                <td>
+                                                    <div class="flex">
+                                                        <a href="#detail"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-eye"></i>
+                                                        </a>
+                                                        <a href="#Delete"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-trash"></i>
+                                                        </a>
+                                                        <a href="#edit"
+                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                            <i class="fa-regular fa-edit"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                                <div class="flex justify-end pt-4 space-x-4">
+
+                                    <div class="my-auto">
+                                        <h1 class="cs-font-caption text-cs-gray"><span class="text-cs-black">6 -
+                                                10</span> of <span class="text-cs-black">1</span> items</h1>
+                                    </div>
+
+                                    <div class="my-auto flex space-x-3">
+                                        <button
+                                            class="border flex p-2 rounded-lg bg-white hover:bg-slate-50 transition-all">
+                                            <i class="fa-regular fa-chevron-left text-xs my-auto text-cs-black"></i>
+                                        </button>
+                                        <div
+                                            class="flex border bg-white hover:bg-slate-50 transition-all rounded-lg p-2">
+                                            <h1 class="cs-font-caption text-cs-black my-auto">12</h1>
+                                        </div>
+                                        <button
+                                            class="border flex p-2 rounded-lg bg-white hover:bg-slate-50 transition-all">
+                                            <i class="fa-regular fa-chevron-right text-xs my-auto text-cs-black"></i>
+                                        </button>
+                                    </div>
+
+                                    <div>
+                                        <button
+                                            class="border py-2 px-3 rounded-lg flex space-x-2 bg-white hover:bg-slate-50 transition-all">
+                                            <h1 class="cs-font-caption text-cs-gray my-auto">10 / page</h1>
+                                            <i class="fa-regular fa-chevron-down text-xs my-auto text-cs-gray"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- ========= end Waiting Tab (view for desktop only) ========= -->
+
+                        </div>
+                        <!-- end Unassigned Tab -->
 
                         <!-- Waiting Tab -->
                         <div x-show="tab === 'Waiting'" class="relative px-2 pb-4">
@@ -981,8 +1514,6 @@
                             </div>
                             <!-- ========= end Waiting Tab (view for mobile only) ========= -->
 
-
-
                             <!-- ========= Waiting Tab (view for desktop only) ========= -->
                             <div class="h-full hidden lg:block">
                                 <div class=" overflow-x-auto rounded-md border border-gray-200 ">
@@ -1003,7 +1534,7 @@
                                                 </td>
                                                 <td
                                                     class="w-12 p-3 text-left whitespace-nowrap font-title text-sm tracking-wide">
-                                                    Due Date
+                                                    Expected Date
                                                 </td>
                                                 <td
                                                     class="w-12 p-3 whitespace-nowrap text-left font-title text-sm tracking-wide">
@@ -1265,14 +1796,42 @@
 
                                     </table>
                                 </div>
+                                <div class="flex justify-end pt-4 space-x-4">
+
+                                    <div class="my-auto">
+                                        <h1 class="cs-font-caption text-cs-gray"><span class="text-cs-black">6 -
+                                                10</span> of <span class="text-cs-black">1</span> items</h1>
+                                    </div>
+
+                                    <div class="my-auto flex space-x-3">
+                                        <button
+                                            class="border flex p-2 rounded-lg bg-white hover:bg-slate-50 transition-all">
+                                            <i class="fa-regular fa-chevron-left text-xs my-auto text-cs-black"></i>
+                                        </button>
+                                        <div
+                                            class="flex border bg-white hover:bg-slate-50 transition-all rounded-lg p-2">
+                                            <h1 class="cs-font-caption text-cs-black my-auto">12</h1>
+                                        </div>
+                                        <button
+                                            class="border flex p-2 rounded-lg bg-white hover:bg-slate-50 transition-all">
+                                            <i class="fa-regular fa-chevron-right text-xs my-auto text-cs-black"></i>
+                                        </button>
+                                    </div>
+
+                                    <div>
+                                        <button
+                                            class="border py-2 px-3 rounded-lg flex space-x-2 bg-white hover:bg-slate-50 transition-all">
+                                            <h1 class="cs-font-caption text-cs-gray my-auto">10 / page</h1>
+                                            <i class="fa-regular fa-chevron-down text-xs my-auto text-cs-gray"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
                             </div>
                             <!-- ========= end Waiting Tab (view for desktop only) ========= -->
 
                         </div>
                         <!-- end Waiting Tab -->
-
-
-
 
                         <!-- Processing Tab -->
                         <div x-show="tab === 'Processing'" class="relative px-2">

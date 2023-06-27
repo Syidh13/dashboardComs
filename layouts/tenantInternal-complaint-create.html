@@ -105,7 +105,7 @@
 
                                     <!-- News (mobile) -->
                                     <li x-data="{ open: false }">
-                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-selected"
+                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-normal"
                                             @click="open = !open">
                                             <div class="space-x-3 flex">
                                                 <i class="fa-regular fa-newspaper my-auto"></i>
@@ -119,7 +119,7 @@
                                                 <!-- internal news -->
                                                 <li>
                                                     <a href="./news-internalNews.html" class="">
-                                                        <div class="cs-nav-selected py-2">
+                                                        <div class="cs-nav-normal py-2">
                                                             <h1 class="ml-6">Internal News</h1>
                                                         </div>
                                                     </a>
@@ -180,7 +180,7 @@
 
                                     <!-- Tenant & Internal (mobile) -->
                                     <li x-data="{ open: false }">
-                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-normal"
+                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-selected"
                                             @click="open = !open">
                                             <div class="space-x-3 flex">
                                                 <i class="fa-regular fa-store my-auto"></i>
@@ -194,7 +194,7 @@
                                                 <!-- Complaint & Request -->
                                                 <li>
                                                     <a href="./tenantInternal-complaint.html" class="">
-                                                        <div class="cs-nav-normal py-2">
+                                                        <div class="cs-nav-selected py-2">
                                                             <h1 class="ml-6">Complaint & Request</h1>
                                                         </div>
                                                     </a>
@@ -310,7 +310,7 @@
                                                 <!-- Complaint & Request -->
                                                 <li>
                                                     <a href="./tenantInternal-complaint.html" class="">
-                                                        <div class="cs-nav-normal py-2">
+                                                        <div class="cs-nav-selected py-2">
                                                             <h1 class="ml-6">Complaint & Request</h1>
                                                         </div>
                                                     </a>
@@ -510,7 +510,7 @@
 
                         <!-- Building Management (desktop) -->
                         <li class="relative">
-                            <a class="flex cs-nav-selected py-4" data-te-sidenav-link-ref>
+                            <a class="flex cs-nav-normal py-4" data-te-sidenav-link-ref>
                                 <span>
                                     <i class="fa-regular fa-clipboard"></i>
                                 </span>
@@ -538,7 +538,7 @@
                                 <!-- Schedule Maintance -->
                                 <li class="relative ">
                                     <a href="./buildingManagement-scheduleMaintance.html"
-                                        class="flex py-2 cs-nav-selected" data-te-sidenav-link-ref>
+                                        class="flex py-2 cs-nav-normal" data-te-sidenav-link-ref>
                                         <h1 class="ml-6 "> Schedule Maintance</h1>
                                     </a>
                                 </li>
@@ -550,7 +550,7 @@
 
                         <!-- Tenant & Internal (desktop) -->
                         <li class="relative">
-                            <a class="flex cs-nav-normal py-4" data-te-sidenav-link-ref>
+                            <a class="flex cs-nav-selected py-4" data-te-sidenav-link-ref>
                                 <span>
                                     <i class="fa-regular fa-store"></i>
                                 </span>
@@ -568,7 +568,7 @@
 
                                 <!-- Complaint & Request -->
                                 <li class="relative ">
-                                    <a href="./tenantInternal-complaint.html" class="flex py-2 cs-nav-normal"
+                                    <a href="./tenantInternal-complaint.html" class="flex py-2 cs-nav-selected"
                                         data-te-sidenav-link-ref>
                                         <h1 class="pl-6 whitespace-normal"> Complaint & Request
                                         </h1>
