@@ -827,12 +827,46 @@
                 <!-- ===== end FAB ==== -->
 
                 <!-- ===== section breadcrumb ==== -->
-                <nav class="w-full rounded-md" aria-label="">
+                <nav class="w-full rounded-md space-y-2 relative z-10" aria-label="">
                     <ol class="flex space-x-2 list-reset">
                         <li class="my-auto cs-font-overline text-cs-gray">Building Management</li>
                         <i class="text-xs fa-regular fa-slash-forward text-cs-gray"></i>
                         <li class="my-auto cs-font-overline text-cs-primary">Schedule Maintance</li>
                     </ol>
+
+                    <div class="flex justify-between">
+                        <!-- title -->
+                        <h1 class="cs-font-body text-xl md:text-2xl">Schedule Maintance</h1>
+                        <!-- button dropdown -->
+                        <div x-data="{ open: false }">
+                            <button @click="open = !open"
+                                class="flex px-4 py-2 my-auto space-x-2 bg-white border rounded hover:bg-cs-primary-soft transition-all">
+                                <h1 class=" my-auto cs-font-buttonNormal text-cs-black">View by task</h1>
+                                <i class="text-cs-black fa-solid fa-caret-down my-auto"></i>
+                            </button>
+                            <!-- modal -->
+                            <div x-show="open" class="absolute right-4 py-2" x-transition>
+                                <div class="border bg-white shadow rounded-md divide-y w-full max-w-xs">
+                                    <div class="p-2 cursor-pointer hover:bg-cs-primary-soft transition-all">
+                                        <a href="#">
+                                            <h1 class="cs-font-body">View by Task</h1>
+                                        </a>
+                                    </div>
+                                    <div class="p-2 cursor-pointer hover:bg-cs-primary-soft transition-all">
+                                        <a href="#">
+                                            <h1 class="cs-font-body">View by Staff</h1>
+                                        </a>
+                                    </div>
+                                    <div class="p-2 cursor-pointer hover:bg-cs-primary-soft transition-all">
+                                        <a href="#">
+                                            <h1 class="cs-font-body">View by Summary</h1>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </nav>
                 <!-- ===== end section breadcrumb ==== -->
 
