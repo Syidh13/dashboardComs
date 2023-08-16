@@ -15,6 +15,8 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
@@ -837,6 +839,14 @@
                                 class="focus:border-transparen my-2 block border bg-white px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded "
                                 id="tabs-profile-tab3" data-te-toggle="pill" data-te-target="#tabs-work" role="tab"
                                 aria-controls="tabs-work" aria-selected="false">Work Order</a>
+                        </li>
+                        <!-- tab Schedule Maintance -->
+                        <li role="presentation">
+                            <a href="#tabs-scheduleMaintance"
+                                class="focus:border-transparen my-2 block border bg-white px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded "
+                                id="tabs-schedule-tab3" data-te-toggle="pill" data-te-target="#tabs-scheduleMaintance"
+                                role="tab" aria-controls="tabs-scheduleMaintance" aria-selected="false">Schedule
+                                Maintance</a>
                         </li>
                     </ul>
                     <!-- ===== ================ ==== -->
@@ -1781,6 +1791,7 @@
                         <!-- ===== end section modul tab Complaint request ==== -->
                         <!-- ===== ================ ==== -->
 
+
                         <!-- ===== ================ ==== -->
                         <!-- ===== section modul tab Complaint work order ==== -->
                         <!-- ===== ================ ==== -->
@@ -2538,6 +2549,1383 @@
                         <!-- ===== ================ ==== -->
                         <!-- ===== end section modul tab Complaint work order ==== -->
                         <!-- ===== ================ ==== -->
+
+
+
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== section modul tab Schedule Maintance ==== -->
+                        <!-- ===== ================ ==== -->
+                        <div class="hidden  transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+                            id="tabs-scheduleMaintance" role="tabpanel" aria-labelledby="Complaint Request">
+
+                            <section class="w-full space-y-4" id="content">
+
+                                <!-- ===== ================ ==== -->
+                                <!-- ===== section last update & date range ==== -->
+                                <!-- ===== ================ ==== -->
+                                <section class="md:flex md:space-x-3 space-y-2 md:space-y-0">
+                                    <div class="my-auto bg-white">
+                                        <input type="date" name="" id=""
+                                            class="font-sans text-sm p-2 border rounded-md w-full">
+                                    </div>
+                                    <div class="text-xs text-slate-40 flex my-auto">
+                                        <span class="my-auto">Last Updated:</span>
+                                        <span class="my-auto">Mar 20, 2023 10:00</span>
+                                    </div>
+                                </section>
+                                <!-- ===== ================ ==== -->
+                                <!-- ===== end section last update & date range ==== -->
+                                <!-- ===== ================ ==== -->
+
+                                <div class="border px-4 py-8 space-y-4 bg-white rounded-md">
+                                    <!-- ===== ================ ==== -->
+                                    <!-- ===== section Options List ==== -->
+                                    <!-- ===== ================ ==== -->
+                                    <section>
+                                        <!-- button -->
+                                        <div class="grid md:grid-cols-3 grid-cols-2 gap-2">
+
+                                            <!-- Property -->
+                                            <div x-data="{ open: false }" class="relative z-[6]">
+                                                <button @click="open = !open"
+                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                                    <h1 class="font-sans text-sm text-left w-full truncate">Property
+                                                    </h1>
+                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                                </button>
+                                                <!-- show modul -->
+                                                <div x-show="open" x-transition
+                                                    class="border absolute w-full p-2 bg-white rounded-md shadow-md">
+                                                    <!-- search -->
+                                                    <div>
+                                                        <input type="search" name="" id=""
+                                                            class="border w-full p-2 cs-font-body"
+                                                            placeholder="Search...">
+                                                    </div>
+                                                    <!-- end search -->
+
+                                                    <!-- Main title -->
+                                                    <div class="pt-2">
+                                                        <div class="p-2 bg-slate-100 grid grid-cols-3">
+                                                            <div class="flex space-x-3 col-span-2">
+                                                                <input type="checkbox" name="" id="">
+                                                                <h1 class="cs-font-overline font-bold my-auto">Property
+                                                                </h1>
+                                                            </div>
+                                                            <div class="col-span-1">
+                                                                <h1 class="cs-font-overline font-bold text-right">Record
+                                                                    Count</h1>
+                                                            </div>
+                                                        </div>
+                                                        <div class="max-h-32 overflow-y-auto w-full divide-y">
+
+                                                            <!-- FX Sudirman (property) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        FX Sudirman
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        713</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end FX Sudirman (property) -->
+
+                                                            <!-- Beachwalk (property) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        Beachwalk
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        333</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end Beachwalk (property) -->
+                                                            <!-- FX Sudirman (property) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        FX Sudirman
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        713</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end FX Sudirman (property) -->
+
+                                                            <!-- Beachwalk (property) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        Beachwalk
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        333</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end Beachwalk (property) -->
+
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- end Main title -->
+                                                </div>
+                                            </div>
+                                            <!-- end property -->
+
+                                            <!-- Items ID -->
+                                            <div x-data="{ open: false }" class="relative z-[5]">
+                                                <button @click="open = !open"
+                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                                    <h1 class="font-sans text-sm text-left w-full truncate">Items ID
+                                                    </h1>
+                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                                </button>
+                                                <!-- show modul -->
+                                                <div x-show="open" x-transition
+                                                    class="border absolute w-full p-2 bg-white rounded-md shadow-md">
+                                                    <!-- search -->
+                                                    <div>
+                                                        <input type="search" name="" id=""
+                                                            class="border w-full p-2 cs-font-body"
+                                                            placeholder="Search...">
+                                                    </div>
+                                                    <!-- end search -->
+
+                                                    <!-- Main title -->
+                                                    <div class="pt-2">
+                                                        <div class="p-2 bg-slate-100 grid grid-cols-3">
+                                                            <div class="flex space-x-3 col-span-2">
+                                                                <input type="checkbox" name="" id="">
+                                                                <h1 class="cs-font-overline font-bold my-auto">Property
+                                                                </h1>
+                                                            </div>
+                                                            <div class="col-span-1">
+                                                                <h1 class="cs-font-overline font-bold text-right">Record
+                                                                    Count</h1>
+                                                            </div>
+                                                        </div>
+                                                        <div class="max-h-52 overflow-y-auto w-full divide-y">
+
+                                                            <!-- List 1 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-001
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        713</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 1 (item id) -->
+
+                                                            <!-- List 2 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-002
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        333</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 2 (item id) -->
+
+                                                            <!-- List 3 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-003
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        232</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 3 (item id) -->
+
+                                                            <!-- List 4 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-004
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        221</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 4 (item id) -->
+
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- end Main title -->
+                                                </div>
+                                            </div>
+                                            <!-- end items ID -->
+
+                                            <!-- Form Number -->
+                                            <div x-data="{ open: false }" class="relative z-[4]">
+                                                <button @click="open = !open"
+                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                                    <h1 class="font-sans text-sm text-left w-full truncate">Form Number
+                                                    </h1>
+                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                                </button>
+                                                <!-- show modul -->
+                                                <div x-show="open" x-transition
+                                                    class="border absolute w-full p-2 bg-white rounded-md shadow-md">
+                                                    <!-- search -->
+                                                    <div>
+                                                        <input type="search" name="" id=""
+                                                            class="border w-full p-2 cs-font-body"
+                                                            placeholder="Search...">
+                                                    </div>
+                                                    <!-- end search -->
+
+                                                    <!-- Main title -->
+                                                    <div class="pt-2">
+                                                        <div class="p-2 bg-slate-100 grid grid-cols-3">
+                                                            <div class="flex space-x-3 col-span-2">
+                                                                <input type="checkbox" name="" id="">
+                                                                <h1 class="cs-font-overline font-bold my-auto">Property
+                                                                </h1>
+                                                            </div>
+                                                            <div class="col-span-1">
+                                                                <h1 class="cs-font-overline font-bold text-right">Record
+                                                                    Count</h1>
+                                                            </div>
+                                                        </div>
+                                                        <div class="max-h-52 overflow-y-auto w-full divide-y">
+
+                                                            <!-- List 1 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-001
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        713</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 1 (item id) -->
+
+                                                            <!-- List 2 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-002
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        333</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 2 (item id) -->
+
+                                                            <!-- List 3 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-003
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        232</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 3 (item id) -->
+
+                                                            <!-- List 4 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-004
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        221</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 4 (item id) -->
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- end Main title -->
+                                                </div>
+                                            </div>
+                                            <!-- end Form Number -->
+
+
+                                            <!-- Category -->
+                                            <div x-data="{ open: false }" class="relative z-[3]">
+                                                <button @click="open = !open"
+                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                                    <h1 class="font-sans text-sm text-left w-full truncate">Category
+                                                    </h1>
+                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                                </button>
+                                                <!-- show modul -->
+                                                <div x-show="open" x-transition
+                                                    class="border absolute w-full p-2 bg-white rounded-md shadow-md">
+                                                    <!-- search -->
+                                                    <div>
+                                                        <input type="search" name="" id=""
+                                                            class="border w-full p-2 cs-font-body"
+                                                            placeholder="Search...">
+                                                    </div>
+                                                    <!-- end search -->
+
+                                                    <!-- Main title -->
+                                                    <div class="pt-2">
+                                                        <div class="p-2 bg-slate-100 grid grid-cols-3">
+                                                            <div class="flex space-x-3 col-span-2">
+                                                                <input type="checkbox" name="" id="">
+                                                                <h1 class="cs-font-overline font-bold my-auto">Property
+                                                                </h1>
+                                                            </div>
+                                                            <div class="col-span-1">
+                                                                <h1 class="cs-font-overline font-bold text-right">Record
+                                                                    Count</h1>
+                                                            </div>
+                                                        </div>
+                                                        <div class="max-h-32 overflow-y-auto w-full divide-y">
+
+                                                            <!-- List 1 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-001
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        713</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 1 (item id) -->
+
+                                                            <!-- List 2 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-002
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        333</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 2 (item id) -->
+
+                                                            <!-- List 3 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-003
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        232</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 3 (item id) -->
+
+                                                            <!-- List 4 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-004
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        221</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 4 (item id) -->
+
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- end Main title -->
+                                                </div>
+                                            </div>
+                                            <!-- end Category -->
+
+
+                                            <!-- Item Name -->
+                                            <div x-data="{ open: false }" class="relative z-[2]">
+                                                <button @click="open = !open"
+                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                                    <h1 class="font-sans text-sm text-left w-full truncate">Item Name
+                                                    </h1>
+                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                                </button>
+                                                <!-- show modul -->
+                                                <div x-show="open" x-transition
+                                                    class="border absolute w-full p-2 bg-white rounded-md shadow-md">
+                                                    <!-- search -->
+                                                    <div>
+                                                        <input type="search" name="" id=""
+                                                            class="border w-full p-2 cs-font-body"
+                                                            placeholder="Search...">
+                                                    </div>
+                                                    <!-- end search -->
+
+                                                    <!-- Main title -->
+                                                    <div class="pt-2">
+                                                        <div class="p-2 bg-slate-100 grid grid-cols-3">
+                                                            <div class="flex space-x-3 col-span-2">
+                                                                <input type="checkbox" name="" id="">
+                                                                <h1 class="cs-font-overline font-bold my-auto">Property
+                                                                </h1>
+                                                            </div>
+                                                            <div class="col-span-1">
+                                                                <h1 class="cs-font-overline font-bold text-right">Record
+                                                                    Count</h1>
+                                                            </div>
+                                                        </div>
+                                                        <div class="max-h-32 overflow-y-auto w-full divide-y">
+
+                                                            <!-- List 1 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-001
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        713</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 1 (item id) -->
+
+                                                            <!-- List 2 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-002
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        333</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 2 (item id) -->
+
+                                                            <!-- List 3 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-003
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        232</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 3 (item id) -->
+
+                                                            <!-- List 4 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-004
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        221</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 4 (item id) -->
+
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- end Main title -->
+                                                </div>
+                                            </div>
+                                            <!-- end Item Name -->
+
+                                            <!-- Form Checklist -->
+                                            <div x-data="{ open: false }" class="relative z-[3]">
+                                                <button @click="open = !open"
+                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                                    <h1 class="font-sans text-sm text-left w-full truncate">Form
+                                                        Checklist
+                                                    </h1>
+                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                                </button>
+                                                <!-- show modul -->
+                                                <div x-show="open" x-transition
+                                                    class="border absolute w-full p-2 bg-white rounded-md shadow-md">
+                                                    <!-- search -->
+                                                    <div>
+                                                        <input type="search" name="" id=""
+                                                            class="border w-full p-2 cs-font-body"
+                                                            placeholder="Search...">
+                                                    </div>
+                                                    <!-- end search -->
+
+                                                    <!-- Main title -->
+                                                    <div class="pt-2">
+                                                        <div class="p-2 bg-slate-100 grid grid-cols-3">
+                                                            <div class="flex space-x-3 col-span-2">
+                                                                <input type="checkbox" name="" id="">
+                                                                <h1 class="cs-font-overline font-bold my-auto">Property
+                                                                </h1>
+                                                            </div>
+                                                            <div class="col-span-1">
+                                                                <h1 class="cs-font-overline font-bold text-right">Record
+                                                                    Count</h1>
+                                                            </div>
+                                                        </div>
+                                                        <div class="max-h-32 overflow-y-auto w-full divide-y">
+
+                                                            <!-- List 1 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-001
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        713</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 1 (item id) -->
+
+                                                            <!-- List 2 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-002
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        333</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 2 (item id) -->
+
+                                                            <!-- List 3 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-003
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        232</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 3 (item id) -->
+
+                                                            <!-- List 4 (item id) -->
+                                                            <div class="p-2  grid grid-cols-3">
+                                                                <div class="flex space-x-3 c w-full col-span-2">
+                                                                    <input type="checkbox" name="" id="">
+                                                                    <h1 class="cs-font-body my-auto">
+                                                                        PSKL_HVAC-L3-004
+                                                                    </h1>
+                                                                </div>
+                                                                <div class="col-span-1">
+                                                                    <h1 class="cs-font-body text-right">
+                                                                        221</h1>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end List 4 (item id) -->
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- end Main title -->
+                                                </div>
+                                            </div>
+                                            <!-- end Form Checklist -->
+
+                                            <!-- Assigned User -->
+                                            <div x-data="{ open: false }" class="relative z-[1] col-span-3">
+                                                <button @click="open = !open"
+                                                    class="border w-full bg-white flex justify-between p-2 rounded-md space-x-2 hover:bg-blue-50 transition-colors">
+                                                    <h1 class="font-sans text-sm text-left w-full truncate">Assigned
+                                                        User</h1>
+                                                    <i class="fa-regular fa-chevron-down my-auto text-xs"></i>
+                                                </button>
+                                                <!-- show modul -->
+                                                <div x-show="open" x-transition class="absolute pt-1 w-full">
+                                                    <div class="border rounded-m truncate flex w-full">
+                                                        <input type="search" name="" placeholder="Search Tenant" id=""
+                                                            class="text-xs truncate p-2 bg-white w-full">
+                                                    </div>
+                                                    <form action="/action_page.php"
+                                                        class="bg-white border rounded-m p-2 space-y-2">
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="check1"
+                                                                name="option1" value="something" checked>
+                                                            <label class="form-check-label font-sans text-sm text-left"
+                                                                for="check1">FX
+                                                                Chicago Popcorn</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="check2"
+                                                                name="option2" value="something">
+                                                            <label class="form-check-label font-sans text-sm text-left"
+                                                                for="check2">Zenbu</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="check2"
+                                                                name="option2" value="something">
+                                                            <label class="form-check-label font-sans text-sm text-left"
+                                                                for="check2">Your
+                                                                Bag Spa</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="check2"
+                                                                name="option2" value="something">
+                                                            <label class="form-check-label font-sans text-sm text-left"
+                                                                for="check2">XIAOMI</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="check2"
+                                                                name="option2" value="something">
+                                                            <label class="form-check-label font-sans text-sm text-left"
+                                                                for="check2">Wingstop</label>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <!-- end Assigned User -->
+
+                                        </div>
+                                        <!-- end button -->
+                                    </section>
+                                    <!-- ===== ================ ==== -->
+                                    <!-- ===== end section Options List ==== -->
+                                    <!-- ===== ================ ==== -->
+                                </div>
+
+
+                                <div class="border px-4 py-8 space-y-4 bg-white rounded-md">
+                                    <!-- ===== ================ ==== -->
+                                    <!-- ===== section Chart ==== -->
+                                    <!-- ===== ================ ==== -->
+                                    <section class="grid grid-cols-5 gap-6">
+                                        <!-- grid 1 -->
+                                        <div class="col-span-1 space-y-3">
+                                            <!-- total task -->
+                                            <div class="bg-cs-primary p-4 rounded-md">
+                                                <h1 class="cs-font-caption text-white">Total Task</h1>
+                                                <h1 class="font-headline1 text-white text-4xl tracking-tight">4.020</h1>
+                                            </div>
+                                            <!-- total Progress -->
+                                            <div class="bg-cs-primary p-4 rounded-md">
+                                                <h1 class="cs-font-caption text-white">Total Progress</h1>
+                                                <h1 class="font-headline1 text-white text-4xl tracking-tight">2.005</h1>
+                                            </div>
+                                        </div>
+                                        <!-- end grid 1 -->
+
+                                        <!-- grid 2 -->
+                                        <div class="col-span-2">
+                                            <div>
+                                                <canvas id="myChart" class="h-full"></canvas>
+                                            </div>
+
+                                            <script>
+                                                const ctx = document.getElementById('myChart');
+
+                                                new Chart(ctx, {
+                                                    type: 'bar',
+                                                    data: {
+                                                        labels: ['Complete', 'Wait', 'End Inspect', 'Process',],
+                                                        datasets: [{
+                                                            label: 'Record Count',
+                                                            data: [384, 227, 126, 4,],
+                                                            borderWidth: 1
+                                                        }]
+                                                    },
+                                                    options: {
+                                                        scales: {
+                                                            y: {
+                                                                beginAtZero: true
+                                                            }
+                                                        }
+                                                    }
+                                                });
+                                            </script>
+                                        </div>
+                                        <!-- end grid 2 -->
+
+                                        <!-- grid 3 -->
+                                        <div class="col-span-2 grid grid-cols-2 gap-3">
+                                            <!-- Rating Overall -->
+                                            <div class="border p-2 bg-white rounded-md space-y-2">
+                                                <h1 class="cs-font-caption text-cs-gray">Rating Overall</h1>
+                                                <div class="flex space-x-3">
+                                                    <h1 class="font-body text-3xl text-slate-900">4.95</h1>
+                                                    <div class="my-auto">
+                                                        <i class="fa-solid fa-star text-lg text-yellow-500"></i>
+                                                        <i class="fa-solid fa-star text-lg text-yellow-500"></i>
+                                                        <i class="fa-solid fa-star text-lg text-yellow-500"></i>
+                                                        <i
+                                                            class="fa-solid fa-star-sharp-half-stroke text-lg text-yellow-500"></i>
+                                                        <i class="fa-regular fa-star text-slate-300 text-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end Rating Overall -->
+
+                                            <!-- Rating Quality -->
+                                            <div class="border p-2 bg-white rounded-md space-y-2">
+                                                <h1 class="cs-font-caption text-cs-gray">Rating Quality</h1>
+                                                <div class="flex space-x-3">
+                                                    <h1 class="font-body text-3xl text-slate-900">4.95</h1>
+                                                    <div class="my-auto">
+                                                        <i class="fa-solid fa-star text-lg text-yellow-500"></i>
+                                                        <i class="fa-solid fa-star text-lg text-yellow-500"></i>
+                                                        <i class="fa-solid fa-star text-lg text-yellow-500"></i>
+                                                        <i
+                                                            class="fa-solid fa-star-sharp-half-stroke text-lg text-yellow-500"></i>
+                                                        <i class="fa-regular fa-star text-slate-300 text-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end Rating Quality -->
+
+                                            <!-- Rating Accuracy -->
+                                            <div class="border p-2 bg-white rounded-md space-y-2">
+                                                <h1 class="cs-font-caption text-cs-gray">Rating Accuracy</h1>
+                                                <div class="flex space-x-3">
+                                                    <h1 class="font-body text-3xl text-slate-900">4.95</h1>
+                                                    <div class="my-auto">
+                                                        <i class="fa-solid fa-star text-lg text-yellow-500"></i>
+                                                        <i class="fa-solid fa-star text-lg text-yellow-500"></i>
+                                                        <i class="fa-solid fa-star text-lg text-yellow-500"></i>
+                                                        <i
+                                                            class="fa-solid fa-star-sharp-half-stroke text-lg text-yellow-500"></i>
+                                                        <i class="fa-regular fa-star text-slate-300 text-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end Rating Accuracy -->
+
+                                            <!-- Rating Speed -->
+                                            <div class="border p-2 bg-white rounded-md space-y-2">
+                                                <h1 class="cs-font-caption text-cs-gray">Rating Speed</h1>
+                                                <div class="flex space-x-3">
+                                                    <h1 class="font-body text-3xl text-slate-900">4.95</h1>
+                                                    <div class="my-auto">
+                                                        <i class="fa-solid fa-star text-lg text-yellow-500"></i>
+                                                        <i class="fa-solid fa-star text-lg text-yellow-500"></i>
+                                                        <i class="fa-solid fa-star text-lg text-yellow-500"></i>
+                                                        <i
+                                                            class="fa-solid fa-star-sharp-half-stroke text-lg text-yellow-500"></i>
+                                                        <i class="fa-regular fa-star text-slate-300 text-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end Rating Speed -->
+                                        </div>
+                                        <!-- end grid 3 -->
+
+                                    </section>
+                                    <!-- ===== ================ ==== -->
+                                    <!-- ===== end section Chart ==== -->
+                                    <!-- ===== ================ ==== -->
+                                </div>
+
+
+                                <!-- ===== ================ ==== -->
+                                <!-- ===== section Schedule Maintance ==== -->
+                                <!-- ===== ================ ==== -->
+                                <section class="py-4 space-y-4">
+                                    <!-- top bar -->
+                                    <div class="flex justify-between">
+                                        <h1 class="font-title text-lg">Scheduled Maintance </h1>
+                                        <div>
+                                            <!-- export -->
+                                            <button
+                                                class="border py-2 px-3 transition-colors rounded bg-blue-500 hover:bg-blue-400 flex space-x-3">
+                                                <i class="fa-regular fa-file-arrow-down text-white"></i>
+                                                <h1 class="text-xs font-title text-white">Export</h1>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- end top bar -->
+                                    <div class="border  space-y-4 bg-white rounded-md">
+                                        <section class=" space-y-4" id="content">
+                                            <div class="max-w-full border bg-white rounded-md overflow-x-auto">
+                                                <div>
+                                                    <table class="text-center text-sm font-light" aria-label="">
+                                                        <thead
+                                                            class="border-b font-medium dark:border-neutral-500 bg-slate-100">
+                                                            <tr>
+                                                                <th scope="col" class="px-6 py-4 text-left truncate">
+                                                                    Ticket
+                                                                    ID</th>
+                                                                <th scope="col" class="px-6 py-4 text-left truncate">
+                                                                    Item Name
+                                                                </th>
+                                                                <th scope="col" class="px-6 py-4 text-left truncate">
+                                                                    Property</th>
+                                                                <th scope="col" class="px-6 py-4 text-left truncate">
+                                                                    Title
+                                                                </th>
+                                                                <th scope="col" class="px-6 py-4 text-left truncate">
+                                                                    Assigned User</th>
+                                                                <th scope="col" class="px-6 py-4 text-left truncate">
+                                                                    Progress
+                                                                </th>
+                                                                <th scope="col" class="px-6 py-4 text-left truncate">
+                                                                    Inspected by
+                                                                </th>
+                                                                <th scope="col" class="px-6 py-4 text-left truncate">
+                                                                    Approved by
+                                                                </th>
+                                                                <th scope="col" class="px-6 py-4 text-left truncate">
+                                                                    Time Process
+                                                                </th>
+                                                                <th scope="col" class="px-6 py-4 text-left truncate">
+                                                                    Time Completed</th>
+                                                                <th scope="col" class="px-6 py-4 text-left truncate">
+                                                                    Time Inspected</th>
+                                                                <th scope="col" class="px-6 py-4 text-left truncate">
+                                                                    Time Approve</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="divide-y">
+                                                            <tr class="bg-white">
+                                                                <td
+                                                                    class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                                    FXS/WO/BMOPS/XII/2022/0013</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Kanopi
+                                                                    Langit
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">FX
+                                                                    Sudirman</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Lantai 2
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Cecep Kurniawan
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Wait
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                            </tr>
+
+                                                            <tr class="bg-slate-50">
+                                                                <td
+                                                                    class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                                    FXS/WO/BMOPS/XII/2022/0013</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Kanopi
+                                                                    Langit
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">FX
+                                                                    Sudirman</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Lantai 2
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Cecep Kurniawan
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Wait
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                            </tr>
+
+
+                                                            <tr class="bg-white">
+                                                                <td
+                                                                    class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                                    FXS/WO/BMOPS/XII/2022/0013</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Kanopi
+                                                                    Langit
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">FX
+                                                                    Sudirman</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Lantai 2
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Cecep Kurniawan
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Wait
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                            </tr>
+
+                                                            <tr class="bg-slate-50">
+                                                                <td
+                                                                    class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                                    FXS/WO/BMOPS/XII/2022/0013</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Kanopi
+                                                                    Langit
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">FX
+                                                                    Sudirman</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Lantai 2
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Cecep Kurniawan
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Wait
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                            </tr>
+
+                                                            <tr class="bg-white">
+                                                                <td
+                                                                    class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                                    FXS/WO/BMOPS/XII/2022/0013</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Kanopi
+                                                                    Langit
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">FX
+                                                                    Sudirman</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Lantai 2
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Cecep Kurniawan
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Wait
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                            </tr>
+
+                                                            <tr class="bg-slate-50">
+                                                                <td
+                                                                    class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                                    FXS/WO/BMOPS/XII/2022/0013</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Kanopi
+                                                                    Langit
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">FX
+                                                                    Sudirman</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Lantai 2
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Cecep Kurniawan
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Wait
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                            </tr>
+
+                                                            <tr class="bg-white">
+                                                                <td
+                                                                    class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                                    FXS/WO/BMOPS/XII/2022/0013</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Kanopi
+                                                                    Langit
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">FX
+                                                                    Sudirman</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Lantai 2
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Cecep Kurniawan
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Wait
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                            </tr>
+
+                                                            <tr class="bg-slate-50">
+                                                                <td
+                                                                    class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                                    FXS/WO/BMOPS/XII/2022/0013</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Kanopi
+                                                                    Langit
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">FX
+                                                                    Sudirman</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Lantai 2
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Cecep Kurniawan
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Wait
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                            </tr>
+
+                                                            <tr class="bg-white">
+                                                                <td
+                                                                    class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                                    FXS/WO/BMOPS/XII/2022/0013</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Kanopi
+                                                                    Langit
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">FX
+                                                                    Sudirman</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Lantai 2
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Cecep Kurniawan
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Wait
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                            </tr>
+
+                                                            <tr class="bg-slate-50">
+                                                                <td
+                                                                    class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                                    FXS/WO/BMOPS/XII/2022/0013</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Kanopi
+                                                                    Langit
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">FX
+                                                                    Sudirman</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Lantai 2
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Cecep Kurniawan
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Wait
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                            </tr>
+
+                                                            <tr class="bg-white">
+                                                                <td
+                                                                    class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                                    FXS/WO/BMOPS/XII/2022/0013</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Kanopi
+                                                                    Langit
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">FX
+                                                                    Sudirman</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Lantai 2
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Cecep Kurniawan
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Wait
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                            </tr>
+
+                                                            <tr class="bg-slate-50">
+                                                                <td
+                                                                    class="whitespace-nowrap px-6 py-4 text-left font-medium">
+                                                                    FXS/WO/BMOPS/XII/2022/0013</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Kanopi
+                                                                    Langit
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">FX
+                                                                    Sudirman</td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Lantai 2
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">
+                                                                    Cecep Kurniawan
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left">Wait
+                                                                </td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                                <td class="whitespace-nowrap px-6 py-4 text-left"></td>
+                                                            </tr>
+
+
+
+
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-end py-2">
+                                                <nav aria-label="Pagination">
+                                                    <ul class="flex">
+                                                        <li
+                                                            class="p-1.5 hover:bg-slate-100 rounded-sm font-title text-xs text-center">
+                                                            Previous</li>
+                                                        <li class="p-1.5 hover:bg-slate-200 rounded-sm w-8 ">
+                                                            <h1 class="text-center font-title text-xs">1</h1>
+                                                        </li>
+                                                        <li class="p-1.5 hover:bg-slate-200 rounded-sm w-8 ">
+                                                            <h1 class="text-center font-title text-xs">2</h1>
+                                                        </li>
+                                                        <li
+                                                            class="p-1.5 hover:bg-slate-100 rounded-sm font-title text-xs text-center">
+                                                            Next
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </section>
+                                        <!-- ===== ================ ==== -->
+                                        <!-- ===== end section Schedule Maintance ==== -->
+                                        <!-- ===== ================ ==== -->
+                                    </div>
+                                </section>
+                                <!-- ===== ================ ==== -->
+                                <!-- ===== end section Schedule Maintance ==== -->
+                                <!-- ===== ================ ==== -->
+
+
+                                <div class="border px-4 py-8 space-y-4 bg-white rounded-md">
+                                    <!-- ===== ================ ==== -->
+                                    <!-- ===== section Percentage of Delay Task ==== -->
+                                    <!-- ===== ================ ==== -->
+                                    <div class=" w-full space-y-4" id="content">
+                                        <!-- title -->
+                                        <h1 class="font-title text-lg">Percentage of Task P​rogress</h1>
+                                        <section class="grid md:grid-cols-5 gap-3">
+
+                                            <div class="md:col-span-2">
+                                                <div class="overflow-hidden bg-white rounded-md border h-full">
+
+                                                    <div class="p-10">
+                                                        <canvas id="taskProgress1"></canvas>
+                                                    </div>
+
+                                                    <!-- Chart doughnut -->
+                                                    <script>
+                                                        const dataDoughnut1 = {
+                                                            labels: ["Inspect", "Wait", "Process", "Complete"],
+                                                            datasets: [
+                                                                {
+                                                                    label: "Data",
+                                                                    data: [300, 50, 100, 120],
+                                                                    backgroundColor: [
+                                                                        "rgb(52, 73, 94)",
+                                                                        "rgb(26, 188, 156)",
+                                                                        "rgb(231, 76, 60)",
+                                                                        "rgb(52, 152, 219)",
+                                                                    ],
+                                                                    hoverOffset: 4,
+                                                                },
+                                                            ],
+                                                        };
+
+                                                        const configDoughnutwow = {
+                                                            type: "doughnut",
+                                                            data: dataDoughnutwow,
+                                                            options: {},
+                                                        };
+
+                                                        var chartBar = new Chart(
+                                                            document.getElementById("taskProgresswow"),
+                                                            configDoughnutwow
+                                                        );
+
+                                                    </script>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-span-3">
+                                                <div class="border rounded-md bg-white h-full ">
+
+                                                    <!-- bar chart Top 5 Submitter -->
+                                                    <div class="md:col-span-1 h-full">
+                                                        <div
+                                                            class="overflow-hidden bg-white rounded-md my-auto  h-full p-2">
+
+                                                            <div class="flex h-full">
+                                                                <canvas class="w-full my-auto h-full"
+                                                                    id="taskCategory"></canvas>
+                                                            </div>
+
+                                                            <!-- Bar Chart -->
+                                                            <script>
+                                                                const dataCategory = {
+                                                                    labels: ["AC", "Electricity", "Plumbing - Air Kotor", "Listrik", "Lift & Eskalator", "Civil", "Exhaust", "Safety", "Lain lain"],
+                                                                    datasets: [
+                                                                        {
+                                                                            label: "Total Tasks by Category",
+                                                                            data: [1595, 868, 625, 533, 493, 346, 339, 258, 192],
+                                                                            backgroundColor: [
+                                                                                "rgb(52, 73, 94)",
+                                                                                "rgb(52, 73, 94)",
+                                                                                "rgb(52, 73, 94)",
+                                                                                "rgb(52, 73, 94)",
+                                                                                "rgb(52, 73, 94)",
+                                                                            ],
+                                                                            hoverOffset: 4,
+                                                                        },
+                                                                    ],
+                                                                };
+                                                                const optionsCategory = {
+                                                                    indexAxis: "y",
+                                                                    responsive: true,
+                                                                    plugins: {
+                                                                        legend: {
+                                                                            position: "top",
+                                                                        },
+                                                                        title: {
+                                                                            // display: true,
+                                                                            // text: "Top 5 Submitter",
+                                                                        },
+                                                                    },
+                                                                };
+                                                                const configCategory = {
+                                                                    type: "bar",
+                                                                    data: dataCategory,
+                                                                    options: optionsCategory,
+                                                                };
+
+                                                                var chartBar = new Chart(
+                                                                    document.getElementById("taskCategory"),
+                                                                    configCategory
+                                                                );
+
+                                                            </script>
+                                                            <!-- end Bar Chart -->
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- end bar chart Top 5 Submitter -->
+
+                                                </div>
+
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <!-- ===== ================ ==== -->
+                                    <!-- ===== end section Chart ==== -->
+                                    <!-- ===== ================ ==== -->
+                                </div>
+
+                            </section>
+
+
+
+
+
+                        </div>
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== end section modul tab Shedule Maintance ==== -->
+                        <!-- ===== ================ ==== -->
+
+
                     </section>
                     <!-- ===== ================ ==== -->
                     <!-- ===== end section modul tab ==== -->

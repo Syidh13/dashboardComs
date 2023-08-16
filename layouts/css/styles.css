@@ -3586,6 +3586,12 @@ textarea.form-control.is-invalid {
   }
 }
 
+/* ======== Clip Path ======== */
+
+/* .cs-clippath-tag {
+  @apply clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+} */
+
 /* ======== Button ======== */
 
 .cs-nav-selected {
@@ -3820,6 +3826,10 @@ textarea.form-control.is-invalid {
   right: 1.25rem;
 }
 
+.top-0 {
+  top: 0px;
+}
+
 .top-3 {
   top: 0.75rem;
 }
@@ -3834,10 +3844,6 @@ textarea.form-control.is-invalid {
 
 .top-\[6\.5rem\] {
   top: 6.5rem;
-}
-
-.top-0 {
-  top: 0px;
 }
 
 .z-10 {
@@ -4049,6 +4055,10 @@ textarea.form-control.is-invalid {
   max-height: 8rem;
 }
 
+.max-h-52 {
+  max-height: 13rem;
+}
+
 .max-h-56 {
   max-height: 14rem;
 }
@@ -4079,6 +4089,10 @@ textarea.form-control.is-invalid {
 
 .w-24 {
   width: 6rem;
+}
+
+.w-28 {
+  width: 7rem;
 }
 
 .w-32 {
@@ -4125,18 +4139,6 @@ textarea.form-control.is-invalid {
   width: 100%;
 }
 
-.w-96 {
-  width: 24rem;
-}
-
-.w-28 {
-  width: 7rem;
-}
-
-.w-screen {
-  width: 100vw;
-}
-
 .min-w-full {
   min-width: 100%;
 }
@@ -4156,6 +4158,10 @@ textarea.form-control.is-invalid {
 
 .flex-shrink-0 {
   flex-shrink: 0;
+}
+
+.table-auto {
+  table-layout: auto;
 }
 
 .-translate-x-full {
@@ -4205,6 +4211,14 @@ textarea.form-control.is-invalid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
 .grid-cols-6 {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
@@ -4249,6 +4263,10 @@ textarea.form-control.is-invalid {
   justify-content: space-evenly;
 }
 
+.gap-1 {
+  gap: 0.25rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
@@ -4257,8 +4275,8 @@ textarea.form-control.is-invalid {
   gap: 0.75rem;
 }
 
-.gap-1 {
-  gap: 0.25rem;
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -4455,6 +4473,11 @@ textarea.form-control.is-invalid {
   border-color: rgb(59 130 246 / var(--tw-border-opacity));
 }
 
+.border-cs-gray {
+  --tw-border-opacity: 1;
+  border-color: rgb(153 153 153 / var(--tw-border-opacity));
+}
+
 .border-cs-primary {
   --tw-border-opacity: 1;
   border-color: rgb(33 150 243 / var(--tw-border-opacity));
@@ -4573,10 +4596,6 @@ textarea.form-control.is-invalid {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-red-200\/10 {
-  background-color: rgb(254 202 202 / 0.1);
 }
 
 .bg-opacity-50 {
@@ -4836,6 +4855,10 @@ textarea.form-control.is-invalid {
   font-family: primary-Regular;
 }
 
+.font-headline1 {
+  font-family: primary-Regular;
+}
+
 .font-sans {
   font-family: Inter, sans-serif;
 }
@@ -4851,6 +4874,11 @@ textarea.form-control.is-invalid {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-4xl {
@@ -4987,6 +5015,11 @@ textarea.form-control.is-invalid {
   color: rgb(226 232 240 / var(--tw-text-opacity));
 }
 
+.text-slate-300 {
+  --tw-text-opacity: 1;
+  color: rgb(203 213 225 / var(--tw-text-opacity));
+}
+
 .text-slate-400 {
   --tw-text-opacity: 1;
   color: rgb(148 163 184 / var(--tw-text-opacity));
@@ -5012,6 +5045,11 @@ textarea.form-control.is-invalid {
   color: rgb(30 41 59 / var(--tw-text-opacity));
 }
 
+.text-slate-900 {
+  --tw-text-opacity: 1;
+  color: rgb(15 23 42 / var(--tw-text-opacity));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -5029,6 +5067,12 @@ textarea.form-control.is-invalid {
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -5182,6 +5226,11 @@ textarea.form-control.is-invalid {
   background-color: rgb(229 229 229 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-red-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-slate-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
@@ -5195,11 +5244,6 @@ textarea.form-control.is-invalid {
 .hover\:bg-slate-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-red-300:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
 }
 
 .hover\:font-title:hover {

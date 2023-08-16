@@ -2,9 +2,9 @@
 
 @tailwind components;
 /* ======== Clip Path ======== */
-.cs-clippath-tag {
+/* .cs-clippath-tag {
   @apply clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-}
+} */
 /* ======== Button ======== */
 .cs-nav-selected {
   @apply justify-between cs-font-buttonNormal md:justify-start md:space-x-3 px-6 rounded-lg text-left md:cursor-pointer bg-blue-50  overflow-hidden text-cs-primary whitespace-nowrap;
