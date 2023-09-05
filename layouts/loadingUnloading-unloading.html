@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMS - Master Data - Items</title>
+    <title>COMS - Unloading</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./media/fontawesome-pro-6.0.0-web/css/all.min.css">
     <!-- alpinejs -->
@@ -97,7 +97,7 @@
                                     <!-- end dashboard (mobile) -->
 
                                     <!-- Staff (mobile) -->
-                                    <li class="cs-nav-selected">
+                                    <li class="cs-nav-normal">
                                         <a href="./staffSchedule.html" class="flex py-3 space-x-3">
                                             <i class="fa-regular fa-users my-auto"></i>
                                             <h1>Staff</h1>
@@ -107,7 +107,7 @@
 
                                     <!-- Loading/Unloading (mobile) -->
                                     <li x-data="{ open: false }">
-                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-normal"
+                                        <a href="#" class="py-3 flex justify-between gap-3 cs-nav-selected"
                                             @click="open = !open">
                                             <div class="space-x-3 flex">
                                                 <i class="fa-regular fa-newspaper my-auto"></i>
@@ -130,8 +130,8 @@
 
                                                 <!-- Unloading -->
                                                 <li>
-                                                    <a href="loadingUnloading-unloading.html" class="">
-                                                        <div class="cs-nav-normal py-2">
+                                                    <a href="./loadingUnloading-unloading.html" class="">
+                                                        <div class="cs-nav-selected py-2">
                                                             <h1 class="ml-6">Unloading</h1>
                                                         </div>
                                                     </a>
@@ -140,7 +140,10 @@
                                             </ul>
                                         </div>
 
-                                        <!-- News (mobile) -->
+                                    </li>
+                                    <!-- end News (mobile) -->
+
+                                    <!-- News (mobile) -->
                                     <li x-data="{ open: false }">
                                         <a href="#" class="py-3 flex justify-between gap-3 cs-nav-normal"
                                             @click="open = !open">
@@ -506,7 +509,7 @@
 
                         <!-- Staff (desktop) -->
                         <li class="relative">
-                            <a href="./staffSchedule.html" class="flex cs-nav-selected py-4" data-te-sidenav-link-ref>
+                            <a href="./staffSchedule.html" class="flex cs-nav-normal py-4" data-te-sidenav-link-ref>
                                 <span>
                                     <i class="fa-regular fa-users"></i>
                                 </span>
@@ -517,7 +520,7 @@
 
                         <!-- Loading/Unloading (desktop) -->
                         <li class="relative">
-                            <a class="flex cs-nav-normal py-4" data-te-sidenav-link-ref>
+                            <a class="flex cs-nav-selected py-4" data-te-sidenav-link-ref>
                                 <span>
                                     <i class="fa-regular fa-newspaper"></i>
                                 </span>
@@ -545,8 +548,7 @@
 
                                 <!-- Unloading -->
                                 <li class="relative ">
-                                    <a href="./loadingUnloading-unloading.html" class="flex py-2 cs-nav-normal"
-                                        data-te-sidenav-link-ref>
+                                    <a href="#" class="flex py-2 cs-nav-selected" data-te-sidenav-link-ref>
                                         <h1 class="ml-6 "> Unloading</h1>
                                     </a>
                                 </li>
