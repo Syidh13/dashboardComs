@@ -891,551 +891,805 @@
 
 
         <!--* ===== section main display (right on desktop & center mobile) ==== -->
-        <section class="w-full h-screen pt-16 overflow-y-auto">
-            <div class="w-full h-full px-4 py-6 bg-slate-50">
+        <section class="w-full h-screen pt-16 overflow-y-auto bg-slate-50">
+            <div class="w-full h-full py-6  px-4">
+
+                <div class="flex justify-between">
+                    <div class="space-y-1">
+                        <!-- ===== section breadcrumb ==== -->
+                        <nav class="w-full rounded-md" aria-label="">
+                            <ol class="flex space-x-2 list-reset">
+                                <li class="my-auto text-xs text-slate-400 font-title-regular">Staff</li>
+                            </ol>
+                        </nav>
+                        <!-- ===== end section breadcrumb ==== -->
+                        <!-- ===== Date ==== -->
+                        <div class="flex space-x-2">
+                            <h1 class="cs-font-caption font-title text-cs-primary my-auto">Monday,</h1>
+                            <h1 class="cs-font-caption text-cs-gray my-auto">03 February 2023</h1>
+                        </div>
+                        <!-- ===== end Date ==== -->
+                    </div>
+                    <!-- ===== input Date ==== -->
+                    <div class="my-auto">
+                        <input type="date" name="" id=""
+                            class="cs-font-caption text-sm border-slate-200 border rounded-md">
+                    </div>
+                    <!-- ===== end input Date ==== -->
+                </div>
 
 
-                <div class="pb-20 space-y-5">
-                    <!-- ===== section breadcrumb ==== -->
-                    <nav class="w-full rounded-md" aria-label="">
-                        <ol class="flex space-x-2 list-reset">
-                            <li class="my-auto cs-font-overline text-cs-gray">Staff Schedule</li>
-                        </ol>
-                    </nav>
-                    <!-- ===== end section breadcrumb ==== -->
-
-                    <!-- section search & donwload -->
-                    <section class="flex justify-between p-2 space-x-2 bg-white border rounded">
-                        <div class="w-full ">
-                            <input type="search" name="" id="" placeholder="Search Staff"
-                                class="w-full p-2 cs-font-body rounded bg-slate-50">
+                <!-- ===== ================ ==== -->
+                <!-- ===== section Main Body ==== -->
+                <!-- ===== ================ ==== -->
+                <section class="py-4">
+                    <!-- ===== ================ ==== -->
+                    <!-- ===== section Tab ==== -->
+                    <!-- ===== ================ ==== -->
+                    <section class="p-4 rounded-md bg-white border border-slate-200 flex justify-between">
+                        <div>
+                            <h1 class="cs-font-overline text-cs-gray">Select type of task</h1>
+                            <ul class="flex list-none  flex-wrap border-b-0 pl-0 md:flex-row space-x-2" id="tabs-tab3"
+                                role="tablist" data-te-nav-ref>
+                                <!-- tab complaint -->
+                                <li role="presentation">
+                                    <a href="#tabs-complaint"
+                                        class="my-2 block  border bg-white px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded"
+                                        id="tabs-home-tab3" data-te-toggle="pill" data-te-target="#tabs-complaint"
+                                        data-te-nav-active role="tab" aria-controls="tabs-complaint"
+                                        aria-selected="true">Complaint Request</a>
+                                </li>
+                                <!-- tab work -->
+                                <li role="presentation">
+                                    <a href="#tabs-work"
+                                        class="focus:border-transparen my-2 block border bg-white px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded "
+                                        id="tabs-profile-tab3" data-te-toggle="pill" data-te-target="#tabs-work"
+                                        role="tab" aria-controls="tabs-work" aria-selected="false">Work Order</a>
+                                </li>
+                                <!-- tab Schedule Maintance -->
+                                <li role="presentation">
+                                    <a href="#tabs-scheduleMaintance"
+                                        class="focus:border-transparen my-2 block border bg-white px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded "
+                                        id="tabs-schedule-tab3" data-te-toggle="pill"
+                                        data-te-target="#tabs-scheduleMaintance" role="tab"
+                                        aria-controls="tabs-scheduleMaintance" aria-selected="false">Schedule
+                                        Maintance</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h1 class="cs-font-overline text-cs-gray">Select Property</h1>
+                            <button
+                                class="flex my-2 space-x-3 border bg-white px-7 pt-4 pb-3.5 text-neutral-500 rounded">
+                                <h1 class="my-auto text-xs font-medium uppercase leading-tight">Property</h1>
+                                <i class="my-auto fa-solid fa-caret-down"></i>
+                            </button>
                         </div>
                     </section>
-                    <!-- end section search & donwload -->
+                    <!-- ===== ================ ==== -->
+                    <!-- ===== end section Tab ==== -->
+                    <!-- ===== ================ ==== -->
 
 
-                    <section class="overflow-x-auto rounded-md border border-gray-200">
-                        <table class="table-auto w-full" aria-describedby="">
-                            <thead class="border-b-2 border-gray-200 bg-gray-50">
-                                <tr class="text-left font-title text-sm tracking-wide">
-                                    <th class="p-4">No</th>
-                                    <th class="p-4">Name</th>
-                                    <th class="p-4">Property</th>
-                                    <th class="p-4">Role</th>
-                                    <th class="p-4">Department</th>
-                                    <th class="p-4">Email</th>
-                                    <th class="p-4">Action</th>
-                                </tr>
-                            </thead>
 
+                    <section class="py-8">
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== section modul tab Complaint request ==== -->
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== ================ ==== -->
+                        <section
+                            class="hidden relative  transition-opacity duration-150 ease-linear  data-[te-tab-active]:block"
+                            id="tabs-complaint" role="tabpanel" data-te-tab-active aria-labelledby="Complaint Request">
+                            <!-- title -->
+                            <div class="py-2">
+                                <h1 class="cs-font-headline2 text-cs-black">Complaint Request</h1>
+                            </div>
 
-                            <tbody class="divide-y">
+                            <div class="grid grid-cols-3 gap-3 py-2">
+                                <!-- left grid (Complaint Request) -->
+                                <section class="col-span-2 space-y-4">
 
-                                <!-- staff 1 -->
-                                <tr class="bg-white font-body whitespace-nowrap text-sm" x-data="{ open: false }">
-                                    <td class="px-4 py-6">1</td>
-                                    <td class="px-4 py-6">C. Ardi Singal</td>
-                                    <td class="px-4 py-6">FX Sudirman</td>
-                                    <td class="px-4 py-6 text-cs-primary">IT Coordinator</td>
-                                    <td class="px-4 py-6">IT</td>
-                                    <td class="px-4 py-6">ejenza@fx.co.id</td>
-                                    <td>
-                                        <i @click="open = true"
-                                            class="fa-regular fa-eye mx-auto hover:bg-cs-primary-soft hover:text-cs-primary transition-all p-3 rounded-full"></i>
-                                        <!-- modal -->
-                                        <div x-show="open" x-transition
-                                            class="absolute top-0 left-0 h-screen w-screen backdrop-blur">
+                                    <div class=" p-4 bg-white border border-slate-200 rounded-md space-y-3">
+                                        <!-- Total Task -->
+                                        <div class="flex">
+                                            <div class="bg-blue-500 p-4 text-white rounded-md space-y-2">
+                                                <h1 class="cs-font-caption">Total Complain & Request Task</h1>
+                                                <h1 class="cs-font-headline1">233</h1>
+                                            </div>
+                                        </div>
+                                        <!-- end Total Task -->
 
-                                            <div class="flex justify-center my-auto h-screen p-4 md:p-0">
-                                                <div class="py-20 w-full max-w-2xl">
-                                                    <div class="my-auto h-full relative max-w-2-xl w-full rounded-md">
-                                                        <div
-                                                            class="p-4 border rounded-t-md bg-white flex justify-between">
-                                                            <h1 class="cs-font-title text-cs-black my-auto">Staff Detail
+                                        <!-- tag task -->
+                                        <div class="grid grid-cols-4 gap-3">
+                                            <!-- Wait -->
+                                            <div class="flex">
+                                                <div
+                                                    class="bg-white border border-slate-200 p-2 rounded-md space-y-2 w-full">
+                                                    <h1 class="cs-font-caption text-cs-gray">Wait</h1>
+                                                    <h1 class="cs-font-title text-cs-black">233</h1>
+                                                </div>
+                                            </div>
+                                            <!-- end Wait -->
+
+                                            <!-- Approve -->
+                                            <div class="flex">
+                                                <div
+                                                    class="bg-white border border-slate-200 p-2 rounded-md space-y-2 w-full">
+                                                    <h1 class="cs-font-caption text-cs-gray">Approve</h1>
+                                                    <h1 class="cs-font-title text-cs-black">233</h1>
+                                                </div>
+                                            </div>
+                                            <!-- end Approve -->
+
+                                            <!-- Inspect -->
+                                            <div class="flex">
+                                                <div
+                                                    class="bg-white border border-slate-200 p-2 rounded-md space-y-2 w-full">
+                                                    <h1 class="cs-font-caption text-cs-gray">Inspect</h1>
+                                                    <h1 class="cs-font-title text-cs-black">233</h1>
+                                                </div>
+                                            </div>
+                                            <!-- end Inspect -->
+
+                                            <!-- Process -->
+                                            <div class="flex">
+                                                <div
+                                                    class="bg-white border border-slate-200 p-2 rounded-md space-y-2 w-full">
+                                                    <h1 class="cs-font-caption text-cs-gray">Process</h1>
+                                                    <h1 class="cs-font-title text-cs-black">233</h1>
+                                                </div>
+                                            </div>
+                                            <!-- end Process -->
+
+                                            <!-- Complete -->
+                                            <div class="flex">
+                                                <div
+                                                    class="bg-white border border-green-500 p-2 rounded-md space-y-2 w-full">
+                                                    <h1 class="cs-font-caption text-green-500">Complete</h1>
+                                                    <h1 class="cs-font-title text-green-500">233</h1>
+                                                </div>
+                                            </div>
+                                            <!-- end Complete -->
+
+                                            <!-- Unassign -->
+                                            <div class="flex">
+                                                <div
+                                                    class="bg-white border border-slate-200 p-2 rounded-md space-y-2 w-full">
+                                                    <h1 class="cs-font-caption text-cs-gray">Unassign</h1>
+                                                    <h1 class="cs-font-title text-cs-black">233</h1>
+                                                </div>
+                                            </div>
+                                            <!-- end Unassign -->
+
+                                            <!-- Reject -->
+                                            <div class="flex">
+                                                <div
+                                                    class="bg-white border border-slate-200 p-2 rounded-md space-y-2 w-full">
+                                                    <h1 class="cs-font-caption text-cs-gray">Reject</h1>
+                                                    <h1 class="cs-font-title text-cs-black">233</h1>
+                                                </div>
+                                            </div>
+                                            <!-- end Reject -->
+                                        </div>
+                                        <!-- end tag task -->
+                                    </div>
+
+                                    <div>
+                                        <!-- title -->
+                                        <div class="py-2">
+                                            <h1 class="cs-font-title text-cs-black">List Staff</h1>
+                                        </div>
+
+                                        <div
+                                            class=" p-4 bg-white border border-slate-200 rounded-md space-y-3 overflow-y-auto">
+                                            <!-- search -->
+                                            <input type="search" name="" id=""
+                                                class="border cs-font-body text-sm w-full max-w-lg rounded-md border-slate-200"
+                                                placeholder="Search staff">
+                                            <table class="table-auto w-full border-collapse" aria-describedby="">
+                                                <th>
+                                                    <tr>
+                                                        <!-- No -->
+                                                        <th
+                                                            class="bg-slate-100 text-left py-2 px-3  border border-slate-200">
+                                                            <h1 class="cs-font-subtitle text-sm whitespace-nowrap">No
                                                             </h1>
-                                                            <button @click="open = !open">
-                                                                <i
-                                                                    class="fa-regular fa-xmark my-auto py-2 px-2.5 bg-slate-50 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-colors"></i>
+                                                        </th>
+                                                        <!-- Action -->
+                                                        <th
+                                                            class="bg-slate-100 text-left py-2 px-3  border border-slate-200">
+                                                            <h1 class="cs-font-subtitle text-sm whitespace-nowrap">
+                                                                Action
+                                                            </h1>
+                                                        </th>
+                                                        <!-- Name -->
+                                                        <th
+                                                            class="bg-slate-100 text-left py-2 px-3  border border-slate-200">
+                                                            <h1 class="cs-font-subtitle text-sm whitespace-nowrap">Name
+                                                            </h1>
+                                                        </th>
+                                                        <!-- Rate -->
+                                                        <th
+                                                            class="bg-slate-100 text-left py-2 px-3  border border-slate-200">
+                                                            <h1 class="cs-font-subtitle text-sm whitespace-nowrap">Rate
+                                                            </h1>
+                                                        </th>
+                                                        <!-- Inspect -->
+                                                        <th
+                                                            class="bg-slate-100 text-left py-2 px-3  border border-slate-200">
+                                                            <h1 class="cs-font-subtitle text-sm whitespace-nowrap">
+                                                                Inspect
+                                                            </h1>
+                                                        </th>
+                                                        <!-- Approve -->
+                                                        <th
+                                                            class="bg-slate-100 text-left py-2 px-3  border border-slate-200">
+                                                            <h1 class="cs-font-subtitle text-sm whitespace-nowrap">
+                                                                Approve
+                                                            </h1>
+                                                        </th>
+                                                        <!-- Complete -->
+                                                        <th
+                                                            class="bg-slate-100 text-left py-2 px-3  border border-slate-200">
+                                                            <h1 class="cs-font-subtitle text-sm whitespace-nowrap">
+                                                                Complete
+                                                            </h1>
+                                                        </th>
+                                                        <!-- Wait -->
+                                                        <th
+                                                            class="bg-slate-100 text-left py-2 px-3  border border-slate-200">
+                                                            <h1 class="cs-font-subtitle text-sm whitespace-nowrap">Wait
+                                                            </h1>
+                                                        </th>
+                                                        <!-- unassigned -->
+                                                        <th
+                                                            class="bg-slate-100 text-left py-2 px-3  border border-slate-200">
+                                                            <h1 class="cs-font-subtitle text-sm whitespace-nowrap">
+                                                                unassigned
+                                                            </h1>
+                                                        </th>
+                                                        <!-- Process -->
+                                                        <th
+                                                            class="bg-slate-100 text-left py-2 px-3  border border-slate-200">
+                                                            <h1 class="cs-font-subtitle text-sm whitespace-nowrap">
+                                                                Process
+                                                            </h1>
+                                                        </th>
+                                                    </tr>
+                                                </th>
+                                                <tbody>
+                                                    <!-- staff 1 -->
+                                                    <tr>
+                                                        <!-- no -->
+                                                        <td
+                                                            class="cs-font-body border-collapse border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            1
+                                                        </td>
+                                                        <!-- action -->
+                                                        <td
+                                                            class="cs-font-body border-collapse border border-slate-200  py-3 px-4 text-sm text-cs-black text-center">
+                                                            <button>
+                                                                <div
+                                                                    class="hover:bg-slate-100 transition-all hover:rounded-full py-1.5 px-2">
+                                                                    <i class="fa-regular fa-eye"></i>
+                                                                </div>
                                                             </button>
-                                                        </div>
-                                                        <div
-                                                            class="overflow-y-auto border-x border-b rounded-b-md h-full p-4 align-top bg-white">
+                                                        </td>
+                                                        <!-- name -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-left">
+                                                            Syidh Al Rasyid
+                                                        </td>
+                                                        <!-- Rate -->
+                                                        <td
+                                                            class="cs-font-title border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-primary text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Inspect -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Approve -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Complete -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Wait -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Unassign -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Process -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                    </tr>
+                                                    <!-- end staff 1 -->
+
+                                                    <!-- staff 2 -->
+                                                    <tr>
+                                                        <!-- no -->
+                                                        <td
+                                                            class="cs-font-body border-collapse border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            2
+                                                        </td>
+                                                        <!-- action -->
+                                                        <td
+                                                            class="cs-font-body border-collapse border border-slate-200  py-3 px-4 text-sm text-cs-black text-center">
+                                                            <button>
+                                                                <div
+                                                                    class="hover:bg-slate-100 transition-all hover:rounded-full py-1.5 px-2">
+                                                                    <i class="fa-regular fa-eye"></i>
+                                                                </div>
+                                                            </button>
+                                                        </td>
+                                                        <!-- name -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-left">
+                                                            Security Kawasan 1
+                                                        </td>
+                                                        <!-- Rate -->
+                                                        <td
+                                                            class="cs-font-title border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-primary text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Inspect -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Approve -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Complete -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Wait -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Unassign -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Process -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                    </tr>
+                                                    <!-- end staff 2 -->
+
+                                                    <!-- staff 3 -->
+                                                    <tr>
+                                                        <!-- no -->
+                                                        <td
+                                                            class="cs-font-body border-collapse border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            3
+                                                        </td>
+                                                        <!-- action -->
+                                                        <td
+                                                            class="cs-font-body border-collapse border border-slate-200  py-3 px-4 text-sm text-cs-black text-center">
+                                                            <button>
+                                                                <div
+                                                                    class="hover:bg-slate-100 transition-all hover:rounded-full py-1.5 px-2">
+                                                                    <i class="fa-regular fa-eye"></i>
+                                                                </div>
+                                                            </button>
+                                                        </td>
+                                                        <!-- name -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-left">
+                                                            Landscape Kawasan 1
+                                                        </td>
+                                                        <!-- Rate -->
+                                                        <td
+                                                            class="cs-font-title border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-primary text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Inspect -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Approve -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Complete -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Wait -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Unassign -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Process -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                    </tr>
+                                                    <!-- end staff 3 -->
+
+                                                    <!-- staff 4 -->
+                                                    <tr>
+                                                        <!-- no -->
+                                                        <td
+                                                            class="cs-font-body border-collapse border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            4
+                                                        </td>
+                                                        <!-- action -->
+                                                        <td
+                                                            class="cs-font-body border-collapse border border-slate-200  py-3 px-4 text-sm text-cs-black text-center">
+                                                            <button>
+                                                                <div
+                                                                    class="hover:bg-slate-100 transition-all hover:rounded-full py-1.5 px-2">
+                                                                    <i class="fa-regular fa-eye"></i>
+                                                                </div>
+                                                            </button>
+                                                        </td>
+                                                        <!-- name -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-left">
+                                                            Syidh Al Rasyid
+                                                        </td>
+                                                        <!-- Rate -->
+                                                        <td
+                                                            class="cs-font-title border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-primary text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Inspect -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Approve -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Complete -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Wait -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Unassign -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Process -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                    </tr>
+                                                    <!-- end staff 4 -->
+
+                                                    <!-- staff 5 -->
+                                                    <tr>
+                                                        <!-- no -->
+                                                        <td
+                                                            class="cs-font-body border-collapse border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            5
+                                                        </td>
+                                                        <!-- action -->
+                                                        <td
+                                                            class="cs-font-body border-collapse border border-slate-200  py-3 px-4 text-sm text-cs-black text-center">
+                                                            <button>
+                                                                <div
+                                                                    class="hover:bg-slate-100 transition-all hover:rounded-full py-1.5 px-2">
+                                                                    <i class="fa-regular fa-eye"></i>
+                                                                </div>
+                                                            </button>
+                                                        </td>
+                                                        <!-- name -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-left">
+                                                            Security Kawasan 1
+                                                        </td>
+                                                        <!-- Rate -->
+                                                        <td
+                                                            class="cs-font-title border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-primary text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Inspect -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Approve -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Complete -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Wait -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Unassign -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Process -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                    </tr>
+                                                    <!-- end staff 5 -->
+
+                                                    <!-- staff 6 -->
+                                                    <tr>
+                                                        <!-- no -->
+                                                        <td
+                                                            class="cs-font-body border-collapse border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            6
+                                                        </td>
+                                                        <!-- action -->
+                                                        <td
+                                                            class="cs-font-body border-collapse  border-slate-200 border  py-3 px-4 text-sm text-cs-black text-center">
                                                             <div
-                                                                class="grid grid-cols-1 md:grid-cols-3 space-y-2 md:space-y-0">
-
-                                                                <!-- Photo Profile mobile -->
-                                                                <div class="col-span-1 md:hidden">
-                                                                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                                                                        alt=""
-                                                                        class="aspect-square rounded-full object-cover w-24 border border-slate-200 border-spacing-1">
-                                                                </div>
-                                                                <!-- end Photo Profile mobile -->
-
-                                                                <!-- Information detail staff -->
-                                                                <div class="md:col-span-2">
-                                                                    <div class="space-y-2 md:space-y-3">
-                                                                        <h1 class="cs-font-overline text-cs-primary">FX
-                                                                            Sudirman
-                                                                        </h1>
-                                                                        <div>
-                                                                            <h1 class="cs-font-title text-cs-black">C.
-                                                                                Ardi
-                                                                                Singal</h1>
-                                                                            <h1 class="cs-font-caption text-cs-gray">IT
-                                                                                Coordinator
-                                                                            </h1>
-                                                                        </div>
-
-                                                                        <div class="space-y-1">
-                                                                            <!-- departement -->
-                                                                            <div class="flex">
-                                                                                <div
-                                                                                    class="space-x-3 p-2 rounded-md flex bg-slate-50">
-                                                                                    <h1 class="my-auto cs-font-caption">
-                                                                                        Departement :</h1>
-                                                                                    <h1
-                                                                                        class="my-auto cs-font-caption font-semibold">
-                                                                                        Kitchen Area
-                                                                                    </h1>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!-- end departement -->
-
-                                                                            <!-- Phone -->
-                                                                            <div class="flex">
-                                                                                <div
-                                                                                    class="space-x-3 p-2 rounded-md flex bg-slate-50">
-                                                                                    <h1 class="my-auto cs-font-caption">
-                                                                                        Phone :</h1>
-                                                                                    <h1
-                                                                                        class="my-auto cs-font-caption font-semibold">
-                                                                                        0813xxx xxxx xxxx
-                                                                                    </h1>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!-- end Phone -->
-
-                                                                            <!-- Email -->
-                                                                            <div class="flex">
-                                                                                <div
-                                                                                    class="space-x-3 p-2 rounded-md flex bg-slate-50">
-                                                                                    <h1 class="my-auto cs-font-caption">
-                                                                                        Email :</h1>
-                                                                                    <h1
-                                                                                        class="my-auto cs-font-caption font-semibold">
-                                                                                        xxx.gmail.com
-                                                                                    </h1>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!-- end Email -->
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- end Information detail staff -->
-
-
-
-                                                                <!-- Photo Profile desktop -->
-                                                                <div class="col-span-1 hidden md:block">
-                                                                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                                                                        alt=""
-                                                                        class="aspect-square rounded-full object-cover md:w-full border border-slate-200 border-spacing-1">
-                                                                </div>
-                                                                <!-- end Photo Profile desktop -->
-
-                                                                <!-- line -->
-                                                                <div class="py-3 md:py-4 col-span-3">
-                                                                    <div class="w-full h-[1px] bg-slate-200">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- end line -->
-
-                                                                <!-- Working time -->
-                                                                <section class="space-y-4 col-span-3">
-                                                                    <!-- title -->
-                                                                    <h1 class="cs-font-title text-cs-black">Staff
-                                                                        Working
-                                                                        Time</h1>
-                                                                    <!-- start end date -->
-                                                                    <div class="col-span-3">
-                                                                        <div class="grid grid-cols-2 gap-3">
-                                                                            <div class="flex flex-col">
-                                                                                <label for="start-date"
-                                                                                    class="text-gray-600 cs-font-caption">Start
-                                                                                    Date</label>
-                                                                                <input type="date" id="start-date"
-                                                                                    class="px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
-                                                                            </div>
-
-                                                                            <div class="flex flex-col">
-                                                                                <label for="end-date"
-                                                                                    class="text-gray-600 cs-font-caption">End
-                                                                                    Date</label>
-                                                                                <input type="date" id="end-date"
-                                                                                    class="px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- end start end date -->
-
-                                                                    <!-- ===== ================ ==== -->
-                                                                    <!-- ===== section tab ==== -->
-                                                                    <!-- ===== ================ ==== -->
-                                                                    <section class="py-4">
-                                                                        <!-- ===== ================ ==== -->
-                                                                        <!-- ===== section title Tab ==== -->
-                                                                        <!-- ===== ================ ==== -->
-                                                                        <!-- title -->
-                                                                        <div>
-                                                                            <h1 class="cs-font-title text-cs-black">
-                                                                                Type of work</h1>
-                                                                            <h1 class="cs-font-caption text-cs-gray">
-                                                                                Select a type of work to see the work of
-                                                                                the staff</h1>
-                                                                        </div>
-                                                                        <!-- title -->
-                                                                        <ul class="mb-4 flex list-none border-b-0 pl-0 md:flex-row space-x-2 overflow-y-auto"
-                                                                            id="tabs-tab3" role="tablist"
-                                                                            data-te-nav-ref>
-                                                                            <!-- tab complaint -->
-                                                                            <li role="presentation">
-                                                                                <a href="#tabs-complaint"
-                                                                                    class="my-2 block  border bg-white px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded"
-                                                                                    id="tabs-home-tab3"
-                                                                                    data-te-toggle="pill"
-                                                                                    data-te-target="#tabs-complaint"
-                                                                                    data-te-nav-active role="tab"
-                                                                                    aria-controls="tabs-complaint"
-                                                                                    aria-selected="true">
-                                                                                    <div class="space-y-2">
-                                                                                        <h1 class="cs-font-overline">
-                                                                                            Complaint & Request</h1>
-                                                                                        <h1 class="cs-font-headline2">
-                                                                                            28.098</h1>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <!-- tab work -->
-                                                                            <li role="presentation">
-                                                                                <a href="#tabs-work"
-                                                                                    class="focus:border-transparen my-2 block border bg-white px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded "
-                                                                                    id="tabs-profile-tab3"
-                                                                                    data-te-toggle="pill"
-                                                                                    data-te-target="#tabs-work"
-                                                                                    role="tab" aria-controls="tabs-work"
-                                                                                    aria-selected="false">
-                                                                                    <div class="space-y-2">
-                                                                                        <h1 class="cs-font-overline">
-                                                                                            Work Order</h1>
-                                                                                        <h1 class="cs-font-headline2">
-                                                                                            11.098</h1>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <!-- tab Schedule Maintance -->
-                                                                            <li role="presentation">
-                                                                                <a href="#tabs-scheduleMaintance"
-                                                                                    class="focus:border-transparen my-2 block border bg-white px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded "
-                                                                                    id="tabs-schedule-tab3"
-                                                                                    data-te-toggle="pill"
-                                                                                    data-te-target="#tabs-scheduleMaintance"
-                                                                                    role="tab"
-                                                                                    aria-controls="tabs-scheduleMaintance"
-                                                                                    aria-selected="false">
-                                                                                    <div class="space-y-2">
-                                                                                        <h1 class="cs-font-overline">
-                                                                                            Schedule Maintance</h1>
-                                                                                        <h1 class="cs-font-headline2">
-                                                                                            11.098</h1>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <!-- ===== ================ ==== -->
-                                                                        <!-- ===== end section title Tab ==== -->
-                                                                        <!-- ===== ================ ==== -->
-
-
-                                                                        <!-- ===== ================ ==== -->
-                                                                        <!-- ===== section modul tab ==== -->
-                                                                        <!-- ===== ================ ==== -->
-                                                                        <section>
-                                                                            <!-- ===== ================ ==== -->
-                                                                            <!-- ===== section modul tab Complaint request ==== -->
-                                                                            <!-- ===== ================ ==== -->
-                                                                            <div class="hidden  transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-                                                                                id="tabs-complaint" role="tabpanel"
-                                                                                data-te-tab-active
-                                                                                aria-labelledby="Complaint Request">
-
-                                                                                <section
-                                                                                    class="w-full space-y-4 divide-y"
-                                                                                    id="content">
-
-
-
-                                                                                    <!-- ===== ================ ==== -->
-                                                                                    <!-- ===== log 1 ==== -->
-                                                                                    <!-- ===== ================ ==== -->
-                                                                                    <div class="grid grid-cols-12 py-4">
-                                                                                        <!-- bullet -->
-                                                                                        <div class="col-span-1 pt-1.5">
-                                                                                            <div
-                                                                                                class="h-2 w-2 bg-slate-100 border-2 rounded-full border-cs-primary">
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <!-- end bullet -->
-
-                                                                                        <section
-                                                                                            class="col-span-11 space-y-2">
-                                                                                            <!-- time -->
-                                                                                            <div>
-                                                                                                <h1
-                                                                                                    class="cs-font-caption text-slate-500">
-                                                                                                    30 Aug 2023 09:15
-                                                                                                </h1>
-                                                                                            </div>
-                                                                                            <!-- tag -->
-                                                                                            <div class="flex space-x-2">
-                                                                                                <h1
-                                                                                                    class="p-2 rounded-md bg-slate-100 cs-font-caption">
-                                                                                                    Shift Leader</h1>
-                                                                                                <h1
-                                                                                                    class="p-2 rounded-md bg-slate-100 cs-font-caption">
-                                                                                                    AC</h1>
-                                                                                                <h1
-                                                                                                    class="p-2 rounded-md bg-red-100 text-red-500 cs-font-caption">
-                                                                                                    Waiting</h1>
-                                                                                            </div>
-                                                                                            <!-- end tag -->
-                                                                                        </section>
-                                                                                    </div>
-                                                                                    <!-- ===== ================ ==== -->
-                                                                                    <!-- ===== end log 1 ==== -->
-                                                                                    <!-- ===== ================ ==== -->
-
-                                                                                    <!-- ===== ================ ==== -->
-                                                                                    <!-- ===== log 2 ==== -->
-                                                                                    <!-- ===== ================ ==== -->
-                                                                                    <div class="grid grid-cols-12 py-4">
-                                                                                        <!-- bullet -->
-                                                                                        <div class="col-span-1 pt-1.5">
-                                                                                            <div
-                                                                                                class="h-2 w-2 bg-slate-100 border-2 rounded-full border-cs-primary">
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <!-- end bullet -->
-
-                                                                                        <section
-                                                                                            class="col-span-11 space-y-3">
-                                                                                            <!-- time -->
-                                                                                            <div>
-                                                                                                <h1
-                                                                                                    class="cs-font-caption text-slate-500">
-                                                                                                    30 Aug 2023 10:22
-                                                                                                </h1>
-                                                                                            </div>
-                                                                                            <!-- tag -->
-                                                                                            <div class="flex space-x-2">
-                                                                                                <h1
-                                                                                                    class="p-2 rounded-md bg-slate-100 cs-font-caption">
-                                                                                                    Shift Leader</h1>
-                                                                                                <h1
-                                                                                                    class="p-2 rounded-md bg-slate-100 cs-font-caption">
-                                                                                                    AC</h1>
-                                                                                                <h1
-                                                                                                    class="p-2 rounded-md bg-yellow-100 text-yellow-600 cs-font-caption">
-                                                                                                    Processing</h1>
-                                                                                            </div>
-                                                                                            <!-- end tag -->
-
-                                                                                            <!-- photo -->
-                                                                                            <div>
-                                                                                                <img src="https://s3-ap-southeast-1.amazonaws.com/mall-assets.izy.ai/img/3_85B5609FE868745C_cc830063e2229c26363b9318f97e5d44.jpg"
-                                                                                                    alt=""
-                                                                                                    class="rounded-md w-36">
-                                                                                            </div>
-
-                                                                                            <!-- description -->
-                                                                                            <div>
-                                                                                                <h1
-                                                                                                    class="cs-font-body text-cs-black">
-                                                                                                    Progres pemasangan
-                                                                                                    pompa garam</h1>
-                                                                                            </div>
-                                                                                        </section>
-                                                                                    </div>
-                                                                                    <!-- ===== ================ ==== -->
-                                                                                    <!-- ===== end log 2 ==== -->
-                                                                                    <!-- ===== ================ ==== -->
-
-                                                                                    <!-- ===== ================ ==== -->
-                                                                                    <!-- ===== log 3 ==== -->
-                                                                                    <!-- ===== ================ ==== -->
-                                                                                    <div class="grid grid-cols-12 py-4">
-                                                                                        <!-- bullet -->
-                                                                                        <div class="col-span-1 pt-1.5">
-                                                                                            <div
-                                                                                                class="h-2 w-2 bg-slate-100 border-2 rounded-full border-cs-primary">
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <!-- end bullet -->
-
-                                                                                        <section
-                                                                                            class="col-span-11 space-y-3">
-                                                                                            <!-- time -->
-                                                                                            <div>
-                                                                                                <h1
-                                                                                                    class="cs-font-caption text-slate-500">
-                                                                                                    30 Aug 2023 10:22
-                                                                                                </h1>
-                                                                                            </div>
-                                                                                            <!-- tag -->
-                                                                                            <div class="flex space-x-2">
-                                                                                                <h1
-                                                                                                    class="p-2 rounded-md bg-slate-100 cs-font-caption">
-                                                                                                    Shift Leader</h1>
-                                                                                                <h1
-                                                                                                    class="p-2 rounded-md bg-slate-100 cs-font-caption">
-                                                                                                    AC</h1>
-                                                                                                <h1
-                                                                                                    class="p-2 rounded-md bg-green-100 text-green-600 cs-font-caption">
-                                                                                                    Complete</h1>
-                                                                                            </div>
-                                                                                            <!-- end tag -->
-
-                                                                                            <!-- photo -->
-                                                                                            <div>
-                                                                                                <img src="https://s3-ap-southeast-1.amazonaws.com/mall-assets.izy.ai/img/3_85B5609FE868745C_cc830063e2229c26363b9318f97e5d44.jpg"
-                                                                                                    alt=""
-                                                                                                    class="rounded-md w-36">
-                                                                                            </div>
-
-                                                                                            <!-- description -->
-                                                                                            <div>
-                                                                                                <h1
-                                                                                                    class="cs-font-body text-cs-black">
-                                                                                                    Proses pemasangan
-                                                                                                    sudah berhasil</h1>
-                                                                                            </div>
-                                                                                        </section>
-                                                                                    </div>
-                                                                                    <!-- ===== ================ ==== -->
-                                                                                    <!-- ===== end log 3 ==== -->
-                                                                                    <!-- ===== ================ ==== -->
-
-
-
-                                                                                </section>
-
-                                                                            </div>
-                                                                            <!-- ===== ================ ==== -->
-                                                                            <!-- ===== end section modul tab Complaint request ==== -->
-                                                                            <!-- ===== ================ ==== -->
-
-
-                                                                            <!-- ===== ================ ==== -->
-                                                                            <!-- ===== section modul tab Complaint work order ==== -->
-                                                                            <!-- ===== ================ ==== -->
-                                                                            <div class="hidden opacity-0 space-y-3 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-                                                                                id="tabs-work" role="tabpanel"
-                                                                                aria-labelledby="Work Order">
-
-                                                                                <div>cupapi</div>
-
-                                                                            </div>
-                                                                            <!-- ===== ================ ==== -->
-                                                                            <!-- ===== end section modul tab Complaint work order ==== -->
-                                                                            <!-- ===== ================ ==== -->
-
-
-
-                                                                            <!-- ===== ================ ==== -->
-                                                                            <!-- ===== section modul tab Schedule Maintance ==== -->
-                                                                            <!-- ===== ================ ==== -->
-                                                                            <div class="hidden  transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-                                                                                id="tabs-scheduleMaintance"
-                                                                                role="tabpanel"
-                                                                                aria-labelledby="Complaint Request">
-
-                                                                                <div>suwawawiwaa</div>
-
-
-                                                                            </div>
-                                                                            <!-- ===== ================ ==== -->
-                                                                            <!-- ===== end section modul tab Shedule Maintance ==== -->
-                                                                            <!-- ===== ================ ==== -->
-
-
-                                                                        </section>
-                                                                        <!-- ===== ================ ==== -->
-                                                                        <!-- ===== end section modul tab ==== -->
-                                                                        <!-- ===== ================ ==== -->
-
-                                                                    </section>
-                                                                    <!-- ===== ================ ==== -->
-                                                                    <!-- ===== end section tab ==== -->
-                                                                    <!-- ===== ================ ==== -->
-
-                                                                </section>
-                                                                <!-- end Working time -->
-
+                                                                class="hover:bg-slate-200 hover:rounded-full py-1.5 px-2">
+                                                                <i class="fa-regular fa-eye"></i>
                                                             </div>
+                                                        </td>
+                                                        <!-- name -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-left">
+                                                            Landscape Kawasan 1
+                                                        </td>
+                                                        <!-- Rate -->
+                                                        <td
+                                                            class="cs-font-title border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-primary text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Inspect -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Approve -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Complete -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Wait -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Unassign -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                        <!-- Process -->
+                                                        <td
+                                                            class="cs-font-body border-collapse whitespace-nowrap border-slate-200 border py-3 px-4 text-sm text-cs-black text-center">
+                                                            32
+                                                        </td>
+                                                    </tr>
+                                                    <!-- end staff 6 -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                </section>
+                                <!-- end left grid (Complaint Request) -->
+
+                                <!-- right grid (Complaint Request) -->
+                                <section class="col-span-1 relative">
+                                    <div class="bg-white border border-slate-200 rounded-md p-4">
+                                        <!-- title -->
+                                        <h1 class="cs-font-caption text-cs-gray">Complaint & Request</h1>
+                                        <div class="flex space-x-3 py-1">
+                                            <i class="fa-solid fa-stars text-yellow-500 text-lg my-auto"></i>
+                                            <h1 class="cs-font-title text-cs-black my-auto">Top 5 staff</h1>
+                                        </div>
+                                        <!-- end title -->
+                                        <!-- best staff -->
+                                        <div class="py-2">
+                                            <div class="border border-slate-200 rounded-md divide-y">
+                                                <!-- staff 1 -->
+                                                <div class="px-2 py-4">
+                                                    <div class="grid grid-cols-4">
+                                                        <div class="col-span-3">
+                                                            <h1 class="cs-font-body text-sm text-cs-black">Syidh Al
+                                                                Rasyid
+                                                            </h1>
+                                                        </div>
+                                                        <div class="col-span-1">
+                                                            <h1
+                                                                class="cs-font-title text-sm text-cs-primary text-right">
+                                                                50
+                                                            </h1>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!-- end staff 1 -->
+                                                <!-- staff 1 -->
+                                                <div class="px-2 py-4">
+                                                    <div class="grid grid-cols-4">
+                                                        <div class="col-span-3">
+                                                            <h1 class="cs-font-body text-sm text-cs-black">Syidh Al
+                                                                Rasyid
+                                                            </h1>
+                                                        </div>
+                                                        <div class="col-span-1">
+                                                            <h1
+                                                                class="cs-font-title text-sm text-cs-primary text-right">
+                                                                50
+                                                            </h1>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end staff 1 -->
+                                                <!-- staff 1 -->
+                                                <div class="px-2 py-4">
+                                                    <div class="grid grid-cols-4">
+                                                        <div class="col-span-3">
+                                                            <h1 class="cs-font-body text-sm text-cs-black">Syidh Al
+                                                                Rasyid
+                                                            </h1>
+                                                        </div>
+                                                        <div class="col-span-1">
+                                                            <h1
+                                                                class="cs-font-title text-sm text-cs-primary text-right">
+                                                                50
+                                                            </h1>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end staff 1 -->
+                                                <!-- staff 1 -->
+                                                <div class="px-2 py-4">
+                                                    <div class="grid grid-cols-4">
+                                                        <div class="col-span-3">
+                                                            <h1 class="cs-font-body text-sm text-cs-black">Syidh Al
+                                                                Rasyid
+                                                            </h1>
+                                                        </div>
+                                                        <div class="col-span-1">
+                                                            <h1
+                                                                class="cs-font-title text-sm text-cs-primary text-right">
+                                                                50
+                                                            </h1>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end staff 1 -->
+                                                <!-- staff 1 -->
+                                                <div class="px-2 py-4">
+                                                    <div class="grid grid-cols-4">
+                                                        <div class="col-span-3">
+                                                            <h1 class="cs-font-body text-sm text-cs-black">Syidh Al
+                                                                Rasyid
+                                                            </h1>
+                                                        </div>
+                                                        <div class="col-span-1">
+                                                            <h1
+                                                                class="cs-font-title text-sm text-cs-primary text-right">
+                                                                50
+                                                            </h1>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end staff 1 -->
                                             </div>
                                         </div>
-                                        <!-- end modal -->
-                                    </td>
-                                </tr>
-                                <!-- end staff 1 -->
+                                        <!-- end best staff -->
+                                    </div>
 
-                                <tr class="bg-gray-50 font-body whitespace-nowrap text-sm">
-                                    <td class="px-4 py-6">1</td>
-                                    <td class="px-4 py-6">C. Ardi Singal</td>
-                                    <td class="px-4 py-6">FX Sudirman</td>
-                                    <td class="px-4 py-6">IT Coordinator</td>
-                                    <td class="px-4 py-6">IT</td>
-                                    <td class="px-4 py-6">ejenza@fx.co.id</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
-
-                    <!-- pagenation -->
-                    <section class="p-2 bg-white rounded-md border">
-                        <div class="flex justify-between">
-                            <!-- number of page -->
-                            <button
-                                class="border py-2 px-4 hover:bg-cs-primary-soft text-cs-black flex hover:border-primary hover:text-cs-primary space-x-2">
-                                <h1 class="cs-font-caption">10 / Page</h1>
-                                <i class="fa-solid fa-caret-down my-auto"></i>
-                            </button>
-                            <!-- end number of page -->
-
-                            <!-- chevron -->
-                            <div class="space-x-2 flex">
-                                <h1 class="my-auto cs-font-caption text-cs-gray">1/10 of 230 items</h1>
-                                <button
-                                    class="hover:bg-cs-primary-soft text-cs-black hover:border-primary transition-all hover:text-cs-primary rounded-full">
-                                    <i class="fa-regular fa-chevron-left text-xs py-3 px-4"></i>
-                                </button>
-
-                                <button
-                                    class="hover:bg-cs-primary-soft text-cs-black hover:border-primary transition-all hover:text-cs-primary rounded-full">
-                                    <i class="fa-regular fa-chevron-right text-xs py-3 px-4"></i>
-                                </button>
+                                </section>
+                                <!-- end right grid (Complaint Request) -->
                             </div>
-                            <!-- end chevron -->
-                        </div>
-                    </section>
-                    <!-- end pagenation -->
 
-                </div>
+                        </section>
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== end section modul tab Complaint request ==== -->
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== ================ ==== -->
+
+
+
+
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== section modul tab Complaint work order ==== -->
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== ================ ==== -->
+                        <section
+                            class="hidden opacity-0 space-y-3 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+                            id="tabs-work" role="tabpanel" aria-labelledby="Work Order">
+
+                            <div>yes</div>
+                        </section>
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== end section modul tab Complaint work order ==== -->
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== ================ ==== -->
+
+
+
+
+
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== section modul tab Schedule Maintance ==== -->
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== ================ ==== -->
+                        <section class="hidden  transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+                            id="tabs-scheduleMaintance" role="tabpanel" aria-labelledby="Complaint Request">
+                            <div>test</div>
+                        </section>
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== end section modul tab Shedule Maintance ==== -->
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== ================ ==== -->
+                    </section>
+
+
+                </section>
+                <!-- ===== ================ ==== -->
+                <!-- ===== end section Main Body ==== -->
+                <!-- ===== ================ ==== -->
+
+
+
             </div>
-            <!-- ===== end section main ==== -->
         </section>
+        <!--* ===== section main display (right on desktop & center mobile) ==== -->
         <!--* ===== section main display (right on desktop & center mobile) ==== -->
 
 
