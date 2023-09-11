@@ -1167,14 +1167,481 @@
                                                             1
                                                         </td>
                                                         <!-- action -->
-                                                        <td
+                                                        <td x-data="{ open: false }"
                                                             class="cs-font-body border-collapse border border-slate-200  py-3 px-4 text-sm text-cs-black text-center">
-                                                            <button>
+                                                            <button @click="open = true">
                                                                 <div
                                                                     class="hover:bg-slate-100 transition-all hover:rounded-full py-1.5 px-2">
                                                                     <i class="fa-regular fa-eye"></i>
                                                                 </div>
                                                             </button>
+                                                            <!-- Modal staff -->
+                                                            <div x-show="open">
+                                                                <div
+                                                                    class="fixed z-30 backdrop-blur bg-black/10 h-screen w-screen top-0 left-0 pt-16">
+                                                                    <!-- box -->
+                                                                    <div class="flex justify-center h-full">
+                                                                        <div
+                                                                            class="bg-white shadow rounded-md my-auto max-w-xl w-full relative">
+                                                                            <!-- header -->
+                                                                            <div
+                                                                                class="flex justify-between p-3 border-b bg-white rounded-t-md">
+                                                                                <h1
+                                                                                    class="cs-font-subtitle text-sm my-auto text-cs-black">
+                                                                                    Staff Overview</h1>
+                                                                                <button @click="open = !open"
+                                                                                    class="py-2 px-2.5 rounded-full bg-slate-100 flex hover:bg-red-500 hover:text-white transition-all">
+                                                                                    <i class="fa-regular fa-xmark"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <!-- information -->
+                                                                            <div class="h-[37.5rem] rounded-b-md flex">
+                                                                                <div
+                                                                                    class="overflow-y-auto h-full rounded-b-md p-4">
+                                                                                    <div
+                                                                                        class="grid grid-cols-9 gap-3 py-2">
+                                                                                        <div class="col-span-2">
+                                                                                            <!-- photo profile -->
+                                                                                            <div>
+                                                                                                <img src="https://images.pexels.com/photos/633432/pexels-photo-633432.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                                                                                                    alt=""
+                                                                                                    class="aspect-square w-full rounded-xl object-cover">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="col-span-7 flex-col space-y-2">
+                                                                                            <!-- tag -->
+                                                                                            <div class="flex">
+                                                                                                <h1
+                                                                                                    class="cs-font-overline text-white py-0.5 px-3 rounded-md bg-cs-primary">
+                                                                                                    FX
+                                                                                                    Sudirman</h1>
+                                                                                            </div>
+
+                                                                                            <div>
+                                                                                                <!-- name -->
+                                                                                                <div class="flex">
+                                                                                                    <h1
+                                                                                                        class="cs-font-headline1 tracking-tight text-cs-black">
+                                                                                                        Rudi Sudarna
+                                                                                                    </h1>
+                                                                                                </div>
+                                                                                                <!-- Division -->
+                                                                                                <div class="flex">
+                                                                                                    <h1
+                                                                                                        class="cs-font-caption tracking-tight text-cs-gray">
+                                                                                                        IT Coordinator
+                                                                                                    </h1>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <!-- Contact Information -->
+                                                                                    <div
+                                                                                        class="grid grid-cols-3 gap-2 py-2">
+
+                                                                                        <!-- Departement -->
+                                                                                        <div
+                                                                                            class="col-span-1 text-left">
+                                                                                            <div
+                                                                                                class="border p-2 rounded-md">
+                                                                                                <h1
+                                                                                                    class="cs-font-overline text-cs-gray">
+                                                                                                    Departement</h1>
+                                                                                                <h1
+                                                                                                    class="cs-font-caption tracking-tight text-cs-black overflow-y-auto scrollbar-hide">
+                                                                                                    Kitchen Area</h1>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <!-- Phone -->
+                                                                                        <div
+                                                                                            class="col-span-1 text-left">
+                                                                                            <div
+                                                                                                class="border p-2 rounded-md">
+                                                                                                <h1
+                                                                                                    class="cs-font-overline text-cs-gray">
+                                                                                                    Phone</h1>
+                                                                                                <h1
+                                                                                                    class="cs-font-caption tracking-tight text-cs-black overflow-y-auto scrollbar-hide">
+                                                                                                    +62 0813 xxxx xxxx
+                                                                                                </h1>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <!-- Email -->
+                                                                                        <div
+                                                                                            class="col-span-1 text-left">
+                                                                                            <div
+                                                                                                class="border p-2 rounded-md">
+                                                                                                <h1
+                                                                                                    class="cs-font-overline text-cs-gray">
+                                                                                                    Email</h1>
+                                                                                                <h1
+                                                                                                    class="cs-font-caption tracking-tight text-cs-black overflow-y-auto scrollbar-hide">
+                                                                                                    chicken_lovely@gmail.comchicken_lovely@gmail.com
+                                                                                                </h1>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+
+                                                                                    <!-- ===== ================ ==== -->
+                                                                                    <!-- ===== section modul tab staff 1 ==== -->
+                                                                                    <!-- ===== ================ ==== -->
+                                                                                    <section class="max-w-2xl mx-auto">
+
+                                                                                        <div
+                                                                                            class="border-b border-gray-200 dark:border-gray-700 mb-4">
+                                                                                            <ul class="flex flex-wrap -mb-px"
+                                                                                                id="myTab"
+                                                                                                data-tabs-toggle="#staffTab-1"
+                                                                                                role="tablist">
+                                                                                                <li class="mr-2"
+                                                                                                    role="presentation">
+                                                                                                    <button
+                                                                                                        class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
+                                                                                                        id="complaint-tab"
+                                                                                                        data-tabs-target="#complaint"
+                                                                                                        type="button"
+                                                                                                        role="tab"
+                                                                                                        aria-controls="complaint"
+                                                                                                        aria-selected="true">Complain
+                                                                                                        &
+                                                                                                        Request</button>
+                                                                                                </li>
+                                                                                                <li class="mr-2"
+                                                                                                    role="presentation">
+                                                                                                    <button
+                                                                                                        class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300 active"
+                                                                                                        id="work-tab"
+                                                                                                        data-tabs-target="#workOrder"
+                                                                                                        type="button"
+                                                                                                        role="tab"
+                                                                                                        aria-controls="workOrder"
+                                                                                                        aria-selected="false">Work
+                                                                                                        Order</button>
+                                                                                                </li>
+                                                                                                <li class="mr-2"
+                                                                                                    role="presentation">
+                                                                                                    <button
+                                                                                                        class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300 active"
+                                                                                                        id="schedule-tab"
+                                                                                                        data-tabs-target="#schedule"
+                                                                                                        type="button"
+                                                                                                        role="tab"
+                                                                                                        aria-controls="schedule"
+                                                                                                        aria-selected="false">Schedule
+                                                                                                        Maintance</button>
+                                                                                                </li>
+
+                                                                                            </ul>
+                                                                                        </div>
+
+                                                                                        <!-- Modal -->
+                                                                                        <div id="staffTab-1">
+                                                                                            <!-- Complaint & request -->
+                                                                                            <section
+                                                                                                class="bg-gray-50 p-4 rounded-lg hidden"
+                                                                                                id="complaint"
+                                                                                                role="tabpanel"
+                                                                                                aria-labelledby="complaint-tab">
+
+                                                                                                <section class="py-3">
+                                                                                                    <div
+                                                                                                        class="text-left flex justify-between">
+                                                                                                        <h1
+                                                                                                            class="cs-font-title text-cs-black my-auto">
+                                                                                                            Rating &
+                                                                                                            Review
+                                                                                                        </h1>
+                                                                                                        <div
+                                                                                                            class="my-auto">
+                                                                                                            <button
+                                                                                                                class="hover:bg-slate-200 transition-colors px-2.5 py-1 rounded-full">
+                                                                                                                <i
+                                                                                                                    class="fa-regular fa-chevron-right">
+                                                                                                                </i>
+                                                                                                            </button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="py-3">
+                                                                                                        <div
+                                                                                                            class="grid grid-cols-4">
+                                                                                                            <div
+                                                                                                                class="col-span-1 space-y-2">
+                                                                                                                <h1
+                                                                                                                    class="font-body text-left text-5xl text-cs-black">
+                                                                                                                    6.4
+                                                                                                                </h1>
+                                                                                                                <div
+                                                                                                                    class="flex justify-around">
+                                                                                                                    <i
+                                                                                                                        class="fa-solid fa-star text-yellow-500"></i>
+                                                                                                                    <i
+                                                                                                                        class="fa-solid fa-star text-yellow-500"></i>
+                                                                                                                    <i
+                                                                                                                        class="fa-solid fa-star text-yellow-500"></i>
+                                                                                                                    <i
+                                                                                                                        class="fa-solid fa-star text-slate-300"></i>
+                                                                                                                    <i
+                                                                                                                        class="fa-solid fa-star text-slate-300"></i>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </section>
+
+                                                                                                <section class="py-3">
+                                                                                                    <div
+                                                                                                        class="text-left">
+                                                                                                        <h1
+                                                                                                            class="cs-font-title text-cs-black my-auto">
+                                                                                                            Activity
+                                                                                                        </h1>
+                                                                                                    </div>
+                                                                                                    <div class="py-3">
+                                                                                                        <div>
+                                                                                                            <table
+                                                                                                                aria-describedby=""
+                                                                                                                class="table-auto border-collapse w-full">
+                                                                                                                <thead>
+                                                                                                                    <tr
+                                                                                                                        class="cs-font-overline text-cs-black text-left w-full bg-slate-100">
+                                                                                                                        <!-- Task -->
+                                                                                                                        <th
+                                                                                                                            class="bg-slate-100 text-left py-2 px-3  border border-slate-200">
+                                                                                                                            <h1
+                                                                                                                                class="cs-font-overline text-xs whitespace-nowrap">
+                                                                                                                                Task
+                                                                                                                            </h1>
+                                                                                                                        </th>
+                                                                                                                        <!-- Rating -->
+                                                                                                                        <th
+                                                                                                                            class="bg-slate-100 text-left py-2 px-3  border border-slate-200">
+                                                                                                                            <h1
+                                                                                                                                class="cs-font-overline text-xs whitespace-nowrap">
+                                                                                                                                Rating
+                                                                                                                            </h1>
+                                                                                                                        </th>
+                                                                                                                        <!-- Start Time -->
+                                                                                                                        <th
+                                                                                                                            class="bg-slate-100 text-left py-2 px-3  border border-slate-200">
+                                                                                                                            <h1
+                                                                                                                                class="cs-font-overline text-xs whitespace-nowrap">
+                                                                                                                                Start
+                                                                                                                                Time
+                                                                                                                            </h1>
+                                                                                                                        </th>
+                                                                                                                        <!-- End Time -->
+                                                                                                                        <th
+                                                                                                                            class="bg-slate-100 text-left py-2 px-3  border border-slate-200">
+                                                                                                                            <h1
+                                                                                                                                class="cs-font-overline text-xs whitespace-nowrap">
+                                                                                                                                End
+                                                                                                                                Time
+                                                                                                                            </h1>
+                                                                                                                        </th>
+                                                                                                                    </tr>
+                                                                                                                </thead>
+                                                                                                                <tbody>
+                                                                                                                    <!-- =========== -->
+                                                                                                                    <!-- ==== Task 1 CR ==== -->
+                                                                                                                    <!-- =========== -->
+                                                                                                                    <tr
+                                                                                                                        class="text-left text-cs-black cs-font-caption">
+                                                                                                                        <!-- task -->
+                                                                                                                        <td
+                                                                                                                            class="cs-font-body border-collapse border-slate-200 border py-3 px-4 text-sm text-cs-black text-left">
+                                                                                                                            Saluran
+                                                                                                                            drain
+                                                                                                                            crovo
+                                                                                                                            meluap
+                                                                                                                        </td>
+                                                                                                                        <!-- rating -->
+                                                                                                                        <td
+                                                                                                                            class="cs-font-body border-collapse border-slate-200 border py-3 px-4 text-sm text-cs-black text-left">
+                                                                                                                            <div
+                                                                                                                                class="flex space-x-1">
+                                                                                                                                <i
+                                                                                                                                    class="fa-solid fa-star text-yellow-500"></i>
+                                                                                                                                <i
+                                                                                                                                    class="fa-solid fa-star text-yellow-500"></i>
+                                                                                                                                <i
+                                                                                                                                    class="fa-solid fa-star text-yellow-500"></i>
+                                                                                                                                <i
+                                                                                                                                    class="fa-solid fa-star text-yellow-500"></i>
+                                                                                                                                <i
+                                                                                                                                    class="fa-solid fa-star text-slate-200"></i>
+                                                                                                                            </div>
+                                                                                                                        </td>
+                                                                                                                        <!-- Start time -->
+                                                                                                                        <td
+                                                                                                                            class="cs-font-body border-collapse border-slate-200 border py-3 px-4 text-sm text-cs-black text-right">
+                                                                                                                            <div>
+                                                                                                                                <h1
+                                                                                                                                    class="text-cs-gray cs-font-caption">
+                                                                                                                                    01/12/2023
+                                                                                                                                </h1>
+                                                                                                                                <h1
+                                                                                                                                    class="cs-font-caption text-cs-black">
+                                                                                                                                    11:04
+                                                                                                                                </h1>
+                                                                                                                            </div>
+                                                                                                                        </td>
+                                                                                                                        <!-- End time -->
+                                                                                                                        <td
+                                                                                                                            class="cs-font-body border-collapse border-slate-200 border py-3 px-4 text-sm text-cs-black text-right">
+                                                                                                                            <div>
+                                                                                                                                <h1
+                                                                                                                                    class="text-cs-gray cs-font-caption">
+                                                                                                                                    01/12/2023
+                                                                                                                                </h1>
+                                                                                                                                <h1
+                                                                                                                                    class="cs-font-caption text-cs-black">
+                                                                                                                                    14:22
+                                                                                                                                </h1>
+                                                                                                                            </div>
+                                                                                                                        </td>
+                                                                                                                    </tr>
+                                                                                                                    <!-- =========== -->
+                                                                                                                    <!-- ==== end Task 1 CR ==== -->
+                                                                                                                    <!-- =========== -->
+
+                                                                                                                    <!-- =========== -->
+                                                                                                                    <!-- ==== Task 2 CR ==== -->
+                                                                                                                    <!-- =========== -->
+                                                                                                                    <tr
+                                                                                                                        class="text-left text-cs-black cs-font-caption">
+                                                                                                                        <!-- task -->
+                                                                                                                        <td
+                                                                                                                            class="cs-font-body border-collapse border-slate-200 border py-3 px-4 text-sm text-cs-black text-left">
+                                                                                                                            Lampu
+                                                                                                                            LED
+                                                                                                                            mati
+                                                                                                                        </td>
+                                                                                                                        <!-- rating -->
+                                                                                                                        <td
+                                                                                                                            class="cs-font-body border-collapse border-slate-200 border py-3 px-4 text-sm text-cs-black text-left">
+                                                                                                                            <div
+                                                                                                                                class="flex space-x-1">
+                                                                                                                                <i
+                                                                                                                                    class="fa-solid fa-star text-yellow-500"></i>
+                                                                                                                                <i
+                                                                                                                                    class="fa-solid fa-star text-yellow-500"></i>
+                                                                                                                                <i
+                                                                                                                                    class="fa-solid fa-star text-yellow-500"></i>
+                                                                                                                                <i
+                                                                                                                                    class="fa-solid fa-star text-yellow-500"></i>
+                                                                                                                                <i
+                                                                                                                                    class="fa-solid fa-star text-slate-200"></i>
+                                                                                                                            </div>
+                                                                                                                        </td>
+                                                                                                                        <!-- Start time -->
+                                                                                                                        <td
+                                                                                                                            class="cs-font-body border-collapse border-slate-200 border py-3 px-4 text-sm text-cs-black text-right">
+                                                                                                                            <div>
+                                                                                                                                <h1
+                                                                                                                                    class="text-cs-gray cs-font-caption">
+                                                                                                                                    01/12/2023
+                                                                                                                                </h1>
+                                                                                                                                <h1
+                                                                                                                                    class="cs-font-caption text-cs-black">
+                                                                                                                                    11:04
+                                                                                                                                </h1>
+                                                                                                                            </div>
+                                                                                                                        </td>
+                                                                                                                        <!-- End time -->
+                                                                                                                        <td
+                                                                                                                            class="cs-font-body border-collapse border-slate-200 border py-3 px-4 text-sm text-cs-black text-right">
+                                                                                                                            <div>
+                                                                                                                                <h1
+                                                                                                                                    class="text-cs-gray cs-font-caption">
+                                                                                                                                    01/12/2023
+                                                                                                                                </h1>
+                                                                                                                                <h1
+                                                                                                                                    class="cs-font-caption text-cs-black">
+                                                                                                                                    14:22
+                                                                                                                                </h1>
+                                                                                                                            </div>
+                                                                                                                        </td>
+                                                                                                                    </tr>
+                                                                                                                    <!-- =========== -->
+                                                                                                                    <!-- ==== end Task 2 CR ==== -->
+                                                                                                                    <!-- =========== -->
+                                                                                                                </tbody>
+                                                                                                            </table>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </section>
+
+
+                                                                                            </section>
+                                                                                            <!-- end Complaint & request -->
+
+                                                                                            <!-- Work Order -->
+                                                                                            <div class="bg-gray-50 p-4 rounded-lg dark:bg-gray-800"
+                                                                                                id="workOrder"
+                                                                                                role="tabpanel"
+                                                                                                aria-labelledby="dashboard-tab">
+                                                                                                <p
+                                                                                                    class="text-gray-500 dark:text-gray-400 text-sm">
+                                                                                                    This is some
+                                                                                                    placeholder content
+                                                                                                    the <strong
+                                                                                                        class="font-medium text-gray-800 dark:text-white">Dashboard
+                                                                                                        tab's associated
+                                                                                                        content</strong>.
+                                                                                                    Clicking another tab
+                                                                                                    will toggle the
+                                                                                                    visibility of this
+                                                                                                    one for the next.
+                                                                                                    The tab JavaScript
+                                                                                                    swaps classes to
+                                                                                                    control the content
+                                                                                                    visibility and
+                                                                                                    styling.</p>
+                                                                                            </div>
+                                                                                            <!-- end Work Order -->
+
+                                                                                            <!-- Schedule Maintance -->
+                                                                                            <div class="bg-gray-50 p-4 rounded-lg dark:bg-gray-800"
+                                                                                                id="schedule"
+                                                                                                role="tabpanel"
+                                                                                                aria-labelledby="schedule-tab">
+                                                                                                <p
+                                                                                                    class="text-gray-500 dark:text-gray-400 text-sm">
+                                                                                                    This is some
+                                                                                                    placeholder content
+                                                                                                    the <strong
+                                                                                                        class="font-medium text-gray-800 dark:text-white">schedule
+                                                                                                        tab's associated
+                                                                                                        content</strong>.
+                                                                                                    Clicking another tab
+                                                                                                    will toggle the
+                                                                                                    visibility of this
+                                                                                                    one for the next.
+                                                                                                    The tab JavaScript
+                                                                                                    swaps classes to
+                                                                                                    control the content
+                                                                                                    visibility and
+                                                                                                    styling.</p>
+                                                                                            </div>
+                                                                                            <!-- end Schedule Maintance -->
+                                                                                        </div>
+                                                                                    </section>
+                                                                                    <!-- ===== ================ ==== -->
+                                                                                    <!-- ===== end section modul tab staff 1 ==== -->
+                                                                                    <!-- ===== ================ ==== -->
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end Modal staff -->
                                                         </td>
                                                         <!-- name -->
                                                         <td

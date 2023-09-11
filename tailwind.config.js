@@ -33,5 +33,6 @@ module.exports = {
         require('tailwind-scrollbar-hide'),
         require('preline/plugin'),
         require('tw-elements/dist/plugin'),
+        require('tailwind-scrollbar-hide'),
   ],
 }
