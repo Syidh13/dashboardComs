@@ -120,9 +120,9 @@
                                             <ul class="space-y-1">
                                                 <!-- Loading -->
                                                 <li>
-                                                    <a href="loadingUnloading-loading.html" class="">
+                                                    <a href="loadingUnloading-internal.html" class="">
                                                         <div class="cs-nav-selected py-2">
-                                                            <h1 class="ml-6">Loading</h1>
+                                                            <h1 class="ml-6">Internal</h1>
                                                         </div>
                                                     </a>
                                                 </li>
@@ -130,9 +130,9 @@
 
                                                 <!-- Unloading -->
                                                 <li>
-                                                    <a href="./loadingUnloading-unloading.html" class="">
+                                                    <a href="./loadingUnloading-external.html" class="">
                                                         <div class="cs-nav-normal py-2">
-                                                            <h1 class="ml-6">Unloading</h1>
+                                                            <h1 class="ml-6">External</h1>
                                                         </div>
                                                     </a>
                                                 </li>
@@ -538,9 +538,9 @@
 
                                 <!-- Loading -->
                                 <li class="relative ">
-                                    <a href="./loadingUnloading-loading.html" class="flex py-2 cs-nav-selected"
+                                    <a href="./loadingUnloading-internal.html" class="flex py-2 cs-nav-selected"
                                         data-te-sidenav-link-ref>
-                                        <h1 class="pl-6 whitespace-normal"> Loading
+                                        <h1 class="pl-6 whitespace-normal"> Internal
                                         </h1>
                                     </a>
                                 </li>
@@ -548,9 +548,9 @@
 
                                 <!-- Unloading -->
                                 <li class="relative ">
-                                    <a href="./loadingUnloading-unloading.html" class="flex py-2 cs-nav-normal"
+                                    <a href="./loadingUnloading-external.html" class="flex py-2 cs-nav-normal"
                                         data-te-sidenav-link-ref>
-                                        <h1 class="ml-6 "> Unloading</h1>
+                                        <h1 class="ml-6 "> External</h1>
                                     </a>
                                 </li>
                                 <!-- end Unloading -->
@@ -899,20 +899,75 @@
 
 
                 <div class="pb-20 space-y-5">
-                    <!-- ===== section breadcrumb ==== -->
-                    <nav class="w-full rounded-md" aria-label="">
-                        <ol class="flex space-x-2 list-reset">
-                            <li class="my-auto cs-font-overline text-cs-gray">Staff Schedule</li>
-                        </ol>
-                    </nav>
-                    <!-- ===== end section breadcrumb ==== -->
+                    <div class="flex justify-between">
+                        <!-- ===== section breadcrumb ==== -->
+                        <nav class="w-full rounded-md my-auto" aria-label="">
+                            <ol class="flex space-x-2 list-reset">
+                                <li class="my-auto cs-font-overline text-cs-gray">Staff Schedule</li>
+                            </ol>
+                        </nav>
+                        <!-- ===== end section breadcrumb ==== -->
+                        <div>
+                            <input type="date" name="" id=""
+                                class="font-body text-sm rounded-md border border-slate-400">
+                        </div>
+                    </div>
 
                     <!-- section search & donwload -->
-                    <section class="flex justify-between p-2 space-x-2 bg-white border rounded">
-                        <div class="w-full ">
-                            <input type="search" name="" id="" placeholder="Search Staff"
-                                class="w-full p-2 cs-font-body rounded bg-slate-50">
+                    <section class="p-2 bg-white border rounded">
+                        <div class="w-full">
+                            <input type="search" name="" id="" placeholder="Search Code or Company"
+                                class="w-full p-2 cs-font-body text-sm border border-slate-200 rounded bg-slate-50">
                         </div>
+
+
+                        <div class="flex space-x-3 pt-3">
+                            <!-- Select type -->
+                            <div class="space-y-1" x-data="{ open: false }">
+                                <h1 class="cs-font-caption text-cs-gray">Select Type</h1>
+                                <button @click="open = !open">
+                                    <div class="border border-slate-200 rounded-md bg-white px-4 py-2 flex space-x-2">
+                                        <h1 class="my-auto cs-font-body">All Type</h1>
+                                        <i class="my-auto fa-solid fa-caret-down text-sm"></i>
+                                    </div>
+                                </button>
+                                <!-- modal select type -->
+                                <div class="bg-white border absolute shadow rounded-md border-slate-200" x-show="open"
+                                    x-transition>
+                                    <ul class="divide-y bg-white rounded-md">
+                                        <li class="py-2 px-4 hover:bg-slate-100 cs-font-body rounded-t-md">All</li>
+                                        <li class="py-2 px-4 hover:bg-slate-100 cs-font-body">Loading</li>
+                                        <li class="py-2 px-4 hover:bg-slate-100 cs-font-body rounded-b-md">Unloading
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- end Select type -->
+
+                            <!-- Select Progress -->
+                            <div class="space-y-1" x-data="{ open: false }">
+                                <h1 class="cs-font-caption text-cs-gray">Select Progress</h1>
+                                <button @click="open = !open">
+                                    <div class="border border-slate-200 rounded-md bg-white px-4 py-2 flex space-x-2">
+                                        <h1 class="my-auto cs-font-body">All Progress</h1>
+                                        <i class="my-auto fa-solid fa-caret-down text-sm"></i>
+                                    </div>
+                                </button>
+                                <!-- modal Select Progress -->
+                                <div class="bg-white border absolute shadow rounded-md border-slate-200" x-show="open"
+                                    x-transition>
+                                    <ul class="divide-y bg-white rounded-md">
+                                        <li class="py-2 px-4 hover:bg-slate-100 cs-font-body rounded-t-md">All</li>
+                                        <li class="py-2 px-4 hover:bg-slate-100 cs-font-body">Progress</li>
+                                        <li class="py-2 px-4 hover:bg-slate-100 cs-font-body rounded-b-md">Complete
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- end Select Progress -->
+                        </div>
+
+
                     </section>
                     <!-- end section search & donwload -->
 
@@ -925,6 +980,7 @@
                                     <th class="p-4">Type</th>
                                     <th class="p-4">Code</th>
                                     <th class="p-4">Company</th>
+                                    <th class="p-4">Progress</th>
                                     <th class="p-4">Items</th>
                                     <th class="p-4">SIKA</th>
                                     <th class="p-4">Action</th>
@@ -944,8 +1000,8 @@
                                     </td>
                                     <td class="px-4 py-6 text-cs-primary">PSK/LU/VII/2023/0018</td>
                                     <td class="px-4 py-6">Mcdonald</td>
-                                    <td class="px-4 py-6 text-cs-black">Coca Cola 2dus, Fanta 4dus, TV 55inch 10 unit,
-                                        Meja 50 unit, Kursi 120 Unit, Stand Monitor 5 unit.</td>
+                                    <td class="px-4 py-6 text-yellow-500 cs-font-body">Progress</td>
+                                    <td class="px-4 py-6 text-cs-black">10 Request</td>
                                     <td class="px-4 py-6 text-cs-primary">https://example.com/SIKA/McdonaldSika.pdf</td>
                                     <td>
                                         <div class="flex space-x-2 px-3">
@@ -967,7 +1023,7 @@
                                                         class="max-w-xl w-full border md:rounded-md  bg-white divide-y relative">
                                                         <!-- header close -->
                                                         <div
-                                                            class="flex justify-between p-4 bg-white border-b fixed-top rounded-t-md md:absolute w-full">
+                                                            class="flex justify-between p-4 bg-white border-b fixed-top rounded-t-md md:absolute w-full z-20">
                                                             <div class="w-full my-auto cs-font-title text-cs-black">
                                                                 Detail</div>
                                                             <button @click="open = !open"
@@ -999,6 +1055,423 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+
+                                                            <!-- line -->
+                                                            <div class="py-4">
+                                                                <div class="h-[1px] w-full bg-slate-100"></div>
+                                                            </div>
+                                                            <!-- end line -->
+
+                                                            <!-- Tracking Progress -->
+                                                            <div class="bg-slate-50 rounded-md p-2 md:p-4 space-y-2"
+                                                                x-data="{ open: false }">
+                                                                <div class="flex justify-between">
+                                                                    <h1 class="cs-font-title text-cs-black">Tracking
+                                                                        Progress</h1>
+                                                                    <button @click="open = true">
+                                                                        <i
+                                                                            class="fa-regular fa-angle-right px-3 py-2 rounded-full hover:bg-slate-200"></i>
+                                                                    </button>
+                                                                </div>
+                                                                <!-- modal tracking progress -->
+                                                                <div x-show="open" x-transition
+                                                                    class="h-screen w-screen top-0 left-0 fixed-top bg-black/25 z-50">
+
+                                                                    <div class="flex h-full">
+                                                                        <!-- box tracking progress -->
+                                                                        <div class="my-auto w-full flex justify-center">
+                                                                            <div
+                                                                                class="max-w-xl w-full border md:rounded-md  bg-white divide-y relative">
+                                                                                <!-- header close -->
+                                                                                <div
+                                                                                    class="flex justify-between p-4 bg-white border-b fixed-top rounded-t-md md:absolute w-full z-20">
+                                                                                    <div
+                                                                                        class="w-full my-auto cs-font-title text-cs-black">
+                                                                                        Tracking Progress</div>
+                                                                                    <button @click="open = !open"
+                                                                                        class="py-1.5 px-3 bg-red-50 hover:bg-red-500 hover:text-white text-red-500 rounded-full transition-colors">
+                                                                                        <i
+                                                                                            class="fa-regular fa-xmark my-auto"></i>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <!-- end header close -->
+
+                                                                                <!-- information -->
+                                                                                <div
+                                                                                    class="p-4 md:max-h-[37.5rem] h-full md:overflow-y-auto py-20">
+                                                                                    <!-- timeline -->
+                                                                                    <!-- ========= timeline ========= -->
+                                                                                    <div class=" p-2 rounded-lg">
+                                                                                        <ol
+                                                                                            class="relative border-l border-gray-200">
+
+
+                                                                                            <!-- timeline - GM Division -->
+                                                                                            <li
+                                                                                                class="mb-10 ml-4 space-y-2">
+                                                                                                <div
+                                                                                                    class="absolute mt-0.5 w-3 h-3 bg-cs-gray rounded-full -left-1.5  ring-8 ring-white ">
+                                                                                                </div>
+                                                                                                <!-- date -->
+                                                                                                <div
+                                                                                                    class="flex space-x-3">
+                                                                                                    <!-- time -->
+                                                                                                    <time
+                                                                                                        class="cs-font-caption text-cs-gray my-auto">09:00</time>
+                                                                                                    <!-- line -->
+                                                                                                    <div
+                                                                                                        class="h-4 w-[1px] bg-cs-gray my-auto">
+                                                                                                    </div>
+                                                                                                    <!-- date -->
+                                                                                                    <time
+                                                                                                        class="cs-font-caption text-cs-gray my-auto">23
+                                                                                                        Feb 2013</time>
+                                                                                                </div>
+                                                                                                <!-- Title -->
+                                                                                                <div
+                                                                                                    class="rounded-md space-y-6">
+                                                                                                    <div
+                                                                                                        class="space-y-2">
+                                                                                                        <h3
+                                                                                                            class="cs-font-headline1 text-cs-black">
+                                                                                                            GM Division
+                                                                                                        </h3>
+                                                                                                        <div
+                                                                                                            class="flex">
+                                                                                                            <p
+                                                                                                                class="cs-font-body text-red-500 bg-red-100 p-2 rounded-md">
+                                                                                                                Your
+                                                                                                                submission
+                                                                                                                was
+                                                                                                                rejected
+                                                                                                            </p>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <!-- note -->
+                                                                                                    <div
+                                                                                                        class="border p-2 rounded-md bg-slate-50 space-y-1">
+                                                                                                        <h1
+                                                                                                            class="cs-font-caption text-cs-gray">
+                                                                                                            Note</h1>
+                                                                                                        <h1
+                                                                                                            class="cs-font-body text-cs-black">
+                                                                                                            Telah
+                                                                                                            memiliki
+                                                                                                            barang yang
+                                                                                                            berbahaya
+                                                                                                        </h1>
+                                                                                                    </div>
+                                                                                                    <!-- items -->
+                                                                                                    <div
+                                                                                                        class=" rounded-md  space-y-2">
+                                                                                                        <h1
+                                                                                                            class="cs-font-caption text-red-500">
+                                                                                                            Items
+                                                                                                            rejected !
+                                                                                                        </h1>
+                                                                                                        <!-- list items -->
+                                                                                                        <!-- item 1 -->
+                                                                                                        <div
+                                                                                                            class="border bg-red-50 border-red-500 rounded-md divide-y">
+                                                                                                            <div
+                                                                                                                class="p-2 space-y-2">
+                                                                                                                <h1
+                                                                                                                    class="cs-font-title my-auto line-through text-red-500">
+                                                                                                                    Tabung
+                                                                                                                    Gas
+                                                                                                                </h1>
+                                                                                                                <div
+                                                                                                                    class="border p-2 border-red-300 rounded-md bg-slate-50 space-y-1">
+                                                                                                                    <h1
+                                                                                                                        class="cs-font-caption text-cs-gray">
+                                                                                                                        Reason
+                                                                                                                    </h1>
+                                                                                                                    <h1
+                                                                                                                        class="cs-font-body text-cs-black">
+                                                                                                                        Tabung
+                                                                                                                        gas
+                                                                                                                        tidak
+                                                                                                                        diperbolehkan
+                                                                                                                        masuk
+                                                                                                                        ke
+                                                                                                                        area
+                                                                                                                        event
+                                                                                                                    </h1>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <!-- end item 1 -->
+
+                                                                                                        <!-- item 2 -->
+                                                                                                        <div
+                                                                                                            class="border bg-red-50 border-red-500 rounded-md divide-y">
+                                                                                                            <div
+                                                                                                                class="p-2 space-y-2">
+                                                                                                                <h1
+                                                                                                                    class="cs-font-title my-auto line-through text-red-500">
+                                                                                                                    Pipa
+                                                                                                                    besi
+                                                                                                                    10M
+                                                                                                                </h1>
+                                                                                                                <div
+                                                                                                                    class="border p-2 border-red-300 rounded-md bg-slate-50 space-y-1">
+                                                                                                                    <h1
+                                                                                                                        class="cs-font-caption text-cs-gray">
+                                                                                                                        Reason
+                                                                                                                    </h1>
+                                                                                                                    <h1
+                                                                                                                        class="cs-font-body text-cs-black">
+                                                                                                                        Terlalu
+                                                                                                                        panjang,
+                                                                                                                        tidak
+                                                                                                                        dapat
+                                                                                                                        masuk
+                                                                                                                        dalam
+                                                                                                                        lokasi
+                                                                                                                        kami.
+                                                                                                                    </h1>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <!-- end item 2 -->
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <!-- line -->
+                                                                                                <div class="pt-6">
+                                                                                                    <div
+                                                                                                        class="w-full h-[4px] bg-slate-100">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                            <!-- end timeline - GM Division -->
+
+
+                                                                                            <!-- timeline - Operation -->
+                                                                                            <li
+                                                                                                class="mb-10 ml-4 space-y-2">
+                                                                                                <div
+                                                                                                    class="absolute mt-0.5 w-3 h-3 bg-cs-gray rounded-full -left-1.5  ring-8 ring-white ">
+                                                                                                </div>
+                                                                                                <!-- date -->
+                                                                                                <div
+                                                                                                    class="flex space-x-3">
+                                                                                                    <!-- time -->
+                                                                                                    <time
+                                                                                                        class="cs-font-caption text-cs-gray my-auto">09:00</time>
+                                                                                                    <!-- line -->
+                                                                                                    <div
+                                                                                                        class="h-4 w-[1px] bg-cs-gray my-auto">
+                                                                                                    </div>
+                                                                                                    <!-- date -->
+                                                                                                    <time
+                                                                                                        class="cs-font-caption text-cs-gray my-auto">23
+                                                                                                        Feb 2013</time>
+                                                                                                </div>
+                                                                                                <!-- Title -->
+                                                                                                <div
+                                                                                                    class="rounded-md space-y-6">
+                                                                                                    <div
+                                                                                                        class="space-y-2">
+                                                                                                        <h3
+                                                                                                            class="cs-font-headline1 text-cs-black">
+                                                                                                            Operation
+                                                                                                        </h3>
+                                                                                                        <div
+                                                                                                            class="flex">
+                                                                                                            <p
+                                                                                                                class="cs-font-body text-green-500 bg-green-100 p-2 rounded-md">
+                                                                                                                Your
+                                                                                                                submission
+                                                                                                                was
+                                                                                                                accepted
+                                                                                                                - move
+                                                                                                                on to
+                                                                                                                the next
+                                                                                                                Division
+                                                                                                            </p>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <!-- line -->
+                                                                                                <div class="pt-6">
+                                                                                                    <div
+                                                                                                        class="w-full h-[4px] bg-slate-100">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                            <!-- end timeline - Operation -->
+
+
+                                                                                            <!-- timeline - Finance -->
+                                                                                            <li
+                                                                                                class="mb-10 ml-4 space-y-2">
+                                                                                                <div
+                                                                                                    class="absolute mt-0.5 w-3 h-3 bg-cs-gray rounded-full -left-1.5  ring-8 ring-white ">
+                                                                                                </div>
+                                                                                                <!-- date -->
+                                                                                                <div
+                                                                                                    class="flex space-x-3">
+                                                                                                    <!-- time -->
+                                                                                                    <time
+                                                                                                        class="cs-font-caption text-cs-gray my-auto">09:00</time>
+                                                                                                    <!-- line -->
+                                                                                                    <div
+                                                                                                        class="h-4 w-[1px] bg-cs-gray my-auto">
+                                                                                                    </div>
+                                                                                                    <!-- date -->
+                                                                                                    <time
+                                                                                                        class="cs-font-caption text-cs-gray my-auto">23
+                                                                                                        Feb 2013</time>
+                                                                                                </div>
+                                                                                                <!-- Title -->
+                                                                                                <div
+                                                                                                    class="rounded-md space-y-6">
+                                                                                                    <div
+                                                                                                        class="space-y-2">
+                                                                                                        <h3
+                                                                                                            class="cs-font-headline1 text-cs-black">
+                                                                                                            Finance</h3>
+                                                                                                        <div
+                                                                                                            class="flex">
+                                                                                                            <p
+                                                                                                                class="cs-font-body text-green-500 bg-green-100 p-2 rounded-md">
+                                                                                                                Your
+                                                                                                                submission
+                                                                                                                was
+                                                                                                                accepted
+                                                                                                                - move
+                                                                                                                on to
+                                                                                                                the next
+                                                                                                                Division
+                                                                                                            </p>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <!-- line -->
+                                                                                                <div class="pt-6">
+                                                                                                    <div
+                                                                                                        class="w-full h-[4px] bg-slate-100">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                            <!-- end timeline - Finance -->
+
+
+                                                                                            <!-- timeline - TCR Division -->
+                                                                                            <li
+                                                                                                class="mb-10 ml-4 space-y-2">
+                                                                                                <div
+                                                                                                    class="absolute mt-0.5 w-3 h-3 bg-cs-gray rounded-full -left-1.5  ring-8 ring-white ">
+                                                                                                </div>
+                                                                                                <!-- date -->
+                                                                                                <div
+                                                                                                    class="flex space-x-3">
+                                                                                                    <!-- time -->
+                                                                                                    <time
+                                                                                                        class="cs-font-caption text-cs-gray my-auto">09:00</time>
+                                                                                                    <!-- line -->
+                                                                                                    <div
+                                                                                                        class="h-4 w-[1px] bg-cs-gray my-auto">
+                                                                                                    </div>
+                                                                                                    <!-- date -->
+                                                                                                    <time
+                                                                                                        class="cs-font-caption text-cs-gray my-auto">23
+                                                                                                        Feb 2013</time>
+                                                                                                </div>
+                                                                                                <!-- Title -->
+                                                                                                <div
+                                                                                                    class="rounded-md space-y-6">
+                                                                                                    <div
+                                                                                                        class="space-y-2">
+                                                                                                        <h3
+                                                                                                            class="cs-font-headline1 text-cs-black">
+                                                                                                            TCR Division
+                                                                                                        </h3>
+                                                                                                        <div
+                                                                                                            class="flex">
+                                                                                                            <p
+                                                                                                                class="cs-font-body text-green-500 bg-green-100 p-2 rounded-md">
+                                                                                                                Your
+                                                                                                                submission
+                                                                                                                was
+                                                                                                                accepted
+                                                                                                                - move
+                                                                                                                on to
+                                                                                                                the next
+                                                                                                                Division
+                                                                                                            </p>
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                                    <!-- items -->
+                                                                                                    <div
+                                                                                                        class=" rounded-md  space-y-2">
+                                                                                                        <h1
+                                                                                                            class="cs-font-caption text-red-500">
+                                                                                                            Items
+                                                                                                            rejected !
+                                                                                                        </h1>
+                                                                                                        <!-- list items -->
+                                                                                                        <!-- item 1 -->
+                                                                                                        <div
+                                                                                                            class="border bg-red-50 border-red-500 rounded-md divide-y">
+                                                                                                            <div
+                                                                                                                class="p-2 space-y-2">
+                                                                                                                <h1
+                                                                                                                    class="cs-font-title my-auto line-through text-red-500">
+                                                                                                                    Tabung
+                                                                                                                    Gas
+                                                                                                                </h1>
+                                                                                                                <div
+                                                                                                                    class="border p-2 border-red-300 rounded-md bg-slate-50 space-y-1">
+                                                                                                                    <h1
+                                                                                                                        class="cs-font-caption text-cs-gray">
+                                                                                                                        Reason
+                                                                                                                    </h1>
+                                                                                                                    <h1
+                                                                                                                        class="cs-font-body text-cs-black">
+                                                                                                                        Tabung
+                                                                                                                        gas
+                                                                                                                        tidak
+                                                                                                                        diperbolehkan
+                                                                                                                        masuk
+                                                                                                                        ke
+                                                                                                                        area
+                                                                                                                        event
+                                                                                                                    </h1>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <!-- end item 1 -->
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <!-- line -->
+                                                                                                <div class="pt-6">
+                                                                                                    <div
+                                                                                                        class="w-full h-[4px] bg-slate-100">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                            <!-- end timeline - TCR Division -->
+
+
+
+
+                                                                                        </ol>
+                                                                                        <!-- ========= end timeline ========= -->
+                                                                                    </div>
+                                                                                    <!-- end timeline -->
+                                                                                </div>
+                                                                                <!-- end information -->
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- end box tracking progress -->
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end modal tracking progress -->
+                                                                <h1 class="cs-font-body text-green-500">Complete</h1>
+                                                            </div>
+                                                            <!-- end Tracking Progress -->
 
                                                             <!-- line -->
                                                             <div class="py-4">
@@ -1052,7 +1525,7 @@
 
                                                         <!-- Footer -->
                                                         <div
-                                                            class="flex justify-end p-4 bg-white border-b fixed-bottom rounded-b-md md:absolute w-full space-x-3">
+                                                            class="flex justify-end p-4 bg-white border-b fixed-bottom rounded-b-md md:absolute w-full space-x-3 z-20">
                                                             <!-- reject item -->
                                                             <button
                                                                 class="py-2 px-3 rounded-md bg-red-50 text-red-500 hover:bg-red-500 hover:text-white transition-colors">Reject</button>
@@ -1163,6 +1636,7 @@
                                                                                                         <div
                                                                                                             class="col-span-6 my-auto">
                                                                                                             Meja 12 unit
+
                                                                                                         </div>
 
                                                                                                         <div
@@ -1764,8 +2238,8 @@
                                     </td>
                                     <td class="px-4 py-6 text-cs-primary">PSK/LU/VII/2023/0018</td>
                                     <td class="px-4 py-6">KFC</td>
-                                    <td class="px-4 py-6 text-cs-black">Coca Cola 2dus, Fanta 4dus, TV 55inch 10 unit,
-                                        Meja 50 unit, Kursi 120 Unit, Stand Monitor 5 unit.</td>
+                                    <td class="px-4 py-6 text-green-500 cs-font-body">Completed</td>
+                                    <td class="px-4 py-6 text-cs-black">10 Request</td>
                                     <td class="px-4 py-6 text-cs-primary">https://example.com/SIKA/KFCSika.pdf</td>
                                     <td>
                                         <div class="flex space-x-2 px-3">
