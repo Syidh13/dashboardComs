@@ -1079,10 +1079,214 @@
                                                 <!-- action -->
                                                 <td>
                                                     <div class="flex">
-                                                        <a href="#detail"
-                                                            class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
-                                                            <i class="fa-regular fa-eye"></i>
-                                                        </a>
+                                                        <!-- view detail -->
+                                                        <div x-data="{ open: false }">
+                                                            <button @click="open = true"
+                                                                class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
+                                                                <i class="fa-regular fa-eye"></i>
+                                                            </button>
+                                                            <!-- modal -->
+                                                            <div x-show=""
+                                                                class="fixed h-screen w-screen bg-black/25 top-0 left-0 z-20">
+                                                                <div class="flex h-full justify-center">
+                                                                    <div
+                                                                        class="my-auto bg-white rounded-md w-full max-w-xl relative">
+                                                                        <!-- header -->
+                                                                        <div class="flex justify-between border-b p-4">
+                                                                            <h1
+                                                                                class="cs-font-title text-cs-black my-auto">
+                                                                                Detail Scheduled Maintenance</h1>
+                                                                            <button
+                                                                                class="px-3 py-1 rounded-full bg-slate-100 hover:bg-red-100 hover:text-red-500 transition-colors">
+                                                                                <i class="fa-regular fa-xmark"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                        <!-- end header -->
+                                                                        <!-- information -->
+                                                                        <div
+                                                                            class="p-4 max-h-[31.25rem] overflow-y-auto pb-20">
+                                                                            <div class="pb-4">
+                                                                                <div class="flex justify-between py-2">
+                                                                                    <div class="flex space-x-2">
+                                                                                        <!-- property -->
+                                                                                        <h1
+                                                                                            class="cs-font-overline px-3 py-1 text-white rounded-md bg-blue-500">
+                                                                                            Beachwalk Bali</h1>
+                                                                                        <!-- Task Type -->
+                                                                                        <h1
+                                                                                            class="cs-font-overline px-3 py-1 text-cs-black rounded-md bg-slate-300">
+                                                                                            Civil</h1>
+                                                                                    </div>
+                                                                                    <!-- date -->
+                                                                                    <div class="my-auto">
+                                                                                        <h1
+                                                                                            class="cs-font-caption text-cs-gray">
+                                                                                            7 Sep 2023 23:00</h1>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- ticket ID -->
+                                                                                <h1
+                                                                                    class="cs-font-overline text-cs-gray">
+                                                                                    PSKL/PM/IX/2023/0113</h1>
+                                                                                <!-- title -->
+                                                                                <h1
+                                                                                    class="font-body text-xl text-cs-primary">
+                                                                                    Maintenance Weekly</h1>
+                                                                            </div>
+
+                                                                            <section class="py-2">
+                                                                                <div
+                                                                                    class="rounded-md p-2 bg-slate-100 grid grid-cols-2 gap-3">
+                                                                                    <!-- Preventive Template -->
+                                                                                    <div
+                                                                                        class="bg-white p-2 rounded-md col-span-1 space-y-1">
+                                                                                        <h1
+                                                                                            class="cs-font-overline text-cs-gray">
+                                                                                            Preventive Template</h1>
+                                                                                        <h1
+                                                                                            class="cs-font-body text-cs-black">
+                                                                                            FORM CHECKLIST STEEL AND
+                                                                                            PIPE
+                                                                                            COLOR</h1>
+                                                                                    </div>
+                                                                                    <!-- Asset -->
+                                                                                    <div
+                                                                                        class="bg-white p-2 rounded-md col-span-1 space-y-1">
+                                                                                        <h1
+                                                                                            class="cs-font-overline text-cs-gray">
+                                                                                            Asset</h1>
+                                                                                        <h1
+                                                                                            class="cs-font-body text-cs-black">
+                                                                                            Cat pagar main gate</h1>
+                                                                                    </div>
+                                                                                    <!-- Status -->
+                                                                                    <div
+                                                                                        class="bg-white p-2 rounded-md col-span-1 space-y-1">
+                                                                                        <h1
+                                                                                            class="cs-font-overline text-cs-gray">
+                                                                                            Status</h1>
+                                                                                        <h1
+                                                                                            class="cs-font-body text-cs-black">
+                                                                                            Wait</h1>
+                                                                                    </div>
+                                                                                    <!-- Assigned User -->
+                                                                                    <div
+                                                                                        class="bg-white p-2 rounded-md col-span-1 space-y-1">
+                                                                                        <h1
+                                                                                            class="cs-font-overline text-cs-gray">
+                                                                                            Assigned User</h1>
+                                                                                        <h1
+                                                                                            class="cs-font-body text-cs-black">
+                                                                                            -</h1>
+                                                                                    </div>
+                                                                                    <!-- Period -->
+                                                                                    <div
+                                                                                        class="bg-white p-2 rounded-md col-span-1 space-y-1">
+                                                                                        <h1
+                                                                                            class="cs-font-overline text-cs-gray">
+                                                                                            Period</h1>
+                                                                                        <h1
+                                                                                            class="cs-font-body text-cs-black">
+                                                                                            Weekly</h1>
+                                                                                    </div>
+                                                                                    <!-- Priority -->
+                                                                                    <div
+                                                                                        class="bg-white p-2 rounded-md col-span-1 space-y-1">
+                                                                                        <h1
+                                                                                            class="cs-font-overline text-cs-gray">
+                                                                                            Priority</h1>
+                                                                                        <h1
+                                                                                            class="cs-font-body text-cs-black">
+                                                                                            No</h1>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </section>
+
+
+                                                                            <!-- Progress Approval -->
+                                                                            <section class="py-2 group">
+                                                                                <button
+                                                                                    class="bg-white group-hover:transition-colors group-hover:bg-blue-50 group-hover:border-cs-primary p-2 border text-left w-full rounded-md col-span-1 space-y-1">
+                                                                                    <div class="flex justify-between ">
+                                                                                        <h1
+                                                                                            class="cs-font-overline text-cs-gray my-auto ">
+                                                                                            Progress Approval</h1>
+                                                                                        <i
+                                                                                            class="fa-regular fa-angle-right my-auto group-hover:transition-colors group-hover:bg-blue-500 group-hover:text-white bg-slate-100 group px-2 py-1 rounded-full"></i>
+                                                                                    </div>
+                                                                                    <h1
+                                                                                        class="cs-font-body text-cs-black group-hover:text-blue-500">
+                                                                                        Waiting for approval Manager
+                                                                                    </h1>
+                                                                                </button>
+                                                                            </section>
+                                                                            <!-- end Progress Approval -->
+
+                                                                            <!-- Log Progress -->
+                                                                            <section class="py-2">
+                                                                                <div class="space-y-2">
+                                                                                    <h1
+                                                                                        class="cs-font-title text-cs-black">
+                                                                                        Log
+                                                                                        Progress</h1>
+                                                                                    <div
+                                                                                        class="py-2 bg-slate-50 p-2 rounded-md">
+                                                                                        <div
+                                                                                            class="flex justify-between">
+                                                                                            <h1
+                                                                                                class="cs-font-body text-cs-black">
+                                                                                                Waiting</h1>
+                                                                                            <h1
+                                                                                                class="cs-font-caption my-auto text-cs-gray">
+                                                                                                20 Sep 2023 14:19</h1>
+                                                                                        </div>
+                                                                                        <h1
+                                                                                            class="py-2 cs-font-body text-cs-black">
+                                                                                            By
+                                                                                            Tarmili</h1>
+                                                                                        <div class="space-y-2">
+                                                                                            <h1 class="cs-font-body">
+                                                                                                Attachment:</h1>
+                                                                                            <!-- file photo -->
+                                                                                            <div>
+                                                                                                <h1
+                                                                                                    class="cs-font-body">
+                                                                                                    File Photo</h1>
+                                                                                                <h1
+                                                                                                    class="cs-font-body">
+                                                                                                    -</h1>
+                                                                                            </div>
+                                                                                            <!-- file PDF -->
+                                                                                            <div>
+                                                                                                <h1
+                                                                                                    class="cs-font-body">
+                                                                                                    File PDF</h1>
+                                                                                                <h1
+                                                                                                    class="cs-font-body">
+                                                                                                    -</h1>
+                                                                                            </div>
+                                                                                            <!-- file Video -->
+                                                                                            <div>
+                                                                                                <h1
+                                                                                                    class="cs-font-body">
+                                                                                                    File Video</h1>
+                                                                                                <h1
+                                                                                                    class="cs-font-body">
+                                                                                                    -</h1>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </section>
+                                                                            <!-- end Log Progress -->
+
+                                                                        </div>
+                                                                        <!-- end information -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end view detail -->
                                                         <a href="#Delete"
                                                             class="my-auto text-cs-black hover:bg-cs-primary-soft hover:text-cs-primary transition-all py-3 px-3.5 rounded-full">
                                                             <i class="fa-regular fa-trash"></i>
