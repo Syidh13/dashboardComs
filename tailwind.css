@@ -1,17 +1,14 @@
 @tailwind base;
 
 @tailwind components;
-/* ======== Clip Path ======== */
-/* .cs-clippath-tag {
-  @apply clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-} */
+
 /* ======== Button ======== */
 .cs-nav-selected {
-  @apply justify-between cs-font-buttonNormal md:justify-start md:space-x-3 px-6 rounded-lg text-left md:cursor-pointer bg-blue-50  overflow-hidden text-cs-primary whitespace-nowrap;
+  @apply justify-between cs-font-buttonSelected md:justify-start md:space-x-3 px-6 rounded-lg text-left md:cursor-pointer bg-blue-50  overflow-hidden text-cs-primary whitespace-nowrap;
 }
 
 .cs-nav-normal {
-  @apply cs-font-buttonNormal transition-colors  md:justify-start md:space-x-3 px-6 rounded-lg text-left md:cursor-pointer  hover:text-cs-primary whitespace-nowrap;
+  @apply cs-font-buttonNormal transition-colors text-slate-500 md:justify-start md:space-x-3 px-6 rounded-lg text-left md:cursor-pointer  hover:text-cs-primary whitespace-nowrap;
 }
 
 /* ======== Table ======== */
@@ -30,39 +27,43 @@
 
 /* ======== Fonts ======== */
 .cs-font-headline1 {
-  @apply text-3xl font-headline1;
+  @apply text-3xl;
 }
 
 .cs-font-headline2 {
-  @apply text-2xl font-headline2;
+  @apply text-2xl;
 }
 
 .cs-font-title {
-  @apply text-base font-title;
+  @apply text-sm font-semibold;
 }
 
 .cs-font-subtitle {
-  @apply text-base font-subtitle;
+  @apply text-base;
 }
 
 .cs-font-body {
-  @apply text-sm font-body;
+  @apply text-sm font-normal;
 }
 
 .cs-font-caption {
-  @apply text-xs font-caption;
+  @apply text-xs;
 }
 
 .cs-font-overline {
-  @apply text-[0.625rem] uppercase font-overline;
+  @apply text-xs font-medium uppercase;
 }
 
 .cs-font-buttonHover {
-  @apply text-sm font-buttonbold;
+  @apply text-sm;
 }
 
 .cs-font-buttonNormal {
-  @apply text-sm font-buttonregular;
+  @apply text-sm font-light;
+}
+
+.cs-font-buttonSelected {
+  @apply text-sm font-medium;
 }
 
 @tailwind utilities;

@@ -35,10 +35,11 @@
                 <!-- end logo -->
 
                 <!-- profile button -->
-                <a href="#" class="hidden px-2 py-1 my-auto space-x-3 border rounded md:flex">
+                <a href="#"
+                    class="hidden px-2 py-1 my-auto space-x-2 md:flex hover:bg-slate-100 rounded-md transition-all">
                     <img src="https://images.pexels.com/photos/8090261/pexels-photo-8090261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        alt="" class="object-cover w-10 h-10 border-2 rounded-full">
-                    <h1 class="my-auto text-sm font-title text-slate-800">Phoenix Jasper</h1>
+                        alt="" class="object-cover w-8 h-8 border-2 rounded-full">
+                    <h1 class="my-auto font-semibold text-xs text-slate-800">Phoenix Jasper</h1>
                 </a>
                 <!-- end profile button -->
 
@@ -99,15 +100,15 @@
                                         <!-- sub -->
                                         <div x-show="open" class="py-1" x-transition>
                                             <ul class="space-y-1">
-                                                <!-- Complaint & Request -->
+                                                <!-- Overview -->
                                                 <li>
                                                     <a href="#" class="">
-                                                        <div class="cs-nav-normal py-2">
-                                                            <h1 class="ml-6">Complaint & Request</h1>
+                                                        <div class="cs-nav-selected py-2">
+                                                            <h1 class="ml-6">Overview</h1>
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <!-- end Complaint & Request -->
+                                                <!-- end Overview -->
 
                                                 <!-- Work Order -->
                                                 <li>
@@ -523,11 +524,10 @@
     <section class="flex-col w-full md:flex md:flex-row md:min-h-screen fixed">
 
         <!-- ===== section button (left on desktop) ==== -->
-        <section
-            class="flex-col flex-shrink-0 hidden h-screen pt-20 overflow-y-auto text-gray-700 bg-white border-r md:w-64 md:block  scrollbar-hide">
+        <section class="flex-col flex-shrink-0 hidden  text-gray-700  border-r md:w-64 md:block">
             <div class="flex flex-col items-center justify-between flex-shrink-0 bg-white">
 
-                <div class="" id="sidenav-1" data-te-sidenav-init data-te-sidenav-position="absolute">
+                <div class="py-20" id="sidenav-1" data-te-sidenav-init data-te-sidenav-position="absolute">
                     <ul class="relative m-0 list-none px-[0.2rem] space-y-2" data-te-sidenav-menu-ref>
 
                         <!-- Dashboard (desktop) -->
@@ -548,30 +548,23 @@
                             <ul class="show !visible relative m-0 hidden pt-2 list-none p-0 data-[te-collapse-show]:block space-y-3"
                                 data-te-sidenav-collapse-ref>
 
-                                <!-- Complaint & Request -->
+                                <!-- Overview -->
                                 <li class="relative ">
-                                    <a href="#" class="flex py-2 cs-nav-normal" data-te-sidenav-link-ref>
-                                        <h1 class="pl-6 whitespace-normal"> Complaint & Request
+                                    <a href="#" class="flex py-2 cs-nav-selected" data-te-sidenav-link-ref>
+                                        <h1 class="pl-6 whitespace-normal"> Overview
                                         </h1>
                                     </a>
                                 </li>
-                                <!-- end Complaint & Request -->
+                                <!-- end Overview -->
 
-                                <!-- Work Order -->
+                                <!-- Staff List -->
                                 <li class="relative ">
                                     <a href="#" class="flex py-2 cs-nav-normal" data-te-sidenav-link-ref>
-                                        <h1 class="ml-6 "> Work Order</h1>
+                                        <h1 class="ml-6 "> Staff List</h1>
                                     </a>
                                 </li>
-                                <!-- end Work Order -->
+                                <!-- end Staff List -->
 
-                                <!-- Schedule Maintance -->
-                                <li class="relative ">
-                                    <a href="#" class="flex py-2 cs-nav-normal" data-te-sidenav-link-ref>
-                                        <h1 class="ml-6 "> Schedule Maintance</h1>
-                                    </a>
-                                </li>
-                                <!-- end Schedule Maintance -->
 
                             </ul>
                         </li>
@@ -963,8 +956,6 @@
                     </ul>
 
 
-
-
                 </div>
 
             </div>
@@ -974,53 +965,64 @@
 
 
         <!--* ===== section main display (right on desktop & center mobile) ==== -->
-        <section class="w-full h-screen pt-16 overflow-y-auto bg-slate-50">
-            <div class="w-full h-full py-6 space-y-5  px-4">
+        <section class="w-full h-screen md:pt-16 pt-14 overflow-y-auto bg-white">
+            <div class="w-full h-full py-6  px-4">
 
                 <!-- ===== section breadcrumb ==== -->
                 <nav class="w-full rounded-md" aria-label="">
-                    <ol class="flex space-x-2 list-reset">
-                        <li class="my-auto text-xs text-slate-400 font-title-regular">Dashboard</li>
-                        <!-- <i class="text-xs fa-regular fa-slash-forward text-slate-400"></i>
-                        <li class="my-auto text-xs text-slate-800 font-title">Tenant Meter Utility</li> -->
-                    </ol>
+                    <h1 class="text-2xl tracking-tight font-medium text-slate-800">Overview</h1>
                 </nav>
                 <!-- ===== end section breadcrumb ==== -->
-
 
                 <!-- ===== ================ ==== -->
                 <!-- ===== section Main Body ==== -->
                 <!-- ===== ================ ==== -->
-                <section class="">
+                <section>
                     <!-- ===== ================ ==== -->
                     <!-- ===== section Tab ==== -->
                     <!-- ===== ================ ==== -->
-                    <ul class="mb-4 flex list-none  flex-wrap border-b-0 pl-0 md:flex-row space-x-2" id="tabs-tab3"
-                        role="tablist" data-te-nav-ref>
-                        <!-- tab complaint -->
-                        <li role="presentation">
-                            <a href="#tabs-complaint"
-                                class="my-2 block  border bg-white px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded"
-                                id="tabs-home-tab3" data-te-toggle="pill" data-te-target="#tabs-complaint"
-                                data-te-nav-active role="tab" aria-controls="tabs-complaint"
-                                aria-selected="true">Complaint Request</a>
-                        </li>
-                        <!-- tab work -->
-                        <li role="presentation">
-                            <a href="#tabs-work"
-                                class="focus:border-transparen my-2 block border bg-white px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded "
-                                id="tabs-profile-tab3" data-te-toggle="pill" data-te-target="#tabs-work" role="tab"
-                                aria-controls="tabs-work" aria-selected="false">Work Order</a>
-                        </li>
-                        <!-- tab Schedule Maintance -->
-                        <li role="presentation">
-                            <a href="#tabs-scheduleMaintance"
-                                class="focus:border-transparen my-2 block border bg-white px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded "
-                                id="tabs-schedule-tab3" data-te-toggle="pill" data-te-target="#tabs-scheduleMaintance"
-                                role="tab" aria-controls="tabs-scheduleMaintance" aria-selected="false">Schedule
-                                Maintance</a>
-                        </li>
-                    </ul>
+                    <div class="mb-2 mt-2">
+                        <!-- caption -->
+                        <h1 class="text-xs font-caption text-slate-400">Select Tab</h1>
+                        <!-- end caption -->
+                        <div class="overflow-x-auto">
+                            <ul class="mb-2 flex  border-b-0 pl-0 space-x-2" id="tabs-tab3" role="tablist"
+                                data-te-nav-ref>
+                                <!-- tab all -->
+                                <li role="presentation" class="flex-none">
+                                    <a href="#tabs-all"
+                                        class="my-2 block  border bg-white px-7 py-3 text-xs font-normal uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded"
+                                        id="tabs-home-tab3" data-te-toggle="pill" data-te-target="#tabs-all"
+                                        data-te-nav-active role="tab" aria-controls="tabs-all"
+                                        aria-selected="true">All</a>
+                                </li>
+                                <!-- tab complaint -->
+                                <li role="presentation" class="flex-none">
+                                    <a href="#tabs-complaint"
+                                        class="focus:border-transparen my-2 block border bg-white px-7 py-3 text-xs font-normal uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded "
+                                        id="tabs-profile-tab3" data-te-toggle="pill" data-te-target="#tabs-complaint"
+                                        role="tab" aria-controls="tabs-complaint" aria-selected="false">Complaint &
+                                        Request</a>
+                                </li>
+                                <!-- tab work -->
+                                <li role="presentation" class="flex-none">
+                                    <a href="#tabs-work"
+                                        class="focus:border-transparen my-2 block border bg-white px-7 py-3 text-xs font-normal uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded "
+                                        id="tabs-work-tab3" data-te-toggle="pill" data-te-target="#tabs-work" role="tab"
+                                        aria-controls="tabs-work" aria-selected="false">Work Order</a>
+                                </li>
+                                <!-- tab Schedule Maintance -->
+                                <li role="presentation" class="flex-none">
+                                    <a href="#tabs-scheduleMaintance"
+                                        class="focus:border-transparen my-2 block border bg-white px-7 py-3 text-xs font-normal uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded "
+                                        id="tabs-schedule-tab3" data-te-toggle="pill"
+                                        data-te-target="#tabs-scheduleMaintance" role="tab"
+                                        aria-controls="tabs-scheduleMaintance" aria-selected="false">Schedule
+                                        Maintance</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <!-- ===== ================ ==== -->
                     <!-- ===== end section Tab ==== -->
                     <!-- ===== ================ ==== -->
@@ -1030,11 +1032,518 @@
                     <!-- ===== section modul tab ==== -->
                     <!-- ===== ================ ==== -->
                     <section>
+
                         <!-- ===== ================ ==== -->
-                        <!-- ===== section modul tab Complaint request ==== -->
+                        <!-- ===== section modul tab All ==== -->
                         <!-- ===== ================ ==== -->
                         <div class="hidden  transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-                            id="tabs-complaint" role="tabpanel" data-te-tab-active aria-labelledby="Complaint Request">
+                            id="tabs-all" role="tabpanel" data-te-tab-active aria-labelledby="all">
+
+                            <section class="w-full space-y-2" id="content">
+
+                                <!-- ===== ================ ==== -->
+                                <!-- ===== section Filter ==== -->
+                                <!-- ===== ================ ==== -->
+                                <section>
+                                    <!-- caption -->
+                                    <h1 class="text-xs font-caption text-slate-400">Filter</h1>
+                                    <!-- end caption -->
+                                    <div class=" overflow-x-auto">
+                                        <div class="my-auto bg-white">
+                                            <div class="flex space-x-2">
+                                                <input placeholder="Start date"
+                                                    class="textbox-n my-2 block  border bg-white px-3 py-2 text-xs font-normal uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded"
+                                                    type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
+                                                    id="date" />
+                                                <input placeholder="End date"
+                                                    class="textbox-n my-2 block  border bg-white px-3 py-2 text-xs font-normal uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded"
+                                                    type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
+                                                    id="date" />
+
+                                                <div
+                                                    class="border bg-white flex cursor-pointer rounded space-x-2 px-3 h-8 my-auto hover:bg-slate-100">
+                                                    <h1
+                                                        class="whitespace-nowrap my-auto  text-xs font-normal uppercase leading-tight text-neutral-500">
+                                                        Select Property</h1>
+                                                    <i class="fa-solid fa-sort-down my-auto text-xs"></i>
+                                                </div>
+
+                                                <button
+                                                    class="p-2 rounded-md border border-blue-600 flex h-8 my-auto bg-blue-500 text-white">
+                                                    <i class="fa-regular fa-download my-auto"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- ===== ================ ==== -->
+                                <!-- ===== end section Filter ==== -->
+                                <!-- ===== ================ ==== -->
+
+                                <!-- line -->
+                                <div class="w-full h-[1px] bg-slate-200"></div>
+                                <!-- end line -->
+
+                                <!-- ===== ================ ==== -->
+                                <!-- ===== section Complaint & Request ==== -->
+                                <!-- ===== ================ ==== -->
+                                <section class="md:py-4 py-2">
+                                    <h1 class="font-sans text-lg text-slate-800 font-medium">Complaint & Request</h1>
+                                    <!-- filter -->
+                                    <div class="pt-2">
+                                        <div class="grid  md:grid-cols-5 gap-2 grid-cols-2">
+
+                                            <!-- opsi Categories -->
+                                            <div x-data="{ open: false }">
+                                                <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
+                                                    @click="open = !open">
+                                                    <div class="space-x-3 flex">
+                                                        <h1
+                                                            class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
+                                                            Categories
+                                                        </h1>
+                                                    </div>
+                                                    <div class="my-auto">
+                                                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- modal -->
+                                                <div x-show="open"
+                                                    class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
+                                                    <div class="flex h-screen justify-center">
+                                                        <div class="my-auto w-full max-w-lg rounded-md border">
+                                                            <!-- header -->
+                                                            <div
+                                                                class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
+                                                                <div class="flex justify-between">
+                                                                    <h1
+                                                                        class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
+                                                                        Select Category</h1>
+                                                                    <button
+                                                                        class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
+                                                                        @click="open = !open">Close</button>
+                                                                </div>
+                                                                <!-- search -->
+                                                                <div class="pt-2">
+                                                                    <input type="search" name="" id=""
+                                                                        placeholder="search category"
+                                                                        class="border rounded-md p-2 w-full font-light text-sm">
+                                                                </div>
+                                                            </div>
+                                                            <!-- scroll -->
+                                                            <div
+                                                                class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!-- end opsi Categories -->
+
+                                            <!-- opsi Type -->
+                                            <div x-data="{ open: false }">
+                                                <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
+                                                    @click="open = !open">
+                                                    <div class="space-x-3 flex">
+                                                        <h1
+                                                            class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
+                                                            Type
+                                                        </h1>
+                                                    </div>
+                                                    <div class="my-auto">
+                                                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- modal -->
+                                                <div x-show="open"
+                                                    class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
+                                                    <div class="flex h-screen justify-center">
+                                                        <div class="my-auto w-full max-w-lg rounded-md border">
+                                                            <!-- header -->
+                                                            <div
+                                                                class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
+                                                                <div class="flex justify-between">
+                                                                    <h1
+                                                                        class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
+                                                                        Select Type</h1>
+                                                                    <button
+                                                                        class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
+                                                                        @click="open = !open">Close</button>
+                                                                </div>
+                                                                <!-- search -->
+                                                                <div class="pt-2">
+                                                                    <input type="search" name="" id=""
+                                                                        placeholder="search category"
+                                                                        class="border rounded-md p-2 w-full font-light text-sm">
+                                                                </div>
+                                                            </div>
+                                                            <!-- scroll -->
+                                                            <div
+                                                                class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!-- end opsi Type -->
+
+                                            <!-- opsi Tenant -->
+                                            <div x-data="{ open: false }">
+                                                <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
+                                                    @click="open = !open">
+                                                    <div class="space-x-3 flex">
+                                                        <h1
+                                                            class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
+                                                            Tenant
+                                                        </h1>
+                                                    </div>
+                                                    <div class="my-auto">
+                                                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- modal -->
+                                                <div x-show="open"
+                                                    class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
+                                                    <div class="flex h-screen justify-center">
+                                                        <div class="my-auto w-full max-w-lg rounded-md border">
+                                                            <!-- header -->
+                                                            <div
+                                                                class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
+                                                                <div class="flex justify-between">
+                                                                    <h1
+                                                                        class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
+                                                                        Select Tenant</h1>
+                                                                    <button
+                                                                        class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
+                                                                        @click="open = !open">Close</button>
+                                                                </div>
+                                                                <!-- search -->
+                                                                <div class="pt-2">
+                                                                    <input type="search" name="" id=""
+                                                                        placeholder="search category"
+                                                                        class="border rounded-md p-2 w-full font-light text-sm">
+                                                                </div>
+                                                            </div>
+                                                            <!-- scroll -->
+                                                            <div
+                                                                class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!-- end opsi Tenant -->
+
+                                            <!-- opsi Departement -->
+                                            <div x-data="{ open: false }">
+                                                <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
+                                                    @click="open = !open">
+                                                    <div class="space-x-3 flex">
+                                                        <h1
+                                                            class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
+                                                            Departement
+                                                        </h1>
+                                                    </div>
+                                                    <div class="my-auto">
+                                                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- modal -->
+                                                <div x-show="open"
+                                                    class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
+                                                    <div class="flex h-screen justify-center">
+                                                        <div class="my-auto w-full max-w-lg rounded-md border">
+                                                            <!-- header -->
+                                                            <div
+                                                                class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
+                                                                <div class="flex justify-between">
+                                                                    <h1
+                                                                        class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
+                                                                        Select Departement</h1>
+                                                                    <button
+                                                                        class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
+                                                                        @click="open = !open">Close</button>
+                                                                </div>
+                                                                <!-- search -->
+                                                                <div class="pt-2">
+                                                                    <input type="search" name="" id=""
+                                                                        placeholder="search category"
+                                                                        class="border rounded-md p-2 w-full font-light text-sm">
+                                                                </div>
+                                                            </div>
+                                                            <!-- scroll -->
+                                                            <div
+                                                                class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!-- end opsi Departement -->
+
+                                            <!-- opsi Submiter Name -->
+                                            <div x-data="{ open: false }" class="col-span-2 md:col-span-1">
+                                                <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
+                                                    @click="open = !open">
+                                                    <div class="space-x-3 flex">
+                                                        <h1
+                                                            class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
+                                                            Submiter Name
+                                                        </h1>
+                                                    </div>
+                                                    <div class="my-auto">
+                                                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- modal -->
+                                                <div x-show="open"
+                                                    class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
+                                                    <div class="flex h-screen justify-center">
+                                                        <div class="my-auto w-full max-w-lg rounded-md border">
+                                                            <!-- header -->
+                                                            <div
+                                                                class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
+                                                                <div class="flex justify-between">
+                                                                    <h1
+                                                                        class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
+                                                                        Select Submiter Name</h1>
+                                                                    <button
+                                                                        class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
+                                                                        @click="open = !open">Close</button>
+                                                                </div>
+                                                                <!-- search -->
+                                                                <div class="pt-2">
+                                                                    <input type="search" name="" id=""
+                                                                        placeholder="search category"
+                                                                        class="border rounded-md p-2 w-full font-light text-sm">
+                                                                </div>
+                                                            </div>
+                                                            <!-- scroll -->
+                                                            <div
+                                                                class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                                <div
+                                                                    class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
+                                                                    <h1 class="text-sm font-light text-slate-700">
+                                                                        Category</h1>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!-- end opsi Submiter Name -->
+                                        </div>
+                                    </div>
+                                    <!-- end filter -->
+                                </section>
+                                <!-- ===== ================ ==== -->
+                                <!-- ===== end section Complaint & Request ==== -->
+                                <!-- ===== ================ ==== -->
+
+                                <!-- ===== ================ ==== -->
+                                <!-- ===== section Card ==== -->
+                                <!-- ===== ================ ==== -->
+                                <section class="grid md:grid-cols-5 gap-2">
+                                    <!-- Complaint & Request -->
+                                    <div class="border rounded-md p-4 space-y-1 bg-slate-50">
+                                        <!-- caption -->
+                                        <h1 class="text-xs font-normal text-slate-400 truncate">Complaint & Request</h1>
+                                        <h1 class="text-3xl  font-light text-blue-500">2198</h1>
+                                    </div>
+                                    <!-- Tenant Submitter -->
+                                    <div class="border rounded-md p-4 space-y-1 bg-slate-50">
+                                        <!-- caption -->
+                                        <h1 class="text-xs font-normal text-slate-400 truncate">Tenant Submitter</h1>
+                                        <h1 class="text-3xl  font-light text-blue-500">2198</h1>
+                                    </div>
+                                    <!-- Internal Submitter -->
+                                    <div class="border rounded-md p-4 space-y-1 bg-slate-50">
+                                        <!-- caption -->
+                                        <h1 class="text-xs font-normal text-slate-400 truncate">Internal Submitter</h1>
+                                        <h1 class="text-3xl  font-light text-blue-500">2198</h1>
+                                    </div>
+                                    <!-- Percentage Complete -->
+                                    <div class="border rounded-md p-4 space-y-1 bg-slate-50">
+                                        <!-- caption -->
+                                        <h1 class="text-xs font-normal text-slate-400 truncate">Percentage Complete</h1>
+                                        <h1 class="text-3xl  font-light text-blue-500">86,08%</h1>
+                                    </div>
+                                    <!-- Satisfaction Level  -->
+                                    <div class="border rounded-md p-4 space-y-1 bg-slate-50">
+                                        <!-- caption -->
+                                        <h1 class="text-xs font-normal text-slate-400 truncate">Satisfaction Level </h1>
+                                        <h1 class="text-3xl  font-light text-blue-500">4,85</h1>
+                                    </div>
+                                </section>
+                                <!-- ===== ================ ==== -->
+                                <!-- ===== end section Card ==== -->
+                                <!-- ===== ================ ==== -->
+
+
+
+                            </section>
+
+                        </div>
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== end section modul tab All ==== -->
+                        <!-- ===== ================ ==== -->
+
+
+                        <!-- ===== ================ ==== -->
+                        <!-- ===== section modul tab All ==== -->
+                        <!-- ===== ================ ==== -->
+                        <div class="hidden  transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+                            id="tabs-complaint" role="tabpanel" aria-labelledby="complaint">
 
                             <section class="w-full space-y-4" id="content">
 
@@ -1960,7 +2469,7 @@
 
                         </div>
                         <!-- ===== ================ ==== -->
-                        <!-- ===== end section modul tab Complaint request ==== -->
+                        <!-- ===== end section modul tab All ==== -->
                         <!-- ===== ================ ==== -->
 
 
@@ -2181,7 +2690,7 @@
 
                                             <!-- Chart doughnut -->
                                             <script>
-                                                const dataDoughnut1 = {
+                                                const dataDoughnut_2 = {
                                                     labels: ["Inspect", "Wait", "Process", "Complete"],
                                                     datasets: [
                                                         {
@@ -2200,7 +2709,7 @@
 
                                                 const configDoughnut1 = {
                                                     type: "doughnut",
-                                                    data: dataDoughnut1,
+                                                    data: dataDoughnut_2,
                                                     options: {},
                                                 };
 
@@ -2227,7 +2736,7 @@
 
                                                     <!-- Bar Chart -->
                                                     <script>
-                                                        const dataCategory = {
+                                                        const dataCategory_1 = {
                                                             labels: ["AC", "Electricity", "Plumbing - Air Kotor", "Listrik", "Lift & Eskalator", "Civil", "Exhaust", "Safety", "Lain lain"],
                                                             datasets: [
                                                                 {
@@ -2244,7 +2753,7 @@
                                                                 },
                                                             ],
                                                         };
-                                                        const optionsCategory = {
+                                                        const optionsCategory_1 = {
                                                             indexAxis: "y",
                                                             responsive: true,
                                                             plugins: {
@@ -2257,7 +2766,7 @@
                                                                 },
                                                             },
                                                         };
-                                                        const configCategory = {
+                                                        const configCategory_1 = {
                                                             type: "bar",
                                                             data: dataCategory,
                                                             options: optionsCategory,
@@ -3458,13 +3967,13 @@
                                         <!-- grid 2 -->
                                         <div class="col-span-2">
                                             <div>
-                                                <canvas id="myChart" class="h-full"></canvas>
+                                                <canvas id="myChart_1" class="h-full"></canvas>
                                             </div>
 
                                             <script>
-                                                const ctx = document.getElementById('myChart');
+                                                const ctx = document.getElementById('myChart_1');
 
-                                                new Chart(ctx, {
+                                                new Chart_1(ctx, {
                                                     type: 'bar',
                                                     data: {
                                                         labels: ['Complete', 'Wait', 'End Inspect', 'Process',],
@@ -4107,8 +4616,6 @@
                 <!-- ===== ================ ==== -->
                 <!-- ===== end section Main Body ==== -->
                 <!-- ===== ================ ==== -->
-
-
 
             </div>
         </section>
