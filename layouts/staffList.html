@@ -104,7 +104,7 @@
                                                 <!-- Overview -->
                                                 <li>
                                                     <a href="index.html" class="">
-                                                        <div class="cs-nav-selected py-2">
+                                                        <div class="cs-nav-normal py-2">
                                                             <h1 class="ml-6">Overview</h1>
                                                         </div>
                                                     </a>
@@ -114,7 +114,7 @@
                                                 <!-- Work Order -->
                                                 <li>
                                                     <a href="./staffList.html" class="">
-                                                        <div class="cs-nav-normal py-2">
+                                                        <div class="cs-nav-selected py-2">
                                                             <h1 class="ml-6">Staff list</h1>
                                                         </div>
                                                     </a>
@@ -602,7 +602,7 @@
 
                                 <!-- Overview -->
                                 <li class="relative ">
-                                    <a href="./index.html" class="flex py-2 cs-nav-selected" data-te-sidenav-link-ref>
+                                    <a href="./index.html" class="flex py-2 cs-nav-normal" data-te-sidenav-link-ref>
                                         <h1 class="pl-6 whitespace-normal"> Overview
                                         </h1>
                                     </a>
@@ -611,7 +611,8 @@
 
                                 <!-- Staff List -->
                                 <li class="relative ">
-                                    <a href="./staffList.html" class="flex py-2 cs-nav-normal" data-te-sidenav-link-ref>
+                                    <a href="./staffList.html" class="flex py-2 cs-nav-selected"
+                                        data-te-sidenav-link-ref>
                                         <h1 class="ml-6 "> Staff List</h1>
                                     </a>
                                 </li>
@@ -1075,7 +1076,7 @@
 
                 <!-- ===== section breadcrumb ==== -->
                 <nav class="w-full rounded-md" aria-label="">
-                    <h1 class="text-2xl tracking-tight font-medium text-slate-800">Overview</h1>
+                    <h1 class="text-2xl tracking-tight font-medium text-slate-800">Staff List</h1>
                 </nav>
                 <!-- ===== end section breadcrumb ==== -->
 
@@ -1088,7 +1089,7 @@
                     <!-- ===== ================ ==== -->
                     <div class="mb-2 mt-2">
                         <!-- caption -->
-                        <h1 class="text-xs font-caption text-slate-400">Select Tab</h1>
+                        <h1 class="text-xs font-caption text-slate-400">Select Type Of Task</h1>
                         <!-- end caption -->
                         <div class="overflow-x-auto">
                             <ul class="mb-2 flex  border-b-0 pl-0 space-x-2" id="tabs-tab3" role="tablist"
@@ -1125,13 +1126,7 @@
                                         aria-controls="tabs-scheduleMaintance" aria-selected="false">Schedule
                                         Maintance</a>
                                 </li>
-                                <!-- tab Permits -->
-                                <li role="presentation" class="flex-none">
-                                    <a href="#tabs-permits"
-                                        class="focus:border-transparen my-2 block border bg-white px-7 py-3 text-xs font-normal uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-white data-[te-nav-active]:bg-blue-500 rounded "
-                                        id="tabs-schedule-tab3" data-te-toggle="pill" data-te-target="#tabs-permits"
-                                        role="tab" aria-controls="tabs-permits" aria-selected="false">Permits</a>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -1179,6 +1174,13 @@
                                                         Select Property</h1>
                                                     <i class="fa-solid fa-sort-down my-auto text-xs"></i>
                                                 </div>
+                                                <div
+                                                    class="border bg-white flex cursor-pointer rounded space-x-2 px-3 h-8 my-auto hover:bg-slate-100">
+                                                    <h1
+                                                        class="whitespace-nowrap my-auto  text-xs font-normal uppercase leading-tight text-neutral-500">
+                                                        Select Departement</h1>
+                                                    <i class="fa-solid fa-sort-down my-auto text-xs"></i>
+                                                </div>
 
                                                 <button
                                                     class="p-2 rounded-md border border-blue-600 flex h-8 my-auto bg-blue-500 text-white">
@@ -1197,532 +1199,81 @@
                                 <!-- end line -->
 
                                 <!-- ===== ================ ==== -->
-                                <!-- ===== section Complaint & Request ==== -->
+                                <!-- ===== section Overview ==== -->
                                 <!-- ===== ================ ==== -->
                                 <section class="space-y-2 md:py-8 py-4">
-                                    <section class="">
-                                        <h1 class="font-sans text-lg text-slate-800 font-medium">Complaint & Request
-                                        </h1>
-                                        <!-- filter -->
-                                        <div class="pt-2">
-                                            <div class="grid  md:grid-cols-5 gap-2 grid-cols-2">
-
-                                                <!-- opsi Categories -->
-                                                <div x-data="{ open: false }">
-                                                    <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
-                                                        @click="open = !open">
-                                                        <div class="space-x-3 flex">
-                                                            <h1
-                                                                class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
-                                                                Categories
-                                                            </h1>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- modal -->
-                                                    <div x-show="open"
-                                                        class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
-                                                        <div class="flex h-screen justify-center">
-                                                            <div class="my-auto w-full max-w-lg rounded-md border">
-                                                                <!-- header -->
-                                                                <div
-                                                                    class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
-                                                                    <div class="flex justify-between">
-                                                                        <h1
-                                                                            class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
-                                                                            Select Category</h1>
-                                                                        <button
-                                                                            class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
-                                                                            @click="open = !open">Close</button>
-                                                                    </div>
-                                                                    <!-- search -->
-                                                                    <div class="pt-2">
-                                                                        <input type="search" name="" id=""
-                                                                            placeholder="search category"
-                                                                            class="border rounded-md p-2 w-full font-light text-sm">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- scroll -->
-                                                                <div
-                                                                    class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <!-- end opsi Categories -->
-
-                                                <!-- opsi Type -->
-                                                <div x-data="{ open: false }">
-                                                    <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
-                                                        @click="open = !open">
-                                                        <div class="space-x-3 flex">
-                                                            <h1
-                                                                class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
-                                                                Type
-                                                            </h1>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- modal -->
-                                                    <div x-show="open"
-                                                        class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
-                                                        <div class="flex h-screen justify-center">
-                                                            <div class="my-auto w-full max-w-lg rounded-md border">
-                                                                <!-- header -->
-                                                                <div
-                                                                    class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
-                                                                    <div class="flex justify-between">
-                                                                        <h1
-                                                                            class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
-                                                                            Select Type</h1>
-                                                                        <button
-                                                                            class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
-                                                                            @click="open = !open">Close</button>
-                                                                    </div>
-                                                                    <!-- search -->
-                                                                    <div class="pt-2">
-                                                                        <input type="search" name="" id=""
-                                                                            placeholder="search category"
-                                                                            class="border rounded-md p-2 w-full font-light text-sm">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- scroll -->
-                                                                <div
-                                                                    class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <!-- end opsi Type -->
-
-                                                <!-- opsi Tenant -->
-                                                <div x-data="{ open: false }">
-                                                    <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
-                                                        @click="open = !open">
-                                                        <div class="space-x-3 flex">
-                                                            <h1
-                                                                class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
-                                                                Tenant
-                                                            </h1>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- modal -->
-                                                    <div x-show="open"
-                                                        class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
-                                                        <div class="flex h-screen justify-center">
-                                                            <div class="my-auto w-full max-w-lg rounded-md border">
-                                                                <!-- header -->
-                                                                <div
-                                                                    class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
-                                                                    <div class="flex justify-between">
-                                                                        <h1
-                                                                            class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
-                                                                            Select Tenant</h1>
-                                                                        <button
-                                                                            class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
-                                                                            @click="open = !open">Close</button>
-                                                                    </div>
-                                                                    <!-- search -->
-                                                                    <div class="pt-2">
-                                                                        <input type="search" name="" id=""
-                                                                            placeholder="search category"
-                                                                            class="border rounded-md p-2 w-full font-light text-sm">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- scroll -->
-                                                                <div
-                                                                    class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <!-- end opsi Tenant -->
-
-                                                <!-- opsi Departement -->
-                                                <div x-data="{ open: false }">
-                                                    <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
-                                                        @click="open = !open">
-                                                        <div class="space-x-3 flex">
-                                                            <h1
-                                                                class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
-                                                                Departement
-                                                            </h1>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- modal -->
-                                                    <div x-show="open"
-                                                        class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
-                                                        <div class="flex h-screen justify-center">
-                                                            <div class="my-auto w-full max-w-lg rounded-md border">
-                                                                <!-- header -->
-                                                                <div
-                                                                    class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
-                                                                    <div class="flex justify-between">
-                                                                        <h1
-                                                                            class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
-                                                                            Select Departement</h1>
-                                                                        <button
-                                                                            class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
-                                                                            @click="open = !open">Close</button>
-                                                                    </div>
-                                                                    <!-- search -->
-                                                                    <div class="pt-2">
-                                                                        <input type="search" name="" id=""
-                                                                            placeholder="search category"
-                                                                            class="border rounded-md p-2 w-full font-light text-sm">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- scroll -->
-                                                                <div
-                                                                    class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <!-- end opsi Departement -->
-
-                                                <!-- opsi Submiter Name -->
-                                                <div x-data="{ open: false }" class="col-span-2 md:col-span-1">
-                                                    <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
-                                                        @click="open = !open">
-                                                        <div class="space-x-3 flex">
-                                                            <h1
-                                                                class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
-                                                                Submiter Name
-                                                            </h1>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- modal -->
-                                                    <div x-show="open"
-                                                        class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
-                                                        <div class="flex h-screen justify-center">
-                                                            <div class="my-auto w-full max-w-lg rounded-md border">
-                                                                <!-- header -->
-                                                                <div
-                                                                    class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
-                                                                    <div class="flex justify-between">
-                                                                        <h1
-                                                                            class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
-                                                                            Select Submiter Name</h1>
-                                                                        <button
-                                                                            class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
-                                                                            @click="open = !open">Close</button>
-                                                                    </div>
-                                                                    <!-- search -->
-                                                                    <div class="pt-2">
-                                                                        <input type="search" name="" id=""
-                                                                            placeholder="search category"
-                                                                            class="border rounded-md p-2 w-full font-light text-sm">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- scroll -->
-                                                                <div
-                                                                    class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <!-- end opsi Submiter Name -->
-                                            </div>
-                                        </div>
-                                        <!-- end filter -->
-                                    </section>
+                                    <h1 class="font-sans text-lg text-slate-800 font-medium"> Overview
+                                    </h1>
 
 
                                     <!-- ===== ================ ==== -->
                                     <!-- ===== section Card Hero ==== -->
                                     <!-- ===== ================ ==== -->
-                                    <section class="grid md:grid-cols-5 gap-2">
-                                        <!-- Complaint & Request -->
-                                        <div class="border rounded-md p-4 space-y-1 bg-slate-50">
+                                    <div class="grid md:grid-cols-4 grid-cols-2 gap-2">
+                                        <!-- Total All -->
+                                        <div
+                                            class="border rounded-md p-4 col-span-2 md:col-span-1 space-y-1 bg-blue-500">
                                             <!-- caption -->
-                                            <h1 class="text-xs font-normal text-slate-400 truncate">Complaint & Request
+                                            <h1 class="text-xs font-normal text-white truncate">Total All
                                             </h1>
-                                            <h1 class="text-3xl  font-light text-blue-500">2198</h1>
+                                            <h1 class="text-4xl  font-light text-white">120</h1>
                                         </div>
-                                        <!-- Tenant Submitter -->
+                                    </div>
+                                    <section class="grid md:grid-cols-4 grid-cols-2 gap-2">
+                                        <!-- Unassign -->
                                         <div class="border rounded-md p-4 space-y-1 bg-slate-50">
                                             <!-- caption -->
-                                            <h1 class="text-xs font-normal text-slate-400 truncate">Tenant Submitter
+                                            <h1 class="text-xs font-normal text-slate-400 truncate">Unassign
                                             </h1>
-                                            <h1 class="text-3xl  font-light text-blue-500">2198</h1>
+                                            <h1 class="text-3xl  font-light text-blue-500">120</h1>
                                         </div>
-                                        <!-- Internal Submitter -->
+                                        <!-- Waiting -->
                                         <div class="border rounded-md p-4 space-y-1 bg-slate-50">
                                             <!-- caption -->
-                                            <h1 class="text-xs font-normal text-slate-400 truncate">Internal Submitter
+                                            <h1 class="text-xs font-normal text-slate-400 truncate">Waiting
                                             </h1>
-                                            <h1 class="text-3xl  font-light text-blue-500">2198</h1>
+                                            <h1 class="text-3xl  font-light text-blue-500">120</h1>
                                         </div>
-                                        <!-- Percentage Complete -->
+                                        <!-- Processing -->
                                         <div class="border rounded-md p-4 space-y-1 bg-slate-50">
                                             <!-- caption -->
-                                            <h1 class="text-xs font-normal text-slate-400 truncate">Percentage Complete
+                                            <h1 class="text-xs font-normal text-slate-400 truncate">Processing
                                             </h1>
-                                            <h1 class="text-3xl  font-light text-blue-500">86,08%</h1>
+                                            <h1 class="text-3xl  font-light text-blue-500">120</h1>
                                         </div>
-                                        <!-- Satisfaction Level  -->
+                                        <!-- Completed -->
                                         <div class="border rounded-md p-4 space-y-1 bg-slate-50">
                                             <!-- caption -->
-                                            <h1 class="text-xs font-normal text-slate-400 truncate">Satisfaction Level
+                                            <h1 class="text-xs font-normal text-slate-400 truncate">Completed
                                             </h1>
-                                            <h1 class="text-3xl  font-light text-blue-500">4,85</h1>
+                                            <h1 class="text-3xl  font-light text-blue-500">120</h1>
+                                        </div>
+                                        <!-- Start Inspected  -->
+                                        <div class="border rounded-md p-4 space-y-1 bg-slate-50">
+                                            <!-- caption -->
+                                            <h1 class="text-xs font-normal text-slate-400 truncate">Start Inspected
+                                            </h1>
+                                            <h1 class="text-3xl  font-light text-blue-500">100</h1>
+                                        </div>
+                                        <!-- End Inspected  -->
+                                        <div class="border rounded-md p-4 space-y-1 bg-slate-50">
+                                            <!-- caption -->
+                                            <h1 class="text-xs font-normal text-slate-400 truncate">End Inspected
+                                            </h1>
+                                            <h1 class="text-3xl  font-light text-blue-500">100</h1>
+                                        </div>
+                                        <!-- Approved  -->
+                                        <div class="border rounded-md p-4 space-y-1 bg-slate-50">
+                                            <!-- caption -->
+                                            <h1 class="text-xs font-normal text-slate-400 truncate">Approved
+                                            </h1>
+                                            <h1 class="text-3xl  font-light text-blue-500">100</h1>
                                         </div>
                                     </section>
                                     <!-- ===== ================ ==== -->
                                     <!-- ===== end section Card Hero ==== -->
                                     <!-- ===== ================ ==== -->
 
-
-                                    <section class="md:grid md:grid-cols-6 gap-2 space-y-2 md:space-y-0">
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== tab all - section Percentage of Task P​rogress ==== -->
-                                        <!-- ===== ================ ==== -->
-                                        <div class="border rounded-md p-2 col-span-2">
-                                            <h1
-                                                class="font-sans text-center md:text-left text-sm tracking-tight truncate font-semibold text-slate-600">
-                                                Percentage of Task
-                                                Progress</h1>
-                                        </div>
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== end tab all - section Percentage of Task P​rogress ==== -->
-                                        <!-- ===== ================ ==== -->
-
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== tab all - section Task in departement ==== -->
-                                        <!-- ===== ================ ==== -->
-                                        <div class="border rounded-md p-2 col-span-4">
-                                            <h1
-                                                class="font-sans text-center md:text-left text-sm tracking-tight truncate font-semibold text-slate-600">
-                                                Task in Departement</h1>
-                                        </div>
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== end tab all - section Task in departement ==== -->
-                                        <!-- ===== ================ ==== -->
-                                    </section>
-
-                                    <section class="md:grid md:grid-cols-6 gap-2 space-y-2 md:space-y-0">
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== tab all - section Top 5 Submitter Internal ==== -->
-                                        <!-- ===== ================ ==== -->
-                                        <div class="border rounded-md p-2 col-span-3">
-                                            <h1
-                                                class="font-sans text-center text-xs tracking-tight truncate font-semibold text-slate-600">
-                                                Top 5 Submitter Internal</h1>
-                                        </div>
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== end tab all - section Top 5 Submitter Internal ==== -->
-                                        <!-- ===== ================ ==== -->
-
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== tab all - section Top 5 Submitter Tenant ==== -->
-                                        <!-- ===== ================ ==== -->
-                                        <div class="border rounded-md p-2 col-span-3">
-                                            <h1
-                                                class="font-sans text-center text-xs tracking-tight truncate font-semibold text-slate-600">
-                                                Top 5 Submitter Tenant</h1>
-                                        </div>
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== end tab all - section Top 5 Submitter Tenant ==== -->
-                                        <!-- ===== ================ ==== -->
-
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== tab all - section Top 5 Submitter Category ==== -->
-                                        <!-- ===== ================ ==== -->
-                                        <div class="border rounded-md p-2 col-span-3">
-                                            <h1
-                                                class="font-sans text-center text-xs tracking-tight truncate font-semibold text-slate-600">
-                                                Top 5 Submitter Category</h1>
-                                        </div>
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== end tab all - section Top 5 Submitter Category ==== -->
-                                        <!-- ===== ================ ==== -->
-
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== tab all - section Top 5 Submitter Floor ==== -->
-                                        <!-- ===== ================ ==== -->
-                                        <div class="border rounded-md p-2 col-span-3">
-                                            <h1
-                                                class="font-sans text-center text-xs tracking-tight truncate font-semibold text-slate-600">
-                                                Top 5 Submitter Floor</h1>
-                                        </div>
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== end tab all - section Top 5 Submitter Floor ==== -->
-                                        <!-- ===== ================ ==== -->
-                                    </section>
                                 </section>
                                 <!-- ===== ================ ==== -->
                                 <!-- ===== end section Complaint & Request ==== -->
@@ -1733,802 +1284,6 @@
                                 <div class="w-full h-[1px] bg-slate-200"></div>
                                 <!-- end line -->
 
-                                <!-- ===== ================ ==== -->
-                                <!-- ===== section Work Order ==== -->
-                                <!-- ===== ================ ==== -->
-                                <section class="space-y-2 md:py-8 py-4">
-                                    <section class="">
-                                        <h1 class="font-sans text-lg text-slate-800 font-medium">Work Order
-                                        </h1>
-                                        <!-- filter -->
-                                        <div class="pt-2">
-                                            <div class="grid  md:grid-cols-5 gap-2 grid-cols-2">
-
-                                                <!-- opsi Categories -->
-                                                <div x-data="{ open: false }">
-                                                    <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
-                                                        @click="open = !open">
-                                                        <div class="space-x-3 flex">
-                                                            <h1
-                                                                class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
-                                                                Categories
-                                                            </h1>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- modal -->
-                                                    <div x-show="open"
-                                                        class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
-                                                        <div class="flex h-screen justify-center">
-                                                            <div class="my-auto w-full max-w-lg rounded-md border">
-                                                                <!-- header -->
-                                                                <div
-                                                                    class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
-                                                                    <div class="flex justify-between">
-                                                                        <h1
-                                                                            class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
-                                                                            Select Category</h1>
-                                                                        <button
-                                                                            class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
-                                                                            @click="open = !open">Close</button>
-                                                                    </div>
-                                                                    <!-- search -->
-                                                                    <div class="pt-2">
-                                                                        <input type="search" name="" id=""
-                                                                            placeholder="search category"
-                                                                            class="border rounded-md p-2 w-full font-light text-sm">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- scroll -->
-                                                                <div
-                                                                    class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <!-- end opsi Categories -->
-
-                                                <!-- opsi Submitter -->
-                                                <div x-data="{ open: false }">
-                                                    <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
-                                                        @click="open = !open">
-                                                        <div class="space-x-3 flex">
-                                                            <h1
-                                                                class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
-                                                                Submitter
-                                                            </h1>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- modal -->
-                                                    <div x-show="open"
-                                                        class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
-                                                        <div class="flex h-screen justify-center">
-                                                            <div class="my-auto w-full max-w-lg rounded-md border">
-                                                                <!-- header -->
-                                                                <div
-                                                                    class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
-                                                                    <div class="flex justify-between">
-                                                                        <h1
-                                                                            class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
-                                                                            Select Submitter</h1>
-                                                                        <button
-                                                                            class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
-                                                                            @click="open = !open">Close</button>
-                                                                    </div>
-                                                                    <!-- search -->
-                                                                    <div class="pt-2">
-                                                                        <input type="search" name="" id=""
-                                                                            placeholder="search category"
-                                                                            class="border rounded-md p-2 w-full font-light text-sm">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- scroll -->
-                                                                <div
-                                                                    class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <!-- end opsi Submitter -->
-
-                                                <!-- opsi Description -->
-                                                <div x-data="{ open: false }" class="col-span-2 md:col-span-1">
-                                                    <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
-                                                        @click="open = !open">
-                                                        <div class="space-x-3 flex">
-                                                            <h1
-                                                                class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
-                                                                Description
-                                                            </h1>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- modal -->
-                                                    <div x-show="open"
-                                                        class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
-                                                        <div class="flex h-screen justify-center">
-                                                            <div class="my-auto w-full max-w-lg rounded-md border">
-                                                                <!-- header -->
-                                                                <div
-                                                                    class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
-                                                                    <div class="flex justify-between">
-                                                                        <h1
-                                                                            class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
-                                                                            Select Description</h1>
-                                                                        <button
-                                                                            class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
-                                                                            @click="open = !open">Close</button>
-                                                                    </div>
-                                                                    <!-- search -->
-                                                                    <div class="pt-2">
-                                                                        <input type="search" name="" id=""
-                                                                            placeholder="search category"
-                                                                            class="border rounded-md p-2 w-full font-light text-sm">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- scroll -->
-                                                                <div
-                                                                    class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <!-- end opsi Description -->
-
-
-                                            </div>
-                                        </div>
-                                        <!-- end filter -->
-                                    </section>
-
-
-                                    <!-- ===== ================ ==== -->
-                                    <!-- ===== section Card Hero ==== -->
-                                    <!-- ===== ================ ==== -->
-                                    <section class="grid md:grid-cols-5 gap-2">
-                                        <!-- Work Order -->
-                                        <div class="border rounded-md p-4 space-y-1 bg-slate-50">
-                                            <!-- caption -->
-                                            <h1 class="text-xs font-normal text-slate-400 truncate">Work Order
-                                            </h1>
-                                            <h1 class="text-3xl  font-light text-blue-500">22568</h1>
-                                        </div>
-
-                                    </section>
-                                    <!-- ===== ================ ==== -->
-                                    <!-- ===== end section Card Hero ==== -->
-                                    <!-- ===== ================ ==== -->
-
-
-                                    <section class="md:grid md:grid-cols-6 gap-2 space-y-2 md:space-y-0">
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== tab all - section Percentage of Task P​rogress ==== -->
-                                        <!-- ===== ================ ==== -->
-                                        <div class="border rounded-md p-2 col-span-2">
-                                            <h1
-                                                class="font-sans text-center md:text-left text-sm tracking-tight truncate font-semibold text-slate-600">
-                                                Percentage of Task
-                                                Progress</h1>
-                                        </div>
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== end tab all - section Percentage of Task P​rogress ==== -->
-                                        <!-- ===== ================ ==== -->
-
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== tab all - section Total Task in Category ==== -->
-                                        <!-- ===== ================ ==== -->
-                                        <div class="border rounded-md p-2 col-span-4">
-                                            <h1
-                                                class="font-sans text-center md:text-left text-sm tracking-tight truncate font-semibold text-slate-600">
-                                                Total Task in Category</h1>
-                                        </div>
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== end tab all - section Total Task in Category ==== -->
-                                        <!-- ===== ================ ==== -->
-                                    </section>
-
-                                    <section class="md:grid md:grid-cols-6 gap-2 space-y-2 md:space-y-0">
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== tab all - section Top 5 Submitter ==== -->
-                                        <!-- ===== ================ ==== -->
-                                        <div class="border rounded-md p-2 col-span-2">
-                                            <h1
-                                                class="font-sans text-center text-xs tracking-tight truncate font-semibold text-slate-600">
-                                                Top 5 Submitter</h1>
-                                        </div>
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== end tab all - section Top 5 Submitter ==== -->
-                                        <!-- ===== ================ ==== -->
-
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== tab all - section Top 5 Description ==== -->
-                                        <!-- ===== ================ ==== -->
-                                        <div class="border rounded-md p-2 col-span-2">
-                                            <h1
-                                                class="font-sans text-center text-xs tracking-tight truncate font-semibold text-slate-600">
-                                                Top 5 Description</h1>
-                                        </div>
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== end tab all - section Top 5 Description ==== -->
-                                        <!-- ===== ================ ==== -->
-
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== tab all - section Top 5 Departement ==== -->
-                                        <!-- ===== ================ ==== -->
-                                        <div class="border rounded-md p-2 col-span-2">
-                                            <h1
-                                                class="font-sans text-center text-xs tracking-tight truncate font-semibold text-slate-600">
-                                                Top 5 Departement</h1>
-                                        </div>
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== end tab all - section Top 5 Departement ==== -->
-                                        <!-- ===== ================ ==== -->
-
-                                    </section>
-                                </section>
-                                <!-- ===== ================ ==== -->
-                                <!-- ===== end section Work Order ==== -->
-                                <!-- ===== ================ ==== -->
-
-
-                                <!-- line -->
-                                <div class="w-full h-[1px] bg-slate-200"></div>
-                                <!-- end line -->
-
-                                <!-- ===== ================ ==== -->
-                                <!-- ===== section Scheduled Maintance ==== -->
-                                <!-- ===== ================ ==== -->
-                                <section class="space-y-2 md:py-8 py-4">
-                                    <section class="">
-                                        <h1 class="font-sans text-lg text-slate-800 font-medium">Scheduled Maintance
-                                        </h1>
-                                        <!-- filter -->
-                                        <div class="pt-2">
-                                            <div class="grid  md:grid-cols-5 gap-2 grid-cols-2">
-
-                                                <!-- opsi Categories -->
-                                                <div x-data="{ open: false }">
-                                                    <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
-                                                        @click="open = !open">
-                                                        <div class="space-x-3 flex">
-                                                            <h1
-                                                                class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
-                                                                Categories
-                                                            </h1>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- modal -->
-                                                    <div x-show="open"
-                                                        class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
-                                                        <div class="flex h-screen justify-center">
-                                                            <div class="my-auto w-full max-w-lg rounded-md border">
-                                                                <!-- header -->
-                                                                <div
-                                                                    class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
-                                                                    <div class="flex justify-between">
-                                                                        <h1
-                                                                            class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
-                                                                            Select Category</h1>
-                                                                        <button
-                                                                            class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
-                                                                            @click="open = !open">Close</button>
-                                                                    </div>
-                                                                    <!-- search -->
-                                                                    <div class="pt-2">
-                                                                        <input type="search" name="" id=""
-                                                                            placeholder="search category"
-                                                                            class="border rounded-md p-2 w-full font-light text-sm">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- scroll -->
-                                                                <div
-                                                                    class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <!-- end opsi Categories -->
-
-                                                <!-- opsi Item -->
-                                                <div x-data="{ open: false }">
-                                                    <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
-                                                        @click="open = !open">
-                                                        <div class="space-x-3 flex">
-                                                            <h1
-                                                                class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
-                                                                Item
-                                                            </h1>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- modal -->
-                                                    <div x-show="open"
-                                                        class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
-                                                        <div class="flex h-screen justify-center">
-                                                            <div class="my-auto w-full max-w-lg rounded-md border">
-                                                                <!-- header -->
-                                                                <div
-                                                                    class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
-                                                                    <div class="flex justify-between">
-                                                                        <h1
-                                                                            class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
-                                                                            Select Item</h1>
-                                                                        <button
-                                                                            class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
-                                                                            @click="open = !open">Close</button>
-                                                                    </div>
-                                                                    <!-- search -->
-                                                                    <div class="pt-2">
-                                                                        <input type="search" name="" id=""
-                                                                            placeholder="search category"
-                                                                            class="border rounded-md p-2 w-full font-light text-sm">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- scroll -->
-                                                                <div
-                                                                    class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <!-- end opsi Item -->
-
-                                                <!-- opsi Form Checklist -->
-                                                <div x-data="{ open: false }">
-                                                    <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
-                                                        @click="open = !open">
-                                                        <div class="space-x-3 flex">
-                                                            <h1
-                                                                class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
-                                                                Form Checklist
-                                                            </h1>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- modal -->
-                                                    <div x-show="open"
-                                                        class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
-                                                        <div class="flex h-screen justify-center">
-                                                            <div class="my-auto w-full max-w-lg rounded-md border">
-                                                                <!-- header -->
-                                                                <div
-                                                                    class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
-                                                                    <div class="flex justify-between">
-                                                                        <h1
-                                                                            class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
-                                                                            Select Form Checklist</h1>
-                                                                        <button
-                                                                            class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
-                                                                            @click="open = !open">Close</button>
-                                                                    </div>
-                                                                    <!-- search -->
-                                                                    <div class="pt-2">
-                                                                        <input type="search" name="" id=""
-                                                                            placeholder="search category"
-                                                                            class="border rounded-md p-2 w-full font-light text-sm">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- scroll -->
-                                                                <div
-                                                                    class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <!-- end opsi Form Checklist -->
-
-                                                <!-- opsi Assigned User -->
-                                                <div x-data="{ open: false }">
-                                                    <div class="border rounded-md px-3 py-1 flex justify-between cursor-pointer bg-white hover:bg-slate-50"
-                                                        @click="open = !open">
-                                                        <div class="space-x-3 flex">
-                                                            <h1
-                                                                class="my-auto truncate line-clamp-1 text-slate-500 text-sm font-sans font-light tracking-tight">
-                                                                Assigned User
-                                                            </h1>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- modal -->
-                                                    <div x-show="open"
-                                                        class="left-0 top-0 z-30 absolute h-screen w-screen bg-white/80 px-4">
-                                                        <div class="flex h-screen justify-center">
-                                                            <div class="my-auto w-full max-w-lg rounded-md border">
-                                                                <!-- header -->
-                                                                <div
-                                                                    class="sticky w-full rounded-t-md border-b bg-white px-3 py-4">
-                                                                    <div class="flex justify-between">
-                                                                        <h1
-                                                                            class="font-sans font-semibold text-slate-800 md:text-xl text-lg">
-                                                                            Select Assigned User</h1>
-                                                                        <button
-                                                                            class="font-semibold font-sans text-xs uppercase my-auto text-red-500"
-                                                                            @click="open = !open">Close</button>
-                                                                    </div>
-                                                                    <!-- search -->
-                                                                    <div class="pt-2">
-                                                                        <input type="search" name="" id=""
-                                                                            placeholder="search category"
-                                                                            class="border rounded-md p-2 w-full font-light text-sm">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- scroll -->
-                                                                <div
-                                                                    class=" overflow-y-auto max-h-52 bg-white rounded-b-md">
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                    <div
-                                                                        class="flex cursor-pointer justify-between p-3 hover:bg-slate-50">
-                                                                        <h1 class="text-sm font-light text-slate-700">
-                                                                            Category</h1>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <!-- end opsi Assigned User -->
-
-                                            </div>
-                                        </div>
-                                        <!-- end filter -->
-                                    </section>
-
-
-                                    <!-- ===== ================ ==== -->
-                                    <!-- ===== section Card Hero ==== -->
-                                    <!-- ===== ================ ==== -->
-                                    <section class="grid md:grid-cols-5 gap-2">
-                                        <div class="space-y-2 md:col-span-1">
-                                            <!-- Total Task -->
-                                            <div class="border rounded-md p-4 space-y-1 bg-slate-50">
-                                                <!-- caption -->
-                                                <h1 class="text-xs font-normal text-slate-400 truncate">Total Task
-                                                </h1>
-                                                <h1 class="text-3xl  font-light text-blue-500">22568</h1>
-                                            </div>
-                                            <!-- Total Progress -->
-                                            <div class="border rounded-md p-4 space-y-1 bg-slate-50">
-                                                <!-- caption -->
-                                                <h1 class="text-xs font-normal text-slate-400 truncate">Total Progress
-                                                </h1>
-                                                <h1 class="text-3xl  font-light text-blue-500">22568</h1>
-                                            </div>
-                                        </div>
-                                        <div class="md:col-span-2">
-                                            <div class="border rounded-md p-2">
-                                                <h1 class="font-sans text-xs text-slate-600 font-medium">Work Order
-                                                </h1>
-                                            </div>
-                                        </div>
-                                        <div class="md:col-span-2">
-                                            <div class="border rounded-md p-2 space-y-2">
-                                                <div>
-                                                    <h1 class="font-sans text-sm text-slate-600 font-medium">Rating
-                                                        Overall
-                                                    </h1>
-                                                    <div class="flex space-x-2">
-                                                        <i class="fa-solid fa-star text-base text-yellow-500"></i>
-                                                        <i class="fa-solid fa-star text-base text-yellow-500"></i>
-                                                        <i class="fa-solid fa-star text-base text-yellow-500"></i>
-                                                        <i
-                                                            class="fa-solid fa-star-half-stroke text-base text-yellow-500"></i>
-                                                        <i class="fa-solid fa-star text-base text-slate-200"></i>
-                                                        <h1 class="text-sm text-blue-500 my-auto">(4,95)</h1>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <h1 class="font-sans text-sm text-slate-600 font-medium">Rating
-                                                        Quality
-                                                    </h1>
-                                                    <div class="flex space-x-2">
-                                                        <i class="fa-solid fa-star text-base text-yellow-500"></i>
-                                                        <i class="fa-solid fa-star text-base text-yellow-500"></i>
-                                                        <i class="fa-solid fa-star text-base text-yellow-500"></i>
-                                                        <i
-                                                            class="fa-solid fa-star-half-stroke text-base text-yellow-500"></i>
-                                                        <i class="fa-solid fa-star text-base text-slate-200"></i>
-                                                        <h1 class="text-sm text-blue-500 my-auto">(4,95)</h1>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <h1 class="font-sans text-sm text-slate-600 font-medium">Rating
-                                                        Accuracy
-                                                    </h1>
-                                                    <div class="flex space-x-2">
-                                                        <i class="fa-solid fa-star text-base text-yellow-500"></i>
-                                                        <i class="fa-solid fa-star text-base text-yellow-500"></i>
-                                                        <i class="fa-solid fa-star text-base text-yellow-500"></i>
-                                                        <i
-                                                            class="fa-solid fa-star-half-stroke text-base text-yellow-500"></i>
-                                                        <i class="fa-solid fa-star text-base text-slate-200"></i>
-                                                        <h1 class="text-sm text-blue-500 my-auto">(4,95)</h1>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <h1 class="font-sans text-sm text-slate-600 font-medium">Rating
-                                                        Speed
-                                                    </h1>
-                                                    <div class="flex space-x-2">
-                                                        <i class="fa-solid fa-star text-base text-yellow-500"></i>
-                                                        <i class="fa-solid fa-star text-base text-yellow-500"></i>
-                                                        <i class="fa-solid fa-star text-base text-yellow-500"></i>
-                                                        <i
-                                                            class="fa-solid fa-star-half-stroke text-base text-yellow-500"></i>
-                                                        <i class="fa-solid fa-star text-base text-slate-200"></i>
-                                                        <h1 class="text-sm text-blue-500 my-auto">(4,95)</h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <!-- ===== ================ ==== -->
-                                    <!-- ===== end section Card Hero ==== -->
-                                    <!-- ===== ================ ==== -->
-
-
-                                    <section class="md:grid md:grid-cols-6 gap-2 space-y-2 md:space-y-0">
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== tab all - section Percentage of Delay Task ==== -->
-                                        <!-- ===== ================ ==== -->
-                                        <div class="border rounded-md p-2 col-span-2">
-                                            <h1
-                                                class="font-sans text-center md:text-left text-sm tracking-tight truncate font-semibold text-slate-600">
-                                                Percentage of Delay Task</h1>
-                                        </div>
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== end tab all - section Percentage of Delay Task ==== -->
-                                        <!-- ===== ================ ==== -->
-
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== tab all - section Top 5 Items Maintained ==== -->
-                                        <!-- ===== ================ ==== -->
-                                        <div class="border rounded-md p-2 col-span-4">
-                                            <h1
-                                                class="font-sans text-center md:text-left text-sm tracking-tight truncate font-semibold text-slate-600">
-                                                Top 5 Items Maintained</h1>
-                                        </div>
-                                        <!-- ===== ================ ==== -->
-                                        <!-- ===== end tab all - section Top 5 Items Maintained ==== -->
-                                        <!-- ===== ================ ==== -->
-                                    </section>
-
-                                </section>
-                                <!-- ===== ================ ==== -->
-                                <!-- ===== end section Work Order ==== -->
-                                <!-- ===== ================ ==== -->
 
 
                             </section>
@@ -4842,20 +3597,6 @@
                         <!-- ===== end section modul tab Shedule Maintance ==== -->
                         <!-- ===== ================ ==== -->
 
-                        <!-- ===== ================ ==== -->
-                        <!-- ===== section modul tab Permits ==== -->
-                        <!-- ===== ================ ==== -->
-                        <div class="hidden  transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-                            id="tabs-permits" role="tabpanel" aria-labelledby="Permits">
-                            <section class="w-full space-y-4" id="content">
-
-                                <h1>Permits</h1>
-
-                            </section>
-                        </div>
-                        <!-- ===== ================ ==== -->
-                        <!-- ===== end section modul tab Permits ==== -->
-                        <!-- ===== ================ ==== -->
 
 
                     </section>
